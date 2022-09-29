@@ -1,0 +1,67 @@
+.Footer {
+    background: hsl(0, 0%, 80%);
+    color: hsl(0, 0%, 5%);
+    text-align: center;
+    font-size: 14px;
+}
+  
+.Footer-Content {
+    display: flex;
+    padding: 12px * 2;
+    justify-content: center;
+    margin: auto;
+    max-width: 850px;
+}
+  
+.Footer-Content div {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+  
+.Social-Icons {
+    background: hsl(0, 0%, 87%);
+    padding-top: 12px;
+    padding-bottom: 12px/2;
+}
+  
+.Social-Icons a {
+    padding: 12px/2;
+    color: hsl(0, 0%, 15%);
+}
+  
+.Social-Icons a:hover {
+    color: #e5398d;
+}
+  
+.Social-Icons a svg {
+    height: 48px;
+    width: 48px;
+}
+  
+.Links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+    font-size: 1.5em;
+}
+  
+.Links a {
+    color: hsl(0, 0%, 15%);
+}
+  
+.Links a:hover {
+    text-decoration: underline;
+}
+  
+.Logo {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+  
+.Logo img {
+    width: 150px;
+    height: 150px;
+    margin-right: 12px;
+}

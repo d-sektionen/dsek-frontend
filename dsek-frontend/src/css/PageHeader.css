@@ -1,0 +1,60 @@
+.No-Img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+  
+.Header-Wrapper {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    position: relative;
+    overflow: hidden;
+}
+  
+.Img-Wrapper {
+    flex-grow: 1;
+    max-width: 1200px;
+}
+  
+.Img-Wrapper div {
+    position: relative;
+    transition: padding 0.3s ease;
+}
+  
+.Gradient {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0), hsl(0, 0%, 5%));
+    opacity: 0.4;
+    background-size: cover;
+    background-position: center;
+}
+  
+.Title {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    font-weight: bold;
+    margin: 12px;
+    font-size: 3rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+  
+.Page-Header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
