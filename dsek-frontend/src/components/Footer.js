@@ -21,9 +21,9 @@ function Footer() {
             Datateknologsektionen, Kårallen, Universitetet, 581&nbsp;83&nbsp;Linköping
           </div>
           <div className="Links">
-            <a href="/404">Kontakt</a>
-            <a href="/404">Sektionsinfo</a>
-            <a href="/404">Personuppgiftshantering</a>
+            <a href="#">Kontakt</a>
+            <a href="#">Sektionsinfo</a>
+            <a href="#">Personuppgiftshantering</a>
           </div>
         </div>
       </footer>

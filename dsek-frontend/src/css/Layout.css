@@ -1,0 +1,17 @@
+.Page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: minmax(60%, 1fr) minmax(180px, 300px);
+    grid-gap: 24px;
+    padding: 24px 12px 12px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
