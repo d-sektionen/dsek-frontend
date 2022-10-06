@@ -10,8 +10,6 @@ function Nav() {
             <NavButton title="Alumni-blogg" link="https://google.com"/>
             <NavButton title="Exjobb" link="https://google.com"/>
             <NavButton title="Företag" link="https://google.com"/>
-            <NavButton title="Medlemstjänster" link="https://google.com"/>
-            <NavButton title="Test" link="https://google.com"/>
         </nav>
     );
 }
