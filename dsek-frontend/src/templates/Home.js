@@ -1,11 +1,13 @@
 import Widget from '../components/Widget.js';
 import PostPreview from '../components/PostPreview.js';
+import SideNav from '../components/SideNav.js';
 import '../css/Home.css';
 
 function Home() {
     return (
         <div className="Home">
             <div className="Left">
+                <SideNav/>
                 <Widget title="Kommande aktiviteter" text="Det finns inga kommande aktiviteter"/>
             </div>
             <div className="Middle">
