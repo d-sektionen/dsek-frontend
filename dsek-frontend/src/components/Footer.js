@@ -1,31 +1,26 @@
-import { FiMoreHorizontal, FiFacebook, FiInstagram } from 'react-icons/fi'
+import { FiFacebook } from 'react-icons/fi'
+import '../css/Footer.css';
 
 function Footer() {
     return (
         <footer className="Footer">
-        <div className="Social-Icons">
-          <a href="https://www.facebook.com/datateknologsektionen">
-            <FiFacebook />
-          </a>
-          <a href="https://instagram.com/dsektionen">
-            <FiInstagram />
-          </a>
-          <a href="/socialamedier">
-            <FiMoreHorizontal />
-          </a>
-        </div>
-        <div className="Footer-Content">
-          <div className="Logo">
-            <img src={"/logo.png"} alt="D-sektionen" />
-            Datateknologsektionen, Kårallen, Universitetet, 581&nbsp;83&nbsp;Linköping
-          </div>
-          <div className="Links">
-            <a href="#">Kontakt</a>
-            <a href="#">Sektionsinfo</a>
-            <a href="#">Personuppgiftshantering</a>
-          </div>
-        </div>
-      </footer>
+            <nav className="footer-line">
+                 <div className="color-d-sek color-brown"/>
+                 <div className="color-d-sek color-pink"/>
+                 <div className="color-d-sek color-yellow"/>
+                 <div className="color-d-sek color-green"/>
+                 <div className="color-d-sek color-blue"/>
+            </nav>
+
+            <p class="left-class" >
+               Datateknologsektionen, Kårallen, Universitetet, 581 83 Linköping
+            </p>
+            <p class="left-class" >
+               hej
+            </p>
+        
+        </footer>
+       
     );
 }
   

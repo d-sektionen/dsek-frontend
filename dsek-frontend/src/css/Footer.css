@@ -1,0 +1,43 @@
+.Footer {
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    /*justify-content: center;*/
+    color: black;
+   /* background-color: gray;*/
+    line-height: 6px;
+    bottom: 0px;
+    /*border-top: 3px solid pink;*/
+}
+
+.footer-line{
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    display: inline-block;
+}
+
+.color-d-sek{
+    width: 100%;
+    height: 30px;
+}
+
+.color-brown{
+    background-color: brown;
+}
+
+.color-pink{
+    background-color: pink;
+}
+
+.color-yellow{
+    background-color: yellow;
+}
+
+.color-green{
+    background-color: green;
+}
+
+.color-blue{
+    background-color: blue;
+}

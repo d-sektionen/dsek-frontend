@@ -1,0 +1,19 @@
+.Home {
+    position: absolute;
+    display: flex;
+    top: calc(15% + 48px);
+    width: 100%;
+    padding-top: 16px;
+}
+
+.Left {
+    width: 25%;
+}
+
+.Middle {
+    width: 50%;
+}
+
+.Right {
+    width: 25%;
+}

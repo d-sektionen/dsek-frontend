@@ -1,11 +1,12 @@
+import Header from './Header';
 import Footer from './Footer';
-import Nav from './Nav';
+import Home from '../templates/Home';
 
 function Layout() {
     return (
         <div className="Page">
-            <Nav/>
-            <Footer />
+            <Header/>
+            <Home/>
         </div>
     );
 }
