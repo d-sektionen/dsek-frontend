@@ -1,4 +1,3 @@
-import '../css/Footer.css';
 import { FiMoreHorizontal, FiFacebook, FiInstagram } from 'react-icons/fi'
 
 function Footer() {

@@ -1,5 +1,3 @@
-import '../css/Nav.css';
-
 import { ReactComponent as Logo } from './svg/logo.inline.svg';
 
 import {
