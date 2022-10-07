@@ -1,6 +1,7 @@
 import Header from './Header';
 import Footer from './Footer';
 import Home from '../templates/Home';
+import "../css/Layout.css"
 
 function Layout() {
     return (
