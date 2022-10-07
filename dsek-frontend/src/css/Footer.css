@@ -1,14 +1,15 @@
 .Footer {
-    bottom: 0;
+    position:absolute;
+
+    /*TODO: temporary fix*/
+    bottom: -512px;
+
     width: 100%;
     height: 156px;
     background: #f8f8f8;
     color: #555;
     text-align: center;
     font-size: 14px;
-
-    /*TODO: temporary solution*/
-    margin-top:calc(15% + 48px + 696px);
 }
 
 .Footer-Content {
