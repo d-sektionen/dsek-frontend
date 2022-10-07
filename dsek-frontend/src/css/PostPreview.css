@@ -1,3 +1,35 @@
 .PostPreview {
-    
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.PostPreview-Title {
+    font-family: "Asap", Arial, sans-serif;
+    margin: 0;
+    line-height: 1.2;
+    border-bottom: 2px solid #333;
+    padding-bottom: 6px;
+}
+
+.PostPreview-Date {
+    font-size: 90%;
+    line-height: 1.3;
+    margin-top: 2px;
+    text-align: left;
+    color: #333;
+    font-family: "Asap", Arial, sans-serif;
+    font-weight: 300;
+    padding-top: 6px;
+}
+
+.PostPreview-Content {
+    width: 100%;
+    padding-bottom: 36px;
+    overflow: hidden;
+}
+
+.PostPreview-Text {
+    color: #555;
+    word-wrap: break-word;
+    line-height: 1.6875;
 }

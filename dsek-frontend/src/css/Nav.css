@@ -6,7 +6,7 @@
 
 .NavButton {
     display: inline-block;
-    background-color: gray;
+    background-color: white;
     width: 132px;
     margin-left: 4px;
     margin-right: 4px;
@@ -15,14 +15,20 @@
 
 .NavButton:hover {
     cursor: pointer;
-    background-color: #333333;
+    background-color: #E5398D;
+}
+
+.NavButton:hover a {
+    color: #F7E623;
 }
 
 .NavButton a {
     text-decoration: none;
-    color: white;
     font-size: 16px;
     line-height: 32px;
+    color: #000;
+    padding: 18px 12px;
+    transition: color 0.15s linear;
 }
 
 .SideNav {
@@ -46,4 +52,68 @@
     float: left;
     width: 32px;
     height: 32px;
+    /*
+    opacity: 0;
+    transition: all 0.6s;
+    */
+}
+
+.PageNavButton-Selected {
+    font-family: "Asap", Arial, sans-serif;
+    margin: 0 3px;
+    background: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+    text-decoration: none;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    transition: box-shadow 0.3s ease;
+    cursor: default;
+    border-bottom: #305fb9 6px solid;
+    float: left;
+}
+
+.PageNavButton-Disabled {
+    font-family: "Asap", Arial, sans-serif;
+    margin: 0 3px;
+    background: #e7e7e7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+    text-decoration: none;
+    transition: box-shadow 0.3s ease;
+    cursor: default;
+    float: left;
+}
+
+.PageNavButton {
+    font-family: "Asap", Arial, sans-serif;
+    margin: 0 3px;
+    background: #f8f8f8;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+    text-decoration: none;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    transition: box-shadow 0.3s ease;
+    cursor: default;
+    float: left;
+}
+
+.PageNavButton:hover {
+    cursor: pointer;
+    border-bottom: #E5398D 6px solid;
+}
+
+.PageNav {
+    width: 266px;
+    height: 32px;
+    margin: auto;
 }

@@ -1,6 +1,7 @@
 import Widget from '../components/Widget.js';
 import PostPreview from '../components/PostPreview.js';
 import SideNav from '../components/SideNav.js';
+import PageNav from '../components/PageNav.js';
 import '../css/Home.css';
 
 function Home() {
@@ -12,6 +13,8 @@ function Home() {
             </div>
             <div className="Middle">
                 <PostPreview/>
+                <PostPreview/>
+                <PageNav/>
             </div>
             <div className="Right">
                 <Widget title="Huvudsponsor" link="https://d-sektionen.se/wp-content/uploads/2019/03/ericsson.png"/>

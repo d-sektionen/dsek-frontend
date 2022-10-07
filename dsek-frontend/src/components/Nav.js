@@ -4,7 +4,7 @@ import NavButton from './NavButton.js';
 function Nav() {
     return (
         <nav className="Menu">
-            <NavButton title="Sektionen" link="https://google.com"/>
+            <NavButton title="Sektionen ⯆" link="https://google.com"/>
             {
                 /** TODO Sektionen dropdown
                  *  Sektionsinfo
@@ -15,7 +15,7 @@ function Nav() {
                  *  Protokoll styrelsemöten
                  */
             }
-            <NavButton title="Utskott" link="https://google.com"/>
+            <NavButton title="Utskott ⯆" link="https://google.com"/>
             {
                 /** TODO Utskott dropdown
                  *  Eventutskottet
@@ -35,7 +35,7 @@ function Nav() {
                  *  Werkmästeriet
                  */
             }
-            <NavButton title="Sökande" link="https://google.com"/>
+            <NavButton title="Sökande ⯆" link="https://google.com"/>
             {
                 /** TODO Sökande dropdown
                  *  Utbildningar
