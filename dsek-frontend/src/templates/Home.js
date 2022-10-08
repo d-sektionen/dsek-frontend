@@ -4,6 +4,8 @@ import SideNav from '../components/SideNav.js';
 import PageNav from '../components/PageNav.js';
 import '../css/Home.css';
 
+import postsData from '../fake-cms/posts.json';
+
 function Home() {
     return (
         <div className="Home">
@@ -12,8 +14,9 @@ function Home() {
                 <Widget title="Kommande aktiviteter" text="Det finns inga kommande aktiviteter"/>
             </div>
             <div className="Middle">
-                <PostPreview/>
-                <PostPreview/>
+                {
+                    postsData.map((postData) => <PostPreview title={postData.title} date={postData.date} content={postData.content}/>)
+                }
                 <PageNav/>
             </div>
             <div className="Right">
