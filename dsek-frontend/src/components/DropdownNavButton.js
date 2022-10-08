@@ -11,7 +11,7 @@ function DropdownNavButton(props) {
                         {   
                             props.titles ?
                             props.titles.map((t) =>
-                                <NavButton title={t} link="#"/>
+                                <NavButton title={t[0]} link={t[1]}/>
                             )
                             :
                             <></>

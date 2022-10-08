@@ -2,12 +2,12 @@ import '../css/Nav.css';
 
 function SideNavButton(props) {
     return (
-        <nav className="SideNavButton">
+        <div className="SideNavButton">
             <a href={props.link}>
-                <div className="SideNavButton-Img"></div>
-                <p className="SideNavButton-Title">{props.title}</p>
+                <div className="SideNavButton-Img" style={{background: props.color}}></div>
+                <div className="SideNavButton-Text">{props.title}</div>
             </a>
-        </nav>
+        </div>
     );
 }
 
