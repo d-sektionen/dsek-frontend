@@ -1,0 +1,30 @@
+.DEG {
+    width: 75%;
+    margin: auto;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.DEG-Contact {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.DEG-Content {
+    width: 95%;
+    margin: auto;
+    padding: 16px;
+}
+
+.Bold {
+    font-weight: 600;
+}
+
+.DEG hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #000;
+    margin: 1em 0;
+    padding: 0;
+}
+

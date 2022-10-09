@@ -1,0 +1,30 @@
+.Werk {
+    width: 90%;
+    margin: auto;
+    padding-top: 16px;
+}
+
+.Werk ul {
+    text-align: left;
+}
+
+.Werk li {
+    padding: 6px;
+}
+
+.Werk-Tagline {
+    font-style: italic;
+}
+
+.Werk-Description {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.odd {
+    background-color: rgb(180, 180, 180);
+}
+
+.even {
+    background-color: rgb(211, 211, 211);
+}

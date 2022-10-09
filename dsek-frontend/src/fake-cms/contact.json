@@ -1,0 +1,62 @@
+[
+    {
+        "Committee" : "Werk",
+        "People" : [
+            {
+                "Name" : "Linnea Ivansson",
+                "Post" : "Intendent/MästerWerk/HuvudWerk",
+                "Mail" : "intendent@d-sektionen.se"
+            },
+            {
+                "Name" : "Wilhelm Hedestad",
+                "Post" : "VägWerk",
+                "Mail" : "vagwerk@d-sektionen.se"
+            },
+            {
+                "Name" : "Filip Jakobsson",
+                "Post" : "KraftWerk",
+                "Mail" : "kraftwerk@d-sektionen.se"
+            },
+            {
+                "Name" : "",
+                "Post" : "NätWerk",
+                "Mail" : "natwerk@d-sektionen.se"
+            },
+            {
+                "Name" : "",
+                "Post" : "ReningsWerk",
+                "Mail" : "reningswerk@d-sektionen.se"
+            }
+        ]
+    },
+    {
+        "Committee" : "UtbU",
+        "People" : [
+            {
+                "Name" : "",
+                "Post" : "Utbildningsutskottets ordförande",
+                "Mail" : "utbu@d-sektionen.se"
+            },
+            {
+                "Name" : "",
+                "Post" : "SnOrdf D-programmet",
+                "Mail" : "d-snordf@d-sektionen.se"
+            },
+            {
+                "Name" : "",
+                "Post" : "SnOrdf IP-programmet",
+                "Mail" : "ip-snordf@d-sektionen.se"
+            },
+            {
+                "Name" : "",
+                "Post" : "SnOrdf IT-programmet",
+                "Mail" : "it-snordf@d-sektionen.se"
+            },
+            {
+                "Name" : "",
+                "Post" : "SnOrdf U-programmet",
+                "Mail" : "u-snordf@d-sektionen.se"
+            }
+        ]
+    }
+]
