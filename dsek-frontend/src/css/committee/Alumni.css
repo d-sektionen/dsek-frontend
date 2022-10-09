@@ -1,0 +1,14 @@
+.Alumni {
+    width: 80%;
+    margin: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Alumni img {
+    margin-top: 8px;
+    height: 256px;
+}
+
+.Alumni-Section {
+    margin: 64px;
+}

@@ -1,0 +1,58 @@
+[
+    {
+        "Name" : "AktU",
+        "Logo" : "https://d-sektionen.se/wp-content/uploads/2020/01/Ny-AktU-logga.png",
+        "Info" : "AktU är utskottets aktivitetsgrupp och jobbar helhjärtat med att arrangera roliga evenemang, öppna för alla. Som bas i vår verksamhet erbjuder vi brädspelskvällar samt motionsspel i form av fotboll och innebandy. Utöver det anordnar vi större evenemang såsom fulsittningar, halvtidssittningen π-balen för alla treor i D- och TBi-sektionen, samt oregelbundna event såsom brännboll eller retrospelkvällar. Vårt mål är att erbjuda en bred uppsättning aktiviteter där det ska finnas någonting för alla! Glöm inte att gilla vår Facebook-sida för att hålla dig uppdaterad om alla våra evenemang. Datum och tider för allt vi anordnar kommer även att finnas i D-sektionens kalender. Glöm inte heller att följa oss på Instagram! Har du några frågor kring AktU eller är intresserad av ett samarbete? Kontakta AktUs ordförande!",
+        "BackgroundColor": "#6ebe45",
+        "Color": "white",
+        "Socials" : {
+            "Instagram" : "https://www.instagram.com/aktu_dsektionen/",
+            "Facebook" : "https://www.facebook.com/DAktU/",
+            "Website" : "",
+            "Discord" : "",
+            "Mail" : "aktivitetsgruppen@d-sektionen.se"
+        }
+    },
+    {
+        "Name" : "DLAN",
+        "Logo" : "https://d-sektionen.se/wp-content/uploads/2020/09/D-LAN-2021_Logotyp-300x182.png",
+        "Info" : "D-LAN är Linköpings största LAN-event arrangerat av D-sektionen på LiU. Inled vårterminen med turneringar, tävlingar och annat kul, där alla studenter på LiU är välkomna. Med hundratals deltagare årligen och en stor prispott är D-LAN tillbaka större och starkare än någonsin. Följ D-LAN på Facebook för mer information om årets LAN, eller besök vår hemsida!",
+        "BackgroundColor": "#62ccca",
+        "Color": "white",
+        "Socials" : {
+            "Instagram" : "",
+            "Facebook" : "https://www.facebook.com/DLANLiTH",
+            "Website" : "https://d-lan.se/",
+            "Discord" : "",
+            "Mail" : "projektledare@d-lan.se"
+        }
+    },
+    {
+        "Name" : "D-BAND",
+        "Logo" : "https://d-sektionen.se/wp-content/uploads/2020/09/logo_svart_bkg_1500x1500-dband-300x184.jpg",
+        "Info" : "D-Band är sektionens band, och spelar covers med fantastisk fart och energi! De har snabbt etablerat sig som en grym liveakt att se och höra. Håll utkik på Facebook för mer information kring när bandet spelar härnäst, samt när de rekryterar nya bandmedlemmar. Se också till att följa D-Band på Instagram! Har du frågor eller är del av en förening och skulle vilja boka D-Band för en spelning? Kontakta bandet via mail.",
+        "BackgroundColor": "black",
+        "Color": "white",
+        "Socials" : {
+            "Instagram" : "https://www.instagram.com/dbandliu/",
+            "Facebook" : "https://www.facebook.com/dbandliu/",
+            "Website" : "",
+            "Discord" : "",
+            "Mail" : "d-band@d-sektionen.se"
+        }
+    },
+    {
+        "Name" : "D20",
+        "Logo" : "https://d-sektionen.se/wp-content/uploads/2021/11/logo-300x300.png",
+        "Info" : "D20 är utskottets rollspelsgrupp som finns för alla d:ares rollspelsbehov. Vi anordnar en rad olika rollspelsrelaterade aktiviteter från semi-regelbundna one shot-kvällar och watchalongs till föreläsningar om character creation och world building. Det finns även en discordserver där alla rollspelsintresserade d:are kan komma i kontakt med varandra för att dela rollspelsrelaterade memes, resurser, och hitta nya grupper att spela med. Låter något av detta intressant så bör du följa oss på Facebook eller gå med i vår discordserver för mer information om när, var, och hur våra evenemang hålls. Har du fler frågor om D20 kan vi kontaktas via vår discordserver, på Facebook eller via mail.",
+        "BackgroundColor": "#725992",
+        "Color": "black",
+        "Socials" : {
+            "Instagram" : "",
+            "Facebook" : "https://www.facebook.com/GroupD20",
+            "Website" : "",
+            "Discord" : "https://discord.com/invite/RqwywGy5cP",
+            "Mail" : "D20@d-sektionen.se"
+        }
+    }
+]

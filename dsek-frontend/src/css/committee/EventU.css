@@ -1,0 +1,10 @@
+.EventU hr {
+    padding: 0;
+    margin: 0;
+}
+
+.EventU-Content {
+    width: 90%;
+    margin: auto;
+    padding-bottom: 24px;
+}
