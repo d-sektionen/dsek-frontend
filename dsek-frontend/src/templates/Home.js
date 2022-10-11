@@ -6,7 +6,25 @@ import '../css/Home.css';
 
 import postsData from '../fake-cms/posts.json';
 
+import React, { useState, useEffect } from 'react'
+
 function Home() {
+    const [Posts, fetchPosts] = useState([])
+
+    const getData = () => {
+        fetch("http://127.0.0.1:8000/api/posts/").then(function(response) {
+            return response.json()
+        }).then(function(data) {
+            fetchPosts(data)
+        }).catch(function() {
+            console.log("Attans, något gick fel")
+        });
+    }
+
+    useEffect(() => {
+        getData()
+    }, [])
+
     return (
         <div className="Home">
             <div className="Left">
@@ -15,7 +33,10 @@ function Home() {
             </div>
             <div className="Middle">
                 {
-                    postsData.map((postData) => <PostPreview title={postData.title} date={postData.date} content={postData.content}/>)
+                    Posts ?
+                    <>{Posts.map((postData) => <PostPreview title={postData.title} date={postData.date} content={postData.content}/>)}</>
+                    : 
+                    <>{postsData.map((postData) => <PostPreview title={postData.title} date={postData.date} content={postData.content}/>)}</>
                 }
                 <PageNav/>
             </div>
