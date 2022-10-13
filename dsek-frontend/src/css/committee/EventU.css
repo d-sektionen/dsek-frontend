@@ -8,3 +8,24 @@
     margin: auto;
     padding-bottom: 24px;
 }
+
+.EventU-Title {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.EventU-Desc, .EventU-Sub-Desc {
+    width: 95%;
+    text-align: left;
+    margin: auto;
+    overflow-wrap: break-word;
+}
+
+.EventU-Sub-Title {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.EventU-Contact {
+    margin-top: 16px;
+    font-size: 12px;
+    font-style: italic;
+}

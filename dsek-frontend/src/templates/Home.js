@@ -9,21 +9,52 @@ import postsData from '../fake-cms/posts.json';
 import React, { useState, useEffect } from 'react'
 
 function Home() {
-    const [Posts, fetchPosts] = useState([])
+    const [Posts, setPosts] = useState([])
+    const [ActivePosts, setActivePosts] = useState([])
+    const [currentPage, setCurrentPage] = useState(1)
+    const [totalPages, setTotalPages] = useState(1)
+    const POSTS_PER_PAGE = 2
 
     const getData = () => {
         fetch("http://127.0.0.1:8000/api/posts/").then(function(response) {
             return response.json()
         }).then(function(data) {
-            fetchPosts(data)
+            setPosts(data)
+            setTotalPages(Math.ceil(data.length / POSTS_PER_PAGE))
+            setCurrentPage(1)
         }).catch(function() {
             console.log("Attans, något gick fel")
         });
     }
 
+    const changePage = (page) => {
+        
+        if(page > 0 && page <= totalPages) {
+            setCurrentPage(page)
+        }
+    }
+
     useEffect(() => {
         getData()
+        
     }, [])
+    
+    
+    
+    useEffect(() => {
+        let active = []
+        for(let i = 0; i < POSTS_PER_PAGE; i++) {
+            if(Posts[POSTS_PER_PAGE * (currentPage - 1) + i]){
+                active.push(Posts[POSTS_PER_PAGE * (currentPage - 1) + i])
+            }   
+        }
+        setActivePosts(active)
+        
+        return () => {
+            
+        }
+
+    }, [currentPage])
 
     return (
         <div className="Home">
@@ -33,12 +64,13 @@ function Home() {
             </div>
             <div className="Middle">
                 {
-                    Posts ?
-                    <>{Posts.map((postData) => <PostPreview title={postData.title} date={postData.date} content={postData.content}/>)}</>
+
+                    ActivePosts ?
+                    <>{ActivePosts.map((postData, index) => <PostPreview key={index}  title={postData.title} date={postData.date} content={postData.content}/>)}</>
                     : 
-                    <>{postsData.map((postData) => <PostPreview title={postData.title} date={postData.date} content={postData.content}/>)}</>
+                    <>{postsData.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date} content={postData.content}/>)}</>
                 }
-                <PageNav/>
+                <PageNav posts={Posts} setPage={changePage} currentPage={currentPage} totalPages={totalPages}/>
             </div>
             <div className="Right">
                 <Widget title="Huvudsponsor" link="https://d-sektionen.se/wp-content/uploads/2019/03/ericsson.png"/>

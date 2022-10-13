@@ -16,7 +16,7 @@ function Footer() {
                     <p><b>Organisationsnr:</b> 822002-1409 <b>Bankgironr:</b> 5644-8251</p>
                     <p><b>E-post:</b> webmaster@d-sektionen.se</p>
                 </div>
-            </div>
+            </div> 
         </footer>
     );
 }

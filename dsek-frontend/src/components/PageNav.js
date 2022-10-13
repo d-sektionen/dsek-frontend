@@ -1,18 +1,25 @@
 import '../css/Nav.css';
 import PageNavButton from './PageNavButton';
 
-function PageNav(props) {
+function PageNav(props) {    
+
+    let pageNumbers = [];
+    if(props.totalPages){
+        pageNumbers = [...Array(props.totalPages).keys()] ;
+        
+    }
+
+
     return (
         <nav className="PageNav">
-            <PageNavButton page="«" disabled={true}/>
-            
-            <PageNavButton page="1"/>
-            <PageNavButton page="2" link="#"/>
-            <PageNavButton page="3" link="#"/>
-            <PageNavButton page="..." disabled={true}/>
-            <PageNavButton page="115" link="#"/>
 
-            <PageNavButton page="»" link="#"/>
+            <PageNavButton page="«" currentPage={props.currentPage} disabled={true}/>
+            {props.posts ? 
+                    pageNumbers.map((number) => <PageNavButton currentPage={props.currentPage} setPage={props.setPage} page={number+1} key={number} />)
+                    : 
+                    <> </>
+            }
+            <PageNavButton page="»" currentPage={props.currentPage} setPage={ () => props.setPage(props.currentPage+1)} />
         </nav>
     );
 }

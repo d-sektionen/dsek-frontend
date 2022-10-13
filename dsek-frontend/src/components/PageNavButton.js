@@ -1,6 +1,7 @@
 import '../css/Nav.css';
 
 function PageNavButton(props) {
+    const className = props.currentPage === props.page ? "PageNavButton-Selected" : "PageNavButton"
     return (
         <nav>
             {
@@ -8,8 +9,9 @@ function PageNavButton(props) {
                 <span>
                     {
                         props.link ?
-                        <a className="PageNavButton" href={props.link}>{props.page}</a> :
-                        <a className="PageNavButton-Selected" href={props.link}>{props.page}</a>
+                        <a className={className} href={props.link}>{props.page}</a> :
+                        <button className={className} onClick={ () => props.setPage(props.page) }>{props.page}</button>
+                        
                     }
                 </span>
             }

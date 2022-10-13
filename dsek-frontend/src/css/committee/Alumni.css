@@ -9,6 +9,23 @@
     height: 256px;
 }
 
+.Alumni-Desc, .Alumni-Section-Title, .Alumni-Section-Text {
+    text-align: left;
+}
+
 .Alumni-Section {
     margin: 64px;
+}
+
+.Alumni-Mail {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.Alumni-Link {
+    font-weight: 600;
+}
+
+.Alumni-Link:hover {
+
 }

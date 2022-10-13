@@ -11,8 +11,18 @@
     padding: 8px;
     width: 80%;
     margin: auto;
+    margin-bottom: 8px;
 }
 
 .Group a {
+    border-radius: 8px;
     padding: 8px;
+    margin: 8px;
+    text-decoration: none;
+    color: white;
+}
+
+.Group a:hover {
+    background-color: white;
+    color: black;
 }

@@ -1,9 +1,9 @@
 .Footer {
-    position:absolute;
+    position: relative;
 
     /*TODO: temporary fix*/
-    bottom: -512px;
-
+    /*bottom: -512px;*/
+    bottom: 0;
     width: 100%;
     height: 156px;
     background: #f8f8f8;
