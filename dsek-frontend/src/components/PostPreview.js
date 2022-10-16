@@ -7,7 +7,7 @@ function PostPreview(props) {
     return (
         <>
             <div className="PostPreview">
-                <h1 className="PostPreview-Title">{props.title}</h1>
+                <h1 className="PostPreview-Title"><a href="#">{props.title}</a></h1>
                 <p className="PostPreview-Date">{props.date}</p>
                 {props && <div className="PostPreview-Content" dangerouslySetInnerHTML={createMarkup(props.content)}></div>}
             </div>

@@ -66,9 +66,9 @@ function Home() {
                 {
 
                     ActivePosts ?
-                    <>{ActivePosts.map((postData, index) => <PostPreview key={index}  title={postData.title} date={postData.date} content={postData.content}/>)}</>
+                    <>{ActivePosts.map((postData, index) => <PostPreview key={index}  title={postData.title} date={postData.date.substring(0, 10)} content={postData.content}/>)}</>
                     : 
-                    <>{postsData.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date} content={postData.content}/>)}</>
+                    <>{postsData.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date.substring(0, 10)} content={postData.content}/>)}</>
                 }
                 <PageNav posts={Posts} setPage={changePage} currentPage={currentPage} totalPages={totalPages}/>
             </div>
