@@ -33,29 +33,74 @@
         "Committee" : "UtbU",
         "People" : [
             {
-                "Name" : "",
-                "Post" : "Utbildningsutskottets ordförande",
+                "Name" : "Emma Siklosi",
+                "Post" : "Utbildningsutskottets Ordförande",
                 "Mail" : "utbu@d-sektionen.se"
             },
             {
-                "Name" : "",
+                "Name" : "Anton Oom",
                 "Post" : "SnOrdf D-programmet",
                 "Mail" : "d-snordf@d-sektionen.se"
             },
             {
-                "Name" : "",
+                "Name" : "Jim Teräväinen",
                 "Post" : "SnOrdf IP-programmet",
                 "Mail" : "ip-snordf@d-sektionen.se"
             },
             {
-                "Name" : "",
+                "Name" : "Alexander Vibom",
                 "Post" : "SnOrdf IT-programmet",
                 "Mail" : "it-snordf@d-sektionen.se"
             },
             {
-                "Name" : "",
+                "Name" : "Joline Hellström",
                 "Post" : "SnOrdf U-programmet",
                 "Mail" : "u-snordf@d-sektionen.se"
+            },
+            {
+                "Name" : "",
+                "Post" : "SnOrdf Master-programmet",
+                "Mail" : "master-snordf@d-sektionen.se"
+            }
+        ]
+    },
+    {
+        "Committee" : "Alumni",
+        "People" : [
+            {
+                "Name" : "Richard Johansson",
+                "Post" : "Ordförande",
+                "Mail" : "alumni@d-sektionen.se"
+            },
+            {
+                "Name" : "Max Mogren",
+                "Post" : "Vice Ordförande",
+                "Mail" : "vice.alumni@d-sektionen.se"
+            },
+            {
+                "Name" : "Danijel Grujicic",
+                "Post" : "AW Ansvarig",
+                "Mail" : "aw.alumni@d-sektionen.se"
+            },
+            {
+                "Name" : "Victor Dahlsberg",
+                "Post" : "Föreläsningsansvarig",
+                "Mail" : "forelasning.alumni@d-sektionen.se"
+            },
+            {
+                "Name" : "Sean Zhong",
+                "Post" : "Sittningsansvarig",
+                "Mail" : "sittning.alumni@d-sektionen.se"
+            },
+            {
+                "Name" : "Alex Wahlgren",
+                "Post" : "Skugga Alumn",
+                "Mail" : "skugga.alumni@d-sektionen.se"
+            },
+            {
+                "Name" : "Gustav Elmqvist",
+                "Post" : "Tryck & PR",
+                "Mail" : "tryck.alumni@d-sektionen.se"
             }
         ]
     }

@@ -1,6 +1,7 @@
 import '../../css/committee/Alumni.css'
 import DsekHeader from '../../components/committee/DsekHeader';
 import Contact from '../../components/committee/Contact';
+import ContactData from "../../fake-cms/contact.json"
 
 function Alumni() {
     return (
@@ -10,11 +11,10 @@ function Alumni() {
                 <div>
                     <img src={"Alumniutskottet_logo.png"}/>
                     <p className="Alumni-Desc">
-                        Alumniutskottet stärker relationen mellan före detta studenter (alumner), universitetet och omvärlden, 
-                        för att ge möjlighet till ömsesidig utveckling av kunskap, kompetens och kontakter. 
-                        Detta görs genom att hålla olika typer av event såsom lunchföreläsningar med gamla studenter eller afterwork-pubar där 
-                        D-studenter kan mingla med alumner. Dessutom håller Alumniutskottet i Generationssittningen, ett evenemang för alla 
-                        tidigare och nuvarande förtroendevalda på sektionen.
+                        Utbildningsutskottet har i uppgift att bevaka utbildningen på våra program och är uppdelat i fem mindre studienämnder, 
+                        en för varje program. Utskottet ansvarar för att samla in kursutvärderingar och arrangera pluggstugor under tentamen perioderna. 
+                        Dessutom arbetar utskottet med att utveckla kurser och se till att utbildningen håller högsta klass. Utskottets syfte är att 
+                        tjäna som länk mellan studenter på programmet, Lintek och universitetet.
                     </p>
                 </div>
 
@@ -60,13 +60,12 @@ function Alumni() {
                     <h2>Kontaktinfo</h2>
                     <hr/>
                     <div className="Alumni-Contact">
-                        <Contact name="Richard Johansson" post="Ordförande" mail="alumni@d-sektionen.se"/>
-                        <Contact name="Max Mogren" post="Vice Ordförande" mail="vice.alumni@d-sektionen.se"/>
-                        <Contact name="Danijel Grujicic" post="AW Ansvarig" mail="aw.alumni@d-sektionen.se"/>
-                        <Contact name="Victor Dahlsberg" post="Föreläsningsansvarig" mail="forelasning.alumni@d-sektionen.se"/>
-                        <Contact name="Sean Zhong" post="Sittningsansvarig" mail="sittning.alumni@d-sektionen.se"/>
-                        <Contact name="Alex Wahlgren" post="Skugga Alumn" mail="skugga.alumni@d-sektionen.se"/>
-                        <Contact name="Gustav Elmqvist" post="Tryck & PR" mail="tryck.alumni@d-sektionen.se"/>
+                    {
+                        ContactData.map((contactData) => contactData["Committee"] == "Alumni" ? 
+                        <> {
+                            contactData["People"].map((person) => <Contact name={person.Name} post={person.Post} mail={person.Mail}/>)
+                        } </> : <></>)
+                    }
                     </div>
                 </div>
             </div>

@@ -1,4 +1,22 @@
 .UtbU {
-    width: 75%;
+    width: 80%;
     margin: auto;
+    font-family: Gill Sans Nova Condensed UltraBold;
+}
+
+.UtbU-Img {
+    margin-top: 8px;
+    height: 256px;
+}
+
+.UtbU-Desc, .UtbU-Section-Text {
+    text-align: left;
+}
+
+.UtbU-Section {
+    margin: 64px;
+}
+
+.UtbU-Link {
+    font-weight: 600;
 }
