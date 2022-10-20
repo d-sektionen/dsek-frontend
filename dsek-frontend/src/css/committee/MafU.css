@@ -1,0 +1,22 @@
+.MafU {
+    width: 80%;
+    margin: auto;
+}
+
+.MafU-Desc, .MafU-Text {
+    text-align: left;
+}
+
+.MafU-Section {
+    margin: 64px;
+}
+
+.MafU-Link {
+    font-weight: 600;
+}
+
+.MafU-Small {
+    font-size: 14px;
+    font-style: italic;
+    padding-bottom: 16px;
+}

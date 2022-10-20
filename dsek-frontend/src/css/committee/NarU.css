@@ -1,0 +1,27 @@
+.NarU {
+    width: 80%;
+    margin: auto;
+}
+
+.NarU-Desc, .NarU-Text {
+    text-align: left;
+}
+
+.NarU-Section {
+    margin: 64px;
+}
+
+.NarU-Link {
+    font-weight: 600;
+}
+
+.NarU-Small {
+    font-size: 14px;
+    font-style: italic;
+    padding-bottom: 16px;
+}
+
+.NarU-List li{
+    text-align: left;
+    margin-bottom: 8px;
+}
