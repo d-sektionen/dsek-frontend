@@ -24,8 +24,6 @@ function Valberedningen() {
                     <a href="#" className="ValleB-Link">Valberedningens policy</a>
                 </div>
 
-                <i><p className="ValleB-Small">Har du frågor eller funderingar? Tveka inte att kontakta <a href="#">val@d-sektionen.se</a></p></i>
-
                 <h2>Hur går det till?</h2>
 
                 <div className="ValleB-Process-Wrapper">
@@ -33,7 +31,7 @@ function Valberedningen() {
                     <p>
                         Valberedningen annonserar en sökperiod där man under en tid tar emot nomineringar. 
                         Antingen så nominerar man sig själv eller en vän som man tycker passar för posten. 
-                        Sök posten själv eller nominera en kandidat via <a>detta formulär</a>.
+                        Sök posten själv eller nominera en kandidat via <a href="#">detta formulär</a>.
                     </p>
                 </div>
                 
@@ -81,6 +79,8 @@ function Valberedningen() {
                     </p>
                 </div>
             </div>
+            
+            <i><p className="ValleB-Small">Har du frågor eller funderingar? Tveka inte att kontakta <a href="#">val@d-sektionen.se</a></p></i>
         </>
     );
 }

@@ -1,15 +1,21 @@
 import '../../css/committee/Alumni.css'
 import DsekHeader from '../../components/committee/DsekHeader';
 import Contact from '../../components/committee/Contact';
-import ContactData from "../../fake-cms/contact.json"
+import {getData} from '../../utils/NetFuncs';
+import React, { useState, useEffect } from 'react';
 
 function Alumni() {
+    const [ContactData, setContactData] = useState([]);
+    useEffect(() => {
+        (async () => { setContactData( await getData("contact")) })();
+    }, []);
+
     return (
         <>
             <DsekHeader/>
             <div className="Alumni">
                 <div>
-                    <img src={"Alumniutskottet_logo.png"}/>
+                    <img src={"Alumniutskottet_logo.png"} alt=""/>
                     <p className="Alumni-Desc">
                         Utbildningsutskottet har i uppgift att bevaka utbildningen på våra program och är uppdelat i fem mindre studienämnder, 
                         en för varje program. Utskottet ansvarar för att samla in kursutvärderingar och arrangera pluggstugor under tentamen perioderna. 
@@ -61,9 +67,9 @@ function Alumni() {
                     <hr/>
                     <div className="Alumni-Contact">
                     {
-                        ContactData.map((contactData) => contactData["Committee"] == "Alumni" ? 
+                        ContactData.map((contactData) => contactData["Committee"] === "Alumni" ? 
                         <> {
-                            contactData["People"].map((person) => <Contact name={person.Name} post={person.Post} mail={person.Mail}/>)
+                            contactData["People"].map((person) => <Contact liuid={"liniv123"}/>)
                         } </> : <></>)
                     }
                     </div>

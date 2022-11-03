@@ -4,43 +4,33 @@ import SideNav from '../components/SideNav.js';
 import PageNav from '../components/PageNav.js';
 import '../css/Home.css';
 
-import postsData from '../fake-cms/posts.json';
-
 import React, { useState, useEffect } from 'react'
+import {getData} from '../utils/NetFuncs';
+
 
 function Home() {
     const [Posts, setPosts] = useState([])
     const [ActivePosts, setActivePosts] = useState([])
-    const [currentPage, setCurrentPage] = useState(1)
-    const [totalPages, setTotalPages] = useState(1)
+    const [currentPage, setCurrentPage] = useState(0)
+    const [totalPages, setTotalPages] = useState(0)
     const POSTS_PER_PAGE = 2
 
-    const getData = () => {
-        fetch("http://127.0.0.1:8000/api/posts/").then(function(response) {
-            return response.json()
-        }).then(function(data) {
-            setPosts(data)
-            setTotalPages(Math.ceil(data.length / POSTS_PER_PAGE))
-            setCurrentPage(1)
-        }).catch(function() {
-            console.log("Attans, något gick fel")
-        });
-    }
+    useEffect(() => {
+        (async () => { 
+            const data = await getData("posts");
+            setPosts(data);
+            setTotalPages(Math.ceil(data.length / POSTS_PER_PAGE));
+            setCurrentPage(1);
+        })();
+    }, []);
 
+    
     const changePage = (page) => {
-        
         if(page > 0 && page <= totalPages) {
             setCurrentPage(page)
         }
     }
 
-    useEffect(() => {
-        getData()
-        
-    }, [])
-    
-    
-    
     useEffect(() => {
         let active = []
         for(let i = 0; i < POSTS_PER_PAGE; i++) {
@@ -49,12 +39,8 @@ function Home() {
             }   
         }
         setActivePosts(active)
-        
-        return () => {
-            
-        }
-
-    }, [currentPage])
+        return () => {}
+    }, [currentPage, Posts])
 
     return (
         <div className="Home">
@@ -64,11 +50,10 @@ function Home() {
             </div>
             <div className="Middle">
                 {
-
                     ActivePosts ?
                     <>{ActivePosts.map((postData, index) => <PostPreview key={index}  title={postData.title} date={postData.date.substring(0, 10)} content={postData.content}/>)}</>
                     : 
-                    <>{postsData.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date.substring(0, 10)} content={postData.content}/>)}</>
+                    <>{Posts.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date.substring(0, 10)} content={postData.content}/>)}</>
                 }
                 <PageNav posts={Posts} setPage={changePage} currentPage={currentPage} totalPages={totalPages}/>
             </div>

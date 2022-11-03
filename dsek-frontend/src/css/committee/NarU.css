@@ -3,6 +3,17 @@
     margin: auto;
 }
 
+.NarU-Header img {
+    margin-top: 8px;
+    height: 256px;
+    margin-right: auto;
+}
+
+.NarU-Header {
+    width: 50%;
+    margin: auto;
+}
+
 .NarU-Desc, .NarU-Text {
     text-align: left;
 }
@@ -24,4 +35,19 @@
 .NarU-List li{
     text-align: left;
     margin-bottom: 8px;
+}
+
+.NarU-Footer {
+    width: 50%;
+    margin: auto;
+    font-weight: bolder;
+    margin-bottom: 8px;
+    margin: 64px;
+    text-align: left;
+}
+/* hehe lite bus ni kan ta bort -Max */
+.NarU-Footer:hover{
+    color: #6dbd43;
+    transform: rotate(360deg);
+    transition: 1s;
 }

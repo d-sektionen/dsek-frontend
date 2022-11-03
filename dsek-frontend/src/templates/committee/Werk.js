@@ -3,20 +3,27 @@ import DsekHeader from "../../components/committee/DsekHeader";
 import FAQ from "../../components/committee/FAQ";
 import ImgObj from "../../components/committee/ImgObj";
 import Contact from "../../components/committee/Contact";
-import ContactData from "../../fake-cms/contact.json"
+import {getData} from '../../utils/NetFuncs';
+
+import React, { useState, useEffect } from 'react';
 
 function Werk() {
+    const [ContactData, setContactData] = useState([]);
+    useEffect(() => {
+        (async () => { setContactData( await getData("contact")) })();
+    }, []);
+
     return (
         <>
             <DsekHeader/>
             <div className="Werk">
                 <hr/>
                 <h1 className="Werk-Title">Werkmästeriet</h1>
-                <p className="Werk-Tagline">Werkmästeriet är oljan i kugghjulen, vallan på skidorna, dippen till pommetallriken och skumkronan på ölen.</p>
+                <p className="Werk-Tagline">Werkmästeriet är oljan i kugghjulen, vallan på skidorna, dippen till pommestallriken och skumkronan på ölen.</p>
                 <hr/>
                 <p className="Werk-Description">
-                    Werkmästeriets uppgift är att sköta om sektionens lokaler, inventarier och fordon, 
-                    så utskottens arbete kan utföras på ett effektivt, strukturerat och trevligt sätt.
+                    Werkmästeriets uppgift är att sköta om sektionens lokaler, inventarier och fordon, så utskottens arbete kan utföras på ett effektivt, 
+                    strukturerat och trevligt sätt.
                 </p>
                 <ul>
                     <p>Några exempel på vad Werkmästeriet gjort under åren är:</p>
@@ -34,7 +41,7 @@ function Werk() {
                     <li className="even">Byggt en ny övervåning i Gula Ladan på VTI (höll tidigare)</li>
                 </ul>
                 <p className="Werk-Description">
-                    Utöver de ovan nämnda projekten och de dagliga rutinerna, som till exempel att boka salar, låna ut nycklar, Utöver de ovan nämnda projekten och de dagliga rutinerna, som till exempel att boka salar, låna ut nycklar, laga bilen och köpa kontorsvaror, driver Werkmästeriet en hel drös mindre projekt, som diverse lagning och städning.
+                    Utöver de ovan nämnda projekten och de dagliga rutinerna, som till exempel att boka salar, låna ut nycklar, 
                     laga bilen och köpa kontorsvaror, driver Werkmästeriet en hel drös mindre projekt, som diverse lagning och städning.
                 </p>
 
@@ -42,37 +49,64 @@ function Werk() {
                 <hr/>
                 <FAQ question="Vem har bokat bilen klockan X?" answer="Se bokningssidan."/>
                 <FAQ question="Får vi lämna saker i Configura?" answer="Endast under korta perioder, fråga ReningsWerk först och ställ sakerna bakom skynket så de kommer undan. Kom ihåg att B23 finns."/>
-                <FAQ question="Jag har inga nycklar till Configura men vill lämna tillbaka nycklar, hur gör jag?" answer="Kontakta någon i ditt utskott som har nyckel, alternativt kontakta vederbörande werkare (VägWerk/KraftWerk) eller Intendenten för att komma in."/>
+                <FAQ question="Jag har inga nycklar till HusEtt men vill lämna tillbaka nycklar, hur gör jag?" answer="Kontakta någon i ditt utskott som har nyckel, alternativt kontakta vederbörande werkare (VägWerk/KraftWerk) eller Intendenten för att komma in."/>
                 <FAQ question="Kan vi sätta loggor och flames på bilen?" answer="Nej. För utförligare svar: prata med Intendenten"/>
-                <FAQ question="Vi behöver komma åt VTI men grinden är stängd, hur kommer vi in?" answer="Bilgrinden på VTI är öppen vardagar 07:00-17:00. Vi har ingen möjlighet att låsa upp den på andra tider, men gånggrinden går att låsa upp."/>
                 <FAQ question="Finns det kaffe i Netlight?" answer="Kanske, du får kolla. Annars är det bara att brygga på. Kolla in kaffeguiden om du känner dig osäker. Glöm inte att skriva upp på tavlan när kaffet är bryggt."/>
                 <FAQ question="Hur loggar jag min bilkörning?" answer="Länk till bilformulär."/>
 
                 <h2>Sektionsrummen</h2>
                 <hr/>
                 <p>
-                    D-sektionen har två sektionsrum, Configura och Netlight. Dessa ligger i Kårallen på nedervåningen.
+                    D-sektionen har tre sektionsrum, Rum 222 (nya Configura), Rum 117 (Kontoret) och Netlight. 
+                    Netlight ligger i Kårallen på nedervåningen, se karta. Rum 222 och Rum 117 ligger i HusEtt bakom A-Huset. 
+                </p>
+                <img src="https://d-sektionen.se/wp-content/uploads/2020/10/sektionsrummen-768x333.png" alt=""/>
+                <p>
                     Sektionsrummen är inga förråd, speciellt inte om man inte kontaktar ReningsWerk innan.
                 </p>
-                <h3>Configura</h3>
+
+                <h3>Rum 117</h3>
                 <p>
-                    Configura är sektionens kontor, där sektionsaktiva kan utföra sitt arbete. Här finns nycklar till sektionens olika resurser.
+                    Rum 117 är sektionens kontor, där sektionsaktiva kan utföra sitt arbete. 
+                    Här finns nycklar till sektionens olika resurser.
+                </p>
+                <h3>Rum 222</h3>
+                <p>
+                    Rum 222 är under renovering och kommer i början av 2023 att vara sektionens 
+                    nya studie- och mötesrum. Mer info kommer.
                 </p>
                 <h3>Netlight</h3>
                 <p>
-                    Netlight är sektionens uppehållsrum, dit man kan komma till exempel för att fördriva lite tid, eller kanske till och med plugga. 
-                    Alla sektionens medlemmar kan komma in i Netlight när Kårallen är öppet. Rummet kan enkelt låsas och låsas upp via medlemsportalen.
+                    Netlight är sektionens uppehållsrum, dit man kan komma till exempel för att 
+                    fördriva lite tid, eller kanske till och med plugga. Alla sektionens medlemmar 
+                    kan komma in i Netlight när Kårallen är öppet. Rummet kan enkelt låsas och 
+                    låsas upp via <a href="https://medlem.d-sektionen.se">medlemsportalen</a>.
                 </p>
 
-                <h2>Bilen</h2>
+                <h2>Bilar</h2>
                 <hr/>
+                <p>Bilarna bokas via <a href="medlem.d-sektionen.se/booking">medlem.d-sektionen.se/booking</a></p>
+                <h3>Kianu Revs</h3>
                 <p>
-                    Sektionsbilen är en manuell Kia C’eed ’14 utrustad med dragkrok. Släpvagn, spännband och cykelhållare finns även att tillgå. 
-                    Mer info finns i bilavtalet och i handskfacket i bilen. Glöm inte att alla som kör bilen måste logga sin körning.
+                    Sektionsbilen är en manuell Kia C’eed ’14 utrustad med dragkrok. Släpvagn, 
+                    spännband och cykelhållare finns även att tillgå. Mer info finns i bilavtalet 
+                    och i handskfacket i bilen. Glöm inte att alla som kör bilen måste 
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxE7lP1nls8baca5LV_q40adFZ95VoE2DZiLTNAETQZ9L60w/viewform">logga sin körning</a>.
+                </p>
+                <h3>Nikola FleXa</h3>
+                <p>
+                    Bilen är en automatisk Tesla model X utrustad med dragkrok. Endast förtroendevalda 
+                    och bilansvariga i utskotten får boka bilen, och bilen får endast användas till sektionsverksamhet. 
+                    För mer info, läs igenom bilavtalet.  
                 </p>
 
                 <h2>Våra Förråd</h2>
                 <hr/>
+                <p>
+                    D-sektionen har ett antal lokaler som kan användas som förråd.
+                </p>
+                <img src="https://d-sektionen.se/wp-content/uploads/2020/10/forrad-768x672.png" alt="forrad"/>
+                <p>Sektionens förråd: Pappers (1), B23 (2), VTI (3)</p>
                 <h3>B23</h3>
                 <p>
                     B23 ligger i B-husets källare, ingång 23. Där kan alla sektionens utskott få förvara begränsade mängder saker. B23 är vårt mest centrala och 
@@ -118,10 +152,10 @@ function Werk() {
                 <h2>Kontaktuppgifter</h2>
                 <hr/>
                 {
-                    ContactData.map((contactData) => contactData["Committee"] == "Werk" ? 
-                    <> {
-                        contactData["People"].map((person) => <Contact name={person.Name} post={person.Post} mail={person.Mail}/>)
-                    } </> : <></>)
+                        ContactData.map((contactData) => contactData["Committee"] === "Werk" ? 
+                        <> {
+                            contactData["People"].map((person) => <Contact liuid={"liniv123"}/>)
+                        } </> : <></>)
                 }
 
             </div>

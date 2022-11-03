@@ -6,6 +6,10 @@ function NarU() {
         <>
             <DsekHeader/>
             <div className="NarU">
+                <div className="NarU-Header" >
+                    <img src={"naru-logo.png"} alt=""/>
+                </div>
+
                 <h1>Näringslivsutskottet</h1>
                 <p className="NarU-Desc">
                     Näringslivsutskottets främsta uppgift är att sköta kontakten och samarbetet mellan sektionen och näringslivet. 
@@ -13,10 +17,10 @@ function NarU() {
                     och samarbetspartners.
                 </p>
 
-                <div className="NarU-Section">
+                <div className="NarU-Section"> 
                     <h2>Företag?</h2>
                     <hr/>
-                    <p className="NarU-Text">Information för företag och organisationer finner ni under fliken <a href="#" className="NarU-Link">Företag</a> på sektionshemsidan.</p>
+                    <p className="NarU-Text">Information för företag och organisationer finner ni under fliken <a href="https://d-sektionen.se/foretag/" className="NarU-Link">Företag</a>. </p>
                 </div>
 
                 <div className="NarU-Section">
@@ -37,7 +41,7 @@ function NarU() {
                     <p className="NarU-Text">
                         Vi i Näringslivsutskottet arbetar för att sprida information om lediga jobb, ex-jobb och företag till sektionens medlemmar. 
                         Håll utkik på hemsidan, i sektionens info-mejl och i sektionsrummen där vi kontinuerligt annonserar och sprider den senaste informationen.
-                        Vi annonserar även på vår <a href="#" className="NarU-Link">Facebook-sida</a>, gilla den för att ta del av allt spännande som händer.
+                        Vi annonserar även på vår <a href="https://www.facebook.com/datateknologsektionen" className="NarU-Link">Facebook-sida</a>, gilla den för att ta del av allt spännande som händer.
                     </p>
                 </div>
 
@@ -52,7 +56,15 @@ function NarU() {
                     </ul>
                     <p className="NarU-Text">Mejla förslag och tips till Näringslivsansvarig.</p>
                 </div>
+
+                <div className='NarU-Footer'>
+                <p> Thea Antonsson (Näringslivsansvarig 22/23) </p>
+                <a href="mailto:nara@d-sektionen.se"> nara@d-sektionen.se </a>
+                </div>
+
             </div>
+
+            {/* Max & Jessica was here*/}
         </>
     );
 }

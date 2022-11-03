@@ -4,7 +4,7 @@ import '../css/Nav.css';
 function DropdownNavButton(props) {
     return (
         <>
-            <span className="TEST">
+            <span className="DropdownNavButtonComponent">
                 <NavButton title={props.title + " ⯆"} link={props.link}/>
                 <nav className="DropdownNavButton">
                     <div className="Dropdown-Buttons">

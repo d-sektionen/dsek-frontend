@@ -1,10 +1,16 @@
 import '../../css/committee/UtbU.css'
 
-import ContactData from "../../fake-cms/contact.json"
 import Contact from "../../components/committee/Contact";
 import DsekHeader from '../../components/committee/DsekHeader';
+import {getData} from '../../utils/NetFuncs';
+import React, { useState, useEffect } from 'react';
 
 function UtbU() {
+    const [ContactData, setContactData] = useState([]);
+    useEffect(() => {
+        (async () => { setContactData( await getData("contact")) })();
+    }, []);
+
     return (
         <>
             <DsekHeader/>

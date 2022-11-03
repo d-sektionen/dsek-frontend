@@ -4,7 +4,7 @@ import { FaInstagram, FaFacebook, FaRegEnvelope, FaDiscord, FaTv } from 'react-i
 function Group(props) {
   return (
     <div className="Group" style={{"color": props.color, "background-color": props.background}}>
-        <img src={props.img} />
+        <img src={props.img} alt=""/>
         <p>{props.info}</p>
         {props.socials["Instagram"] ? <a href={props.socials["Instagram"]}><FaInstagram/></a> : <></>}
         {props.socials["Facebook"] ? <a href={props.socials["Facebook"]}><FaFacebook/></a> : <></>}
