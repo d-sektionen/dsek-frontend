@@ -56,7 +56,6 @@
     height: 48px;
     transition: all 0.6s;
     background-color: white;
-
 }
 
 .SideNavButton:hover{
@@ -67,6 +66,26 @@
     background-color: #305fb9;
 }
 
+.SideNavButton:hover:nth-child(1) .SideNavButton-Img{
+    background-color: #754022;
+}
+
+.SideNavButton:hover:nth-child(2) .SideNavButton-Img{
+    background-color: #E5398D;
+}
+
+.SideNavButton:hover:nth-child(3) .SideNavButton-Img{
+    background-color: #F7E623;
+}
+
+.SideNavButton:hover:nth-child(4) .SideNavButton-Img{
+    background-color: #70BD44;
+}
+
+.SideNavButton:hover:nth-child(5) .SideNavButton-Img{
+    background-color: #20407C;
+}
+
 .SideNavButton-Img {
     width: 48px;
     height: 48px;
@@ -74,12 +93,6 @@
     border-radius: 2px;
     content: "";
     float: left;
-}
-
-.SideNavButton-Img:hover{
-    background-color: #305fb9; 
-    /*hjääälp jag vill använda sidenavbuttons variabel 
-    som just nu heter col*/
 }
 
 .SideNavButton-Text {
