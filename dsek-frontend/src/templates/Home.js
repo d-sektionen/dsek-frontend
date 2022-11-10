@@ -6,6 +6,7 @@ import '../css/Home.css';
 
 import React, { useState, useEffect } from 'react'
 import {getData} from '../utils/NetFuncs';
+import { BackToTop } from '../components/BackToTop.js';
 
 
 function Home() {
@@ -63,6 +64,7 @@ function Home() {
                 <Widget title="I stolt samarbete med" link="https://d-sektionen.se/wp-content/uploads/2020/10/lt_logga.png"/>
                 <Widget title="Vi är stolta över att vara" link="https://d-sektionen.se/wp-content/uploads/2016/09/gron_sektion.png"/>
             </div>
+            < BackToTop />
         </div>
     );
 }
