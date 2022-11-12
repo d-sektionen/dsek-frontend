@@ -5,8 +5,6 @@
     min-width: fit-content;
     display: grid;
     grid-template-columns: repeat(6, 132px);
-    /* grid-template-columns: repeat(6, 140px); */
-    /* grid-template-columns: repeat(6, fit-content); */
 }
 
 .NavButton {
@@ -22,7 +20,14 @@
     width: fit-content;
     align-items: center;
     padding: 0 10px 0 10px;
-    /* box-shadow: 0 10px 5px 1px black; */
+}
+
+.DropdownNavButton {
+    text-align: left;
+}
+
+.dropdown-elements {
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
 
 .NavButton:hover {
@@ -156,16 +161,3 @@
     height: 32px;
     margin: auto;
 }
-
-.DropdownNavButtonComponent .Dropdown-Buttons {
-    display : none;
-    height: 0;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
-}
-
-.DropdownNavButtonComponent:hover .Dropdown-Buttons {
-    height: 100%;
-    display: block;
-}
-
-

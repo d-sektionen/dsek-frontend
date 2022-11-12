@@ -1,28 +1,22 @@
 import '../css/Nav.css'; 
 import { useState } from 'react';
-import { DropdownButton } from './DropdownButton.js';
+import DropdownButton from './DropdownButton.js';
 
 function Dropdown(props) {
 
     const [ display, setDisplay ] = useState( 'none' )
 
-    function handleClick() {
+    function handleHover() {
+        setDisplay( 'block' )
+    }
 
-        if ( display == 'none' ) {
-
-            setDisplay( 'block' )
-
-        } else {
-
-            setDisplay( 'none' )
-
-        }
-
+    function handleLeave() {
+        setDisplay( 'none' )
     }
 
     return (
-        <div>
-            <nav onClick={handleClick} className="Dropdown NavButton">
+        <div onMouseLeave={handleLeave}>
+            <nav onMouseEnter={handleHover} className="Dropdown NavButton">
                 <DropdownButton content={props.content} />
             </nav>
             <div style={{display:display}}>
@@ -32,4 +26,4 @@ function Dropdown(props) {
     )
 }
 
-export {Dropdown}
+export default Dropdown;

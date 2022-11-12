@@ -19,4 +19,4 @@ function DropdownButton(props) {
 
     )
 }
-export {DropdownButton};
+export default DropdownButton;
