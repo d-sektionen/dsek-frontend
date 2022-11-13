@@ -4,15 +4,15 @@
     justify-content: center;
     min-width: fit-content;
     display: grid;
-    grid-template-columns: repeat(6, 132px);
-    /* grid-template-columns: repeat(6, 140px); */
-    /* grid-template-columns: repeat(6, fit-content); */
+    grid-template-columns: 109px 90px 100px repeat(3, auto);
+    column-gap: 5px;
 }
 
 .NavButton {
-    display: inline-block;
     background-color: white;
     height: 32px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
     width: 132px;
 }
 
@@ -22,15 +22,32 @@
     width: fit-content;
     align-items: center;
     padding: 0 10px 0 10px;
-    /* box-shadow: 0 10px 5px 1px black; */
+}
+
+.DropdownNavButton {
+    text-align: left;
+    border-radius: 0;
+}
+
+.dropdown-elements {
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    width: 132px;
+}
+
+.RegNavButton {
+    cursor: pointer;
+    width: fit-content;
 }
 
 .NavButton:hover {
-    cursor: pointer;
     background-color: #E5398D;
 }
 
-.NavButton:hover a {
+.DropdownButton:hover {
+    cursor: default;
+}
+
+.NavButton:hover a, .NavButton:hover p {
     color: #F7E623;
 }
 
@@ -156,16 +173,3 @@
     height: 32px;
     margin: auto;
 }
-
-.DropdownNavButtonComponent .Dropdown-Buttons {
-    display : none;
-    height: 0;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
-}
-
-.DropdownNavButtonComponent:hover .Dropdown-Buttons {
-    height: 100%;
-    display: block;
-}
-
-
