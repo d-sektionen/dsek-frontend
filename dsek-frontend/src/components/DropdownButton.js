@@ -9,11 +9,7 @@ function DropdownButton(props) {
 
         <nav className="DropdownButton">
 
-            <div className="">
-
-                { content  + " ⯆" }
-
-            </div>
+            <p>{content  + " ⯆"}</p>
 
         </nav>
 
