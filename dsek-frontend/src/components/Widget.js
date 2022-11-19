@@ -1,18 +1,23 @@
 import '../css/Widget.css';
+import WidgetElement from './WidgetElement';
+
 
 function Widget(props) {
     return (
         <>
             <div className="Widget">
                 <h1 className="Widget-Title">{props.title}</h1>
-
                 {
-                props.link ? 
-                <img src={props.link} className="Widget-Img"></img>
+                props.content ?
+                props.content.map((x, i) =>
+                    {
+                        // <WidgetElement image={x[0]} content={x[1]} link={x[2]}/>
+                        <WidgetElement key={i} image={x[0]} content={x[1]}/>
+                    }
+                )
                 :
-                <p>{props.text}</p>
+                <></>
                 }
-
             </div>
         </>
     );

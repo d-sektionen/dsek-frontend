@@ -47,7 +47,7 @@ function Home() {
         <div className="Home">
             <div className="Left">
                 <SideNav/>
-                <Widget title="Kommande aktiviteter" text="Det finns inga kommande aktiviteter"/>
+                <Widget title="Kommande aktiviteter" content={[[0, "Det finns inga kommande aktiviteter", ""]]}/>
             </div>
             <div className="Middle">
                 {
@@ -59,10 +59,10 @@ function Home() {
                 <PageNav posts={Posts} setPage={changePage} currentPage={currentPage} totalPages={totalPages}/>
             </div>
             <div className="Right">
-                <Widget title="Huvudsponsor" link="https://d-sektionen.se/wp-content/uploads/2019/03/ericsson.png"/>
-                <Widget title="Samarbetspartners" link="https://d-sektionen.se/wp-content/uploads/2021/11/ITEA-Pro-1.png"/>
-                <Widget title="I stolt samarbete med" link="https://d-sektionen.se/wp-content/uploads/2020/10/lt_logga.png"/>
-                <Widget title="Vi är stolta över att vara" link="https://d-sektionen.se/wp-content/uploads/2016/09/gron_sektion.png"/>
+                <Widget title="Huvudsponsor" content={[[1, "ericsson.png", "http://www.ericsson.com/careers"]]}/>
+                <Widget title="Samarbetspartners" content={[[1, "ITEA-Pro-1.png", "https://www.iteapro.se/"], [1, "sectra.png", "https://www.sectra.com/jobs"], [1, "profilpartner_logo.jpg", "https://www.profilpartner.se/"]]}/>
+                <Widget title="I stolt samarbete med" content={[[1, "lt_logga.png", "https://lintek.liu.se/"]]}/>
+                <Widget title="Vi är stolta över att vara" content={[[1, "gron_sektion.png", "https://www.student.liu.se/vid-sidan-av-studierna/studentorganisationer/gronasektioner?l=sv"]]}/>
             </div>
             < BackToTop />
         </div>
