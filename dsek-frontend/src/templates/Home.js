@@ -47,7 +47,7 @@ function Home() {
         <div className="Home">
             <div className="Left">
                 <SideNav/>
-                <Widget title="Kommande aktiviteter" content={[[0, "Det finns inga kommande aktiviteter", ""]]}/>
+                <Widget title="Kommande aktiviteter" content={[[0, "Det finns inga kommande aktiviteter"]]}/>
             </div>
             <div className="Middle">
                 {
