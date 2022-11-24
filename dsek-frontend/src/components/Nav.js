@@ -7,7 +7,7 @@ function Nav() {
     return (
         <nav className='Menu'>
             <Dropdown content="Sektionen">
-                <Element titles={[["Styrelsen", "#"], ["Miljö", "#"],
+                <Element titles={[["Styrelsen", "/page/styrelsen"], ["Miljö", "#"],
                 ["Dokument", "#"], ["Protokoll", "#"]]} />
             </Dropdown>
             <Dropdown content="Utskott">

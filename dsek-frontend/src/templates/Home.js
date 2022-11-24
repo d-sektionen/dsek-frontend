@@ -1,7 +1,7 @@
-import Widget from '../components/Widget.js';
 import PostPreview from '../components/PostPreview.js';
 import SideNav from '../components/SideNav.js';
 import PageNav from '../components/PageNav.js';
+import Sponsors from '../components/Sponsors.js';
 import '../css/Home.css';
 
 import React, { useState, useEffect } from 'react'
@@ -45,10 +45,7 @@ function Home() {
 
     return (
         <div className="Home">
-            <div className="Left">
-                <SideNav/>
-                <Widget title="Kommande aktiviteter" content={[[0, "Det finns inga kommande aktiviteter"]]}/>
-            </div>
+            <SideNav />
             <div className="Middle">
                 {
                     ActivePosts ?
@@ -58,12 +55,7 @@ function Home() {
                 }
                 <PageNav posts={Posts} setPage={changePage} currentPage={currentPage} totalPages={totalPages}/>
             </div>
-            <div className="Right">
-                <Widget title="Huvudsponsor" content={[[1, "ericsson.png", "http://www.ericsson.com/careers"]]}/>
-                <Widget title="Samarbetspartners" content={[[1, "ITEA-Pro-1.png", "https://www.iteapro.se/"], [1, "sectra.png", "https://www.sectra.com/jobs"], [1, "profilpartner_logo.jpg", "https://www.profilpartner.se/"]]}/>
-                <Widget title="I stolt samarbete med" content={[[1, "lt_logga.png", "https://lintek.liu.se/"]]}/>
-                <Widget title="Vi är stolta över att vara" content={[[1, "gron_sektion.png", "https://www.student.liu.se/vid-sidan-av-studierna/studentorganisationer/gronasektioner?l=sv"]]}/>
-            </div>
+            < Sponsors />
             < BackToTop />
         </div>
     );

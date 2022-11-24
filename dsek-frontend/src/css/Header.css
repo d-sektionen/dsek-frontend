@@ -8,5 +8,7 @@
 }
 
 .Header-Img {
+    position: relative;
+    left: calc(50% - 161px);
     height: 70px;
 }

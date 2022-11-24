@@ -4,10 +4,11 @@ import Nav from './Nav';
 
 function Header() {
 
-    const [showLogo, setShowLogo] = useState(false);
+    const [showLogo, setShowLogo] = useState(true);
 
     useEffect(() => {
         window.addEventListener(("scroll"), () => {
+            console.log(window.scrollY)
             if (window.scrollY < 30) {
                 setShowLogo(true);
             } else {
@@ -20,7 +21,7 @@ function Header() {
         <>
             <header className="Header">
                 {showLogo && (
-                <img src="https://d-sektionen.se/wp-content/uploads/2016/06/d-sektionen.jpg" className="Header-Img" alt=""></img>
+                <a href="/"><img src="https://d-sektionen.se/wp-content/uploads/2016/06/d-sektionen.jpg" className="Header-Img" alt=""></img></a>
                 )}
                 <Nav/>
             </header>
