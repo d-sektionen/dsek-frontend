@@ -45,7 +45,9 @@ function Home() {
 
     return (
         <div className="Home">
-            <SideNav />
+            <div className="wide">
+                <SideNav />
+            </div>
             <div className="Middle">
                 {
                     ActivePosts ?
@@ -55,7 +57,9 @@ function Home() {
                 }
                 <PageNav posts={Posts} setPage={changePage} currentPage={currentPage} totalPages={totalPages}/>
             </div>
-            < Sponsors />
+            <div className="wide">
+                < Sponsors />
+            </div>
             < BackToTop />
         </div>
     );

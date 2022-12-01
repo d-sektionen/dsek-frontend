@@ -7,7 +7,7 @@
 }
 
 .Left {
-    width: 25%;
+    width: 100%;
 }
 
 .Middle {
@@ -15,5 +15,20 @@
 }
 
 .Right {
+    width: 100%;
+}
+
+.wide {
     width: 25%;
+}
+
+@media only screen and (max-width: 850px) {
+    .Middle {
+        width: 100%;
+        margin: 0 auto 0 auto;
+        padding: 0 10px 16px 10px;
+    }
+    .wide {
+        display: none;
+    }
 }

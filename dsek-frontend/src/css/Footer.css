@@ -3,13 +3,13 @@
     position: relative;
     bottom: 0px;
     width: 100%;
-    background: #f8f8f8;
     color: #555;
     text-align: center;
     font-size: 14px;
 }
 
 .Footer-Content {
+    background: #f8f8f8;
     padding: 24px;
 }
 
@@ -19,7 +19,6 @@
 }
 
 .Footer-Info > p {
-    /* border: 1px solid red; */
     margin: 0;
 }
 
@@ -74,3 +73,12 @@ a.Icons:hover {
     width: 100%;
     background-color: #20407C;
 }
+
+@media only screen and (min-width: 850px) {
+    .narrow {
+        display: none;
+        width: 100%;
+        padding-top: 16px;
+    }
+}
+

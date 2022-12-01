@@ -7,8 +7,8 @@ function Nav() {
     return (
         <nav className='Menu'>
             <Dropdown content="Sektionen">
-                <Element titles={[["Styrelsen", "/page/styrelsen"], ["Miljö", "#"],
-                ["Dokument", "#"], ["Protokoll", "#"]]} />
+                <Element titles={[["Styrelsen", "/page/styrelsen"], ["Miljö", "/page/miljo"],
+                ["Dokument", "/page/dokument"], ["Protokoll", "/page/protokoll"]]} />
             </Dropdown>
             <Dropdown content="Utskott">
                 <Element titles={[["EventU", "/eventu"], ["Alumni", "/alumni"],
@@ -20,7 +20,7 @@ function Nav() {
                 ["Valberedningen", "/valberedningen"], ["WebbU",
                     "https://www.webbu.se/"], ["Werkmästeriet", "werk"]]} />
             </Dropdown>
-            <Dropdown content="Sökande">
+            <Dropdown content="Bli student">
                 <Element titles={[["Utbildningar", "#"], ["Bostad", "#"],
                 ["Skolan", "#"], ["Studentliv", "#"], ["FAQ", "#"]]} />
             </Dropdown>

@@ -19,25 +19,23 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-    <Header/>
-      <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/deg" element={<DEG />}></Route>
-          <Route path="/valberedningen" element={<Valberedningen />}></Route>
-          <Route path="/alumni" element={<Alumni />}></Route>
-          <Route path="/werk" element={<Werk />}></Route>
-          <Route path="/utbu" element={<UtbU />}></Route>
-          <Route path="/pubu" element={<PubU />}></Route>
-          <Route path="/naru" element={<NarU />}></Route>
-          <Route path="/mafu" element={<MafU />}></Route>
-          <Route path="/eventu" element={<EventU />}></Route>
-          <Route path="/page/:id" element={<Page/>}></Route>
-        </Routes>
-      </BrowserRouter>1
-      </div>
-      <Footer/>
+    <div className="App">
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<><Header/><Home /><Footer/></>}></Route>
+        <Route path="/page/:id" element={<><Header/><Page /><Footer/></>}></Route>
+        <Route path="/deg" element={<DEG />}></Route>
+        <Route path="/valberedningen" element={<Valberedningen />}></Route>
+        <Route path="/alumni" element={<Alumni />}></Route>
+        <Route path="/werk" element={<Werk />}></Route>
+        <Route path="/utbu" element={<UtbU />}></Route>
+        <Route path="/pubu" element={<PubU />}></Route>
+        <Route path="/naru" element={<NarU />}></Route>
+        <Route path="/mafu" element={<MafU />}></Route>
+        <Route path="/eventu" element={<EventU />}></Route>
+      </Routes>
+    </BrowserRouter>
+    </div>
     </>
   );
 }

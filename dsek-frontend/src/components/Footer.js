@@ -1,10 +1,19 @@
 import '../css/Footer.css';
 import '../css/committee/Group.css'
 import { FaFacebook, FaLinkedin, FaReddit, FaGithub} from 'react-icons/fa'
+import SideNav from './SideNav';
+import Sponsors from './Sponsors';
+
 
 function Footer() {
     return (
         <footer className="Footer">
+            <div className='narrow'>
+                <SideNav/>
+                <Sponsors/>
+            </div>
+            
+
             <div className="Colors">
                 <div className="Color-1"></div>
                 <div className="Color-2"></div>

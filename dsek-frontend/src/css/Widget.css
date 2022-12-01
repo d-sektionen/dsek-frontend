@@ -22,3 +22,9 @@
     width: 128px;
     padding: 16px;
 }
+
+@media only screen and (max-width: 850px) {
+    .Widget {
+        width: 95%;
+    }
+}

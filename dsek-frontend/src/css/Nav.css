@@ -13,7 +13,8 @@
     height: 32px;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
-    width: 132px;
+    width: 132px;  /* TA INTE BORT */
+    padding: 0 10px 0 10px;
 }
 
 .Dropdown {
@@ -21,7 +22,7 @@
     justify-content: center;
     width: fit-content;
     align-items: center;
-    padding: 0 10px 0 10px;
+    white-space: nowrap;
 }
 
 .DropdownNavButton {
@@ -41,6 +42,7 @@
 
 .NavButton:hover {
     background-color: #E5398D;
+    transition: 00.4s;
 }
 
 .DropdownButton:hover {
@@ -56,7 +58,6 @@
     font-size: 16px;
     line-height: 32px;
     color: #000;
-    padding: 18px 12px;
     transition: color 0.15s linear;
 }
 
@@ -72,15 +73,14 @@
 .SideNavButton {
     height: 48px;
     transition: all 0.6s;
-    background-color: white;
 }
 
 .SideNavButton:hover{
     height: 48px;
-} 
+}
 
 .SideNavButton:hover .SideNavButton-Img{
-    background-color: #305fb9;
+    transition: 1s;
 }
 
 .SideNavButton:hover:nth-child(1) .SideNavButton-Img{
@@ -116,8 +116,17 @@
     width: 100%;
     height: 48px;
     line-height: 48px;
-    background-color: white;
     text-align: left;
+    font-size: large;
+}
+
+.SideNavButton > a {
+    text-decoration: none;
+    color: black;
+}
+
+.SideNavButton:hover .SideNavButton-Text{
+    background-color: lightgray;
 }
 
 .SideNavButton-Text:hover{
@@ -185,4 +194,9 @@
     width: 266px;
     height: 32px;
     margin: auto;
+}
+@media only screen and (max-width: 850px) {
+    .SideNav {
+        width: 95%;
+    }
 }

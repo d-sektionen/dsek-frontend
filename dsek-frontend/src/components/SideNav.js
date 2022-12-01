@@ -7,11 +7,11 @@ function SideNav() {
     return (
         <div className="Left">
             <nav className="SideNav">
-                <SideNavButton title="Sociala medier"/>
-                <SideNavButton title="Kalender"/>
-                <SideNavButton title="Medlemstjänster"/>
-                <SideNavButton title="Fotoalbum"/>
-                <SideNavButton title="Kontakt"/>
+                <SideNavButton title="Sociala medier" link="#"/>
+                <SideNavButton title="Kalender" link="#"/>
+                <SideNavButton title="Medlemstjänster" link="#"/>
+                <SideNavButton title="Fotoalbum" link="#"/>
+                <SideNavButton title="Kontakt" link="#"/>
             </nav>
                 <Widget title="Kommande aktiviteter" content={[[0, "Det finns inga kommande aktiviteter"]]}/>
         </div>
