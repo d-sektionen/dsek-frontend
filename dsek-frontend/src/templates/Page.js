@@ -12,6 +12,7 @@ export default function Page() {
     const [PageData, setPageData] = useState([])
     
     const params = useParams();
+
     useEffect(() => {
         (async () => {
             console.log(params);

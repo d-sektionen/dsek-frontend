@@ -18,11 +18,11 @@ function Nav() {
                 ["MafU", "/mafu"], ["NärU", "/naru"], ["STABEN",
                     "https://staben.info/"], ["UtbU", "/utbu"],
                 ["Valberedningen", "/valberedningen"], ["WebbU",
-                    "https://www.webbu.se/"], ["Werkmästeriet", "werk"]]} />
+                    "https://www.webbu.se/"], ["Werkmästeriet", "/werk"]]} />
             </Dropdown>
             <Dropdown content="Bli student">
-                <Element titles={[["Utbildningar", "#"], ["Bostad", "#"],
-                ["Skolan", "#"], ["Studentliv", "#"], ["FAQ", "#"]]} />
+                <Element titles={[["Utbildningar", "/page/utbildningar"], ["Bostad", "/page/bostad"],
+                ["Skolan", "/page/skolan"], ["Studentliv", "/page/studentliv"], ["FAQ", "/page/faq"]]} />
             </Dropdown>
             <NavButton title="Alumni-blogg" link="https://google.com" />
             <NavButton title="Exjobb" link="https://google.com" />
