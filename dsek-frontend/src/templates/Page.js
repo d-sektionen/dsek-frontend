@@ -2,34 +2,30 @@ import SideNav from '../components/SideNav.js';
 import Sponsors from '../components/Sponsors.js';
 import '../css/Home.css';
 
-import React, { useState, useEffect } from 'react'
-import {getData} from '../utils/NetFuncs';
+import { marked } from 'marked';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { BackToTop } from '../components/BackToTop.js';
-import {useParams} from 'react-router-dom';
-
+import { getData } from '../utils/NetFuncs';
 
 export default function Page() {
-    const [PageData, setPageData] = useState([])
-    
     const params = useParams();
     useEffect(() => {
         (async () => {
             console.log(params);
-            const data = await getData("pages/"+params.id);
-            setPageData(data);
+            const res = await getData("pages/" + params.id);
+            const data = marked.parse(res.data);
+            console.log(data);
+            document.getElementById('pageContainer').innerHTML = data;
         })();
     }, [params]);
 
     return (
         <div className="Home">
-            <SideNav/>
-            <div className="Middle">
-                {PageData.data}
-                {/**TODO: parse md*/} 
-            </div>
+            <SideNav />
+            <div className="Middle" id="pageContainer"></div>
             < Sponsors />
             < BackToTop />
         </div>
     );
 }
-  
