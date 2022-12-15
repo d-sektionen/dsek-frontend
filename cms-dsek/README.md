@@ -1,9 +1,19 @@
 # cms-dsek
 
-This project was created using create-payload-app using the js-blank template.
+Cms för dsek-frontend
 
-## How to Use
+## Instruktioner
 
-`yarn dev` will start up your application and reload on any changes.
+### Starta cms
 
-If you have docker and docker-compose installed, you can run `docker-compose up`
+```sh
+docker-compose up
+```
+
+## TODO
+
+- favicon
+- .env är med i gitignore (skapa ny med docker-compose med info från config
+  fil?)
+- byt ut fetch till fake-cms i NetFuncs
+- skapa rätt collections
