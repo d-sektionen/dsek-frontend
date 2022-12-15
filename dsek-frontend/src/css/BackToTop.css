@@ -5,7 +5,7 @@
     bottom: 20px;
     right: 20px;
     font-size: 50px;
-    background: orange;
+    background: rgb(0, 72, 255);
     color: white;
     cursor: pointer;
     border-radius: 100px;
@@ -15,5 +15,5 @@
   }
   
   .back-to-top:hover {
-    background: red;
+    background: rgb(0, 140, 255);
   }

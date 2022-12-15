@@ -13,3 +13,22 @@
     height :100%;
     opacity: 1;
 }
+
+@media only screen and (min-width: 850px) {
+    .narrow-header {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .wide-header {
+        display: none;
+    }
+    .Header-Img {
+        transition: none;
+    }
+    .Header {
+        background-color: #000;
+        box-shadow: none;
+    }
+}

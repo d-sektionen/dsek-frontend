@@ -31,4 +31,7 @@
     .wide {
         display: none;
     }
+    .wide-header {
+        display: none;
+    }
 }

@@ -1,16 +1,14 @@
-
+import {FaCaretDown} from 'react-icons/fa';
 
 function DropdownButton(props) {
     var content = props.content;
 
-    var handleClick = props.onClick;
-
     return (
 
         <nav className="DropdownButton">
-
-            <p>{content  + "⯆"}</p>
-
+            <div className='drop'>
+                {content }<FaCaretDown/>
+            </div>
         </nav>
 
     )

@@ -25,9 +25,36 @@
     white-space: nowrap;
 }
 
+nav > div.drop {
+    /* background-color: red; */
+    /* todo: ta bort om inte behövs */
+}
+
+.hamburger {
+    color: white;
+}
+
 .DropdownNavButton {
+    color:#000;
     text-align: left;
     border-radius: 0;
+    background-color: white;
+    height: 32px;
+    width: 132px;  /* TA INTE BORT */
+    padding: 0 10px 0 10px;
+}
+
+.DropdownNavLink {
+    text-decoration: none;
+}
+
+.DropdownNavButton:hover {
+    background-color: #E5398D;
+    transition: 00.4s;
+}
+
+.DropdownNavButton:hover, .DropdownNavButton:hover {
+    color: #F7E623;
 }
 
 .dropdown-elements {

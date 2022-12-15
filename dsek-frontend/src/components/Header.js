@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../css/Header.css';
 import Nav from './Nav';
+import NarrowNav from './NarrowNav';
 
 function Header() {
 
@@ -19,14 +20,25 @@ function Header() {
     return (
         <>
             <header className="Header">
-                <div style={{height: logoHeight.toString()+"px", transition:"0.3s"} }>
-                    <a href="/" style={{margin:"0",padding:"0",height:"0"}}>
-                        <img src="https://d-sektionen.se/wp-content/uploads/2016/06/d-sektionen.jpg" 
-                        style={{opacity: (logoHeight==0)? "0":"1" ,left:(logoHeight==0)?"50%":"calc(50% - 161px)"}}
-                        className="Header-Img" alt=""></img>
-                    </a>
+                <div className='narrow-header'>
+                    <div style={{height: "45px", transition:"none"} }>
+                        <a href="/" style={{margin:"0",padding:"0",height:"0"}}>
+                            <img src="https://d-sektionen.se/wp-content/uploads/2021/02/mobile-header-logo-2-contrast-2-tablet.png" 
+                            className="Header-Img" alt=""></img>
+                        </a>
+                    </div>
+                    <NarrowNav/>
                 </div>
-                <Nav/>
+                <div className='wide-header'>
+                    <div style={{height: logoHeight.toString()+"px", transition:"0.3s"} }>
+                        <a href="/" style={{margin:"0",padding:"0",height:"0"}}>
+                            <img src="https://d-sektionen.se/wp-content/uploads/2016/06/d-sektionen.jpg" 
+                            style={{opacity: (logoHeight===0)? "0":"1" ,left:(logoHeight===0)?"50%":"calc(50% - 161px)"}}
+                            className="Header-Img" alt=""></img>
+                        </a>
+                    </div>
+                    <Nav/>
+                </div>
             </header>
         </>
     );
