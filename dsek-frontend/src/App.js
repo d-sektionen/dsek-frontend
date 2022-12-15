@@ -9,6 +9,7 @@ import PubU from './templates/committee/PubU';
 import MafU from './templates/committee/MafU';
 import EventU from './templates/committee/EventU';
 import Page from './templates/Page';
+import Utbildningar from './templates/student/Utbildningar';
 
 import Header from './components/Header';
 import Footer from './components/Footer';

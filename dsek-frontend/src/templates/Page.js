@@ -11,6 +11,7 @@ import { getData } from '../utils/NetFuncs';
 
 export default function Page() {
     const params = useParams();
+
     useEffect(() => {
         (async () => {
             console.log(params);
