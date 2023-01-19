@@ -25,3 +25,4 @@
 - [ ] Dropdownmenyn är 'osynlig'
 - [ ] hamburgermeny positioneringen är dålig... hjälp!
 - [ ] hamburgermenyn är för liten
+- [ ] bakåtknappen går inte att trycka på
