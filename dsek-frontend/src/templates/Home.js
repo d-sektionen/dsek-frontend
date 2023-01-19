@@ -59,6 +59,7 @@ function Home() {
             </div>
             <div className="wide">
                 < Sponsors />
+                < BackToTop />
             </div>
             < BackToTop />
         </div>

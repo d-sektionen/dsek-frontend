@@ -14,6 +14,14 @@ function Dropdown(props) {
         setDisplay( 'none' )
     }
 
+    function handleClick() {
+        if (display == 'none') {
+            setDisplay( 'block')
+        } else {
+            setDisplay( 'none')
+        }
+    }
+
     return (
         <div onMouseLeave={handleLeave}>
             <nav onMouseEnter={handleHover} className="Dropdown NavButton">

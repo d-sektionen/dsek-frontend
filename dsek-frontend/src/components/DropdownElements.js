@@ -2,7 +2,7 @@ import NavButton from './NavButton.js';
 import DropdownNavButton from './DropdownNavButton.js';
 import '../css/Nav.css';
 
-function Element(props) {
+function DropdownElements(props) {
     return (
         <div>
             <div className="dropdown-elements">
@@ -19,4 +19,4 @@ function Element(props) {
     );
 }
 
-export default Element;
+export default DropdownElements;

@@ -23,9 +23,14 @@ export default function Page() {
 
     return (
         <div className="Home">
-            <SideNav />
+            <div className="wide">
+                <SideNav />
+            </div>
             <div className="Middle" id="pageContainer"></div>
-            < Sponsors />
+            <div className="wide">
+                < Sponsors />
+                < BackToTop />
+            </div>
             < BackToTop />
         </div>
     );
