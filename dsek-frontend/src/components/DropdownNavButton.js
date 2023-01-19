@@ -1,12 +1,13 @@
-import NavButton from './NavButton.js';
 import '../css/Nav.css';
 
 function DropdownNavButton(props) {
 
     return (
-        <nav className="DropdownNavButton NavButton">
-            <a href={props.link}>{props.title}</a>
-        </nav>
+        <a className = "DropdownNavLink" href={props.link}>
+            <nav className="DropdownNavButton">
+                {props.title}
+            </nav>
+        </a>
     );
 }
 

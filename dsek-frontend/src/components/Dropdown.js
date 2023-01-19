@@ -15,10 +15,10 @@ function Dropdown(props) {
     }
 
     function handleClick() {
-        if (display == 'none') {
-            setDisplay( 'block')
+        if (display === 'none') {
+            handleHover();
         } else {
-            setDisplay( 'none')
+            handleLeave();
         }
     }
 
