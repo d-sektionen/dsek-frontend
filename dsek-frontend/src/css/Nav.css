@@ -28,6 +28,7 @@
 .DropdownNavButton {
     text-align: left;
     border-radius: 0;
+    background-color: white;
 }
 
 .dropdown-elements {
@@ -222,7 +223,7 @@
     }
     
     .NavButton {
-        border: 1px solid red;
+        border-top: 0.5px solid grey;
         width: 100%;
         color: white;
         /* text-align: left; */
@@ -231,6 +232,11 @@
         padding: 0 10px 0 10px;
         /* align-items: left; */
         /* justify-content: left; */
+    }
+
+    .dropdown-elements {
+        background-color: black;
+        width: 100%;
     }
     
     .Dropdown {
@@ -241,30 +247,19 @@
         /* white-space: nowrap; */
     }
     
-    /* .DropdownNavButton {
-        text-align: left;
-        border-radius: 0;
-    } */
-    
-    .dropdown-elements {
-        box-shadow: none;
-        /* width: 132px; */
+    .DropdownNavButton {
+        background-color: #000;
     }
     
     .RegNavButton {
         cursor: pointer;
-        /* width: fit-content; */
     }
     
     .NavButton:hover {
         background-color: black;
         transition: 00.4s;
     }
-    
-    /* .DropdownButton:hover {
-        cursor: pointer;
-    } */
-    
+
     .NavButton:hover a, .NavButton:hover p {
         color: #F7E623;
     }
