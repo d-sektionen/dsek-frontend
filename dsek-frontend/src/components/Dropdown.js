@@ -23,12 +23,26 @@ function Dropdown(props) {
     }
 
     return (
-        <div onMouseLeave={handleLeave}>
-            <nav onMouseEnter={handleHover} className="Dropdown NavButton">
-                <DropdownButton content={props.content} />
-            </nav>
-            <div style={{display:display}}>
-                {props.children}
+        <div>
+            <div className='wide-nav'>
+                <div onMouseLeave={handleLeave}>
+                    <nav onMouseEnter={handleHover} className="Dropdown NavButton">
+                        <DropdownButton content={props.content} />
+                    </nav>
+                    <div style={{display:display}}>
+                        {props.children}
+                    </div>
+                </div>
+            </div>
+            <div className='narrow-nav'>
+                <div onClick={handleClick}>
+                    <nav className="Dropdown NavButton">
+                        <DropdownButton content={props.content} />
+                    </nav>
+                    <div style={{display:display}}>
+                        {props.children}
+                    </div>
+                </div>
             </div>
         </div>
     )
