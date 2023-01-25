@@ -4,7 +4,7 @@
     justify-content: center;
     min-width: fit-content;
     display: grid;
-    grid-template-columns: 109px 90px 100px repeat(3, auto);
+    grid-template-columns: 108px 89px 112px repeat(3, auto);
     column-gap: 5px;
 }
 
@@ -13,7 +13,7 @@
     height: 32px;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
-    width: 132px;  /* TA INTE BORT */
+    width: 100%;
     padding: 0 10px 0 10px;
 }
 
@@ -29,6 +29,7 @@
     text-align: left;
     border-radius: 0;
     background-color: white;
+    padding: 5px 5px 5px 5px;
 }
 
 .DropdownNavLink {
@@ -36,8 +37,10 @@
     color: white;
 }
 
-.DropdownNavLink:hover {
+.DropdownNavButton:hover {
+    transition: 00.4s;
     color: #F7E623;
+    background-color: #E5398D;
 }
 
 .dropdown-elements {
@@ -48,7 +51,6 @@
 .RegNavButton {
     cursor: pointer;
     width: fit-content;
-    
 }
 
 .NavButton:hover {
@@ -60,7 +62,9 @@
     cursor: default;
 }
 
-.NavButton:hover a, .NavButton:hover p, .NavButton:hover {
+.NavButton:hover a,
+.NavButton:hover p,
+.NavButton:hover {
     color: #F7E623;
     text-decoration: none;
 }
@@ -69,7 +73,7 @@
     text-decoration: none;
     font-size: 16px;
     line-height: 32px;
-    color: #000;
+    color: black;
     transition: color 0.15s linear;
 }
 
@@ -87,31 +91,31 @@
     transition: all 0.6s;
 }
 
-.SideNavButton:hover{
+.SideNavButton:hover {
     height: 48px;
 }
 
-.SideNavButton:hover .SideNavButton-Img{
+.SideNavButton:hover .SideNavButton-Img {
     transition: 1s;
 }
 
-.SideNavButton:hover:nth-child(1) .SideNavButton-Img{
+.SideNavButton:hover:nth-child(1) .SideNavButton-Img {
     background-color: #754022;
 }
 
-.SideNavButton:hover:nth-child(2) .SideNavButton-Img{
+.SideNavButton:hover:nth-child(2) .SideNavButton-Img {
     background-color: #E5398D;
 }
 
-.SideNavButton:hover:nth-child(3) .SideNavButton-Img{
+.SideNavButton:hover:nth-child(3) .SideNavButton-Img {
     background-color: #F7E623;
 }
 
-.SideNavButton:hover:nth-child(4) .SideNavButton-Img{
+.SideNavButton:hover:nth-child(4) .SideNavButton-Img {
     background-color: #70BD44;
 }
 
-.SideNavButton:hover:nth-child(5) .SideNavButton-Img{
+.SideNavButton:hover:nth-child(5) .SideNavButton-Img {
     background-color: #20407C;
 }
 
@@ -132,19 +136,19 @@
     font-size: large;
 }
 
-.SideNavButton > a {
+.SideNavButton>a {
     text-decoration: none;
     color: black;
 }
 
-.SideNavButton:hover .SideNavButton-Text{
+.SideNavButton:hover .SideNavButton-Text {
     background-color: lightgray;
 }
 
-.SideNavButton-Text:hover{
+.SideNavButton-Text:hover {
     width: 100%;
     height: 48px;
-    background-color:  lightgray;
+    background-color: lightgray;
     text-align: left;
 }
 
@@ -208,22 +212,24 @@
     margin: auto;
 }
 
-.hamburger{
+.hamburger {
     position: fixed;
     right: 0;
     margin-top: 10px;
-    /* margin: -30px 50px auto auto; varför syns den på vissa datorer men inte andra? */
-    color: red;
-
+    margin: -30px 12px auto auto; /* varför syns den på vissa datorer men inte andra? */
+    color: white;
 }
+
 .hamburger:hover {
     cursor: pointer;
+    color: #F7E623;
 }
 
 @media only screen and (max-width: 850px) {
     .SideNav {
         width: 95%;
     }
+
     .Menu {
         width: 100%;
         height: 32px;
@@ -231,7 +237,7 @@
         display: grid;
         grid-template-columns: 100%;
     }
-    
+
     .NavButton {
         border-top: 0.5px solid #3b3b3b;
         width: 100%;
@@ -252,7 +258,7 @@
     .dropdown-elements {
         width: 100%;
     }
-    
+
     .Dropdown {
         display: flex;
         justify-content: left;
@@ -262,19 +268,21 @@
     .RegNavButton {
         cursor: pointer;
     }
-    
+
     .NavButton:hover {
-        background-color: #0a0a0a; /* todo: better way? */
+        background-color: #0a0a0a;
+        /* todo: better way? */
     }
 
-    .DropdownButton:hover {
+    .DropdownNavButton:hover {
         cursor: pointer;
+        background-color: #121212;
     }
 
     .NavButton:hover {
         color: #F7E623;
     }
-    
+
     .NavButton a {
         text-decoration: none;
         font-size: 16px;
@@ -299,5 +307,9 @@
 
     .wide-nav {
         display: block;
+    }
+
+    .DropdownNavLink {
+        color: #000;
     }
 }
