@@ -31,6 +31,15 @@
     background-color: white;
 }
 
+.DropdownNavLink {
+    text-decoration: none;
+    color: white;
+}
+
+.DropdownNavLink:hover {
+    color: #F7E623;
+}
+
 .dropdown-elements {
     box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
     width: 132px;
@@ -51,8 +60,9 @@
     cursor: default;
 }
 
-.NavButton:hover a, .NavButton:hover p {
+.NavButton:hover a, .NavButton:hover p, .NavButton:hover {
     color: #F7E623;
+    text-decoration: none;
 }
 
 .NavButton a {
@@ -223,19 +233,23 @@
     }
     
     .NavButton {
-        border-top: 0.5px solid grey;
+        border-top: 0.5px solid #3b3b3b;
         width: 100%;
         color: white;
-        /* text-align: left; */
-        height: 32px;
-        background-color: black;
-        padding: 0 10px 0 10px;
-        /* align-items: left; */
-        /* justify-content: left; */
+        text-align: left;
+        background-color: #0a0a0a;
+        padding: 3px 10px 3px 10px;
+    }
+
+    .DropdownNavButton {
+        background-color: #121212;
+        width: 100%;
+        border-top: 0.5px solid #3b3b3b;
+        padding: 5px 5px 5px 35px;
+        text-decoration: none;
     }
 
     .dropdown-elements {
-        background-color: black;
         width: 100%;
     }
     
@@ -243,24 +257,21 @@
         display: flex;
         justify-content: left;
         cursor: pointer;
-        /* align-items: left; */
-        /* white-space: nowrap; */
     }
-    
-    .DropdownNavButton {
-        background-color: #000;
-    }
-    
+
     .RegNavButton {
         cursor: pointer;
     }
     
     .NavButton:hover {
-        background-color: black;
-        transition: 00.4s;
+        background-color: #0a0a0a; /* todo: better way? */
     }
 
-    .NavButton:hover a, .NavButton:hover p {
+    .DropdownButton:hover {
+        cursor: pointer;
+    }
+
+    .NavButton:hover {
         color: #F7E623;
     }
     
