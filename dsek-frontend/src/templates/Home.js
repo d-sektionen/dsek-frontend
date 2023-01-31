@@ -61,7 +61,6 @@ function Home() {
                 < Sponsors />
                 < BackToTop />
             </div>
-            < BackToTop />
         </div>
     );
 }

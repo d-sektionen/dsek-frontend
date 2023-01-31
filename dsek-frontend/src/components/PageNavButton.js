@@ -5,7 +5,7 @@ function PageNavButton(props) {
     return (
         <nav>
             {
-                props.disabled ? <a className="PageNavButton-Disabled" href={props.link}>{props.page}</a> : 
+                props.disabled ? <a className="PageNavButton-Disabled" href={props.link}>{props.page}</a> :
                 <span>
                     {
                         props.link ?

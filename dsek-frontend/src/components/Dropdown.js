@@ -35,8 +35,8 @@ function Dropdown(props) {
                 </div>
             </div>
             <div className='narrow-nav'>
-                <div onClick={handleClick}>
-                    <nav className="Dropdown NavButton">
+                <div>
+                    <nav onClick={handleClick} className="Dropdown NavButton">
                         <DropdownButton content={props.content} />
                     </nav>
                     <div style={{display:display}}>

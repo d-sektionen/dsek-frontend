@@ -1,0 +1,19 @@
+#SearchBoxText {
+    margin-bottom: 5px;
+    border-radius: 2px;
+    height: 30px;
+    padding-left: 7px;
+    border: 1px solid #ddd;
+}
+
+@media only screen and (min-width: 850px) {
+    #SearchBoxText {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    #SearchBoxText {
+        width: 95%;
+    }
+}

@@ -8,6 +8,7 @@
 
 .Left {
     width: 100%;
+    /* max-width: 256px; */
 }
 
 .Middle {
@@ -16,10 +17,12 @@
 
 .Right {
     width: 100%;
+    float: right;
 }
 
 .wide {
     width: 25%;
+    margin: 0 10px 0 10px;
 }
 
 @media only screen and (max-width: 850px) {
@@ -33,5 +36,17 @@
     }
     .wide-header {
         display: none;
+    }
+    .Home {
+        margin-top: 40px;
+    }
+}
+
+@media only screen and (min-width: 850px) {
+    .Left {
+        max-width: 256px;
+    }
+    .Right {
+        max-width: 256px;
     }
 }

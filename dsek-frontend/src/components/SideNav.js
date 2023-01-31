@@ -1,15 +1,17 @@
 import '../css/Nav.css';
 import SideNavButton from './SideNavButton.js';
 import Widget from '../components/Widget.js';
+import SearchBar from './SearchBar';
 
 
 function SideNav() {
     return (
         <div className="Left">
+            <SearchBar className={'SideNavSearch'}/>
             <nav className="SideNav">
-                <SideNavButton title="Sociala medier" link="#"/>
+                <SideNavButton title="Sociala medier" link="/page/socialamedier"/>
                 <SideNavButton title="Kalender" link="#"/>
-                <SideNavButton title="Medlemstjänster" link="#"/>
+                <SideNavButton title="Medlemstjänster" link="https://medlem.d-sektionen.se/"/>
                 <SideNavButton title="Fotoalbum" link="#"/>
                 <SideNavButton title="Kontakt" link="#"/>
             </nav>
