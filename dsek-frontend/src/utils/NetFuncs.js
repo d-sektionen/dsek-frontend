@@ -1,14 +1,17 @@
-export async function getData2(file){
-    // const r = await fetch("http://127.0.0.1:4000/api/posts/"+file);
-    console.log("her3");
-    const r = await fetch("http://localhost:4000/api/posts");
-    console.log("here2", r);
+import qs from 'qs';
+
+export async function getData2(path, query){
+    const stringifiedQuery = qs.stringify(query, { addQueryPrefix: true });
+    const r = await fetch(`http://localhost:4000/api/${path}${stringifiedQuery}`);
     return await r.json();
 }
 
 (async () => { 
-    const data = await getData2("posts");
-    console.log("here");
+    const query = {
+        page: 2,
+        limit: 2
+    };
+    const data = await getData2("posts", query);
     console.log(data);
 })();
 

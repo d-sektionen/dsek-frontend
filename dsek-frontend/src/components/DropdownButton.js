@@ -1,4 +1,4 @@
-import {FaCaretDown} from 'react-icons/fa';
+import {FaSortDown} from 'react-icons/fa';
 
 function DropdownButton(props) {
     var content = props.content;
@@ -6,9 +6,7 @@ function DropdownButton(props) {
     return (
 
         <nav className="DropdownButton">
-            <div className='drop'>
-                {content }<FaCaretDown/>
-            </div>
+                {content + " " }<FaSortDown/>
         </nav>
 
     )

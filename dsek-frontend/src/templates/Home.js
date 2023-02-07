@@ -25,7 +25,7 @@ function Home() {
         })();
     }, []);
 
-    
+     
     const changePage = (page) => {
         if(page > 0 && page <= totalPages) {
             setCurrentPage(page)

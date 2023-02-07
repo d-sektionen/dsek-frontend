@@ -4,17 +4,15 @@ import '../css/Nav.css';
 
 function DropdownElements(props) {
     return (
-        <div>
-            <div className="dropdown-elements">
-                {   
-                    props.titles ?
+        <div className="dropdown-elements">
+            {
+                props.titles ?
                     props.titles.map((t, i) =>
-                        <DropdownNavButton key={i} title={t[0]} link={t[1]}/>
+                        <DropdownNavButton key={i} title={t[0]} link={t[1]} />
                     )
                     :
                     <></>
-                }
-            </div>
+            }
         </div>
     );
 }

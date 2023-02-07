@@ -1,17 +1,17 @@
-import '../css/Nav.css'; 
+import '../css/Nav.css';
 import { useState } from 'react';
 import DropdownButton from './DropdownButton.js';
 
 function Dropdown(props) {
 
-    const [ display, setDisplay ] = useState( 'none' )
+    const [display, setDisplay] = useState('none')
 
     function handleHover() {
-        setDisplay( 'block' )
+        setDisplay('block')
     }
 
     function handleLeave() {
-        setDisplay( 'none' )
+        setDisplay('none')
     }
 
     function handleClick() {
@@ -23,28 +23,24 @@ function Dropdown(props) {
     }
 
     return (
-        <div>
-            <div className='wide-nav'>
-                <div onMouseLeave={handleLeave}>
-                    <nav onMouseEnter={handleHover} className="Dropdown NavButton">
-                        <DropdownButton content={props.content} />
-                    </nav>
-                    <div style={{display:display}}>
-                        {props.children}
-                    </div>
+        <>
+            <div className='wide-nav' onMouseLeave={handleLeave}>
+                <nav onMouseEnter={handleHover} className="Dropdown NavButton">
+                    <DropdownButton content={props.content} />
+                </nav>
+                <div style={{ display: display }}>
+                    {props.children}
                 </div>
             </div>
             <div className='narrow-nav'>
-                <div>
-                    <nav onClick={handleClick} className="Dropdown NavButton">
-                        <DropdownButton content={props.content} />
-                    </nav>
-                    <div style={{display:display}}>
-                        {props.children}
-                    </div>
+                <nav onClick={handleClick} className="Dropdown NavButton">
+                    <DropdownButton content={props.content} />
+                </nav>
+                <div style={{ display: display }}>
+                    {props.children}
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

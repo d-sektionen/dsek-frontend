@@ -69,12 +69,10 @@
     text-decoration: none;
 }
 
-.NavButton a {
+a.NavButton {
     text-decoration: none;
     font-size: 16px;
     line-height: 32px;
-    color: black;
-    transition: color 0.15s linear;
 }
 
 .SideNav {
@@ -283,7 +281,7 @@
         color: #F7E623;
     }
 
-    .NavButton a {
+    a.NavButton {
         text-decoration: none;
         font-size: 16px;
         line-height: 32px;
@@ -309,7 +307,11 @@
         display: block;
     }
 
-    .DropdownNavLink {
+    .DropdownNavLink, a.NavButton {
         color: #000;
+    }
+
+    a.NavButton > nav {
+        /* margin: auto; */
     }
 }
