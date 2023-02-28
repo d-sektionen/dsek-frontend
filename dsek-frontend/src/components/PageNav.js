@@ -42,7 +42,7 @@ function PageNav(props) {
 
         }
 
-        if (props.totalPages - props.currentPage >= 3) {
+        if (props.totalPages - props.currentPage > 2) {
             res.push(<PageNavButton page="..." currentPage={props.currentPage} disabled={true} />)
             res.push(<PageNavButton setPage={props.setPage} page={props.totalPages} key={props.totalPages} />)
         }
