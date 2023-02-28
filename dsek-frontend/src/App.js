@@ -1,44 +1,46 @@
 import './App.css';
-import DEG from './templates/committee/DEG';
-import Valberedningen from './templates/committee/Valberedningen';
 import Alumni from './templates/committee/Alumni';
-import Werk from './templates/committee/Werk';
-import UtbU from './templates/committee/UtbU';
+import DEG from './templates/committee/DEG';
+import EventU from './templates/committee/EventU';
+import MafU from './templates/committee/MafU';
 import NarU from './templates/committee/NarU';
 import PubU from './templates/committee/PubU';
-import MafU from './templates/committee/MafU';
-import EventU from './templates/committee/EventU';
+import UtbU from './templates/committee/UtbU';
+import Valberedningen from './templates/committee/Valberedningen';
+import Werk from './templates/committee/Werk';
 import Page from './templates/Page';
-import Utbildningar from './templates/student/Utbildningar';
 
-import Header from './components/Header';
 import Footer from './components/Footer';
+import Header from './components/Header';
 import Home from './templates/Home';
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Calendar from './templates/misc/Calendar';
 
 function App() {
-  return (
-    <>
-    <div className="App">
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<><Header/><Home /><Footer/></>}></Route>
-        <Route path="/page/:id" element={<><Header/><Page /><Footer/></>}></Route>
-        <Route path="/deg" element={<DEG />}></Route>
-        <Route path="/valberedningen" element={<Valberedningen />}></Route>
-        <Route path="/alumni" element={<Alumni />}></Route>
-        <Route path="/werk" element={<Werk />}></Route>
-        <Route path="/utbu" element={<UtbU />}></Route>
-        <Route path="/pubu" element={<PubU />}></Route>
-        <Route path="/naru" element={<NarU />}></Route>
-        <Route path="/mafu" element={<MafU />}></Route>
-        <Route path="/eventu" element={<EventU />}></Route>
-      </Routes>
-    </BrowserRouter>
-    </div>
-    </>
-  );
+    return (
+        <>
+            <div className="App">
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<><Header /><Home /><Footer /></>}></Route>
+                        {/* <Route path="/home2" element={<><Header /><Home2 /><Footer /></>}></Route> */}
+                        <Route path="/page/:id" element={<><Header /><Page /><Footer /></>}></Route>
+                        <Route path="/deg" element={<DEG />}></Route>
+                        <Route path="/valberedningen" element={<Valberedningen />}></Route>
+                        <Route path="/alumni" element={<Alumni />}></Route>
+                        <Route path="/werk" element={<Werk />}></Route>
+                        <Route path="/utbu" element={<UtbU />}></Route>
+                        <Route path="/pubu" element={<PubU />}></Route>
+                        <Route path="/naru" element={<NarU />}></Route>
+                        <Route path="/mafu" element={<MafU />}></Route>
+                        <Route path="/eventu" element={<EventU />}></Route>
+                        <Route path="/kalender" element={<><Header /><Calendar /><Footer /></>}></Route>
+                    </Routes>
+                </BrowserRouter>
+            </div>
+        </>
+    );
 }
 
 export default App;
