@@ -13,9 +13,10 @@ import Page from './templates/Page';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './templates/Home';
+import Home2 from './templates/Home2';
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Calendar from './templates/misc/Calendar';
+import DCalendar from './templates/misc/DCalendar';
 
 function App() {
     return (
@@ -24,7 +25,7 @@ function App() {
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<><Header /><Home /><Footer /></>}></Route>
-                        {/* <Route path="/home2" element={<><Header /><Home2 /><Footer /></>}></Route> */}
+                        <Route path="/home2" element={<><Header /><Home2 /><Footer /></>}></Route>
                         <Route path="/page/:id" element={<><Header /><Page /><Footer /></>}></Route>
                         <Route path="/deg" element={<DEG />}></Route>
                         <Route path="/valberedningen" element={<Valberedningen />}></Route>
@@ -35,7 +36,7 @@ function App() {
                         <Route path="/naru" element={<NarU />}></Route>
                         <Route path="/mafu" element={<MafU />}></Route>
                         <Route path="/eventu" element={<EventU />}></Route>
-                        <Route path="/kalender" element={<><Header /><Calendar /><Footer /></>}></Route>
+                        <Route path="/kalender" element={<><Header /><DCalendar /><Footer /></>}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>

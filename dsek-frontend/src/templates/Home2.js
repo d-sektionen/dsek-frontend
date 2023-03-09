@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
-import { BackToTop } from "../../components/BackToTop";
-import Sponsors from "../../components/Sponsors";
 import { getData2 } from "../utils/NetFuncs";
 
 export default function Home2() {
+
 
     useEffect(() => {
         (async () => {
@@ -20,15 +19,17 @@ export default function Home2() {
                     {/* <SideNav /> */}
                 </div>
                 <div className="Middle" id="pageContainer">
-
                     Posts
+                    {/* {users && users.map(user =>
+                        </tr>
+                    )} */}
 
                 </div>
-                <div className="wide">
+                {/* <div className="wide">
                     < Sponsors />
                     < BackToTop />
-                </div>
-                < BackToTop />
+                </div> */}
+                {/* < BackToTop /> */}
             </div>
         </>
     );

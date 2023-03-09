@@ -23,36 +23,37 @@ function PageNav(props) {
     function pages() {
 
 
-        let res = [];// = pageNumbers.filter((page, index) => Math.abs(index - props.currentPage) <= 1 ).map((number) => 
-        // <PageNavButton currentPage={props.currentPage} setPage={props.setPage} page={number+1} key={number} />) 
+        let res = [];
 
+        // adds button for current page and +/- 1 page
         res.push(<PageNavButton setPage={props.setPage} page={props.currentPage - 1} key={props.currentPage - 1} />)
         res.push(<PageNavButton currentPage={props.currentPage} setPage={props.setPage} page={props.currentPage} key={props.currentPage} />)
         res.push(<PageNavButton setPage={props.setPage} page={props.currentPage + 1} key={props.currentPage + 1} />)
 
+
+        //If current page is page 1, a page 0 will be added, remove this and add + 2 so it is three buttons
         if (props.currentPage === 1) {
             res.shift();
             res.push(<PageNavButton setPage={props.setPage} page={props.currentPage + 2} key={props.currentPage + 2} />)
         }
 
-        if (props.currentPage > 3) {
-
-            res.unshift(<PageNavButton page="..." currentPage={props.currentPage} disabled={true} />)
-            res.unshift(<PageNavButton setPage={props.setPage} page={1} key={1} />)
-
+        
+        //Removes button with number above total pages
+        if (props.currentPage == props.totalPages && props.totalPages > 2) {
+            res.pop();
+            res.unshift(<PageNavButton setPage={props.setPage} page={props.currentPage - 2} key={props.currentPage - 2} />)
         }
 
-        if (props.totalPages - props.currentPage > 2) {
-            res.push(<PageNavButton page="..." currentPage={props.currentPage} disabled={true} />)
+        //If current page is not the last two pages, add ... and the last page
+        if (props.totalPages - props.currentPage > 1) {
+
+            //if current page is more than one before last one, ... should be added
+            if(props.totalPages - props.currentPage > 2){
+                res.push(<PageNavButton page="..." currentPage={props.currentPage} disabled={true} />)
+            }
             res.push(<PageNavButton setPage={props.setPage} page={props.totalPages} key={props.totalPages} />)
         }
 
-
-        // Removes button with number above total pages, and adds one before, -2 from totalpage, for it to be three buttons
-        if (props.currentPage == props.totalPages) {
-            res.unshift(<PageNavButton setPage={props.setPage} page={props.currentPage - 2} key={props.currentPage - 2} />)
-            res.pop();
-        }
         return res
 
     }
