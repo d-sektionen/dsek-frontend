@@ -17,6 +17,7 @@ import Home2 from './templates/Home2';
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DCalendar from './templates/misc/DCalendar';
+import SocialMedia from './templates/misc/SocialMedia';
 
 function App() {
     return (
@@ -37,6 +38,7 @@ function App() {
                         <Route path="/mafu" element={<MafU />}></Route>
                         <Route path="/eventu" element={<EventU />}></Route>
                         <Route path="/kalender" element={<><Header /><DCalendar /><Footer /></>}></Route>
+                        <Route path="/socialamedier" element={<><Header /><SocialMedia /><Footer /></>}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>

@@ -19,7 +19,7 @@ function Valberedningen() {
                     på sektionens medlemsmöten där medlemmarna får en möjlighet att ta ställning till våra val.
                 </p>
 
-                <div class="ValleB-Link-Wrapper">
+                <div className="ValleB-Link-Wrapper">
                     <a href="#" className="ValleB-Link">Valberedningens urvalsprocess</a><br/>
                     <a href="#" className="ValleB-Link">Valberedningens policy</a>
                 </div>

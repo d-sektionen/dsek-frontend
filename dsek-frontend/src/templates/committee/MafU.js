@@ -69,7 +69,7 @@ function MafU() {
                     Du väljer själv när du vill hemmissionera, men presentationer inför åk 3 kan göras till och med 15 april och inför åk 2 till och med 13 maj. 
                 </p>
                 <p className="MafU-Small">
-                    Mer information och en steg för steg guide om hur du hemmissionerar finns <a href="lith.liu.se/samverkan/hemmissionering" className="MafU-Link">HÄR</a>
+                    Mer information och en steg för steg guide om hur du hemmissionerar finns <a href="https://lith.liu.se/samverkan/hemmissionering" className="MafU-Link">HÄR</a>
                 </p>
                 <p className="MafU-Text">
                     Material till hemmissionering <a href="#" className="MafU-Link">Powerpoint-fil</a> för presentation<br/>

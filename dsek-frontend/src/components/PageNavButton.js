@@ -1,3 +1,4 @@
+import Link from './Link';
 import '../css/Nav.css';
 
 function PageNavButton(props) {
@@ -5,11 +6,11 @@ function PageNavButton(props) {
     return (
         <nav>
             {
-                props.disabled ? <a className="PageNavButton-Disabled" href={props.link}>{props.page}</a> :
+                props.disabled ? <Link className="PageNavButton-Disabled" to={props.link}>{props.page}</Link> :
                 <span>
                     {
                         props.link ?
-                        <a className={className} href={props.link}>{props.page}</a> :
+                        <Link className={className} to={props.link}>{props.page}</Link> :
                         <button className={className} onClick={ () => props.setPage(props.page) }>{props.page}</button>
                         
                     }

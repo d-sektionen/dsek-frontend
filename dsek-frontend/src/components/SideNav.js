@@ -9,7 +9,7 @@ function SideNav() {
         <div className="Left">
             <SearchBar className={'SideNavSearch'} />
             <nav className="SideNav">
-                <SideNavButton title="Sociala medier" link="/page/socialamedier" />
+                <SideNavButton title="Sociala medier" link="/socialamedier" />
                 <SideNavButton title="Kalender" link="/kalender" />
                 <SideNavButton title="Medlemstjänster" link="https://medlem.d-sektionen.se" />
                 <SideNavButton title="Fotoalbum" link="#" />

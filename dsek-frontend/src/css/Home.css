@@ -8,7 +8,6 @@
 
 .Left {
     width: 100%;
-    /* max-width: 256px; */
 }
 
 .Middle {
@@ -25,7 +24,7 @@
     margin: 0 10px 0 10px;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 900px) {
     .Middle {
         width: 100%;
         margin: 0 auto 0 auto;
@@ -42,7 +41,7 @@
     }
 }
 
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 900px) {
     .Left {
         max-width: 256px;
     }

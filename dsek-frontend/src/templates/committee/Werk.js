@@ -85,7 +85,7 @@ function Werk() {
 
                 <h2>Bilar</h2>
                 <hr/>
-                <p>Bilarna bokas via <a href="medlem.d-sektionen.se/booking">medlem.d-sektionen.se/booking</a></p>
+                <p>Bilarna bokas via <a href="https://medlem.d-sektionen.se/booking">medlem.d-sektionen.se/booking</a></p>
                 <h3>Kianu Revs</h3>
                 <p>
                     Sektionsbilen är en manuell Kia C’eed ’14 utrustad med dragkrok. Släpvagn, 

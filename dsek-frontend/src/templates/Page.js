@@ -1,4 +1,4 @@
-import SideNav from '../components/SideNav.js';
+    import SideNav from '../components/SideNav.js';
 import Sponsors from '../components/Sponsors.js';
 import '../css/Home.css';
 
