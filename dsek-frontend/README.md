@@ -10,9 +10,9 @@
 - [ ] Kontakt (länk i sidenav)
 - [ ] Fotoalbum (länk i sidenav)
 - [x] Sociala medier (länk i sidenav)
+- [ ] Skapa bättre kalendervyer för Calendar och CalendarWidget (svenska, storlekt, 24h tid)
 
 ### Bugs
 - [ ] det går inte att klicka längst ut på högerkanten av dropdownmenyknapparna (menyn minimeras när musen fortfarande hovrar över menyn)
-- [ ] Kalender views bugg i biblioteket?
 - [x] PageNavs sifferknappar buggar lite...
 - [x] Länkarna i smala menyn (de som inte är dropdown) funkar bara om man klickar på texten, inte hela knappen

@@ -1,20 +1,18 @@
-import { gapi } from "gapi-script";
-import React, { useEffect, useState } from "react";
 import { BackToTop } from "../../components/BackToTop";
 import Event from "../../components/Event.js";
 import SideNav from "../../components/SideNav";
 import Sponsors from "../../components/Sponsors";
-import { Calendar, globalizeLocalizer } from 'react-big-calendar';
-import globalize from 'globalize';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
+import React, { useEffect, useState } from "react";
+import { gapi } from "gapi-script";
+import FullCalendar from '@fullcalendar/react' // must go before plugins
+import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 
-const localizer = globalizeLocalizer(globalize)
 
-export default function DCalendar () {
 
+export default function Calendar () {
     const [events, setEvents] = useState([]);
  
-    const apiKey = "";
+    const apiKey = "AIzaSyBPkW59yQYzkD2-iFJRzueKiWfJ14GeanM";
     const calendarID = "c_jhjemj5afa0ubjucqad23cuuos@group.calendar.google.com";
    
     const getEvents = (calendarID, apiKey) => {
@@ -31,16 +29,15 @@ export default function DCalendar () {
             .then(
               (response) => {
                 let events = response.result.items;
-                console.log(events);
 
                 const newEvents = [];
                 for (const e of events)  {
-                  console.log(e);
                   const t = {
                     start: e.start.date || e.start.dateTime,
                     end: e.end.date || e.end.dateTime,
                     title: e.summary
                   };
+                  console.log(t);
                   newEvents.push(t);
                 }
                 setEvents(newEvents);
@@ -56,21 +53,20 @@ export default function DCalendar () {
       useEffect(() => {
         const events = getEvents(calendarID, apiKey);
       }, []);
-     
-      return (
+
+    return (
         <div className="Home">
           <div className="wide">
             <SideNav />
           </div>
           <div className="Middle">
             <p><a href="https://calendar.google.com/calendar/embed?src=c_jhjemj5afa0ubjucqad23cuuos%40group.calendar.google.com&ctz=Europe%2FStockholm">Prenumerera genom Google Calendar</a></p>
-            <Calendar
-              localizer={localizer}
+            <FullCalendar
+              plugins={[ dayGridPlugin ]}
+              initialView="dayGridMonth"
               events={events}
-              startAccessor="start"
-              endAccessor="end"
-              style={{ height: 500 }}
             />
+
           </div>
           <div className="wide">
             < Sponsors />

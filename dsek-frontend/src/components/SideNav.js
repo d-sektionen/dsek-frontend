@@ -1,7 +1,7 @@
-import Widget from '../components/Widget.js';
 import '../css/Nav.css';
 import SearchBar from './SearchBar';
 import SideNavButton from './SideNavButton.js';
+import CalendarWidget from './CalendarWidget.js';
 
 
 function SideNav() {
@@ -15,7 +15,7 @@ function SideNav() {
                 <SideNavButton title="Fotoalbum" link="#" />
                 <SideNavButton title="Kontakt" link="#" />
             </nav>
-            <Widget title="Kommande aktiviteter" content={[[0, "Det finns inga kommande aktiviteter"]]} />
+            <CalendarWidget title="Kommande aktiviteter" />
         </div>
     );
 }
