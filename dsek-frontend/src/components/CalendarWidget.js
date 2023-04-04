@@ -10,7 +10,7 @@ function CalendarWidget(props) {
 
     const [events, setEvents] = useState([]);
 
-    const apiKey = "AIzaSyBPkW59yQYzkD2-iFJRzueKiWfJ14GeanM";
+    const apiKey = "AIzaSyCTPkWAUGaoz5TbDDCmhyOHp9r97maEwmc";
     const calendarID = "c_jhjemj5afa0ubjucqad23cuuos@group.calendar.google.com";
 
     const getEvents = (calendarID, apiKey) => {
@@ -28,14 +28,20 @@ function CalendarWidget(props) {
                     (response) => {
                         let events = response.result.items;
 
-                        const newEvents = [];
+                        const newEvents = [
+                            {
+                                start: new Date('2023-04-01T13:15:00+02:00'),
+                                end: new Date('2023-04-01T15:00:00+02:00'),
+                                title: 'Testingggg'
+                            }
+                        ];
                         for (const e of events) {
                             const t = {
                                 start: e.start.date || e.start.dateTime,
                                 end: e.end.date || e.end.dateTime,
-                                title: e.summary
+                                title: e.summary,
+                                url: 'https://www.google.com'
                             };
-                            console.log(t);
                             newEvents.push(t);
                         }
                         setEvents(newEvents);
@@ -63,7 +69,7 @@ function CalendarWidget(props) {
                     headerToolbar={
                         false
                     }
-                    // hour12={true}
+                    locale={'sv'}
                 />
             </div>
         </>

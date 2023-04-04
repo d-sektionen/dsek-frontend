@@ -1,3 +1,4 @@
+import GOOGLE_API_KEY from './config';
 import './App.css';
 import Alumni from './templates/committee/Alumni';
 import DEG from './templates/committee/DEG';

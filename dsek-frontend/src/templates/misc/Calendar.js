@@ -1,3 +1,4 @@
+
 import { BackToTop } from "../../components/BackToTop";
 import Event from "../../components/Event.js";
 import SideNav from "../../components/SideNav";
@@ -11,8 +12,8 @@ import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 
 export default function Calendar () {
     const [events, setEvents] = useState([]);
- 
-    const apiKey = "AIzaSyBPkW59yQYzkD2-iFJRzueKiWfJ14GeanM";
+
+    const apiKey = "AIzaSyCTPkWAUGaoz5TbDDCmhyOHp9r97maEwmc";
     const calendarID = "c_jhjemj5afa0ubjucqad23cuuos@group.calendar.google.com";
    
     const getEvents = (calendarID, apiKey) => {
@@ -30,7 +31,13 @@ export default function Calendar () {
               (response) => {
                 let events = response.result.items;
 
-                const newEvents = [];
+                const newEvents = [
+                  {
+                    start: new Date('2023-04-01T13:15:00+02:00'),
+                    end: new Date('2023-04-01T15:00:00+02:00'),
+                    title: 'Testingggg'
+                  }
+                ];
                 for (const e of events)  {
                   const t = {
                     start: e.start.date || e.start.dateTime,
@@ -51,7 +58,7 @@ export default function Calendar () {
       };
      
       useEffect(() => {
-        const events = getEvents(calendarID, apiKey);
+        getEvents(calendarID, apiKey);
       }, []);
 
     return (
@@ -60,13 +67,13 @@ export default function Calendar () {
             <SideNav />
           </div>
           <div className="Middle">
-            <p><a href="https://calendar.google.com/calendar/embed?src=c_jhjemj5afa0ubjucqad23cuuos%40group.calendar.google.com&ctz=Europe%2FStockholm">Prenumerera genom Google Calendar</a></p>
             <FullCalendar
               plugins={[ dayGridPlugin ]}
               initialView="dayGridMonth"
               events={events}
+              locale={'sv'}
             />
-
+            <p><a href="https://calendar.google.com/calendar/embed?src=c_jhjemj5afa0ubjucqad23cuuos%40group.calendar.google.com&ctz=Europe%2FStockholm">Prenumerera genom Google Calendar</a></p>
           </div>
           <div className="wide">
             < Sponsors />
