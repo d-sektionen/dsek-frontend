@@ -22,6 +22,10 @@
     padding: 16px;
 }
 
+.fc .fc-list-empty-cushion {
+    text-align: center;
+}
+
 @media only screen and (max-width: 900px) {
     .Widget {
         width: 95%;

@@ -1,16 +1,16 @@
 import '../css/Widget.css';
-import WidgetElement from './WidgetElement';
 import React, { useEffect, useState } from "react";
 import { gapi } from "gapi-script";
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import listPlugin from '@fullcalendar/list' // a plugin!
 
-// "Det finns inga kommande aktiviteter" om inga hittas
 function CalendarWidget(props) {
 
     const [events, setEvents] = useState([]);
 
-    const apiKey = "AIzaSyCTPkWAUGaoz5TbDDCmhyOHp9r97maEwmc";
+    const today = new Date('2023-04-02T00:00:00'); // todo: remove parameter
+
+    const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
     const calendarID = "c_jhjemj5afa0ubjucqad23cuuos@group.calendar.google.com";
 
     const getEvents = (calendarID, apiKey) => {
@@ -30,19 +30,21 @@ function CalendarWidget(props) {
 
                         const newEvents = [
                             {
-                                start: new Date('2023-04-01T13:15:00+02:00'),
-                                end: new Date('2023-04-01T15:00:00+02:00'),
-                                title: 'Testingggg'
+                                start: new Date('2023-04-15T13:15:00+02:00'),
+                                end: new Date('2023-04-15T15:00:00+02:00'),
+                                title: 'Testingggg',
+                                url: 'https://www.google.com'
                             }
                         ];
                         for (const e of events) {
-                            const t = {
-                                start: e.start.date || e.start.dateTime,
-                                end: e.end.date || e.end.dateTime,
-                                title: e.summary,
-                                url: 'https://www.google.com'
-                            };
-                            newEvents.push(t);
+                            if (new Date(e.end.date) >= today || new Date(e.end.dateTime) > today) {
+                                const t = {
+                                    start: e.start.date || e.start.dateTime,
+                                    end: e.end.date || e.end.dateTime,
+                                    title: e.summary
+                                };
+                                newEvents.push(t);
+                            }
                         }
                         setEvents(newEvents);
                     },
@@ -56,11 +58,12 @@ function CalendarWidget(props) {
 
     useEffect(() => {
         const events = getEvents(calendarID, apiKey);
+        console.log(events)
     }, []);
 
     return (
         <>
-            <div className="Widget">
+            <div className="CalendarWidget Widget">
                 <h1 className="Widget-Title">{props.title}</h1>
                 <FullCalendar
                     plugins={[listPlugin]}
@@ -70,6 +73,11 @@ function CalendarWidget(props) {
                         false
                     }
                     locale={'sv'}
+                    height={'auto'}
+                    noEventsContent={
+                        'Det finns inga kommande aktiviteter'
+                    }
+                    allDayContent={'Heldag'}
                 />
             </div>
         </>
