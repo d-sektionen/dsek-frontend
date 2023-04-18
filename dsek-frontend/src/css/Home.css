@@ -30,14 +30,21 @@
         margin: 0 auto 0 auto;
         padding: 0 10px 16px 10px;
     }
+
     .wide {
         display: none;
     }
+
     .wide-header {
         display: none;
     }
+
     .Home {
         margin-top: 40px;
+    }
+
+    .FullPageCalendar {
+        margin-top: 1em;
     }
 }
 
@@ -45,6 +52,7 @@
     .Left {
         max-width: 256px;
     }
+
     .Right {
         max-width: 256px;
     }

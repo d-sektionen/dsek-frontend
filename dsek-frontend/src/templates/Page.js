@@ -1,4 +1,4 @@
-    import SideNav from '../components/SideNav.js';
+import SideNav from '../components/SideNav.js';
 import Sponsors from '../components/Sponsors.js';
 import '../css/Home.css';
 
@@ -7,7 +7,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import sanitizeHtml from 'sanitize-html';
 import { BackToTop } from '../components/BackToTop.js';
-import { getData } from '../utils/NetFuncs';
+import { getPage } from '../utils/NetFuncs.js';
 
 export default function Page() {
     const params = useParams();
@@ -15,8 +15,8 @@ export default function Page() {
     useEffect(() => {
         (async () => {
             console.log(params);
-            const res = await getData("pages/" + params.id);
-            const data = marked.parse(res.data);
+            const res = await getPage("pages/" + params.id);
+            const data = marked.parse(res);
             document.getElementById('pageContainer').innerHTML = sanitizeHtml(data);
         })();
     }, [params]);

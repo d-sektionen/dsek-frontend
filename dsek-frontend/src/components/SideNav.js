@@ -1,7 +1,7 @@
 import '../css/Nav.css';
+import CalendarWidget from './CalendarWidget.js';
 import SearchBar from './SearchBar';
 import SideNavButton from './SideNavButton.js';
-import CalendarWidget from './CalendarWidget.js';
 
 
 function SideNav() {
@@ -13,9 +13,9 @@ function SideNav() {
                 <SideNavButton title="Kalender" link="/kalender" />
                 <SideNavButton title="Medlemstjänster" link="https://medlem.d-sektionen.se" />
                 <SideNavButton title="Fotoalbum" link="#" />
-                <SideNavButton title="Kontakt" link="#" />
+                {/* <SideNavButton title="Kontakt" link="#" /> */}
             </nav>
-            <CalendarWidget title="Kommande aktiviteter" />
+            <CalendarWidget title="Månadens aktiviteter" />
         </div>
     );
 }

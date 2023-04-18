@@ -1,23 +1,31 @@
-import React, {useState} from 'react'
-// import '../css/Nav.css';
+import React, { useEffect, useState } from 'react';
 import '../css/SearchBar.css';
 
-function SearchBar () {
-    const [searchInput, setSearchInput] = useState("");
+function SearchBar({ onSearch }) {
+    const [defaultValue, setDefaultValue] = useState('');
 
-    const handleChange = (e) => {
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search)
+        setDefaultValue(urlParams.get('s'));
+    }, []);
+
+    const onSubmit = (e) => {
         e.preventDefault();
-        setSearchInput(e.target.value);
+        const searchInput = e.target.SearchBoxText.value;
+        if (searchInput !== "") {
+            window.location.href = `/?s=${searchInput}`;
+        }
     };
 
-    return <div>
-        <input
-        id="SearchBoxText"
-        type="search"
-        placeholder="Sök..."
-        onChange={handleChange}
-        value={searchInput} />
-    </div>
-} 
+    return (
+        <form onSubmit={onSubmit}>
+            <input
+                id="SearchBoxText"
+                type="search"
+                placeholder="Sök..."
+                defaultValue={defaultValue} />
+        </form>
+    )
+}
 
 export default SearchBar;

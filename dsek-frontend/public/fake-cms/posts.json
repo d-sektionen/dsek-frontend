@@ -13,4 +13,10 @@
         "title": "This Is A Test Post 3",
         "date": "2022-10-06",
         "content": "This post was fetched from our fake cms. This post was fetched from our fake cms. This post was fetched from our fake cms. This post was fetched from our fake cms.This post was fetched from our fake cms. This post was fetched from our fake cms. This post was fetched from our fake cms. This post was fetched from our fake cms."
-    }]
+    },
+    {
+        "title": "This Is Another Post, Which Is Also For Testing",
+        "date": "2022-10-06",
+        "content": "This post is for testing search functionality. Meatballs are tasty. TaStY."
+    }
+]

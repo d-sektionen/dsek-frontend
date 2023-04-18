@@ -1,4 +1,3 @@
-import GOOGLE_API_KEY from './config';
 import './App.css';
 import Alumni from './templates/committee/Alumni';
 import DEG from './templates/committee/DEG';
@@ -14,7 +13,6 @@ import Page from './templates/Page';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './templates/Home';
-import Home2 from './templates/Home2';
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Calendar from './templates/misc/Calendar';
@@ -27,7 +25,6 @@ function App() {
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<><Header /><Home /><Footer /></>}></Route>
-                        <Route path="/home2" element={<><Header /><Home2 /><Footer /></>}></Route>
                         <Route path="/page/:id" element={<><Header /><Page /><Footer /></>}></Route>
                         <Route path="/deg" element={<DEG />}></Route>
                         <Route path="/valberedningen" element={<Valberedningen />}></Route>

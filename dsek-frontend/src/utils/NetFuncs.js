@@ -1,22 +1,42 @@
-import qs from 'qs';
-
-export async function getData2(path, query){
-    const stringifiedQuery = qs.stringify(query, { addQueryPrefix: true });
-    const r = await fetch(`http://localhost:4000/api/${path}${stringifiedQuery}`);
-    return await r.json();
+export async function getPage(file) {
+    const res = await fetch("http://127.0.0.1:3000/fake-cms/" + file + ".md");
+    return res.text();
 }
 
-(async () => { 
-    const query = {
-        page: 2,
-        limit: 2
-    };
-    const data = await getData2("posts", query);
-    console.log(data);
-})();
+export async function getData(file, search = "") {
+    const r = await fetch("http://127.0.0.1:3000/fake-cms/" + file + ".json");
+    const data = await r.json();
+    if (search === "")
+        return data;
 
-// ta bort sen
-export async function getData(file){
-    const r = await fetch("http://127.0.0.1:3000/fake-cms/"+file+".json");
-    return await r.json();
+    // Parse search into regex string
+    let searchRegexStr = "";
+    for (const searchIdx in search) {
+        const ch = search.charAt(searchIdx);
+        searchRegexStr += `[${ch.toLowerCase()}${ch.toUpperCase()}]`
+    }
+    let searchRegex = new RegExp(searchRegexStr, 'g');
+
+    search = search.toLowerCase();
+    const found = data.filter(post => post.title.toLowerCase().includes(search) || post.content.toLowerCase().includes(search));
+    for (const e of found) {
+        let indices = [];
+        let match = searchRegex.exec(e.content);
+        while (match != null) {
+            indices.push(match.index);
+            match = searchRegex.exec(e.content);
+        }
+
+        let prevIdx = 0;
+        let newContent = "";
+        for (let idx of indices) {
+            let word = e.content.slice(idx, idx + search.length);
+            newContent += e.content.slice(prevIdx, idx) + "<b>" + word + "</b>";
+            prevIdx = idx + search.length;
+        }
+        newContent += e.content.slice(prevIdx);
+
+        e.content = newContent;
+    }
+    return found;
 }

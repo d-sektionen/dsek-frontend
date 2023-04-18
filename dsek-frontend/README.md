@@ -10,8 +10,10 @@
 - [ ] Kontakt (länk i sidenav)
 - [ ] Fotoalbum (länk i sidenav)
 - [x] Sociala medier (länk i sidenav)
-- [ ] Skapa bättre kalendervyer för Calendar och CalendarWidget (svenska, storlekt, 24h tid)
+- [x] Skapa bättre kalendervyer för Calendar och CalendarWidget (svenska, storlekt, 24h tid)
 - [x] byt API till kalendern...
+- [x] ics-länk för att prenumerera på sektionskalendern
+- [ ] sidor från md-filer
 
 ### Bugs
 - [ ] det går inte att klicka längst ut på högerkanten av dropdownmenyknapparna (menyn minimeras när musen fortfarande hovrar över menyn)
