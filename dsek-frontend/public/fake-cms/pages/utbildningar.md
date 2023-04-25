@@ -16,7 +16,7 @@ Detta program startades 1975 och är därmed den äldsta civilingenjörsutbildni
 
 [Anmäl dig på antagning.se](https://www.antagning.se/se/search?period=HT_2018&freeText=LIU-50100)
 
-![D](/wp-content/uploads/2014/12/44_datateknik_2014-2015.jpg)
+![D](https://d-sektionen.se/wp-content/uploads/2014/12/44_datateknik_2014-2015.jpg)
 
 ### Masterprofiler
 
@@ -44,11 +44,11 @@ Detta program startades 1975 och är därmed den äldsta civilingenjörsutbildni
 Civilingenjörsprogrammet i informationsteknologi (IT)
 -----------------------------------------------------
 
-Denna utbildning har ett stort fokus på att arbeta i grupp och utmanar studenterna genom sin speciella [problemlösningsmetodik](/pbl/ "Läs mer om problembaserat lärande"). Denna syftar till att öka studenternas förmåga att lösa problem och att ge dem en bättre förutsättning för att kunna arbeta i projektgrupper på deras framtida arbetsplatser. I [Universitetskanslersämbetets](http://www.uka.se) [kvalitetsutvärdering från 2013](http://www2.hsv.se/download/kvalitet/data-it-medieteknik-2012.pdf) fick programmet betyget _hög kvalitet_.
+Denna utbildning har ett stort fokus på att arbeta i grupp och utmanar studenterna genom sin speciella [problemlösningsmetodik](https://d-sektionen.se/pbl/ "Läs mer om problembaserat lärande"). Denna syftar till att öka studenternas förmåga att lösa problem och att ge dem en bättre förutsättning för att kunna arbeta i projektgrupper på deras framtida arbetsplatser. I [Universitetskanslersämbetets](http://www.uka.se) [kvalitetsutvärdering från 2013](http://www2.hsv.se/download/kvalitet/data-it-medieteknik-2012.pdf) fick programmet betyget _hög kvalitet_.
 
 [Anmäl dig på antagning.se](https://www.antagning.se/se/search?period=HT_2018&freeText=LIU-50106)
 
-![IT](/wp-content/uploads/2014/12/50_inf_teknologi_2014-2015.jpg)
+![IT](https://d-sektionen.se/wp-content/uploads/2014/12/50_inf_teknologi_2014-2015.jpg)
 
 ### Masterprofiler
 
@@ -78,7 +78,7 @@ Den här utbildning startades år 2013 där [Fredrik Heintz](https://www.ida.liu
 
 [Anmäl dig på antagning.se](https://www.antagning.se/se/search?period=HT_2018&freeText=LIU-50180)
 
-![U](/wp-content/uploads/2014/12/57_mjukvaruteknik_2014-2015.jpg)
+![U](https://d-sektionen.se/wp-content/uploads/2014/12/57_mjukvaruteknik_2014-2015.jpg)
 
 ### Masterprofiler
 
@@ -103,7 +103,7 @@ Detta är ett kandidatprogram för den som är intresserad av eller vill bli bra
 
 [Anmäl dig på antagning.se](https://www.antagning.se/se/search?period=HT_2018&freeText=LIU-50171)
 
-![IP](/wp-content/uploads/2014/12/28_innovativ_programmering.jpg)
+![IP](https://d-sektionen.se/wp-content/uploads/2014/12/28_innovativ_programmering.jpg)
 
 ### Läs mer
 

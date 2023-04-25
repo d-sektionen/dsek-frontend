@@ -40,3 +40,10 @@ export async function getData(file, search = "") {
     }
     return found;
 }
+export async function getPosts(postId) {
+    //TODO: fixa cors https://docs.directus.io/self-hosted/config-options.html#cors
+    const r = await fetch("https://dsekcms.dankgames.io/items/d_posts/" + postId);
+    const data = await r.json();
+
+    console.log(data);
+}

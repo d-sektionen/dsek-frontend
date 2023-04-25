@@ -6,7 +6,7 @@ import '../css/Home.css';
 
 import React, { useEffect, useState } from 'react';
 import { BackToTop } from '../components/BackToTop.js';
-import { getData } from '../utils/NetFuncs';
+import { getData, getPosts } from '../utils/NetFuncs';
 
 
 function Home() {
@@ -21,6 +21,8 @@ function Home() {
             const urlParams = new URLSearchParams(window.location.search);
             const search = urlParams.get("s") || "";
 
+            const data2 = await getPosts(1);
+            console.log("HEJ! ", data2);
             const data = await getData("posts", search);
             setPosts(data);
             setTotalPages(Math.ceil(data.length / POSTS_PER_PAGE));
