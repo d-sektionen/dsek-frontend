@@ -5,13 +5,16 @@ import DropdownButton from './DropdownButton.js';
 function Dropdown(props) {
 
     const [display, setDisplay] = useState('none')
+    const [height, setHeight] = useState('0');
 
     function handleHover() {
         setDisplay('block')
+        setHeight('auto')
     }
 
     function handleLeave() {
         setDisplay('none')
+        setHeight(0)
     }
 
     function handleClick() {
@@ -28,7 +31,7 @@ function Dropdown(props) {
                 <nav onMouseEnter={handleHover} className="Dropdown NavButton">
                     <DropdownButton content={props.content} />
                 </nav>
-                <div style={{ display: display }}>
+                <div style={{ display: display, height: height }}>
                     {props.children}
                 </div>
             </div>

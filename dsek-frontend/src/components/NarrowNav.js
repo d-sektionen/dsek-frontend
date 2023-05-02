@@ -4,13 +4,13 @@ import Nav from './Nav.js';
 import { GiHamburgerMenu } from 'react-icons/gi'
 
 function NarrowNav() {
-    const [ display, setDisplay ] = useState( 'none' )
+    const [ menuStyle, setMenuStyle ] = useState( 'none' )
 
     function handleClick() {
-        if (display === 'none') {
-            setDisplay( 'block' );
+        if (menuStyle === 'none') {
+            setMenuStyle('block');
         } else {
-            setDisplay( 'none' );
+            setMenuStyle('none');
         }
     }
 
@@ -19,8 +19,8 @@ function NarrowNav() {
             <div className='hamburger' onClick={handleClick}>
                 <GiHamburgerMenu/>
             </div>
-            <div style={{display:display}}>
-                <Nav/>
+            <div style={{display:menuStyle}}>
+                <Nav setState={handleClick}/>
             </div>
         </>
     );

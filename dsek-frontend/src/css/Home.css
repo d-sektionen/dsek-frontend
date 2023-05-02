@@ -1,5 +1,6 @@
 .Home {
     position: relative;
+    flex-grow: 1;
     display: flex;
     margin-top: 128px;
     width: 100%;

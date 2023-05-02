@@ -1,10 +1,9 @@
-import NavButton from './NavButton.js';
 import DropdownNavButton from './DropdownNavButton.js';
 import '../css/Nav.css';
 
 function DropdownElements(props) {
     return (
-        <div className="dropdown-elements">
+        <div className="dropdown-elements" onClick={props.setState}>
             {
                 props.titles ?
                     props.titles.map((t, i) =>
