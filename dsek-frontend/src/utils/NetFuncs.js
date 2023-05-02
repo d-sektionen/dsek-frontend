@@ -35,15 +35,22 @@ export async function getData(file, search = "") {
             prevIdx = idx + search.length;
         }
         newContent += e.content.slice(prevIdx);
-
         e.content = newContent;
     }
     return found;
 }
 export async function getPosts(postId) {
-    //TODO: fixa cors https://docs.directus.io/self-hosted/config-options.html#cors
-    const r = await fetch("https://dsekcms.dankgames.io/items/d_posts/" + postId);
+    // const r = await fetch("https://dsekcms.dankgames.io/items/d_posts/" + postId, {
+    const id = postId === -1 ? "" : postId
+    const r = await fetch("http://185.14.187.34:8055/items/d_posts/" + id, {
+        'method': 'GET',
+        'mode': 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
     const data = await r.json();
 
-    console.log(data);
+
+    return data
 }

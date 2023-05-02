@@ -26,6 +26,15 @@
 
 ## CMS notes
 https://directus.io/
+
+Lägg till cors grejer i docker-compose.yml:
+```yml
+    environment:
+      CORS_ORIGIN: '*'
+      CORS_ENABLED: 'true'
+```
+
+
 ```sh
 docker-compose up -d
 # tänk inte, gör det bara

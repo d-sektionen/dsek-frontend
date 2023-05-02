@@ -4,9 +4,12 @@ import SideNav from '../components/SideNav.js';
 import Sponsors from '../components/Sponsors.js';
 import '../css/Home.css';
 
+import { marked } from 'marked';
 import React, { useEffect, useState } from 'react';
 import { BackToTop } from '../components/BackToTop.js';
-import { getData, getPosts } from '../utils/NetFuncs';
+import { getPosts } from '../utils/NetFuncs';
+
+
 
 
 function Home() {
@@ -21,11 +24,23 @@ function Home() {
             const urlParams = new URLSearchParams(window.location.search);
             const search = urlParams.get("s") || "";
 
-            const data2 = await getPosts(1);
-            console.log("HEJ! ", data2);
-            const data = await getData("posts", search);
-            setPosts(data);
-            setTotalPages(Math.ceil(data.length / POSTS_PER_PAGE));
+            const data = await getPosts(-1);
+            console.log(data);
+            let posts = [];
+            for (const p of data.data) {
+                posts.push({
+                    title: p.title,
+                    preview: marked.parse(p.preview_content),
+                    content: marked.parse(p.content),
+                    date: p.date_created,
+                    id: p.id
+                });
+            }
+            console.log(posts);
+
+
+            setPosts(posts)
+            setTotalPages(Math.ceil(posts.length / POSTS_PER_PAGE));
             setCurrentPage(1);
         })();
     }, []);
@@ -56,9 +71,9 @@ function Home() {
             <div className="Middle">
                 {
                     ActivePosts.length > 0 ?
-                        <>{ActivePosts.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date.substring(0, 10)} content={postData.content} />)}</>
+                        <>{ActivePosts.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date.substring(0, 10)} content={postData.preview} />)}</>
                         :
-                        <>{Posts.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date.substring(0, 10)} content={postData.content} />)}</>
+                        <>{Posts.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date.substring(0, 10)} content={postData.preview} />)}</>
                 }
                 <PageNav posts={Posts} setPage={changePage} currentPage={currentPage} totalPages={totalPages} />
             </div>
