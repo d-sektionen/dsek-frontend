@@ -1,4 +1,4 @@
-import Contact from "../../components/committee/Contact";
+import CommitteeContacts from "../../components/committee/CommitteeContacts";
 import DsekHeader from "../../components/committee/DsekHeader";
 import FAQ from "../../components/committee/FAQ";
 import ImgObj from "../../components/committee/ImgObj";
@@ -151,12 +151,8 @@ function Werk() {
 
                 <h2>Kontaktuppgifter</h2>
                 <hr />
-                {
-                    ContactData.map((contactData) => contactData["Committee"] === "Werk" ?
-                        <> {
-                            contactData["People"].map((person) => <Contact liuid={"liniv123"} />)
-                        } </> : <></>)
-                }
+                <CommitteeContacts name='Werk'></CommitteeContacts>
+
 
             </div>
         </>

@@ -5,8 +5,7 @@ function PostPreview(props) {
     function createMarkup(c) {
         return { __html: c };
     }
-    const pageId = "/blogposts/" + props.id
-    console.log(props.key, pageId, props.title);
+    const pageId = "/blogpost/" + props.id
     return (
         <>
             <div className="PostPreview">

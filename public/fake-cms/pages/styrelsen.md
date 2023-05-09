@@ -5,7 +5,7 @@ Styrelsen och kansliet för D-sektionen är förtroendevalda under ett år och h
 
 I kansliet sitter förtroendevalda ordförande för utskotten, samt styrelsen. Förutom det dagliga arbetet anordnar styrelsen och kansliet evenemang för sektionens medlemmar.
 
-Studienämndsordförande, även kallade SnOrdf kan man kontakta om man har funderingar, tankar eller åsikter kring sin utbildning som man vill ska lyftas till nämden. För mer info om SnOrdfarnas arbete kan du klicka in på UtbUs sida: [Utbildningsutskottet](https://d-sektionen.se/utbildningsutskottet/)
+Studienämndsordförande, även kallade SnOrdf kan man kontakta om man har funderingar, tankar eller åsikter kring sin utbildning som man vill ska lyftas till nämden. För mer info om SnOrdfarnas arbete kan du klicka in på UtbUs sida: [Utbildningsutskottet](https://d-sektionen.se/utbu/)
 
 ### Styrelsen
 

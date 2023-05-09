@@ -16,7 +16,6 @@
 - [ ] Exjobb (meny)
 - [ ] länkar på utskottssidor
 - [ ] borde hoppa till konsekvent plats (t.ex. högst upp) på sidan när man byter sida med pagenav-knappar
-- [ ] UtbU kontaktuppgifter
 - [ ] API-nyckeln till kalendern behöver en annan lösning så att den inte syns i deployad build
 - [ ] tillgänglighet (skärmläsare etc)
 
@@ -26,7 +25,7 @@
 - [x] Länkarna i smala menyn (de som inte är dropdown) funkar bara om man klickar på texten, inte hela knappen
 - [ ] bilder i md pages
 - [ ] hemsidan går typ sönder om den är lite för inzoomad
-- [ ] menyn i smalt läge bör menyn stängas när man klickar på en av länkarna (vilket inte händer när man redirectar inom sidan)
+- [x] menyn i smalt läge bör menyn stängas när man klickar på en av länkarna (vilket inte händer när man redirectar inom sidan)
 - [ ] namn på utskottssidor
 - [ ] PubU:s sida är lite wonky
 - [x] EventU:s sida: borde vara mailto-länk i "grupperna" (e-post-knapp)

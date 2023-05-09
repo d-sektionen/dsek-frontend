@@ -83,7 +83,7 @@ function Home() {
             <div className="Middle">
                 {
                     ActivePosts.length > 0 ?
-                        <>{ActivePosts.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date.substring(0, 10)} content={postData.preview} />)}</>
+                        <>{ActivePosts.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date.substring(0, 10)} content={postData.preview} id={postData.id} />)}</>
                         :
                         <>{Posts.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date.substring(0, 10)} content={postData.preview} id={postData.id} />)}</>
                 }

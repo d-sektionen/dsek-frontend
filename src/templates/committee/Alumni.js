@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import CommitteeContacts from '../../components/committee/CommitteeContacts';
 import DsekHeader from '../../components/committee/DsekHeader';
 import '../../css/committee/Alumni.css';
-import { getData } from '../../utils/NetFuncs';
 
 function Alumni() {
-    const [ContactData, setContactData] = useState([]);
-    useEffect(() => {
-        (async () => { setContactData(await getData("contact")) })();
-    }, []);
-
     return (
         <>
             <DsekHeader />
@@ -65,15 +60,10 @@ function Alumni() {
                     <h2>Kontaktinfo</h2>
                     <hr />
                     <div className="Alumni-Contact">
-                        {
-                            ContactData.map((contactData) => contactData["Committee"] === "Alumni" ?
-                                <> {
-                                    contactData["People"].map((person) => person)
-                                } </> : <></>)
-                        }
+                        <CommitteeContacts name="Alumni" ></CommitteeContacts>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     );
 }

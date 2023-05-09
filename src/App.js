@@ -1,4 +1,6 @@
 import './App.css';
+import BlogPage from './templates/Blogpost';
+import Page from './templates/Page';
 import Alumni from './templates/committee/Alumni';
 import DEG from './templates/committee/DEG';
 import EventU from './templates/committee/EventU';
@@ -8,7 +10,6 @@ import PubU from './templates/committee/PubU';
 import UtbU from './templates/committee/UtbU';
 import Valberedningen from './templates/committee/Valberedningen';
 import Werk from './templates/committee/Werk';
-import Page from './templates/Page';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -26,6 +27,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<><Header /><Home /><Footer /></>}></Route>
                         <Route path="/page/:id" element={<><Header /><Page /><Footer /></>}></Route>
+                        <Route path="/blogpost/:id" element={<><Header /><BlogPage /><Footer /></>}></Route>
                         <Route path="/deg" element={<DEG />}></Route>
                         <Route path="/valberedningen" element={<Valberedningen />}></Route>
                         <Route path="/alumni" element={<Alumni />}></Route>
