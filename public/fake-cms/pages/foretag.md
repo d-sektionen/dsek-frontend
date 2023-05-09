@@ -21,7 +21,7 @@ En lunchföreläsning är ett mycket uppskattat arrangemang av studenterna. Ni k
 D-Pub
 -----
 
-Åtta onsdagar per år anordnar [pubutskottet](/pubutskott/) pubar i Kårallens lokal Gasquen, ett arrangemang med bra uppslutning och avslappnad stämning. I samband med puben finns möjlighet att hålla en kortare föreläsning där de närvarande studenterna bjuds på mat och dryck från puben. Efter föreläsningen har ni möjlighet att mingla med studenterna i Gasquen.
+Åtta onsdagar per år anordnar [pubutskottet](/pubu/) pubar i Kårallens lokal Gasquen, ett arrangemang med bra uppslutning och avslappnad stämning. I samband med puben finns möjlighet att hålla en kortare föreläsning där de närvarande studenterna bjuds på mat och dryck från puben. Efter föreläsningen har ni möjlighet att mingla med studenterna i Gasquen.
 
 Sektionsmöten
 -------------
