@@ -17,7 +17,8 @@
 - [ ] länkar på utskottssidor
 - [ ] borde hoppa till konsekvent plats (t.ex. högst upp) på sidan när man byter sida med pagenav-knappar
 - [ ] UtbU kontaktuppgifter
-- [ ] 
+- [ ] API-nyckeln till kalendern behöver en annan lösning så att den inte syns i deployad build
+- [ ] tillgänglighet (skärmläsare etc)
 
 ### Bugs
 - [x] det går inte att klicka längst ut på högerkanten av dropdownmenyknapparna (menyn minimeras när musen fortfarande hovrar över menyn)

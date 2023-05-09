@@ -6,7 +6,7 @@ Datateknologsektionen har under många år haft en god relation med flertalet f�
 Annonsering
 -----------
 
-Är ni intresserade av att sprida information till sektionens studenter, som exempelvis annonsering för en platsannons eller ett program ni behöver sökande till? Då är vårt annonspaket det ni söker efter! Detta paket garanterar bra spridning av informationen genom sektionens tre primära informationskanaler: Facebook, nyhetsbrev och hemsida. På [Näringslivsutskottets](/naringsliv) Facebook-sida postas ett inlägg med text och eventuell länk. Samma information postas även på sektionens hemsida och i en upplaga av vårt veckovisa nyhetsbrev. Observera att annonsering inte görs till event som är direkt och enbart riktad till studenter. Läs istället under Kvällsevent.
+Är ni intresserade av att sprida information till sektionens studenter, som exempelvis annonsering för en platsannons eller ett program ni behöver sökande till? Då är vårt annonspaket det ni söker efter! Detta paket garanterar bra spridning av informationen genom sektionens tre primära informationskanaler: Facebook, nyhetsbrev och hemsida. På [Näringslivsutskottets](/naru) Facebook-sida postas ett inlägg med text och eventuell länk. Samma information postas även på sektionens hemsida och i en upplaga av vårt veckovisa nyhetsbrev. Observera att annonsering inte görs till event som är direkt och enbart riktad till studenter. Läs istället under Kvällsevent.
 
 Kvällsevent
 -----------

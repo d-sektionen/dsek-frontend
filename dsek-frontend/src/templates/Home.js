@@ -36,6 +36,7 @@ function Home() {
                     id: p.id
                 });
             }
+
             console.log(posts);
 
 
@@ -46,13 +47,13 @@ function Home() {
     }, []);
 
 
-    function scrollToTop() {
+    const scrollToTop = () => {
         console.log("scroll")
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
-    }
+    };
 
     const changePage = (page) => {
         if (page > 0 && page <= totalPages) {
@@ -61,8 +62,7 @@ function Home() {
         setTimeout(() => {
             scrollToTop();
         }, 50)
-
-    }
+    };
 
     useEffect(() => {
         let active = []
@@ -85,7 +85,7 @@ function Home() {
                     ActivePosts.length > 0 ?
                         <>{ActivePosts.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date.substring(0, 10)} content={postData.preview} />)}</>
                         :
-                        <>{Posts.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date.substring(0, 10)} content={postData.preview} />)}</>
+                        <>{Posts.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date.substring(0, 10)} content={postData.preview} id={postData.id} />)}</>
                 }
                 <PageNav posts={Posts} setPage={changePage} currentPage={currentPage} totalPages={totalPages} />
             </div>

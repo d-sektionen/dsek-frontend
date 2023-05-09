@@ -52,7 +52,7 @@ function Valberedningen() {
                         är lämpligast för posten. Här följer några tips som är bra att tänka på inför intervjun:
                     </p>
                     <ul>
-                        <li>Läs på om posten. Information om alla poster finns under <a>Postbeskrivningar.</a></li>
+                        <li>Läs på om posten. Information om alla poster finns under <a href="#">Postbeskrivningar.</a></li>
                         <li>Prata gärna med den som för närvarande innehar posten för att få en uppfattning om arbetsinsatsen som krävs.</li>
                         <li>Va inte nervös. Valberedningen bits inte.</li>
                         <li>Va dig själv!</li>
