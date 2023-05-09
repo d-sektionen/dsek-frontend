@@ -1,47 +1,36 @@
 import { useState } from 'react';
+
 import '../css/Nav.css';
 import DropdownButton from './DropdownButton.js';
 
-function Dropdown(props) {
-
-    const [display, setDisplay] = useState('none')
-
-    function handleHover() {
-        setDisplay('block')
-    }
-
-    function handleLeave() {
-        setDisplay('none')
-    }
+function Dropdown({ content, children }) {
+    const [narrowDisplay, setNarrowDisplay] = useState("none");
 
     function handleClick() {
-        if (display === 'none') {
-            handleHover();
-        } else {
-            handleLeave();
+        if (narrowDisplay === "block") {
+            setNarrowDisplay("none");
+        }
+        else {
+            setNarrowDisplay("block");
         }
     }
 
     return (
         <>
-            <div className='wide-nav' onMouseLeave={handleLeave}>
-                <nav onMouseEnter={handleHover} className="Dropdown NavButton">
-                    <DropdownButton content={props.content} />
-                </nav>
-                <div style={{ display: display }}>
-                    {props.children}
+            <div className="narrow-dropdown">
+                <DropdownButton content={content} onClick={handleClick} />
+                <div className="dropdown-items" style={{display: narrowDisplay}}>
+                    {children}
                 </div>
             </div>
-            <div className='narrow-nav'>
-                <nav onClick={handleClick} className="Dropdown NavButton">
-                    <DropdownButton content={props.content} />
-                </nav>
-                <div style={{ display: display }}>
-                    {props.children}
+            <div className="wide-dropdown">
+                <DropdownButton content={content} />
+                <div className="dropdown-items">
+                    {children}
                 </div>
             </div>
         </>
-    )
+    );
 }
 
 export default Dropdown;

@@ -1,12 +1,10 @@
 import Link from './Link';
 import '../css/Nav.css';
 
-function DropdownNavButton(props) {
+function DropdownNavButton({ link, title }) {
     return (
-        <Link className="DropdownNavLink" to={props.link}>
-            <nav className="DropdownNavButton">
-                {props.title}
-            </nav>
+        <Link className="dropdown-nav-button" to={link}>
+            {title}
         </Link>
     );
 }

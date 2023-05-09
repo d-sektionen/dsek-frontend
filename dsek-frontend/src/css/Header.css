@@ -1,17 +1,19 @@
-.Header {
+.narrow-header,
+.wide-header {
     top: 0;
     position: fixed;
     width: 100%;
-    background-color: #fff;
     z-index: 500;
+}
+
+.wide-header {
+    background-color: #fff;
     box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
 
-.Header-Img {
-    left: calc(50% - 161px);
-    transition: 0.3s;
-    height :100%;
-    opacity: 1;
+.narrow-header {
+    background-color: #000;
+    box-shadow: none;
 }
 
 @media only screen and (min-width: 900px) {
@@ -24,12 +26,23 @@
     .wide-header {
         display: none;
     }
-    .Header-Img {
-        transition: none;
-    }
-    .Header {
-        background-color: #000;
-        box-shadow: none;
-    }
 }
 
+.narrow-header .logo-container {
+    height: 45px;
+}
+
+.wide-header .logo-container {
+    height: 70px;
+    transition: 0.3s;
+    font-size: 0; /* Needed to keep <a> confined to the bounds of .logo-container */
+}
+
+.wide-header .logo-container.hidden {
+    height: 0;
+}
+
+.logo {
+    height: 100%;
+    object-fit: contain;
+}

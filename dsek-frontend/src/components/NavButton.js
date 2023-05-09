@@ -1,12 +1,10 @@
 import '../css/Nav.css';
 import Link from './Link';
 
-function NavButton(props) {
+function NavButton({ link, title }) {
     return (
-        <Link to={props.link} className="NavButton RegNavButton">
-            <nav>
-                {props.title}
-            </nav>
+        <Link to={link} className="nav-button reg-nav-button">
+            {title}
         </Link>
     );
 }

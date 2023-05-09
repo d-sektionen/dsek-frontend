@@ -27,6 +27,7 @@ export async function getData(file, search = "") {
             match = searchRegex.exec(e.content);
         }
 
+        // Bolden text matching search
         let prevIdx = 0;
         let newContent = "";
         for (let idx of indices) {

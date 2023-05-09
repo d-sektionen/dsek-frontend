@@ -20,8 +20,8 @@
 - [ ] 
 
 ### Bugs
-- [ ] det går inte att klicka längst ut på högerkanten av dropdownmenyknapparna (menyn minimeras när musen fortfarande hovrar över menyn)
-- [ ] PageNavs sifferknappar buggar lite...
+- [x] det går inte att klicka längst ut på högerkanten av dropdownmenyknapparna (menyn minimeras när musen fortfarande hovrar över menyn)
+- [x] PageNavs sifferknappar buggar lite...
 - [x] Länkarna i smala menyn (de som inte är dropdown) funkar bara om man klickar på texten, inte hela knappen
 - [ ] bilder i md pages
 - [ ] hemsidan går typ sönder om den är lite för inzoomad
@@ -29,7 +29,7 @@
 - [ ] namn på utskottssidor
 - [ ] PubU:s sida är lite wonky
 - [x] EventU:s sida: borde vara mailto-länk i "grupperna" (e-post-knapp)
-- [ ] Kanske problem med PageNav button, scroll to top, firefox (knapp 2?)
+- [x] Kanske problem med PageNav button, scroll to top, firefox (knapp 2?)
 
 
 ## CMS notes
