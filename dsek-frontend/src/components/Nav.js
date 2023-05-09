@@ -1,7 +1,7 @@
 import '../css/Nav.css';
-import NavButton from './NavButton.js';
-import DropdownElements from './DropdownElements.js';
 import Dropdown from './Dropdown';
+import DropdownElements from './DropdownElements.js';
+import NavButton from './NavButton.js';
 
 function Nav() {
     return (
@@ -26,7 +26,7 @@ function Nav() {
             </Dropdown>
             <NavButton title="Alumni-blogg" link="https://google.com" />
             <NavButton title="Exjobb" link="https://google.com" />
-            <NavButton title="Företag" link="https://google.com" />
+            <NavButton title="Företag" link="/foretag" />
         </nav>
     );
 }

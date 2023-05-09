@@ -46,10 +46,22 @@ function Home() {
     }, []);
 
 
+    function scrollToTop() {
+        console.log("scroll")
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
     const changePage = (page) => {
         if (page > 0 && page <= totalPages) {
             setCurrentPage(page)
         }
+        setTimeout(() => {
+            scrollToTop();
+        }, 50)
+
     }
 
     useEffect(() => {

@@ -1,24 +1,24 @@
-import '../../css/committee/EventU.css'
 import DsekHeader from '../../components/committee/DsekHeader';
 import Group from '../../components/committee/Group';
-import {getData} from '../../utils/NetFuncs';
+import '../../css/committee/EventU.css';
+import { getData } from '../../utils/NetFuncs';
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function EventU() {
     const [data, setData] = useState([]);
     useEffect(() => {
-        (async () => { setData( await getData("eventu-committee")) })();
+        (async () => { setData(await getData("eventu-committee")) })();
     }, []);
 
     return (
         <>
-            <DsekHeader/>
+            <DsekHeader />
             <div className="EventU">
                 <div className="EventU-Content">
                     <h1 className="EventU-Title">Eventutskottet</h1>
                     <p className="EventU-Desc">
-                        Eventutskottet är ett av sektionens största utskott och arbetar kontinuerligt för att se till att det alltid finns 
+                        Eventutskottet är ett av sektionens största utskott och arbetar kontinuerligt för att se till att det alltid finns
                         någonting kul att göra tillsammans med andra sektionsmedlemmar utanför skoltid.
                         Utskottet består av tre grupper: den grönklädda aktivitetsgruppen AktU, projektgruppen D-LAN, samt rollspelsgruppen D20.
                         Vi bistår även med stöd till sektionens band D-Band, samt till alla med idéer på nya roliga aktiviteter.
@@ -31,19 +31,17 @@ function EventU() {
                     <p className="EventU-Contact">
                         Kontakta utskottets aktivitetshanterare med dina frågor och idéer, eller om du har allmänna frågor om utskottet som helhet!
                         <br></br>
-                        Erik Halvarsson (Aktivitetshanterare 22/23)
-                        <a href="#">aktivitetshanterare@d-sektionen.se</a>
+                        Erik Halvarsson (Aktivitetshanterare 22/23)<br></br>
+                        <a href="mailto:aktivitetshanterare@d-sektionen.se">aktivitetshanterare@d-sektionen.se</a>
                     </p>
                 </div>
-                <hr/><h2>Eventutskottets Undergrupper</h2>
+                <hr /><h2>Eventutskottets Undergrupper</h2>
                 {
-                    // console.log(data);
-                    data.map((groupData) => <Group img={groupData.Logo} info={groupData.Info} socials={groupData.Socials} color={groupData.Color} background={groupData.BackgroundColor}/>)
+                    data.map((groupData) => <Group img={groupData.Logo} info={groupData.Info} socials={groupData.Socials} color={groupData.Color} background={groupData.BackgroundColor} />)
                 }
-            </div>
+            </div >
         </>
     );
 }
-  
+
 export default EventU;
-  

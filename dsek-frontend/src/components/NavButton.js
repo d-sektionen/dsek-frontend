@@ -1,8 +1,7 @@
-import Link from './Link';
 import '../css/Nav.css';
+import Link from './Link';
 
 function NavButton(props) {
-    var handleClick = props.onClick;
     return (
         <Link to={props.link} className="NavButton RegNavButton">
             <nav>
