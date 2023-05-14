@@ -53,7 +53,7 @@ function PageNav(props) {
     }
 
     return (
-        <nav className="PageNav">
+        <nav className="page-nav">
 
             {left ? <PageNavButton page="«" currentPage={props.currentPage} setPage={() => props.setPage(1)} /> : <PageNavButton page="«" currentPage={props.currentPage} disabled={true} />}
             {left ? <PageNavButton page="<" currentPage={props.currentPage} setPage={() => props.setPage(props.currentPage - 1)} /> : <PageNavButton page="<" currentPage={props.currentPage} disabled={true} />}
