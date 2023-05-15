@@ -1,67 +1,65 @@
 import '../css/Nav.css';
 import PageNavButton from './PageNavButton';
 
-function PageNav(props) {
+function calculatePageInterval(currentPage, totalPages) {
+    const pageCount = 5; // Preferably an odd number, so that the current page is in the middle
 
-    let left = true;
-    let right = true;
+    let startPage = 1;
+    let endPage = totalPages;
 
-    if (props.currentPage == props.totalPages) {
-        right = false;
-    }
+    if (pageCount < totalPages) {
+        const neighboringPages = pageCount - 1;
+        const pagesToLeft = Math.ceil(neighboringPages / 2);
+        const pagesToRight = Math.floor(neighboringPages / 2);
 
-    if (props.currentPage == 1) {
-        left = false;
-    }
+        startPage = currentPage - pagesToLeft;
+        endPage = currentPage + pagesToRight;
 
-    function pages() {
-
-
-        let res = [];
-
-        // adds button for current page and +/- 1 page
-        res.push(<PageNavButton setPage={props.setPage} page={props.currentPage - 1} key={props.currentPage - 1} />)
-        res.push(<PageNavButton currentPage={props.currentPage} setPage={props.setPage} page={props.currentPage} key={props.currentPage} />)
-        res.push(<PageNavButton setPage={props.setPage} page={props.currentPage + 1} key={props.currentPage + 1} />)
-
-
-        //If current page is page 1, a page 0 will be added, remove this
-        if (props.currentPage === 1) {
-            res.shift();
-            // res.push(<PageNavButton setPage={props.setPage} page={props.currentPage + 2} key={props.currentPage + 2} />)
+        if (startPage < 1) {
+            //endPage += 1 - startPage; // Makes sure there are {pageCount} pages even when at page 1
+            startPage = 1;
         }
 
-
-        //Removes button with number above total pages
-        if (props.currentPage == props.totalPages && props.totalPages > 2) {
-            res.pop();
-            res.unshift(<PageNavButton setPage={props.setPage} page={props.currentPage - 2} key={props.currentPage - 2} />)
+        if (endPage > totalPages) {
+            //startPage += totalPages - endPage; // Makes sure there are {pageCount} pages even when at page {totalPages}
+            endPage = totalPages;
         }
+    }
+    
+    return { startPage, endPage };
+}
 
-        //If current page is not the last two pages, add '...' and the last page
-        if (props.totalPages - props.currentPage > 1) {
+function PageNav({ setPage, currentPage, totalPages }) {
+    let buttons = [];
+    let { startPage, endPage } = calculatePageInterval(currentPage, totalPages);
 
-            //if current page is more than one before last one, '...' should be added
-            if (props.totalPages - props.currentPage > 2) {
-                res.push(<PageNavButton page="..." currentPage={props.currentPage} disabled={true} />)
-            }
-            res.push(<PageNavButton setPage={props.setPage} page={props.totalPages} key={props.totalPages} />)
-        }
-
-        return res
-
+    if (currentPage !== 1) {
+        buttons.push(<PageNavButton label="«" onClick={() => setPage(currentPage - 1)} />);
+    }
+    if (startPage !== 1) {
+        buttons.push(<PageNavButton label={1} onClick={() => setPage(1)} />);
+    }
+    if (startPage > 2) {
+        buttons.push(<PageNavButton label="..." disabled />);
     }
 
+    for (let i = startPage; i <= endPage; i++) {
+        buttons.push(<PageNavButton label={i} onClick={() => setPage(i)} selected={currentPage === i} />);
+    }
+    
+    if (endPage < totalPages - 1) {
+        buttons.push(<PageNavButton label="..." disabled />);
+    }
+    if (endPage !== totalPages) {
+        buttons.push(<PageNavButton label={totalPages} onClick={() => setPage(totalPages)} />);
+    }
+    if (currentPage !== totalPages) {
+        buttons.push(<PageNavButton label="»" onClick={() => setPage(currentPage + 1)} />);
+    }
+    
     return (
         <nav className="page-nav">
-
-            {left ? <PageNavButton page="«" currentPage={props.currentPage} setPage={() => props.setPage(1)} /> : <PageNavButton page="«" currentPage={props.currentPage} disabled={true} />}
-            {left ? <PageNavButton page="<" currentPage={props.currentPage} setPage={() => props.setPage(props.currentPage - 1)} /> : <PageNavButton page="<" currentPage={props.currentPage} disabled={true} />}
-            {props.posts ? pages() : <> </>
-            }
-            {right ? <PageNavButton page=">" currentPage={props.currentPage} setPage={() => props.setPage(props.currentPage + 1)} /> : <PageNavButton page=">" currentPage={props.currentPage} disabled={true} />}
-            {right ? <PageNavButton page="»" currentPage={props.currentPage} setPage={() => props.setPage(props.totalPages)} /> : <PageNavButton page="»" currentPage={props.currentPage} disabled={true} />}
-
+            {buttons}
         </nav>
     );
 }
