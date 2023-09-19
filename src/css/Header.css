@@ -33,9 +33,10 @@
 }
 
 .wide-header .logo-container {
-    height: 70px;
+    height: 150px;
     transition: 0.3s;
-    font-size: 0; /* Needed to keep <a> confined to the bounds of .logo-container */
+    font-size: 0;
+    /* Needed to keep <a> confined to the bounds of .logo-container */
 }
 
 .wide-header .logo-container.hidden {

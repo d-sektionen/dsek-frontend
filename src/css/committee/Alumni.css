@@ -1,5 +1,5 @@
 .Alumni {
-    width: 80%;
+    width: var(--uWidth);
     margin: auto;
     font-family: Gill Sans Nova Condensed UltraBold;
 }
@@ -9,12 +9,10 @@
     height: 256px;
 }
 
-.Alumni-Desc, .Alumni-Section-Title, .Alumni-Section-Text {
+.Alumni-Desc,
+.Alumni-Section-Title,
+.Alumni-Section-Text {
     text-align: left;
-}
-
-.Alumni-Section {
-    margin: 64px;
 }
 
 .Alumni-Mail {
@@ -26,6 +24,4 @@
     font-weight: 600;
 }
 
-.Alumni-Link:hover {
-
-}
+.Alumni-Link:hover {}
