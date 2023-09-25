@@ -15,15 +15,27 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './templates/Home';
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Calendar from './templates/misc/Calendar';
 import SocialMedia from './templates/misc/SocialMedia';
+
+function ScrollToTop() {
+    const { pathname } = useLocation();
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+  
+    return null;
+  }
 
 function App() {
     return (
         <>
             <div className="App">
                 <BrowserRouter>
+                    <ScrollToTop />
                     <Routes>
                         <Route path="/" element={<><Header /><Home /><Footer /></>}></Route>
                         <Route path="/page/:id" element={<><Header /><Page /><Footer /></>}></Route>

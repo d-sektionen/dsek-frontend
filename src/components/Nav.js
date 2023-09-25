@@ -12,18 +12,23 @@ function Nav({ setState }) {
             </Dropdown>
             <Dropdown content="Utskott">
                 <DropdownElements setState={setState} titles={[["EventU", "/eventu"], ["Alumni", "/alumni"],
-                ["D-Group", "https://d-group.se/"], ["DONNA", "https://donna.d-sektionen.se/"], ["DEG", "/deg"],
-                ["LINK-dagarna", "https://linkdagarna.se/"], ["PubU", "/pubu"], ["MafU", "/mafu"],
-                ["NärU", "/naru"], ["STABEN", "https://staben.info/"], ["UtbU", "/utbu"], ["Valberedningen", "/valberedningen"],
+                ["D-Group", "https://d-group.se/", "https://d-sektionen.se/wp-content/uploads/2015/04/d-group.png"], 
+                ["DONNA", "https://donna.d-sektionen.se/", "https://donna.d-sektionen.se/wp-content/uploads/2019/08/cropped-output-onlinepngtools-1-100x49.png"], 
+                ["DEG", "/deg"], ["LINK-dagarna", "https://linkdagarna.se/"], ["PubU", "/pubu", "https://d-sektionen.se/wp-content/uploads/2018/09/pubu-768x442.png"], ["MafU", "/mafu"],
+                ["NärU", "/naru"], ["STABEN", "https://staben.info/", "https://staben.info/images/logo.png"], ["UtbU", "/utbu"], ["Valberedningen", "/valberedningen"],
                 ["WebbU", "https://www.webbu.se/"], ["Werkmästeriet", "/werk"]]} />
             </Dropdown>
             <Dropdown content="Bli student">
                 <DropdownElements setState={setState} titles={[["Utbildningar", "/page/utbildningar"], ["Bostad", "/page/bostad"],
                 ["Skolan", "/page/skolan"], ["Studentliv", "/page/studentliv"], ["FAQ", "/page/faq"]]} />
             </Dropdown>
-            <NavButton title="Alumni-blogg" link="https://google.com" />
-            <NavButton title="Exjobb" link="https://google.com" />
+            <NavButton title="Kalender" link="/kalender" />
+            <NavButton title="Medlemstjänster" link="https://medlem.d-sektionen.se" />
             <NavButton title="Företag" link="/page/foretag" />
+            <Dropdown content="Extra">
+                <DropdownElements setState={setState} titles={[["Sociala medier", "/socialamedier"], ["Alumni-blogg", "https://d-sektionen.se/kategori/alumni-blogg/"], 
+                ["Exjobb", "https://d-sektionen.se/kategori/exjobb/"], ["Fotoalbum", "https://d-sektionen.se/filarkiv/fotoalbum/"]]} />
+            </Dropdown>
         </nav >
     );
 }

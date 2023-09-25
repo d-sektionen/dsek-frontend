@@ -32,7 +32,7 @@
 @media only screen and (min-width: 900px) {
     .site-nav {
         display: grid;
-        grid-template-columns: 108px 89px 112px repeat(3, auto); /* TODO: find a way not to need specific values */
+        grid-template-columns: 108px 89px 112px repeat(4, auto);/* TODO: find a way not to need specific values */
         column-gap: 5px;
         justify-content: center;
     
@@ -130,6 +130,20 @@
     width: 100%;
     z-index: 2;
 }
+
+.dropdown-nav-button .dropdown-icon {
+    max-width: 24px; 
+    max-height: 24px; 
+    margin-right: 8px; 
+}
+
+  .dropdown-nav-button {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse; 
+}
+
+
 
 /**************/
 /* Pagination */
