@@ -4,6 +4,8 @@
     position: fixed;
     width: 100%;
     z-index: 500;
+    background-image: url("../../public/bg.jpg");
+    background-size: cover;
 }
 
 .wide-header {
@@ -36,11 +38,15 @@
     height: 150px;
     transition: 0.3s;
     font-size: 0;
+    margin-top: 50vh;
+    margin-bottom: 30vh;
     /* Needed to keep <a> confined to the bounds of .logo-container */
 }
 
 .wide-header .logo-container.hidden {
     height: 0;
+    margin-top: 0px;
+    margin-bottom: 32px;
 }
 
 .logo {
