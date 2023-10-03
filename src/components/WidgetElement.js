@@ -1,31 +1,24 @@
 import '../css/Widget.css';
 
 function WidgetElement(props) {
-
     return (
         <>
             {
-            props.link ?
-            <div className='Widget-Element'>
-                {
-                    props.isImage ?
-                    <a href={props.link}><img src={props.content} className="Widget-Img"/></a>
+                props.link ?
+                    <div className='Widget-Element'>
+                        {
+                            <a href={props.link}><img src={props.content} alt={props.alt} className="Widget-Img" /></a>
+                        }
+                    </div>
                     :
-                    <p>{props.content}</p>
-                }
-            </div>
-            :
-            <div className='Widget-Element'>
-                {
-                    props.isImage ?
-                    <img src={props.content} className="Widget-Img"/>
-                    :
-                    <p>{props.content}</p>
-                }
-            </div>
+                    <div className='Widget-Element'>
+                        {
+                            <img src={props.content} className="Widget-Img" alt="hej" />
+                        }
+                    </div>
             }
         </>
     );
 }
-  
+
 export default WidgetElement;

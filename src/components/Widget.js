@@ -11,15 +11,15 @@ function Widget(props) {
                 <h1 className="Widget-Title">{props.title}</h1>
                 {
                     props.content ?
-                    props.content.map((x, i) => 
-                        <WidgetElement key={i} isImage={x[0]} content={x[1]} link={x[2]}/>
-                    )
-                    :
-                    <></>
+                        props.content.map((x, i) =>
+                            <WidgetElement key={i} alt={x[0]} content={x[1]} link={x[2]} />
+                        )
+                        :
+                        <></>
                 }
             </div>
         </>
     );
 }
-  
+
 export default Widget;

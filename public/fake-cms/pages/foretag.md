@@ -76,7 +76,7 @@ Donna verkar för att stärka sammanhållningen bland tjejer och icke-binära p�
 
 Är ni ute efter att rekrytera eller bara synas bland tjejer kan ett samarbete med oss gynna er. Vi erbjuder allt från samarbeten på de ovannämnda evenemangen, till möjligheter för egna företagsmingel, After Works och lunchföreläsningar. Vill ni nå ut med information direkt till alla tjejer på sektionen erbjuder vi även annonsering. Är ni intresserade av att synas mer bland tjejer och icke-binära som är intresserade av data är ni välkomna att höra av er till någon av oss, och har ni egna idéer till evenemang så kan vi självklart hjälpa er med detta!
 
-Läs mer om Donna på [](https://donna.d-sektionen.se/)[donna.d-sektionen.se](http://donna.d-sektionen.se/) eller kontakta Donnas sponsansvarig:  
+Läs mer om Donna på [donna.d-sektionen.se](http://donna.d-sektionen.se/) eller kontakta Donnas sponsansvarig:  
 **Sofie Wiklund** 
 **[spons@donna.d-sektionen.se](mailto:spons.donna@donna.d-sektionen.se)**
 

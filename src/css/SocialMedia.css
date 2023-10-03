@@ -1,18 +1,19 @@
-
-h1, h2 {
+h1,
+h2 {
     text-align: left;
     font-weight: normal;
 }
 
-ul, p {
+ul,
+p {
     text-align: left;
 }
 
 a {
     text-decoration: none;
-    color: #3588a3;
+    color: #215769;
 }
 
-.Middle > a:hover {
+.Middle>a:hover {
     text-decoration: underline;
 }

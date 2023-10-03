@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 import "../css/Header.css";
 import Link from "./Link";
-import Nav from "./Nav";
 import NarrowNav from './NarrowNav';
+import Nav from "./Nav";
 
 function Header() {
     const [hideLogo, setHideLogo] = useState(false);
@@ -23,7 +23,7 @@ function Header() {
             <header className="narrow-header">
                 <div className="logo-container">
                     <Link to="/"> {/* Had style={{margin:"0",padding:"0",height:"0"}}. Is this needed? */}
-                        <img src="https://d-sektionen.se/wp-content/uploads/2021/02/mobile-header-logo-2-contrast-2-tablet.png" alt=""
+                        <img src="https://d-sektionen.se/wp-content/uploads/2021/02/mobile-header-logo-2-contrast-2-tablet.png" alt="D-sektionens"
                             className="logo" />
                     </Link>
                 </div>
@@ -32,7 +32,7 @@ function Header() {
             <header className="wide-header">
                 <div className={"logo-container" + (hideLogo ? " hidden" : "")}>
                     <Link to="/"> {/* Had style={{margin:"0",padding:"0",height:"0"}}. Is this needed? */}
-                        <img src="https://d-sektionen.se/wp-content/uploads/2016/06/d-sektionen.jpg" alt="" className="logo" />
+                        <img src="https://d-sektionen.se/wp-content/uploads/2016/06/d-sektionen.jpg" alt="D-sektionen" className="logo" />
                     </Link>
                 </div>
                 <Nav />
