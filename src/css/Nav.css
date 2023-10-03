@@ -137,10 +137,9 @@
     margin-right: 8px; 
 }
 
-  .dropdown-nav-button {
+.dropdown-elements li a {
     display: flex;
     align-items: center;
-    flex-direction: row-reverse; 
 }
 
 
