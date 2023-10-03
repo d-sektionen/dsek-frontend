@@ -7,7 +7,7 @@ function DropdownElements(props) {
             {
                 props.titles ?
                     props.titles.map((t, i) =>
-                        <DropdownNavButton key={i} title={t[0]} link={t[1]} />
+                        <DropdownNavButton key={i} title={t[0]} link={t[1]} icon={t[2]}/>
                     )
                     :
                     <></>

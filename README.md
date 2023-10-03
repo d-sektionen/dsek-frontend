@@ -15,7 +15,7 @@
 - [ ] Företag (meny)
 - [ ] Exjobb (meny)
 - [ ] länkar på utskottssidor
-- [ ] borde hoppa till konsekvent plats (t.ex. högst upp) på sidan när man byter sida med pagenav-knappar
+- [x] borde hoppa till konsekvent plats (t.ex. högst upp) på sidan när man byter sida med pagenav-knappar
 - [ ] API-nyckeln till kalendern behöver en annan lösning så att den inte syns i deployad build
 - [ ] tillgänglighet (skärmläsare etc)
 
