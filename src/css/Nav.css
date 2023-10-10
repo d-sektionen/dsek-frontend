@@ -31,13 +31,7 @@
 
 @media only screen and (min-width: 900px) {
     .site-nav {
-<<<<<<< HEAD
         display: flex;
-=======
-        display: grid;
-        grid-template-columns: 108px 89px 112px repeat(4, auto);/* TODO: find a way not to need specific values */
-        column-gap: 5px;
->>>>>>> 95834eb0fe79123d8fc8f7e6d4b47f61f87b5f47
         justify-content: center;
         width: 100%;
         height: 48px;
