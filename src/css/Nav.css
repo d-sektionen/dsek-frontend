@@ -84,7 +84,7 @@
 
 .wide-dropdown:hover .dropdown-items {
     display: block;
-    width: 132px;
+    width: 150px;
     box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
 
@@ -141,6 +141,18 @@
     align-items: center;
 }
 
+@font-face {
+    font-family: 'staben';
+    src: url('../fonts/ROCKYAOE.ttf') format('truetype'); 
+}
+
+.staben {
+    font-family: 'staben';
+    color: rgba(226,56,40, 1);
+    font-weight: normal;
+    line-height: 1;
+    font-size: 1.25em;
+}
 
 
 /**************/

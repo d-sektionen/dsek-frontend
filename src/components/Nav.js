@@ -3,6 +3,18 @@ import Dropdown from './Dropdown';
 import DropdownElements from './DropdownElements.js';
 import NavButton from './NavButton.js';
 
+//import logos
+import utbU from '../images/utbU.png';
+import werk from '../images/werk.jpg';
+import staben from '../images/staben.png';
+import mafu from '../images/MAFU.png';
+import näru from '../images/NARU.png';
+import pubu from '../images/pubu.png';
+import deg from '../images/deg.png';
+import alumni from '../images/alumni.png';
+import dgroup from '../images/d-grupp.png';
+import webbu from '../images/webbu.png';
+
 function Nav({ setState }) {
 
     const dropdownItemsSektionen = [
@@ -14,19 +26,19 @@ function Nav({ setState }) {
       
     const dropdownItemsUtskott = [
       ["EventU", "/eventu"],
-      ["Alumni", "/alumni", "https://d-sektionen.se/wp-content/uploads/2019/09/Webp.net-resizeimage.png"],
-      ["D-Group", "https://d-group.se/", "https://d-sektionen.se/wp-content/uploads/2015/04/d-group.png"],
+      ["Alumni", "/alumni", alumni],
+      ["D-Group", "https://d-group.se/", dgroup],
       ["DONNA", "https://donna.d-sektionen.se/", "https://donna.d-sektionen.se/wp-content/uploads/2019/08/cropped-output-onlinepngtools-1-100x49.png"],
-      ["DEG", "/deg"],
+      ["DEG", "/deg", deg],
       ["LINK-dagarna", "https://linkdagarna.se/", "https://d-sektionen.se/wp-content/uploads/2020/11/logotyp_linkdagarna.png"],
-      ["PubU", "/pubu", "https://d-sektionen.se/wp-content/uploads/2018/09/pubu-768x442.png"],
-      ["MafU", "/mafu"],
-      ["NärU", "/naru", "https://d-sektionen.se/wp-content/uploads/2018/09/Logga-NarU-vit-768x568.png"],
-      ["STABEN", "https://staben.info/", "https://staben.info/images/logo.png"],
-      ["UtbU", "/utbu"],
+      ["PubU", "/pubu", pubu],
+      ["MafU", "/mafu", mafu],
+      ["NärU", "/naru", näru],
+      ["STABEN", "https://staben.info/", staben],
+      ["UtbU", "/utbu", utbU],
       ["Valberedningen", "/valberedningen"],
-      ["WebbU", "https://www.webbu.se/", "https://d-sektionen.se/wp-content/uploads/2020/10/webbgruppen-logo-1-2048x803.png"],
-      ["Werkmästeriet", "/werk"]
+      ["WebbU", "https://www.webbu.se/", webbu],
+      ["Werkmästeriet", "/werk", werk]
     ];
       
     const dropdownItemsBliStudent = [
@@ -50,7 +62,7 @@ function Nav({ setState }) {
           <DropdownElements setState={setState} titles={dropdownItemsSektionen} />
         </Dropdown>
         <Dropdown content="Utskott">
-          <DropdownElements setState={setState} titles={dropdownItemsUtskott} />
+        <DropdownElements setState={setState} titles={dropdownItemsUtskott} />
         </Dropdown>
         <Dropdown content="Bli student">
           <DropdownElements setState={setState} titles={dropdownItemsBliStudent} />
