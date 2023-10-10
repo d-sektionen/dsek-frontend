@@ -1,32 +1,62 @@
+@import"font.css";
+
 html{
     scroll-behavior: smooth;
 }
 
-body{
-    height: 2000px;
+html, body {
+    margin: 0;
+    height: 100%;
 }
 
-.headerclass{  
+
+.navbar{
+    width: 100%;
+    height: 40px;
+    background-color: #F8F0E5;
+    margin-top: 150px;
+}
+
+.navbar:hover{
+    color: #000000
 
 }
 
 .student{
     text-align: center;   
-    margin-top: 50px;
-    font-size: 40px; 
+    font-size: 30px; 
+    border-radius: 3px;
+    padding: 5px;
+
+}
+
+.studentMenu{
+    margin-top: 20px;
+    text-align: center;   
+    display: flex;
+    flex-wrap: nowrap;
+    flex-basis: auto;
+    justify-content: center;
+    gap: 10px;
+    align-content: center;
+    padding: 5px;
 }
 
 .student a{
     margin-left: 20px;
     margin-right: 20px;
-    border-right: 1px solid #000000;
     text-decoration: none;
     color: #000000;
-    border-left: 1px solid #000000;
+    font-family: dsek;
+    font-weight: 300;
 }
 
+
+
 .student a:hover{
-    color:brown
+    color: #9E7676;
+    text-decoration: underline;
+        
 }
 
 .spons{
@@ -45,6 +75,13 @@ body{
 }
 
 .header{
-    margin-top: 10%;
+    margin-top: 5%;
     top: 0;
+}
+
+.headerimg{
+    width: 80%; 
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
