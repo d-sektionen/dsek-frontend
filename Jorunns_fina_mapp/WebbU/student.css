@@ -1,0 +1,135 @@
+.s{
+    float: right;
+    width: 200px;
+    margin-left: 40px;
+}
+
+h1{
+    text-align: center;
+    margin: 0px;
+    background-color: #6d5959;
+    color: white;
+    font-size: 40px;
+}
+
+.datum{
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+.backgroundImage{
+    height: 450px;
+    background-image: url("https://d-sektionen.se/file_archive/fotoalbum/2016-Nolle-P/dag_07-10.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px;
+}
+
+
+
+.senaste{
+    margin-top: 20px;
+    background-color: #f3dfc1;
+    padding: 15px;
+
+    width:60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.sponsclass{
+    width: 1000px
+}
+
+.spons{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.dsek{
+    width: 50%;
+    background-color: #368f8b;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navimage{
+    width: 20%;
+    float:right;
+}
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+
+.navbar {
+    overflow: hidden;
+    background-color: #454545AA;
+    padding: 10px;
+  }
+  
+  /* Navigation links */
+  .navbar a {
+    float: left;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* The subnavigation menu */
+  .subnav {
+    float: left;
+    overflow: hidden;
+  }
+  
+  /* Subnav button */
+  .subnav .subnavbtn {
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  /* Add a red background color to navigation links on hover */
+  .navbar a:hover, .subnav:hover .subnavbtn {
+    background-color: #368f8b;
+  }
+  
+  /* Style the subnav content - positioned absolute */
+  .subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: #368f8b;
+    width: 100%;
+    z-index: 1;
+  }
+  
+
+  /* Add a grey background color on hover */
+  .subnav-content a:hover {
+    background-color: #ddbea8;
+    
+  }
+  
+  /* When you move the mouse over the subnav container, open the subnav content */
+  .subnav:hover .subnav-content {
+    display: block;
+  }
