@@ -11,6 +11,10 @@ import UtbU from './templates/committee/UtbU';
 import InfU from './templates/committee/InfU';
 import Valberedningen from './templates/committee/Valberedningen';
 import Werk from './templates/committee/Werk';
+import Link from './templates/committee/Link';
+import Dgroup from './templates/committee/Dgroup';
+import Donna from './templates/committee/Donna';
+import Staben from './templates/committee/Staben';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -51,6 +55,10 @@ function App() {
                         <Route path="/mafu" element={<MafU />}></Route>
                         <Route path="/eventu" element={<EventU />}></Route>
                         <Route path="/infu" element={<InfU />}></Route>
+                        <Route path="/donna" element={<Donna />}></Route>
+                        <Route path="/dgroup" element={<Dgroup />}></Route>
+                        <Route path="/link" element={<Link />}></Route>
+                        <Route path="/staben" element={<Staben />}></Route>
                         <Route path="/kalender" element={<><Header /><Calendar /><Footer /></>}></Route>
                         <Route path="/socialamedier" element={<><Header /><SocialMedia /><Footer /></>}></Route>
                     </Routes>
