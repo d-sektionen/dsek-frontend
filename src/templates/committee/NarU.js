@@ -58,7 +58,7 @@ function NarU() {
                 </div>
 
                 <div className='NarU-Footer'>
-                    <p> Thea Antonsson (Näringslivsansvarig 22/23) </p>
+                    <p> Thea Antonsson (Näringslivsansvarig 23/24) </p>
                     <a href="mailto:nara@d-sektionen.se"> nara@d-sektionen.se </a>
                 </div>
 

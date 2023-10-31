@@ -30,6 +30,7 @@ function Nav({ setState }) {
       ["D-Group", "https://d-group.se/", dgroup],
       ["DONNA", "https://donna.d-sektionen.se/", "https://donna.d-sektionen.se/wp-content/uploads/2019/08/cropped-output-onlinepngtools-1-100x49.png"],
       ["DEG", "/deg", deg],
+      ["InfU", "/infu"],
       ["LINK-dagarna", "https://linkdagarna.se/", "https://d-sektionen.se/wp-content/uploads/2020/11/logotyp_linkdagarna.png"],
       ["PubU", "/pubu", pubu],
       ["MafU", "/mafu", mafu],

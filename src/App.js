@@ -8,6 +8,7 @@ import MafU from './templates/committee/MafU';
 import NarU from './templates/committee/NarU';
 import PubU from './templates/committee/PubU';
 import UtbU from './templates/committee/UtbU';
+import InfU from './templates/committee/InfU';
 import Valberedningen from './templates/committee/Valberedningen';
 import Werk from './templates/committee/Werk';
 
@@ -49,6 +50,7 @@ function App() {
                         <Route path="/naru" element={<NarU />}></Route>
                         <Route path="/mafu" element={<MafU />}></Route>
                         <Route path="/eventu" element={<EventU />}></Route>
+                        <Route path="/infu" element={<InfU />}></Route>
                         <Route path="/kalender" element={<><Header /><Calendar /><Footer /></>}></Route>
                         <Route path="/socialamedier" element={<><Header /><SocialMedia /><Footer /></>}></Route>
                     </Routes>

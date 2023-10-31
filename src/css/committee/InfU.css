@@ -1,0 +1,42 @@
+.Infu{
+    width: 80%;
+    margin: auto;
+}
+
+.Infu-Header img {
+    margin-top: 8px;
+    height: 256px;
+    margin-right: auto;
+}
+
+.Infu-Header {
+    width: 50%;
+    margin: auto;
+}
+
+.Infu-Desc, .Infu-Text {
+    text-align: left;
+}
+
+.Infu-Section {
+    margin: 64px;
+}
+
+.Infu-Link {
+    font-weight: 600;
+}
+
+.Infu-Footer {
+    width: 50%;
+    margin: auto;
+    font-weight: bolder;
+    margin-bottom: 8px;
+    margin: 64px;
+    text-align: left;
+}
+/* hehe lite bus ni kan ta bort -Max */
+.Infu-Footer:hover{
+    color: #6dbd43;
+    transform: rotate(360deg);
+    transition: 1s;
+}
