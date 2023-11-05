@@ -5,7 +5,7 @@ import Link from './Link';
 
 import { showDatetime } from '../utils/ShowDatetime';
 
-const BASE_URL = 'http://ssh.new.d-sektionen.se:1337/api';
+const BASE_URL = 'http://strapi.d-sektionen.se:1337/api';
 
 function PostPreview(props) {
     const pageId = "/blogpost/" + props.slug
@@ -16,7 +16,6 @@ function PostPreview(props) {
                 <h1 className="PostPreview-Title"><Link to={pageId}>{props.title}</Link></h1>
                 <p className="PostPreview-Date">{showDatetime(props.date)}</p>
                 <p className="PostPreview-Author">{props.author}</p>
-                
                 <image className="PostPreview-Image" src={BASE_URL + props.thumbnailURL} alt={props.thumbnailAlt} width={props.thumbnailWidth} height={props.thumbnailHeight} />
                 <div className="PostPreview-Content">
                     <Markdown remarkPlugins={[remarkGfm]}>{props.content}</Markdown>

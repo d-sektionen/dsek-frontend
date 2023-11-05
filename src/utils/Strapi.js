@@ -1,4 +1,4 @@
-const BASE_URL = 'http://ssh.new.d-sektionen.se:1337/api/';
+const BASE_URL = 'http://strapi.d-sektionen.se:1337/api/';
 
 export async function getBlogposts() {
     try {
