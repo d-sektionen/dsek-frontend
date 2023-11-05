@@ -2,38 +2,51 @@ import SideNav from '../components/SideNav.js';
 import Sponsors from '../components/Sponsors.js';
 import '../css/Home.css';
 
-import { marked } from 'marked';
+import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { BackToTop } from '../components/BackToTop.js';
-import { getPosts } from '../utils/NetFuncs';
+//import { getPosts } from '../utils/NetFuncs';
+import { getBlogpost } from '../utils/Strapi.js';
+import { showDatetime } from "../utils/ShowDatetime.js";
 
 export default function BlogPage() {
-    const params = useParams();
-    const [Post, setPost] = useState([])
+    const [post, setPost] = useState(null);
+    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
-    console.log("blogpage")
+    const slug = window.location.pathname.split("/").pop()
+
     useEffect(() => {
-        (async () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const search = urlParams.get("s") || "";
-
-            const resp = await getPosts(params.id);
-            const data = resp.data;
-            const currentPost = {
-                title: data.title,
-                preview: marked.parse(data.preview_content),
-                content: marked.parse(data.content),
-                date: data.date_created,
-                id: data.id
+        const fetchPost = async () => {
+            setIsLoading(true);
+            try {
+                const data = await getBlogpost(slug);
+                setPost(data);
+            } catch (error) {
+                setError(error);
             }
-            setPost(currentPost)
-            console.log(currentPost)
-        })();
+            setIsLoading(false);
+        };
+
+        fetchPost();
     }, []);
 
-    function createMarkup(c) {
-        return { __html: c };
+    const scrollToTop = () => {
+        console.log("scroll")
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error.message}</div>;
     }
 
     return (
@@ -42,8 +55,15 @@ export default function BlogPage() {
                 <SideNav />
             </div>
             <div className="Middle" id="pageContainer">
-                <h1>{Post.title}</h1>
-                {Post && <div className="PostPreview-Content" dangerouslySetInnerHTML={createMarkup(Post.content)}></div>}
+                {post &&
+                <div className="PostPreview">
+                        <h1 className="PostPreview-Title">{post.attributes.title}</h1>
+                        <div className="PostPreview-Date">{showDatetime(post.attributes.publishedAt)}</div>
+                        <div className="PostPreview-Content">
+                            <Markdown remarkPlugins={[remarkGfm]}>{post.attributes.content}</Markdown>
+                        </div>
+                </div>
+                }
             </div>
             <div className="wide">
                 < Sponsors />

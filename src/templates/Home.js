@@ -8,7 +8,7 @@ import { marked } from 'marked';
 import React, { useEffect, useState } from 'react';
 import { BackToTop } from '../components/BackToTop.js';
 //import { getPosts } from '../utils/NetFuncs';
-import { getBlogposts, getBlogpost } from '../utils/Strapi.js';
+import { getBlogposts } from '../utils/Strapi.js';
 
 
 
@@ -33,17 +33,6 @@ function Home() {
         fetchPosts();
     }, []);
 
-    const handlePostClick = async (id) => {
-        setIsLoading(true);
-        try {
-            const postData = await getBlogpost(id);
-            setPost(postData);
-        } catch (error) {
-            setError(error);
-        }
-        setIsLoading(false);
-    };
-
     const scrollToTop = () => {
         console.log("scroll")
         window.scrollTo({
@@ -66,9 +55,9 @@ function Home() {
                 <SideNav />
             </div>
             <div className="Middle">
-                <h1>TEST</h1>
+                <h1>Senaste nyheterna</h1>
                 {posts.map((post, index) => (
-                    <PostPreview key={index} title={post.attributes.title} date={post.attributes.publishedAt} content={post.attributes.preview_content} id={post.id} />
+                    <PostPreview key={index} title={post.attributes.title} date={post.attributes.publishedAt} content={post.attributes.preview_content} slug={post.attributes.slug} id={post.id} />
                 ))}
             </div>
             <div className="wide">

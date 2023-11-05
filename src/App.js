@@ -43,8 +43,8 @@ function App() {
                     <ScrollToTop />
                     <Routes>
                         <Route path="/" element={<><Header /><Home /><Footer /></>}></Route>
-                        <Route path="/page/:id" element={<><Header /><Page /><Footer /></>}></Route>
-                        <Route path="/blogpost/:id" element={<><Header /><BlogPage /><Footer /></>}></Route>
+                        <Route path="/page/:slug" element={<><Header /><Page /><Footer /></>}></Route>
+                        <Route path="/blogpost/:slug" element={<><Header /><BlogPage /><Footer /></>}></Route>
                         <Route path="/deg" element={<DEG />}></Route>
                         <Route path="/valberedningen" element={<Valberedningen />}></Route>
                         <Route path="/alumni" element={<Alumni />}></Route>
