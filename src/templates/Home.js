@@ -7,7 +7,6 @@ import '../css/Home.css';
 import { marked } from 'marked';
 import React, { useEffect, useState } from 'react';
 import { BackToTop } from '../components/BackToTop.js';
-//import { getPosts } from '../utils/NetFuncs';
 import { getBlogposts } from '../utils/Strapi.js';
 
 
@@ -57,7 +56,13 @@ function Home() {
             <div className="Middle">
                 <h1>Senaste nyheterna</h1>
                 {posts.map((post, index) => (
-                    <PostPreview key={index} title={post.attributes.title} date={post.attributes.publishedAt} content={post.attributes.preview_content} slug={post.attributes.slug} id={post.id} />
+                    <PostPreview key={index} title={post.attributes.title} date={post.attributes.publishedAt} content={post.attributes.preview_content} 
+                    slug={post.attributes.slug}
+                    thumbnailURL={post.attributes.thumbnail.data.attributes.url}
+                    thumbnailAlt={post.attributes.thumbnail.data.attributes.alternativeText}
+                    thumbnailWidth={post.attributes.thumbnail.data.attributes.width}
+                    thumbnailHeight={post.attributes.thumbnail.data.attributes.height}
+                    id={post.id} />
                 ))}
             </div>
             <div className="wide">

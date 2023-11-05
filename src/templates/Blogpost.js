@@ -7,7 +7,6 @@ import remarkGfm from 'remark-gfm'
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { BackToTop } from '../components/BackToTop.js';
-//import { getPosts } from '../utils/NetFuncs';
 import { getBlogpost } from '../utils/Strapi.js';
 import { showDatetime } from "../utils/ShowDatetime.js";
 
