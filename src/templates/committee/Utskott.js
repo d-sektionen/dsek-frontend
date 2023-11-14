@@ -14,7 +14,7 @@ function UtskottPage() {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    const slug = window.location.pathname.split("/").pop()
+    const slug = window.location.pathname.split("/").pop();
 
     useEffect(() => {
         const fetchUtskott = async () => {
@@ -51,12 +51,11 @@ function UtskottPage() {
         <>
             <div className="home">
                 <DsekHeader />
-                <div className="utskott">
+                <div className="utskott ">
                     {utskott &&
                         <div className={utskott.attributes.slug}>
                             <h1 className="utskott_header_title">{utskott.attributes.title}</h1>
                             <Markdown className="utskott_header_description" remarkPlugins={[remarkGfm]}>{utskott.attributes.preview_content}</Markdown>
-                            <h2 className="utskott_content_title">Beskrivning</h2>
                             <Markdown className="utskott_content_text" remarkPlugins={[remarkGfm]}>{utskott.attributes.content}</Markdown>
                             <p className="utskott_content_date">Senaste redigerad: {showDatetime(utskott.attributes.publishedAt)}</p>
                         </div>

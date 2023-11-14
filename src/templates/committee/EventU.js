@@ -7,6 +7,9 @@ import React, { useEffect, useState } from 'react';
 
 function EventU() {
     const [data, setData] = useState([]);
+
+    const eventuSub = ["dlan", "d20", "dband", "aktu", "schalgu"]
+
     useEffect(() => {
         (async () => { setData(await getData("eventu-committee")) })();
     }, []);
