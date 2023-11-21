@@ -27,6 +27,7 @@
     margin-top: 64px; /* Top margin of 64px for p elements following h2 elements */
 }
 
+/* makes a <hr> (a line after each title) */
 .utskott h2::after {
     content: "";
     display: block;
@@ -34,6 +35,8 @@
     width: 100%;
     margin: 10px 0;
 }
+
+/* ---- Extra css for valberedningen ----*/
 
 .utskott > .valberedningen > .utskott_content_text h3 {
     width: 75%;
@@ -58,17 +61,7 @@
     margin-bottom: 0; 
 }
 
-
-.utskott > .valberedningen > .utskott_content_text ul + p {
-    background-color: blue;
-}
-
 .utskott > .valberedningen > .utskott_content_text p + h3 {
     margin-top: 32px; /* Top margin of 64px for p elements following h2 elements */
 }
-
-
-
-
-
 

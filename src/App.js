@@ -47,18 +47,6 @@ function App() {
                         <Route path="/page/:slug" element={<><Header /><Page /><Footer /></>}></Route>
                         <Route path="/blogpost/:slug" element={<><Header /><BlogPage /><Footer /></>}></Route>
                         <Route path="/utskott/:slug" element={<UtskottPage />}></Route>
-                        <Route path="/utskott/eventu" element={<EventU />}></Route>
-                        <Route path="/utskott/alumni" element={<Alumni />}></Route>
-                        <Route path="/utskott/deg" element={<DEG />}></Route>
-                        <Route path="/utskott/dgroup" element={<Dgroup />}></Route>
-                        <Route path="/utskott/donna" element={<Donna />}></Route>
-                        <Route path="/utskott/infu" element={<InfU />}></Route>
-                        <Route path="/utskott/link" element={<Link />}></Route>
-                        <Route path="/utskott/mafu" element={<MafU />}></Route>                      
-                        <Route path="/utskott/naru" element={<NarU />}></Route>
-                        <Route path="/utskott/pubu" element={<PubU />}></Route>
-                        <Route path="/utskott/staben" element={<Staben />}></Route>
-                        <Route path="/utskott/werk" element={<Werk />}></Route>
                         <Route path="/deg" element={<DEG />}></Route>
                         <Route path="/valberedningen" element={<Valberedningen />}></Route>
                         <Route path="/alumni" element={<Alumni />}></Route>
