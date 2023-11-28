@@ -65,3 +65,6 @@
     margin-top: 32px; /* Top margin of 64px for p elements following h2 elements */
 }
 
+.utskott > .eventu > .utskott_content_text h1 {
+    margin-top: 100px;
+}

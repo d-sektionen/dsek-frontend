@@ -25,20 +25,21 @@ function Nav({ setState }) {
       ];
       
     const dropdownItemsUtskott = [
-      ["EventU", "/eventu"],
-      ["Alumni", "/alumni", alumni],
-      ["D-Group", "/dgroup", dgroup],
-      ["DONNA", "/donna", "https://donna.d-sektionen.se/wp-content/uploads/2019/08/cropped-output-onlinepngtools-1-100x49.png"],
-      ["DEG", "/deg", deg],
-      ["InfU", "/infu"],
-      ["LINK-dagarna", "/link", "https://d-sektionen.se/wp-content/uploads/2020/11/logotyp_linkdagarna.png"],
-      ["PubU", "/pubu", pubu],
-      ["MafU", "/mafu", mafu],
-      ["NärU", "/naru", näru],
-      ["STABEN", "/staben", staben],
-      ["UtbU", "/utbu", utbU],
-      ["Valberedningen", "/valberedningen"],
-      ["WebbU", "https://www.webbu.se/", webbu],
+      ["Alumni", "/utskott/alumni", alumni],
+      ["D-Group", "/utskott/dgroup", dgroup],
+      ["DONNA", "/utskott/donna", "https://donna.d-sektionen.se/wp-content/uploads/2019/08/cropped-output-onlinepngtools-1-100x49.png"],
+      ["DEG", "/utskott/deg", deg],
+      ["EventU", "/utskott/eventu"],
+      ["InfU", "/utskott/infu"],
+      ["LINK-dagarna", "/utskott/link", "https://d-sektionen.se/wp-content/uploads/2020/11/logotyp_linkdagarna.png"],
+      ["PubU", "/utskott/pubu", pubu],
+      ["MafU", "/utskott/mafu", mafu],
+      ["NärU", "/utskott/naru", näru],
+      ["SchlagU", "/utskott/schlagu"],
+      ["STABEN", "/utskott/staben", staben],
+      ["UtbU", "/utskott/utbu", utbU],
+      ["Valberedningen", "/utskott/valberedningen"],
+      ["WebbU", "/utskott/webbu", webbu],
       ["Werkmästeriet", "/werk", werk]
     ];
       
