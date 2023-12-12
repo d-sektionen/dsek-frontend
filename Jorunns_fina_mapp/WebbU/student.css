@@ -4,21 +4,32 @@
     margin-left: 40px;
 }
 
+body{
+  background-image: "https://d-sektionen.se/wp-content/uploads/2013/10/D_m%C3%A4rke.png";
+  background-size: cover;
+}
+
 h1{
     text-align: center;
-    margin: 0px;
-    background-color: #6d5959;
-    color: white;
+    /* background-color: #6d5959; */
+    color: rgb(37, 37, 37);
     font-size: 40px;
+}
+
+h2{
+  text-align: center;
+  font-size: x-large;
 }
 
 .datum{
     font-size: 10px;
     margin-bottom: 10px;
+    padding-left: 30px;
+
 }
 
 .backgroundImage{
-    height: 450px;
+    height: 650px;
     background-image: url("https://d-sektionen.se/file_archive/fotoalbum/2016-Nolle-P/dag_07-10.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,19 +40,26 @@ h1{
 
 .senaste{
     margin-top: 20px;
-    background-color: #f3dfc1;
+    background-color: #fff7e6;
     padding: 15px;
-
-    width:60%;
-    display: block;
+    width:50%;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+
+
+.senaste p{
+  padding-left: 30px;
+  padding-right: 30px;
+
 }
 
 
 .sponsclass{
-    width: 1000px
-}
+    width: 1000px;
+    height: 200px;
+    width: 100%;
+  }
 
 .spons{
     width: 100%;
@@ -75,8 +93,11 @@ html, body {
 
 .navbar {
     overflow: hidden;
-    background-color: #454545AA;
+    background-color: #368f8b;
     padding: 10px;
+    position: sticky;
+    top:0;
+    bottom: 0;
   }
   
   /* Navigation links */
