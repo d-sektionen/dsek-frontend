@@ -6,6 +6,7 @@ import NarrowNav from './NarrowNav';
 import Nav from "./Nav";
 
 function Header() {
+    const [logoUrl, setLogoUrl] = useState("../../public/logo_white.png");
     const [hideLogo, setHideLogo] = useState(false);
 
     useEffect(() => {
@@ -32,7 +33,7 @@ function Header() {
             <header className="wide-header">
                 <div className={"logo-container" + (hideLogo ? " hidden" : "")}>
                     <Link to="/"> {/* Had style={{margin:"0",padding:"0",height:"0"}}. Is this needed? */}
-                        <img src="https://d-sektionen.se/wp-content/uploads/2016/06/d-sektionen.jpg" alt="D-sektionen" className="logo" />
+                    <img src={logoUrl} alt="D-sektionen" className="logo" />
                     </Link>
                 </div>
                 <Nav />

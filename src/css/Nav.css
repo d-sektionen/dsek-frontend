@@ -45,15 +45,15 @@
         width: fit-content;
         height: 32px;
         line-height: 32px;
-        color: #000;
+        background-color: var(--navbar-bg-color);
+        color: var(--navbar-text-color);
         transition: 0.4s;
     }
 
     .wide-dropdown:hover .nav-button,
     .wide-dropdown .dropdown-nav-button:hover,
     .nav-button:hover {
-        background-color: #0008;
-        color: #E5398D;
+        color: #F7E623;
     }
 
     .narrow-dropdown {
@@ -123,6 +123,16 @@
     text-align: left;
     transition: 0.4s;
     /* NOTE: longer than original site, why? */
+}
+
+button {
+    background-color: '#4CAF50';
+    color: 'white';
+    padding: '10px 20px';
+    font-size: '16px';
+    border-radius: '5px';
+    cursor: 'pointer';
+    border: 'none';
 }
 
 .narrow-dropdown .dropdown-items {

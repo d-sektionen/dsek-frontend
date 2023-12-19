@@ -5,6 +5,9 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* dark/light mode */
+    color: var(--text-color);
+    background-color: var(--bg-color);
 }
 
 code {
@@ -14,4 +17,32 @@ code {
 
 :root {
     --uWidth: 66%;
+
+    /* Light mode colors */
+    --text-color-light: #000;
+    --bg-color-light: #fff;
+    --header-bg-color-light: #fff;
+    --footer-text-color-light: #555;
+    --footer-bg-color-light: #f8f8f8;
+    --widget-title-border-color-light: #ddd;
+    --widget-title-bg-color-light: hsla(0, 0%, 82%, .3);
+
+    /* Dark mode colors */
+    --text-color-dark: #fff;
+    --bg-color-dark: #000;
+    --header-bg-color-dark: #000;
+    --footer-text-color-dark: #fff;
+    --footer-bg-color-dark: #000;
+    --widget-title-border-color-dark: #333; 
+    --widget-title-bg-color-dark: hsla(0, 0%, 30%, .3); 
+
+    /* Current colors, initially set to light mode */
+    --text-color: var(--text-color-light);
+    --bg-color: var(--bg-color-light);
+    --header-bg-color: var(--header-bg-color-light);
+    --footer-text-color: var(--footer-text-color-light);
+    --footer-bg-color: var(--footer-bg-color-light);
+    --widget-title-border-color: var(--widget-title-border-color-light);
+    --widget-title-bg-color: var(--widget-title-bg-color-light);
+    
 }

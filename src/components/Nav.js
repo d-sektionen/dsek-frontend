@@ -2,6 +2,7 @@ import '../css/Nav.css';
 import Dropdown from './Dropdown';
 import DropdownElements from './DropdownElements.js';
 import NavButton from './NavButton.js';
+import { useState } from 'react';
 
 //import logos
 import utbU from '../images/utbU.png';
@@ -14,6 +15,7 @@ import deg from '../images/deg.png';
 import alumni from '../images/alumni.png';
 import dgroup from '../images/d-grupp.png';
 import webbu from '../images/webbu.png';
+import valleb from '../images/valleb.png'
 
 function Nav({ setState }) {
 
@@ -37,7 +39,7 @@ function Nav({ setState }) {
       ["NärU", "/naru", näru],
       ["STABEN", "/staben", staben],
       ["UtbU", "/utbu", utbU],
-      ["Valberedningen", "/valberedningen"],
+      ["Valberedningen", "/valberedningen", valleb],
       ["WebbU", "https://www.webbu.se/", webbu],
       ["Werkmästeriet", "/werk", werk]
     ];
@@ -56,6 +58,35 @@ function Nav({ setState }) {
       ["Exjobb", "https://d-sektionen.se/kategori/exjobb/"],
       ["Fotoalbum", "https://d-sektionen.se/filarkiv/fotoalbum/"]
     ];
+
+    const [logoUrl, setLogoUrl] = useState("../../public/logo_white.png");
+
+    function dark() {
+      let root = document.documentElement;
+      if (root.style.getPropertyValue('--text-color') === 'var(--text-color-light)') {
+        root.style.setProperty('--text-color', 'var(--text-color-dark)');
+        root.style.setProperty('--bg-color', 'var(--bg-color-dark)');
+        root.style.setProperty('--header-bg-color', 'var(--header-bg-color-dark)');
+        root.style.setProperty('--navbar-bg-color', 'var(--navbar-bg-color-dark)');
+        root.style.setProperty('--navbar-text-color', 'var(--navbar-text-color-dark)');
+        root.style.setProperty('--footer-text-color', 'var(--footer-text-color-dark)');
+        root.style.setProperty('--footer-bg-color', 'var(--footer-bg-color-dark)');
+        root.style.setProperty('--widget-title-bg-color', 'var(--widget-title-bg-color-dark)');
+        root.style.setProperty('--widget-title-border-color', 'var(--widget-title-border-color-dark)');
+        setLogoUrl("../../public/logo_dark.ai"); 
+      } else {
+        root.style.setProperty('--text-color', 'var(--text-color-light)');
+        root.style.setProperty('--bg-color', 'var(--bg-color-light)');
+        root.style.setProperty('--header-bg-color', 'var(--header-bg-color-light)');
+        root.style.setProperty('--navbar-bg-color', 'var(--navbar-bg-color-light)');
+        root.style.setProperty('--navbar-text-color', 'var(--navbar-text-color-light)');
+        root.style.setProperty('--footer-text-color', 'var(--footer-text-color-light)');
+        root.style.setProperty('--footer-bg-color', 'var(--footer-bg-color-light)');
+        root.style.setProperty('--widget-title-bg-color', 'var(--widget-title-bg-color-light)');
+        root.style.setProperty('--widget-title-border-color', 'var(--widget-title-border-color-light)');
+        setLogoUrl("../../public/logo_white.png");
+      }
+  }
       
     return (
       <nav className="site-nav">
@@ -74,8 +105,11 @@ function Nav({ setState }) {
         <Dropdown content="Extra">
           <DropdownElements setState={setState} titles={dropdownItemsExtra} />
         </Dropdown>
+        <button type="button" onClick={dark}>D-Mode</button>
       </nav>
     );
 }
+
+
 
 export default Nav;
