@@ -1,18 +1,18 @@
 .Footer {
     width: 100%;
-    color: #555;
+    color: var(--footer-text-color);
     text-align: center;
     font-size: 14px;
 }
 
 .Footer-Content {
-    background: #f8f8f8;
+    background: var(--footer-bg-color);
     padding: 24px;
 }
 
 .Footer-Content a {
     text-decoration: none;
-    color: #555;
+    color: var(--footer-text-color);
 }
 
 .Footer-Info>p {
@@ -26,7 +26,7 @@ p.Icons {
 
 a.Icons {
     text-decoration: none;
-    color: #555;
+    color: var(--footer-text-color);
     font-size: 30px;
 }
 

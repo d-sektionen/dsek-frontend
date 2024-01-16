@@ -10,10 +10,10 @@
     font-size: 95%;
     margin: 0;
     line-height: 1.2;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--widget-title-border-color);
+    background-color: var(--widget-title-bg-color);
     padding: 12px;
     text-transform: uppercase;
-    background-color: hsla(0, 0%, 82%, .3);
 }
 
 .Widget-Img {
