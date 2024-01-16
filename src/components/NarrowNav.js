@@ -16,7 +16,7 @@ function NarrowNav() {
 
     return (
         <>
-            <div className='hamburger' onClick={handleClick}>
+            <div className='hamburger' tabindex="0" onClick={handleClick}>
                 <GiHamburgerMenu/>
             </div>
             <div style={{display:menuStyle}}>
