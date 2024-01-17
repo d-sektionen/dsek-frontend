@@ -56,12 +56,12 @@ function Home() {
             <div className="Middle">
                 <h1>Senaste nyheterna</h1>
                 {posts.map((post, index) => (
-                    <PostPreview key={index} title={post.attributes.title} date={post.attributes.publishedAt} content={post.attributes.preview_content} 
+                    <PostPreview key={index} title={post.attributes.title} date={post.attributes.publishedAt} content={post.attributes.preview_content}
                     slug={post.attributes.slug}
-                    thumbnailURL={post.attributes.thumbnail.data.attributes.url}
-                    thumbnailAlt={post.attributes.thumbnail.data.attributes.alternativeText}
-                    thumbnailWidth={post.attributes.thumbnail.data.attributes.width}
-                    thumbnailHeight={post.attributes.thumbnail.data.attributes.height}
+                    thumbnailURL={post.attributes.thumbnail.data !== null ? post.attributes.thumbnail.data.attributes.url : "public/logo_white.png"}
+                    thumbnailAlt={post.attributes.thumbnail.data !== null ? post.attributes.thumbnail.data.attributes.alternativeText : "Logo"}
+                    thumbnailWidth={post.attributes.thumbnail.data !== null ? post.attributes.thumbnail.data.attributes.width : 100}
+                    thumbnailHeight={post.attributes.thumbnail.data !== null ? post.attributes.thumbnail.data.attributes.height : 100}
                     id={post.id} />
                 ))}
             </div>

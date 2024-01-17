@@ -6,7 +6,7 @@ import NarrowNav from './NarrowNav';
 import Nav from "./Nav";
 
 function Header() {
-    const [logoUrl, setLogoUrl] = useState("../../public/logo_white.png");
+    const [logoUrl, setLogoUrl] = useState("../logo_white.png");
     const [hideLogo, setHideLogo] = useState(false);
 
     useEffect(() => {
