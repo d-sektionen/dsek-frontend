@@ -1,6 +1,10 @@
 import { FaDiscord, FaFacebook, FaInstagram, FaRegEnvelope, FaTv } from 'react-icons/fa';
 import '../../css/committee/Group.css';
 
+// For markdown:
+import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+
 import aktuImage from '../../images/aktu.png';
 import dbandImage from '../../images/dband.png';
 import dlanImage from '../../images/dlan.png';
@@ -13,7 +17,7 @@ function Group(props) {
         "dlan": "#62ccca",
         "dband": "black",
         "d20" : "#725992",
-        "schlagu" : "pink",
+        "schlagu" : "magenta",
     }
     const color = props.slug;
 
@@ -29,7 +33,8 @@ function Group(props) {
     return (
         <div className="Group" style={{ "color": "white" , "background-color": colors[color] }}>
             <img src={images[props.slug]} alt={props.title} />
-            <p>{props.info}</p>
+            <Markdown className="Group_header_description" remarkPlugins={[remarkGfm]}>{props.preview}</Markdown>
+            <Markdown className="Group_content_text" remarkPlugins={[remarkGfm]}>{props.content}</Markdown>
             {props.instagram ? <a href={props.instagram} aria-label="Instagram"><FaInstagram /></a> : <></>}
             {props.facebook ? <a href={props.facebook} aria-label="Facebook"><FaFacebook /></a> : <></>}
             {props.website ? <a href={props.website} aria-label="Website"><FaTv /></a> : <></>}

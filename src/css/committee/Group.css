@@ -7,14 +7,6 @@
     padding-bottom: 16px;
 }
 
-.Group p {
-    background-color: #0006;
-    padding: 8px;
-    width: 80%;
-    margin: auto;
-    margin-bottom: 8px;
-}
-
 .Group a {
     border-radius: 8px;
     padding: 8px;
@@ -26,4 +18,28 @@
 .Group a:hover {
     background-color: white;
     color: black;
+}
+
+.Group_header_description,
+.Group_content_text {
+    background-color: #0006;
+    padding: 8px;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 8px;
+}
+
+.Group_header_description a,
+.Group_content_text a {
+    color: white;
+    text-decoration: underline;
+    padding: 0px;
+    margin: 0px;
+}
+
+.Group_header_description a:hover,
+.Group_content_text a:hover {
+    color: cyan;
+    background-color: transparent;
+    text-decoration: underline;
 }

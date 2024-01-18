@@ -53,26 +53,28 @@ function EventU() {
             <div className="EventU">
                 {eventu &&
                     <div className={eventu.attributes.slug}>
-                        <h1 className="utskott_header_title">{eventu.attributes.title}</h1>
-                        <Markdown className="utskott_header_description" remarkPlugins={[remarkGfm]}>{eventu.attributes.preview_content}</Markdown>
-                        <Markdown className="utskott_content_text" remarkPlugins={[remarkGfm]}>{eventu.attributes.content}</Markdown>
+                        <h1 className="EventU-Title">{eventu.attributes.title}</h1>
+                        <Markdown className="EventU-Desc" remarkPlugins={[remarkGfm]}>{eventu.attributes.preview_content}</Markdown>
+                        <Markdown className="EventU-Content" remarkPlugins={[remarkGfm]}>{eventu.attributes.content}</Markdown>
+                        <hr /><h2 className="EventU-Sub-Title">Eventutskottets Undergrupper</h2>
+                        {data && data.map((groupData, index) => (
+                            <div key={index} className={groupData.attributes.slug}>
+                                <Group
+                                preview={groupData.attributes.preview_content}
+                                content={groupData.attributes.content}
+                                title={groupData.attributes.title}
+                                img={groupData.attributes.slug}
+                                slug={groupData.attributes.slug}
+                                instagram={groupData.attributes.instagram}
+                                facebook={groupData.attributes.facebook}
+                                website={groupData.attributes.website}
+                                discord={groupData.attributes.discord}
+                                mail={groupData.attributes.mail} />
+                            </div>
+                        ))}
                         <p className="utskott_content_date">Senaste redigerad: {showDatetime(eventu.attributes.publishedAt)}</p>
                     </div>
                 }
-                <hr /><h2>Eventutskottets Undergrupper</h2>
-                {data && data.map((groupData, index) => (
-                    <div key={index} className={groupData.attributes.slug}>
-                        <Group info={groupData.attributes.content}
-                        title={groupData.attributes.title}
-                        img={groupData.attributes.slug}
-                        slug={groupData.attributes.slug}
-                        instagram={groupData.attributes.instagram}
-                        facebook={groupData.attributes.facebook}
-                        website={groupData.attributes.website}
-                        discord={groupData.attributes.discord}
-                        mail={groupData.attributes.mail} />
-                    </div>
-                ))}
             </div >
         </>
     );
