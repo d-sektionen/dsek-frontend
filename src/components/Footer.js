@@ -23,8 +23,8 @@ function Footer() {
             </div>
             <div className="Footer-Content">
                 <div className="Footer-Info">
-                    <p><b>Postadress:</b> Datateknologsektionen, Kårallen, Universitetet, 581 83 Linköping</p>
-                    <p><b>Organisationsnr:</b> 822002-1409 <b>Bankgironr:</b> 5644-8251</p>
+                    <p><b>Postadress:</b><em tabindex="0"> Datateknologsektionen, Kårallen, Universitetet, 581 83 Linköping</em></p>
+                    <p><b>Organisationsnr:</b><em tabindex="0"> 822002-1409 </em><b>Bankgironr:</b><em tabindex="0"> 5644-8251</em></p>
                     <p><b>E-post:</b> <a href="mailto:webmaster@d-sektionen.se"> webmaster@d-sektionen.se </a> </p>
                     <p className='Icons'><b><a aria-label='Facebook' className="Icons" href="https://www.facebook.com/datateknologsektionen"> <FaFacebook /> </a></b>
                         <b><a aria-label="LinkedIn" className="Icons" href="https://www.linkedin.com/company/datateknologsektionen"> <FaLinkedin /> </a></b>

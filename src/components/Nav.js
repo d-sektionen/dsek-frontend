@@ -17,7 +17,7 @@ import dgroup from '../images/d-grupp.png';
 import webbu from '../images/webbu.png';
 import valleb from '../images/valleb.png'
 
-function Nav({ setState }) {
+function Nav({ setState, tabIndex }) {
 
     const dropdownItemsSektionen = [
         ["Styrelsen", "/page/styrelsen"],
