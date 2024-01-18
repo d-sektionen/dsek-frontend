@@ -17,6 +17,7 @@ function Group(props) {
     }
     const color = props.slug;
 
+    // TODO: Load images from Strapi instead
     const images = {
         "aktu": aktuImage,
         "dlan": dlanImage,
