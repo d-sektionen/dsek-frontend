@@ -57,7 +57,7 @@ function Home() {
                 <h1>Senaste nyheterna</h1>
                 {posts.map((post, index) => (
                     <PostPreview key={index} title={post.attributes.title} date={post.attributes.publishedAt} content={post.attributes.preview_content}
-                    slug={post.attributes.slug}
+                    slug={"/blogpost/" + post.attributes.slug}
                     thumbnailURL={post.attributes.thumbnail.data !== null ? post.attributes.thumbnail.data.attributes.url : "public/logo_white.png"}
                     thumbnailAlt={post.attributes.thumbnail.data !== null ? post.attributes.thumbnail.data.attributes.alternativeText : "Logo"}
                     thumbnailWidth={post.attributes.thumbnail.data !== null ? post.attributes.thumbnail.data.attributes.width : 100}

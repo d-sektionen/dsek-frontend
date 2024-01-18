@@ -8,9 +8,7 @@ import { showDatetime } from '../utils/ShowDatetime';
 const BASE_URL = 'https://strapi.d-sektionen.se/api';
 
 function PostPreview(props) {
-    const pageId = "/blogpost/" + props.slug
-
-    console.log(props.thumbnailURL)
+    const pageId = props.slug
 
     return (
         <>

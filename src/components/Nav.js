@@ -53,9 +53,9 @@ function Nav({ setState }) {
     ];
       
     const dropdownItemsExtra = [
-      ["Sociala medier", "/socialamedier"],
+      ["Sociala medier", "/extra/socialamedier"],
       ["Alumni-blogg", "https://d-sektionen.se/kategori/alumni-blogg/"],
-      ["Exjobb", "https://d-sektionen.se/kategori/exjobb/"],
+      ["Exjobb", "/extra/exjobb"],
       ["Fotoalbum", "https://d-sektionen.se/filarkiv/fotoalbum/"]
     ];
 
