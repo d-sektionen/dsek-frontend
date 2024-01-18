@@ -69,3 +69,31 @@ export async function getDocuments() {
         throw error;
     }
 }
+
+export async function getExjobbs() {
+    try {
+        const response = await fetch(`${BASE_URL + 'exjobbs?populate=*'}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data.data;
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+        throw error;
+    }
+}
+
+export async function getExjobb(slug) {
+    try {
+        const response = await fetch(`${BASE_URL + 'exjobbs?filters[slug][$eq]='}${slug}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data.data[0];
+    } catch (error) {
+        console.error(`Error fetching post with slug ${slug}:`, error);
+        throw error;
+    }
+}
