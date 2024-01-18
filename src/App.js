@@ -57,7 +57,7 @@ function App() {
                         <Route path="/pubu" element={<PubU />}></Route>
                         <Route path="/naru" element={<NarU />}></Route>
                         <Route path="/mafu" element={<MafU />}></Route>
-                        <Route path="/eventu" element={<EventU />}></Route>
+                        <Route path="/utskott/eventu" element={<EventU />}></Route>
                         <Route path="/infu" element={<InfU />}></Route>
                         <Route path="/donna" element={<Donna />}></Route>
                         <Route path="/dgroup" element={<Dgroup />}></Route>
