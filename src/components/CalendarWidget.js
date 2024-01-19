@@ -10,7 +10,7 @@ function CalendarWidget(props) {
     const [events, setEvents] = useState([]);
 
     const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
-    const calendarID = "c_jhjemj5afa0ubjucqad23cuuos@group.calendar.google.com";
+    const calendarID = "c_jhjemj5afa0ubjucqad23cuuos";
 
     const getEvents = (calendarID, apiKey) => {
         function initiate() {
