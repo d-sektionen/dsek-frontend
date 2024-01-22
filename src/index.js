@@ -10,3 +10,9 @@ root.render(
   </React.StrictMode>
 );
 
+document.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.activeElement.click();
+  }
+});

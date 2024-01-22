@@ -9,7 +9,8 @@
     font-family: Gill Sans Nova Condensed UltraBold;
 }
 
-.utskott_content_title{
+.utskott_header_title,
+.utskott_header_description {
     margin: 64px;
     text-align: left;
 }

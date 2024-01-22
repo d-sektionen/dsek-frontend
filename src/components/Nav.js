@@ -16,8 +16,10 @@ import alumni from '../images/alumni.png';
 import dgroup from '../images/d-grupp.png';
 import webbu from '../images/webbu.png';
 import valleb from '../images/valleb.png'
+import donna from '../images/donna.png'
+import link from '../images/linkdagarna.png'
 
-function Nav({ setState }) {
+function Nav({ setState, tabIndex }) {
 
     const dropdownItemsSektionen = [
         ["Styrelsen", "/page/styrelsen"],
@@ -25,25 +27,25 @@ function Nav({ setState }) {
         ["Dokument", "/page/dokument"],
         ["Protokoll", "/page/protokoll"]
       ];
-      
+
     const dropdownItemsUtskott = [
-      ["EventU", "/eventu"],
-      ["Alumni", "/alumni", alumni],
-      ["D-Group", "/dgroup", dgroup],
-      ["DONNA", "/donna", "https://donna.d-sektionen.se/wp-content/uploads/2019/08/cropped-output-onlinepngtools-1-100x49.png"],
-      ["DEG", "/deg", deg],
-      ["InfU", "/infu"],
-      ["LINK-dagarna", "/link", "https://d-sektionen.se/wp-content/uploads/2020/11/logotyp_linkdagarna.png"],
-      ["PubU", "/pubu", pubu],
-      ["MafU", "/mafu", mafu],
-      ["NärU", "/naru", näru],
-      ["STABEN", "/staben", staben],
-      ["UtbU", "/utbu", utbU],
-      ["Valberedningen", "/valberedningen", valleb],
+      ["EventU", "/utskott/eventu"],
+      ["Alumni", "/utskott/alumni", alumni],
+      ["D-Group", "/utskott/dgroup", dgroup],
+      ["DONNA", "/utskott/donna", donna],
+      ["DEG", "/utskott/deg", deg],
+      ["InfU", "/utskott/infu"],
+      ["LINK-dagarna", "/utskott/link", link],
+      ["PubU", "/utskott/pubu", pubu],
+      ["MafU", "/utskott/mafu", mafu],
+      ["NärU", "/utskott/naru", näru],
+      ["STABEN", "/utskott/staben", staben],
+      ["UtbU", "/utskott/utbu", utbU],
+      ["Valberedningen", "/utskott/valberedningen", valleb],
       ["WebbU", "https://www.webbu.se/", webbu],
-      ["Werkmästeriet", "/werk", werk]
+      ["Werkmästeriet", "/utskott/werk", werk]
     ];
-      
+
     const dropdownItemsBliStudent = [
       ["Utbildningar", "/page/utbildningar"],
       ["Bostad", "/page/bostad"],
@@ -51,15 +53,15 @@ function Nav({ setState }) {
       ["Studentliv", "/page/studentliv"],
       ["FAQ", "/page/faq"]
     ];
-      
+
     const dropdownItemsExtra = [
-      ["Sociala medier", "/socialamedier"],
+      ["Sociala medier", "/extra/socialamedier"],
       ["Alumni-blogg", "https://d-sektionen.se/kategori/alumni-blogg/"],
-      ["Exjobb", "https://d-sektionen.se/kategori/exjobb/"],
+      ["Exjobb", "/extra/exjobb"],
       ["Fotoalbum", "https://d-sektionen.se/filarkiv/fotoalbum/"]
     ];
 
-    const [logoUrl, setLogoUrl] = useState("../../public/logo_white.png");
+    const [logoUrl, setLogoUrl] = useState("../logo_white.png");
 
     function dark() {
       let root = document.documentElement;
@@ -84,7 +86,7 @@ function Nav({ setState }) {
         root.style.setProperty('--footer-bg-color', 'var(--footer-bg-color-light)');
         root.style.setProperty('--widget-title-bg-color', 'var(--widget-title-bg-color-light)');
         root.style.setProperty('--widget-title-border-color', 'var(--widget-title-border-color-light)');
-        setLogoUrl("../../public/logo_white.png");
+        setLogoUrl("../logo_white.png");
       }
   }
       
