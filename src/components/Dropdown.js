@@ -29,13 +29,13 @@ function Dropdown({ content, children }) {
 
     return (
         <>
-            <div className="narrow-dropdown">
+            <div className="narrow-dropdown dropdown">
                 <DropdownButton content={content} onClick={()=>handleClick()} tabIndex={"0"}/>
                 <div className="dropdown-items" style={{display: narrowDisplay}}>
                     {children}
                 </div>
             </div>
-            <div className={"wide-dropdown".concat(state)}>
+            <div className={"wide-dropdown dropdown".concat(state)}>
                 <DropdownButton content={content} onClick={()=>handleWide()} tabIndex={"0"}/>
                 <div className="dropdown-items">
                     {children}

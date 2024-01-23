@@ -19,7 +19,7 @@ function NarrowNav() {
             <div className='hamburger' tabIndex="0" onClick={handleClick}>
                 <GiHamburgerMenu/>
             </div>
-            <div style={{display:menuStyle}}>
+            <div className="narrow-nav-menu" style={{display:menuStyle}}>
                 <Nav setState={handleClick}/>
             </div>
         </>
