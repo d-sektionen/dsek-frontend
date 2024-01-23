@@ -19,7 +19,7 @@ code {
     --uWidth: 66%;
 
     /* Light mode colors */
-    --text-color-light: #000;
+    --text-color-light: #111919;
     --bg-color-light: #fff;
     --header-bg-color-light: #fff;
     --footer-text-color-light: #555;
@@ -29,10 +29,10 @@ code {
 
     /* Dark mode colors */
     --text-color-dark: #fff;
-    --bg-color-dark: #000;
-    --header-bg-color-dark: #000;
+    --bg-color-dark: #111919;
+    --header-bg-color-dark: #111919;
     --footer-text-color-dark: #fff;
-    --footer-bg-color-dark: #000;
+    --footer-bg-color-dark: #111919;
     --widget-title-border-color-dark: #333; 
     --widget-title-bg-color-dark: hsla(0, 0%, 30%, .3); 
 

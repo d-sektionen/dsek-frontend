@@ -59,7 +59,6 @@ function Nav({ setState }) {
       ["Fotoalbum", "https://d-sektionen.se/filarkiv/fotoalbum/"]
     ];
 
-    const [logoUrl, setLogoUrl] = useState("../../public/logo_white.png");
 
     function dark() {
       let root = document.documentElement;
@@ -73,7 +72,6 @@ function Nav({ setState }) {
         root.style.setProperty('--footer-bg-color', 'var(--footer-bg-color-dark)');
         root.style.setProperty('--widget-title-bg-color', 'var(--widget-title-bg-color-dark)');
         root.style.setProperty('--widget-title-border-color', 'var(--widget-title-border-color-dark)');
-        setLogoUrl("../../public/logo_dark.ai"); 
       } else {
         root.style.setProperty('--text-color', 'var(--text-color-light)');
         root.style.setProperty('--bg-color', 'var(--bg-color-light)');
@@ -84,7 +82,6 @@ function Nav({ setState }) {
         root.style.setProperty('--footer-bg-color', 'var(--footer-bg-color-light)');
         root.style.setProperty('--widget-title-bg-color', 'var(--widget-title-bg-color-light)');
         root.style.setProperty('--widget-title-border-color', 'var(--widget-title-border-color-light)');
-        setLogoUrl("../../public/logo_white.png");
       }
   }
       

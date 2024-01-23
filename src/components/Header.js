@@ -5,8 +5,11 @@ import Link from "./Link";
 import NarrowNav from './NarrowNav';
 import Nav from "./Nav";
 
+import logoWhite from "../images/logo_white.png";
+import logoDark from "../images/logo_dark.png";
+
 function Header() {
-    const [logoUrl, setLogoUrl] = useState("../../public/logo_white.png");
+    const [logo, setLogo] = useState(logoWhite);
     const [hideLogo, setHideLogo] = useState(false);
 
     useEffect(() => {
@@ -24,7 +27,7 @@ function Header() {
             <header className="narrow-header">
                 <div className="logo-container">
                     <Link to="/"> {/* Had style={{margin:"0",padding:"0",height:"0"}}. Is this needed? */}
-                        <img src="https://d-sektionen.se/wp-content/uploads/2021/02/mobile-header-logo-2-contrast-2-tablet.png" alt="D-sektionens"
+                        <img src={logoWhite} alt="D-sektionens"
                             className="logo" />
                     </Link>
                 </div>
@@ -33,7 +36,7 @@ function Header() {
             <header className="wide-header">
                 <div className={"logo-container" + (hideLogo ? " hidden" : "")}>
                     <Link to="/"> {/* Had style={{margin:"0",padding:"0",height:"0"}}. Is this needed? */}
-                    <img src={logoUrl} alt="D-sektionen" className="logo" />
+                    <img src={logoWhite} alt="D-sektionen" className="logo" />
                     </Link>
                 </div>
                 <Nav />
