@@ -2,7 +2,6 @@ import '../css/Nav.css';
 import Dropdown from './Dropdown';
 import DropdownElements from './DropdownElements.js';
 import NavButton from './NavButton.js';
-import { useState } from 'react';
 
 //import logos
 import utbU from '../images/utbU.png';
@@ -72,6 +71,11 @@ function Nav({ setState }) {
         root.style.setProperty('--footer-bg-color', 'var(--footer-bg-color-dark)');
         root.style.setProperty('--widget-title-bg-color', 'var(--widget-title-bg-color-dark)');
         root.style.setProperty('--widget-title-border-color', 'var(--widget-title-border-color-dark)');
+        root.style.setProperty('--display-light-logo', 'none');
+        root.style.setProperty('--display-dark-logo', 'inline-block');
+        root.style.setProperty('--webkit-scrollbar-track-color', 'var(--bg-color-dark)');
+        root.style.setProperty('--webkit-scrollbar-thumb-color', 'var(--text-color-dark)');
+        root.style.setProperty('--webkit-scrollbar-thumb-hover-color', 'var(--text-color-dark)');
       } else {
         root.style.setProperty('--text-color', 'var(--text-color-light)');
         root.style.setProperty('--bg-color', 'var(--bg-color-light)');
@@ -82,6 +86,11 @@ function Nav({ setState }) {
         root.style.setProperty('--footer-bg-color', 'var(--footer-bg-color-light)');
         root.style.setProperty('--widget-title-bg-color', 'var(--widget-title-bg-color-light)');
         root.style.setProperty('--widget-title-border-color', 'var(--widget-title-border-color-light)');
+        root.style.setProperty('--display-light-logo', 'inline-block');
+        root.style.setProperty('--display-dark-logo', 'none');
+        root.style.setProperty('--webkit-scrollbar-track-color', 'var(--bg-color-light)');
+        root.style.setProperty('--webkit-scrollbar-thumb-color', 'var(--text-color-light)');
+        root.style.setProperty('--webkit-scrollbar-thumb-hover-color', 'var(--text-color-light)');
       }
   }
       

@@ -25,6 +25,11 @@
 
 }
 
+.logo {
+    height: 100%;
+    object-fit: contain;
+}
+
 @media only screen and (max-width: 900px) {
     .wide-header {
         display: none;
@@ -37,7 +42,12 @@
         /* border-radius: 5vh; */
     }
 }
-
+#logoWhite {
+    display: var(--display-light-logo);
+}
+#logoDark {
+    display: var(--display-dark-logo);
+}
 .narrow-header .logo-container {
     height: 45px;
 }
@@ -54,10 +64,4 @@
     margin-top: 0px;
     margin-bottom: 32px;
     opacity: 0;
-}
-
-.logo {
-    height: 100%;
-    object-fit: contain;
-
 }
