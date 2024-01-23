@@ -58,7 +58,7 @@ function PageNav({ setPage, currentPage, totalPages }) {
     }
     
     return (
-        <nav className="page-nav">
+        <nav className="page-nav" tabIndex="0">
             {buttons}
         </nav>
     );

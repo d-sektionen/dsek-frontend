@@ -15,6 +15,7 @@ import Link from './templates/committee/Link';
 import Dgroup from './templates/committee/Dgroup';
 import Donna from './templates/committee/Donna';
 import Staben from './templates/committee/Staben';
+import UtskottPage from './templates/committee/Utskott';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -24,6 +25,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Calendar from './templates/misc/Calendar';
 import SocialMedia from './templates/misc/SocialMedia';
+import { ExjobbPage, Exjobb } from './templates/misc/Exjobb';
 
 function ScrollToTop() {
     const { pathname } = useLocation();
@@ -43,8 +45,10 @@ function App() {
                     <ScrollToTop />
                     <Routes>
                         <Route path="/" element={<><Header /><Home /><Footer /></>}></Route>
-                        <Route path="/page/:id" element={<><Header /><Page /><Footer /></>}></Route>
-                        <Route path="/blogpost/:id" element={<><Header /><BlogPage /><Footer /></>}></Route>
+                        <Route path="/page/:slug" element={<><Header /><Page /><Footer /></>}></Route>
+                        <Route path="/blogpost/:slug" element={<><Header /><BlogPage /><Footer /></>}></Route>
+                        <Route path="/utskott/:slug" element={<UtskottPage />}></Route>
+                        <Route path="/exjobb/:slug" element={<><Header /><ExjobbPage /><Footer /></>}></Route>
                         <Route path="/deg" element={<DEG />}></Route>
                         <Route path="/valberedningen" element={<Valberedningen />}></Route>
                         <Route path="/alumni" element={<Alumni />}></Route>
@@ -53,14 +57,15 @@ function App() {
                         <Route path="/pubu" element={<PubU />}></Route>
                         <Route path="/naru" element={<NarU />}></Route>
                         <Route path="/mafu" element={<MafU />}></Route>
-                        <Route path="/eventu" element={<EventU />}></Route>
+                        <Route path="/utskott/eventu" element={<EventU />}></Route>
                         <Route path="/infu" element={<InfU />}></Route>
                         <Route path="/donna" element={<Donna />}></Route>
                         <Route path="/dgroup" element={<Dgroup />}></Route>
                         <Route path="/link" element={<Link />}></Route>
                         <Route path="/staben" element={<Staben />}></Route>
                         <Route path="/kalender" element={<><Header /><Calendar /><Footer /></>}></Route>
-                        <Route path="/socialamedier" element={<><Header /><SocialMedia /><Footer /></>}></Route>
+                        <Route path="/extra/socialamedier" element={<><Header /><SocialMedia /><Footer /></>}></Route>
+                        <Route path="/extra/exjobb" element={<><Header /><Exjobb /><Footer /></>}></Route>
                     </Routes>
                 </BrowserRouter>
             </div>

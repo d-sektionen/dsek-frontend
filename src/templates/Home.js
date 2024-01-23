@@ -7,45 +7,30 @@ import '../css/Home.css';
 import { marked } from 'marked';
 import React, { useEffect, useState } from 'react';
 import { BackToTop } from '../components/BackToTop.js';
-import { getPosts } from '../utils/NetFuncs';
-
+import { getBlogposts } from '../utils/Strapi.js';
 
 
 
 function Home() {
-    const [Posts, setPosts] = useState([])
-    const [ActivePosts, setActivePosts] = useState([])
-    const [currentPage, setCurrentPage] = useState(0)
-    const [totalPages, setTotalPages] = useState(0)
-    const POSTS_PER_PAGE = 3
+    const [posts, setPosts] = useState([]);
+    const [post, setPost] = useState(null);
+    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        (async () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const search = urlParams.get("s") || "";
-
-            const data = await getPosts(-1);
-            console.log(data);
-            let posts = [];
-            for (const p of data.data) {
-                posts.push({
-                    title: p.title,
-                    preview: marked.parse(p.preview_content),
-                    content: marked.parse(p.content),
-                    date: p.date_created,
-                    id: p.id
-                });
+        const fetchPosts = async () => {
+            setIsLoading(true);
+            try {
+                const data = await getBlogposts(-1);
+                setPosts(data);
+            } catch (error) {
+                setError(error);
             }
+            setIsLoading(false);
+        };
 
-            console.log(posts);
-
-
-            setPosts(posts)
-            setTotalPages(Math.ceil(posts.length / POSTS_PER_PAGE));
-            setCurrentPage(1);
-        })();
+        fetchPosts();
     }, []);
-
 
     const scrollToTop = () => {
         console.log("scroll")
@@ -55,25 +40,13 @@ function Home() {
         });
     };
 
-    const changePage = (page) => {
-        if (page > 0 && page <= totalPages) {
-            setCurrentPage(page)
-        }
-        setTimeout(() => {
-            scrollToTop();
-        }, 50)
-    };
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
 
-    useEffect(() => {
-        let active = []
-        for (let i = 0; i < POSTS_PER_PAGE; i++) {
-            if (Posts[POSTS_PER_PAGE * (currentPage - 1) + i]) {
-                active.push(Posts[POSTS_PER_PAGE * (currentPage - 1) + i])
-            }
-        }
-        setActivePosts(active)
-        return () => { }
-    }, [currentPage, Posts])
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    }
 
     return (
         <div className="Home">
@@ -81,13 +54,16 @@ function Home() {
                 <SideNav />
             </div>
             <div className="Middle">
-                {
-                    ActivePosts.length > 0 ?
-                        <>{ActivePosts.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date.substring(0, 10)} content={postData.preview} id={postData.id} />)}</>
-                        :
-                        <>{Posts.map((postData, index) => <PostPreview key={index} title={postData.title} date={postData.date.substring(0, 10)} content={postData.preview} id={postData.id} />)}</>
-                }
-                <PageNav posts={Posts} setPage={changePage} currentPage={currentPage} totalPages={totalPages} />
+                <h1>Senaste nyheterna</h1>
+                {posts.map((post, index) => (
+                    <PostPreview key={index} title={post.attributes.title} date={post.attributes.publishedAt} content={post.attributes.preview_content}
+                    slug={"/blogpost/" + post.attributes.slug}
+                    thumbnailURL={post.attributes.thumbnail.data !== null ? post.attributes.thumbnail.data.attributes.url : "public/logo_white.png"}
+                    thumbnailAlt={post.attributes.thumbnail.data !== null ? post.attributes.thumbnail.data.attributes.alternativeText : "Logo"}
+                    thumbnailWidth={post.attributes.thumbnail.data !== null ? post.attributes.thumbnail.data.attributes.width : 100}
+                    thumbnailHeight={post.attributes.thumbnail.data !== null ? post.attributes.thumbnail.data.attributes.height : 100}
+                    id={post.id} />
+                ))}
             </div>
             <div className="wide">
                 < Sponsors />
