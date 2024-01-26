@@ -26,9 +26,9 @@ code {
     --footer-bg-color-light: #f8f8f8;
     --widget-title-border-color-light: #ddd;
     --widget-title-bg-color-light: hsla(0, 0%, 82%, .3);
-    --webkit-scrollbar-track: #f8f8f8;
-    --webkit-scrollbar-thumb: #f8f8f8;
-    --webkit-scrollbar-thumb:hover: #f8f8f8;
+    --button-bg-color-light: #fff; 
+    --button-text-color-light: #111919;
+    --navbar-dropdown-bg-color-light: #fff;
 
     /* Dark mode colors */
     --text-color-dark: #fff;
@@ -39,9 +39,9 @@ code {
     --widget-title-border-color-dark: #333; 
     --widget-title-bg-color-dark: hsla(0, 0%, 30%, .3); 
     --display-dark-logo: none;
-    --webkit-scrollbar-track: #333;
-    --webkit-scrollbar-thumb: #333;
-    --webkit-scrollbar-thumb:hover: #333;
+    --button-bg-color-dark: #111919; 
+    --button-text-color-dark: #fff; 
+    --navbar-dropdown-bg-color-dark: #111919;
    
 
     /* Current colors, initially set to light mode */
@@ -53,5 +53,7 @@ code {
     --widget-title-border-color: var(--widget-title-border-color-light);
     --widget-title-bg-color: var(--widget-title-bg-color-light);
     --display-light-logo: inline-block;
-    
+    --button-bg-color: var(--button-bg-color-light);
+    --button-text-color: var(--button-text-color-light);
+    --navbar-dropdown-bg-color: var(--navbar-dropdown-bg-color-light);
 }
