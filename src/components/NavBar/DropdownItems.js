@@ -1,6 +1,7 @@
 import DropdownNavButton from './DropdownNavButton.js';
 
 function DropdownItems(props) {
+    // konstruerar en div för dropdownen som visar alla objekten i Dropdownen
     return (
         <div className="dropdown-items" style={{display:props.displayType}}>
             {props.items && props.items.map((t, i) =>

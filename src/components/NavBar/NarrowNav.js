@@ -4,6 +4,8 @@ import Nav from './Nav.js';
 import { GiHamburgerMenu } from 'react-icons/gi'
 
 function NarrowNav() {
+    // konstruerar och returnerar en NavBar för smala skärmar
+    // (som också funkar bättre med touch-skärmar)
     const [ menuStyle, setMenuStyle ] = useState( 'none' )
 
     function handleClick() {

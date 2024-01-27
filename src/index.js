@@ -23,8 +23,9 @@ document.addEventListener("keydown", function(event) {
   if (event.key === "Escape") {
     event.preventDefault();
     const active_elem = document.activeElement;
-    if (active_elem.classList.contains("navButton")) {
-      active_elem.parentElement.parentElement.parentElement.children[0].focus();
+    if (active_elem.classList.contains("dropdown-nav-button")) {
+      const new_elem = active_elem.parentElement.parentElement.children[0];
+      new_elem.focus();
       const elems = document.getElementsByClassName("dropdown-items");
       for (const e of elems){
         e.style.display = "none";

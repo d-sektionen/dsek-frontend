@@ -1,3 +1,4 @@
+/* NarrowNav */
 @media only screen and (max-width: 900px) {
     .site-nav {
         display: grid;
@@ -7,11 +8,17 @@
         width: 100%;
         height: 32px;
         height: fit-content;
+        margin-right: 0;
     }
 
     .narrow-nav-menu {
         background-color: #000;
         height: fit-content;
+    }
+
+    .narrow-header {
+        overflow-x: hidden;
+        /* OBS! om content är för långt så kommer det inte gå att se hela */
     }
 
     .nav-button {
@@ -20,25 +27,67 @@
         width: 100%;
         line-height: 32px;
         margin: 2px;
-        background-color: #0a0a0a;
         color: white;
         text-align: left;
     }
 
-    a.navButton {
-        color: #fff;
-    }
-
-    .nav-button:hover, .navButton:hover,
-    .narrow-dropdown .dropdown-nav-button:hover {
+    a.dropdown-nav-button:hover, .nav-button:hover {
         color: #F7E623;
     }
 
     .wide-dropdown {
         display: none;
     }
+
+    .hamburger {
+        position: fixed;
+        right: 0;
+        margin-top: 10px;
+        margin: -2em 1em auto auto;
+        /* varför syns den på vissa datorer men inte andra? */
+        color: #fff;
+    }
+    
+    .hamburger:hover {
+        cursor: pointer;
+        color: #F7E623;
+    }
+    
+    .narrow-dropdown .dropdown-nav-button {
+        display: block;
+        border-top: 0.5px solid #3b3b3b;
+        padding: 5px 5px 5px 35px;
+        width: 100%;
+        text-decoration: none;
+        background-color: #121212;
+        color: #fff;
+        text-align: left;
+        transition: 0.4s;
+        /* NOTE: longer than original site, why? */
+    }
+
+    a.reg-nav-button {
+        border-top: 0.5px solid #3b3b3b;
+    }
+    
+    .narrow-dropdown .dropdown-items {
+        width: 100%;
+        z-index: 2;
+        overflow-wrap: break-word;
+    }
+
+    .dropdown-items {
+        contain: content;
+    }
+
+    .button-layout > p {
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+    }
+
 }
 
+/* WideNav */
 @media only screen and (min-width: 900px) {
     .site-nav {
         display: flex;
@@ -52,16 +101,16 @@
         margin: 0 6px 0 6px;
         padding: 0 14px 0 14px;
         font-size: 24px;
-        width: fit-content;
         height: 32px;
         line-height: 32px;
         background-color: var(--navbar-bg-color);
-        color: var(--navbar-text-color);
+        /* color: var(--navbar-text-color); */
+        color: black;
         transition: 0.4s;
     }
 
     .wide-dropdown:hover .nav-button,
-    .wide-dropdown .dropdown-nav-button:hover,
+    a.dropdown-nav-button:hover,
     .nav-button:hover {
         color: #F7E623;
     }
@@ -69,71 +118,59 @@
     .narrow-dropdown {
         display: none;
     }
+
+    .wide-dropdown .dropdown-items {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background-color: #fff;
+    }
+
+    .wide-dropdown:hover .dropdown-items {
+        display: block !important;
+    }
+
+    .dropdown-items {
+        width: fit-content;
+        min-width: 100%;
+        max-width: 20em;
+        box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    }
+    
+    .wide-dropdown .dropdown-nav-button {
+        display: block;
+        padding: 5px 5px 5px 5px;
+        text-align: left;
+        text-decoration: none;
+        transition: 0.4s;
+        /* NOTE: longer than original site, why? */
+    }
+    
+    .wide-dropdown {
+        position: relative;
+    }
+
+    .button-layout > p, .button-layout > img {
+        margin: 0;
+    }
 }
 
+.button-layout {
+    display: flex;
+}
+
+.dropdown-nav-button a {
+    border: none;
+}
 
 .reg-nav-button {
     cursor: pointer;
 }
 
-.wide-dropdown {
-    position: relative;
-}
-
 .dropdown-button {
     cursor: default;
     white-space: nowrap;
-}
-
-.wide-dropdown .dropdown-items {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background-color: #fff;
-}
-
-.wide-dropdown:hover .dropdown-items {
-    display: block;
-    width: 132px;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
-}
-
-.wide-dropdown .dropdown-nav-button {
-    display: block;
-    padding: 5px 5px 5px 5px;
-    color: #000;
-    text-align: left;
-    text-decoration: none;
-    transition: 0.4s;
-    /* NOTE: longer than original site, why? */
-}
-
-.hamburger {
-    position: fixed;
-    right: 0;
-    margin-top: 10px;
-    margin: -30px 12px auto auto;
-    /* varför syns den på vissa datorer men inte andra? */
-    color: #fff;
-}
-
-.hamburger:hover {
-    cursor: pointer;
-    color: #F7E623;
-}
-
-.narrow-dropdown .dropdown-nav-button {
-    display: block;
-    border-top: 0.5px solid #3b3b3b;
-    padding: 5px 5px 5px 35px;
-    width: 100%;
-    text-decoration: none;
-    background-color: #121212;
-    color: #fff;
-    text-align: left;
-    transition: 0.4s;
-    /* NOTE: longer than original site, why? */
 }
 
 button {
@@ -146,20 +183,10 @@ button {
     border: 'none';
 }
 
-.narrow-dropdown .dropdown-items {
-    width: 100%;
-    z-index: 2;
-}
-
 .dropdown-nav-button .dropdown-icon {
     max-width: 24px; 
     max-height: 24px; 
     margin-right: 8px; 
-}
-
-.dropdown-elements li a {
-    display: flex;
-    align-items: center;
 }
 
 @font-face {
@@ -173,128 +200,4 @@ button {
     font-weight: normal;
     line-height: 1;
     font-size: 1.25em;
-}
-
-
-/**************/
-/* Pagination */
-
-.page-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 3px;
-    width: 100%;
-}
-
-.page-nav-button {
-    width: 32px;
-    height: 32px;
-
-    background: #f8f8f8;
-    color: #000;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
-    transition: box-shadow 0.3s ease;
-
-    font-family: "Asap", Arial, sans-serif;
-}
-
-.page-nav-button:hover {
-    border-bottom: #E5398D 6px solid;
-    cursor: pointer;
-}
-
-.page-nav-button.selected {
-    border-bottom: #305fb9 6px solid;
-    cursor: default;
-}
-
-.page-nav-button:disabled {
-    border: 0;
-    background: #e7e7e7;
-    box-shadow: none;
-    cursor: default;
-}
-
-/*******************/
-/* Side navigation */
-
-@media only screen and (max-width: 900px) {
-    .SideNav {
-        width: 95%;
-    }
-}
-
-.SideNav {
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    border-radius: 2px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.SideNavButton {
-    height: 48px;
-    transition: all 0.6s;
-}
-
-.SideNavButton:hover {
-    height: 48px;
-}
-
-.SideNavButton:hover .SideNavButton-Img {
-    transition: 1s;
-}
-
-.SideNavButton:hover:nth-child(1) .SideNavButton-Img {
-    background-color: #754022;
-}
-
-.SideNavButton:hover:nth-child(2) .SideNavButton-Img {
-    background-color: #E5398D;
-}
-
-.SideNavButton:hover:nth-child(3) .SideNavButton-Img {
-    background-color: #F7E623;
-}
-
-.SideNavButton:hover:nth-child(4) .SideNavButton-Img {
-    background-color: #70BD44;
-}
-
-.SideNavButton:hover:nth-child(5) .SideNavButton-Img {
-    background-color: #20407C;
-}
-
-.SideNavButton-Img {
-    width: 48px;
-    height: 48px;
-    margin-right: 12px;
-    border-radius: 2px;
-    content: "";
-    float: left;
-}
-
-.SideNavButton-Text {
-    width: 100%;
-    height: 48px;
-    line-height: 48px;
-    text-align: left;
-    font-size: large;
-}
-
-.SideNavButton>a {
-    text-decoration: none;
-    color: black;
-}
-
-.SideNavButton:hover .SideNavButton-Text {
-    background-color: lightgray;
-}
-
-.SideNavButton-Text:hover {
-    width: 100%;
-    height: 48px;
-    background-color: lightgray;
-    text-align: left;
 }

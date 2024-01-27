@@ -3,14 +3,14 @@ import DropdownButton from './DropdownButton.js';
 import DropdownItems from './DropdownItems.js';
 
 function Dropdown({ title, items }) {
+    // Dropdown är en dropdownmeny som består av en knapp för att "toggla" om 
+    // föremålen, dvs DropdownItems i Dropdownwn som ska visas samt innehåller
+    // kategorin för dropdownen (titeln)
+
     const [narrowDisplay, setNarrowDisplay] = useState("none");
-    const [wideDisplay, setWideDisplay] = useState("");
 
     function handleClick() {
         setNarrowDisplay(narrowDisplay === "block" ?  "none" : "block")
-    }
-    function handleWide() {
-        setWideDisplay( wideDisplay === "block" ?  "none" : "block")
     }
 
     
@@ -21,8 +21,8 @@ function Dropdown({ title, items }) {
                 <DropdownItems items={items} displayType={narrowDisplay}></DropdownItems>
             </div>
             <div className="wide-dropdown dropdown">
-                <DropdownButton title={title} onClick={()=>handleWide()} tabIndex="0"/>
-                <DropdownItems items={items} displayType={wideDisplay}></DropdownItems>
+                <DropdownButton title={title} onClick={()=>handleClick()} tabIndex="0"/>
+                <DropdownItems items={items} displayType={narrowDisplay}></DropdownItems>
             </div>
         </>
     );

@@ -20,7 +20,11 @@ import valleb from '../../images/valleb.png'
 import donna from '../../images/donna.png'
 import link from '../../images/linkdagarna.png'
 
+import placeholder from '../../images/placeholder.png'
+
 function Nav({ setState, tabIndex }) {
+    // konstruerar och returnerar en NavBar som innehåller vanliga knappar och
+    // dropdownknappar
 
     const dropdownItemsSektionen = [
         ["Styrelsen", "/page/styrelsen"],
@@ -30,12 +34,12 @@ function Nav({ setState, tabIndex }) {
       ];
 
     const dropdownItemsUtskott = [
-      ["EventU", "/utskott/eventu"],
+      ["EventU", "/utskott/eventu", placeholder],
       ["Alumni", "/utskott/alumni", alumni],
       ["D-Group", "/utskott/dgroup", dgroup],
       ["DONNA", "/utskott/donna", donna],
       ["DEG", "/utskott/deg", deg],
-      ["InfU", "/utskott/infu"],
+      ["InfU", "/utskott/infu", placeholder],
       ["LINK-dagarna", "/utskott/link", link],
       ["PubU", "/utskott/pubu", pubu],
       ["MafU", "/utskott/mafu", mafu],
@@ -90,10 +94,9 @@ function Nav({ setState, tabIndex }) {
         setLogoUrl("../logo_white.png");
       }
   }
-      
     return (
       <nav className="site-nav">
-        <Dropdown title="Sektionen"  items={dropdownItemsSektionen}></Dropdown>
+        <Dropdown title="Sektionen" items={dropdownItemsSektionen}></Dropdown>
         <Dropdown title="Utskott" items={dropdownItemsUtskott}></Dropdown>
         <Dropdown title="Bli student" items={dropdownItemsBliStudent}></Dropdown>
         <NavButton title="Kalender" link="/kalender" />
