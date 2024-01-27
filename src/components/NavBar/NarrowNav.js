@@ -1,4 +1,4 @@
-import '../css/Nav.css';
+import '../../css/Nav.css';
 import { useState } from 'react';
 import Nav from './Nav.js';
 import { GiHamburgerMenu } from 'react-icons/gi'

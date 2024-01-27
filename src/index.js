@@ -24,7 +24,7 @@ document.addEventListener("keydown", function(event) {
     event.preventDefault();
     const active_elem = document.activeElement;
     if (active_elem.classList.contains("navButton")) {
-      active_elem.parentElement.parentElement.parentElement.parentElement.children[0].focus();
+      active_elem.parentElement.parentElement.parentElement.children[0].focus();
       const elems = document.getElementsByClassName("dropdown-items");
       for (const e of elems){
         e.style.display = "none";

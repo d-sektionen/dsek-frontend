@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 import "../css/Header.css";
 import Link from "./Link";
-import NarrowNav from './NarrowNav';
-import Nav from "./Nav";
+import NarrowNav from './NavBar/NarrowNav';
+import Nav from "./NavBar/Nav";
 
 function Header() {
     const [logoUrl, setLogoUrl] = useState("../logo_white.png");

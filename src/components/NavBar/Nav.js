@@ -1,23 +1,24 @@
-import '../css/Nav.css';
+import '../../css/Nav.css';
 import Dropdown from './Dropdown';
-import DropdownElements from './DropdownElements.js';
 import NavButton from './NavButton.js';
 import { useState } from 'react';
 
+
+
 //import logos
-import utbU from '../images/utbU.png';
-import werk from '../images/werk.jpg';
-import staben from '../images/staben.png';
-import mafu from '../images/MAFU.png';
-import näru from '../images/NARU.png';
-import pubu from '../images/pubu.png';
-import deg from '../images/deg.png';
-import alumni from '../images/alumni.png';
-import dgroup from '../images/d-grupp.png';
-import webbu from '../images/webbu.png';
-import valleb from '../images/valleb.png'
-import donna from '../images/donna.png'
-import link from '../images/linkdagarna.png'
+import utbU from '../../images/utbU.png';
+import werk from '../../images/werk.jpg';
+import staben from '../../images/staben.png';
+import mafu from '../../images/MAFU.png';
+import näru from '../../images/NARU.png';
+import pubu from '../../images/pubu.png';
+import deg from '../../images/deg.png';
+import alumni from '../../images/alumni.png';
+import dgroup from '../../images/d-grupp.png';
+import webbu from '../../images/webbu.png';
+import valleb from '../../images/valleb.png'
+import donna from '../../images/donna.png'
+import link from '../../images/linkdagarna.png'
 
 function Nav({ setState, tabIndex }) {
 
@@ -92,21 +93,13 @@ function Nav({ setState, tabIndex }) {
       
     return (
       <nav className="site-nav">
-        <Dropdown content="Sektionen">
-          <DropdownElements setState={setState} titles={dropdownItemsSektionen} />
-        </Dropdown>
-        <Dropdown content="Utskott">
-        <DropdownElements setState={setState} titles={dropdownItemsUtskott} />
-        </Dropdown>
-        <Dropdown content="Bli student">
-          <DropdownElements setState={setState} titles={dropdownItemsBliStudent} />
-        </Dropdown>
+        <Dropdown title="Sektionen"  items={dropdownItemsSektionen}></Dropdown>
+        <Dropdown title="Utskott" items={dropdownItemsUtskott}></Dropdown>
+        <Dropdown title="Bli student" items={dropdownItemsBliStudent}></Dropdown>
         <NavButton title="Kalender" link="/kalender" />
         <NavButton title="Medlemstjänster" link="https://medlem.d-sektionen.se" />
         <NavButton title="Företag" link="/page/foretag" />
-        <Dropdown content="Extra">
-          <DropdownElements setState={setState} titles={dropdownItemsExtra} />
-        </Dropdown>
+        <Dropdown title="Extra" items={dropdownItemsExtra}></Dropdown>
         <button type="button" onClick={dark}>D-Mode</button>
       </nav>
     );

@@ -1,5 +1,4 @@
-import '../css/Nav.css';
-import Link from './Link';
+import Link from '../Link';
 
 function NavButton({ link, title }) {
     return (

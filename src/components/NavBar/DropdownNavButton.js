@@ -1,6 +1,3 @@
-import '../css/Nav.css';
-
-
 function DropdownNavButton(props) {
     return (
       <div className="dropdown-nav-button">
@@ -13,5 +10,6 @@ function DropdownNavButton(props) {
       </div>
     );
   }
+
 
 export default DropdownNavButton;
