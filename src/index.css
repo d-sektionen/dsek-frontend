@@ -29,6 +29,8 @@ code {
     --button-bg-color-light: #fff; 
     --button-text-color-light: #111919;
     --navbar-dropdown-bg-color-light: #fff;
+    --utskott-bg-color-light: #fff;
+    --utskott-text-color-light: #111919;
 
     /* Dark mode colors */
     --text-color-dark: #fff;
@@ -42,6 +44,8 @@ code {
     --button-bg-color-dark: #111919; 
     --button-text-color-dark: #fff; 
     --navbar-dropdown-bg-color-dark: #111919;
+    --utskott-bg-color-dark: #111919;
+    --utskott-text-color-dark: #fff;
    
 
     /* Current colors, initially set to light mode */
@@ -56,4 +60,6 @@ code {
     --button-bg-color: var(--button-bg-color-light);
     --button-text-color: var(--button-text-color-light);
     --navbar-dropdown-bg-color: var(--navbar-dropdown-bg-color-light);
+    --utskott-bg-color: var(--utskott-bg-color-light);
+    --utskott-text-color: var(--utskott-text-color-light);
 }

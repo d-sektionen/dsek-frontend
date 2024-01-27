@@ -73,7 +73,7 @@ function Nav({ setState, tabIndex }) {
       setDarkMode(isDarkMode);
       console.log('Retrieved from localStorage:', isDarkMode);
     }, []);
-
+    
     useEffect(() => {
       console.log('Setting dark mode:', darkMode);
       localStorage.setItem('isDarkMode', JSON.stringify(darkMode));
@@ -90,12 +90,11 @@ function Nav({ setState, tabIndex }) {
         root.style.setProperty('--widget-title-border-color', 'var(--widget-title-border-color-dark)');
         root.style.setProperty('--display-light-logo', 'none');
         root.style.setProperty('--display-dark-logo', 'inline-block');
-        root.style.setProperty('--webkit-scrollbar-track-color', 'var(--bg-color-dark)');
-        root.style.setProperty('--webkit-scrollbar-thumb-color', 'var(--text-color-dark)');
-        root.style.setProperty('--webkit-scrollbar-thumb-hover-color', 'var(--text-color-dark)');
         root.style.setProperty('--button-bg-color', 'var(--button-bg-color-dark)');
         root.style.setProperty('--button-text-color', 'var(--button-text-color-dark)');
         root.style.setProperty('--navbar-dropdown-bg-color', 'var(--navbar-dropdown-bg-color-dark)');
+        root.style.setProperty('--utskott-bg-color', 'var(--utskott-text-color-dark)');
+        root.style.setProperty('--utskott-text-color', 'var(--utskott-bg-color-dark)');
       } else {
         root.style.setProperty('--text-color', 'var(--text-color-light)');
         root.style.setProperty('--bg-color', 'var(--bg-color-light)');
@@ -111,6 +110,8 @@ function Nav({ setState, tabIndex }) {
         root.style.setProperty('--button-bg-color', 'var(--button-bg-color-light)');
         root.style.setProperty('--button-text-color', 'var(--button-text-color-light)');
         root.style.setProperty('--navbar-dropdown-bg-color', 'var(--navbar-dropdown-bg-color-light)');
+        root.style.setProperty('--utskott-bg-color', 'var(--utskott-text-color-light)');
+        root.style.setProperty('--utskott-text-color', 'var(--utskott-bg-color-light)');
       }
     }, [darkMode]);
       
