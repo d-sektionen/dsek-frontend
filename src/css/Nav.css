@@ -33,6 +33,7 @@
 
     a.dropdown-nav-button:hover, .nav-button:hover {
         color: #F7E623;
+        cursor: pointer;
     }
 
     .wide-dropdown {
@@ -112,6 +113,7 @@
     .wide-dropdown:hover .nav-button,
     a.dropdown-nav-button:hover,
     .nav-button:hover {
+        cursor: pointer;
         color: #F7E623;
     }
 
@@ -128,6 +130,7 @@
     }
 
     .wide-dropdown:hover .dropdown-items {
+        cursor: pointer;
         display: block !important;
     }
 
