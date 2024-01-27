@@ -17,13 +17,11 @@ document.addEventListener("keydown", function(event) {
   }
 });
 
-//Escape sabbar alla andra eventListeners, har troligtvis att göra med att vi manipulerar style hoss vissa element
-
 document.addEventListener("keydown", function(event) {
   if (event.key === "Escape") {
     event.preventDefault();
     const active_elem = document.activeElement;
-    if (active_elem.classList.contains("dropdown-nav-button")) {
+    if (active_elem.classList.contains("dropdown-nav-button") || active_elem.classList.contains("nav-button")) {
       const new_elem = active_elem.parentElement.parentElement.children[0];
       new_elem.focus();
       const elems = document.getElementsByClassName("dropdown-items");
