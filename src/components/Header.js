@@ -24,16 +24,17 @@ function Header() {
             <header className="narrow-header">
                 <div className="logo-container">
                     <Link to="/"> {/* Had style={{margin:"0",padding:"0",height:"0"}}. Is this needed? */}
-                        <img src="https://d-sektionen.se/wp-content/uploads/2021/02/mobile-header-logo-2-contrast-2-tablet.png" alt="D-sektionens"
+                        <img src="../logo_black.png" alt="Datateknologsektionen"
                             className="logo" />
                     </Link>
                 </div>
-                <NarrowNav />
+                <Nav />
+                {/* <NarrowNav /> */}
             </header>
             <header className="wide-header">
                 <div className={"logo-container" + (hideLogo ? " hidden" : "")}>
                     <Link to="/"> {/* Had style={{margin:"0",padding:"0",height:"0"}}. Is this needed? */}
-                    <img src={logoUrl} alt="D-sektionen" className="logo" />
+                    <img src={logoUrl} alt="Datateknologsektionen" className="logo" />
                     </Link>
                 </div>
                 <Nav />

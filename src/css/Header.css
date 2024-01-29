@@ -38,7 +38,8 @@
 }
 
 .narrow-header .logo-container {
-    height: 45px;
+    height: 3em;
+    /* behöver använda samma enhet som margin i ".hamburger" i Nav.css */
 }
 
 .wide-header .logo-container {

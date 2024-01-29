@@ -9,11 +9,7 @@ function NarrowNav() {
     const [ menuStyle, setMenuStyle ] = useState( 'none' )
 
     function handleClick() {
-        if (menuStyle === 'none') {
-            setMenuStyle('block');
-        } else {
-            setMenuStyle('none');
-        }
+        setMenuStyle(menuStyle === "block" ?  "none" : "block")
     }
 
     return (
