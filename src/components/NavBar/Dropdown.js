@@ -7,22 +7,18 @@ function Dropdown({ title, items }) {
     // föremålen, dvs DropdownItems i Dropdownwn som ska visas samt innehåller
     // kategorin för dropdownen (titeln)
 
-    const [narrowDisplay, setNarrowDisplay] = useState("none");
+    const [dropdownDisplay, setDropdownDisplay] = useState("none");
 
     function handleClick() {
-        setNarrowDisplay(narrowDisplay === "block" ?  "none" : "block")
+        setDropdownDisplay(dropdownDisplay === "block" ?  "none" : "block")
     }
 
     
     return (
         <>
-            <div className="narrow-dropdown dropdown">
+            <div className="dropdown">
                 <DropdownButton title={title} onClick={()=>handleClick()} tabIndex="0"/>
-                <DropdownItems items={items} displayType={narrowDisplay}></DropdownItems>
-            </div>
-            <div className="wide-dropdown dropdown">
-                <DropdownButton title={title} onClick={()=>handleClick()} tabIndex="0"/>
-                <DropdownItems items={items} displayType={narrowDisplay}></DropdownItems>
+                <DropdownItems items={items} displayType={dropdownDisplay}></DropdownItems>
             </div>
         </>
     );
