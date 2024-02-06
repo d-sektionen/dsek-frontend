@@ -5,8 +5,10 @@ import Link from "./Link";
 import NarrowNav from './NarrowNav';
 import Nav from "./Nav";
 
+import logoWhite from "../images/logo_white.png";
+import logoDark from "../images/logo_dark.png";
+
 function Header() {
-    const [logoUrl, setLogoUrl] = useState("../logo_white.png");
     const [hideLogo, setHideLogo] = useState(false);
 
     useEffect(() => {
@@ -24,18 +26,19 @@ function Header() {
             <header className="narrow-header">
                 <div className="logo-container">
                     <Link to="/"> {/* Had style={{margin:"0",padding:"0",height:"0"}}. Is this needed? */}
-                        <img src="https://d-sektionen.se/wp-content/uploads/2021/02/mobile-header-logo-2-contrast-2-tablet.png" alt="D-sektionens"
-                            className="logo" />
+                        <img src={logoWhite} alt="D-sektionens"className="logo" />
+                        <img src={logoDark} alt="D-sektionens"className="logo" />
                     </Link>
                 </div>
                 <NarrowNav />
             </header>
             <header className="wide-header">
-                <div className={"logo-container" + (hideLogo ? " hidden" : "")}>
-                    <Link to="/"> {/* Had style={{margin:"0",padding:"0",height:"0"}}. Is this needed? */}
-                    <img src={logoUrl} alt="D-sektionen" className="logo" />
-                    </Link>
-                </div>
+                    <div className={"logo-container" + (hideLogo ? " hidden" : "")}>
+                        <Link to="/"> {/* Had style={{margin:"0",padding:"0",height:"0"}}. Is this needed? */}
+                            <img src={logoWhite} alt="D-sektionen"  className="logo" id="logoWhite" />
+                            <img src={logoDark} alt="D-sektionen" className="logo" id="logoDark" />
+                        </Link>
+                    </div>
                 <Nav />
             </header>
         </>
