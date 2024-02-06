@@ -16,7 +16,7 @@ function Dropdown({ title, items }) {
     
     return (
         <>
-            <div className="dropdown">
+            <div className="dropdown yes-dropdown">
                 <DropdownButton title={title} onClick={()=>handleClick()} tabIndex="0"/>
                 <DropdownItems items={items} displayType={dropdownDisplay}></DropdownItems>
             </div>
