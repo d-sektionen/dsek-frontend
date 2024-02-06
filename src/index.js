@@ -24,11 +24,18 @@ document.addEventListener("keydown", function(event) {
     if (active_elem.classList.contains("dropdown-nav-button") || active_elem.classList.contains("nav-button")) {
       const new_elem = active_elem.parentElement.parentElement.children[0];
       new_elem.focus();
-      const elems = document.getElementsByClassName("dropdown-items");
-      for (const e of elems){
-        e.style.display = "none";
-      }
+    }
+    const elems = document.getElementsByClassName("dropdown-items");
+    for (const e of elems){
+      e.style.display = "none";
     }
   }
 });
+
+const elem = document.activeElement;
+elem.addEventListener('mouseout', function(event) {
+  
+  event.target.style.backgroundColor = '';
+})
+
 
