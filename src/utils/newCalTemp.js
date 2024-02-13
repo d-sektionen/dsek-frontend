@@ -12,28 +12,28 @@ export default function Calendar() {
   const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
   const calendarID = "c_jhjemj5afa0ubjucqad23cuuos@group.calendar.google.com";
 
-  useEffect(() => {
-    const newEvents = [
-      {
-        start: new Date("2024-02-12T13:15:00+02:00"),
-        end: new Date("2024-02-12T15:00:00+02:00"),
-        title: "Testingggg",
-        url: "https://www.bing.com",
-        description: "Test event description", // assuming each event has a description
-      },
-    ];
-    // for (const e of events) {
-    // const t = {
-    // start: e.start.date || e.start.dateTime,
-    //  end: e.end.date || e.end.dateTime,
-    //      title: e.summary,
-    //  description: e.description || "ingen beskrivning tillgänglig",
-    // };
-    //  console.log(t, "ishere");
-    //    newEvents.push(t);
-    // }
+    useEffect(() => {
+        const newEvents = [
+        {
+            start: new Date("2024-02-12T13:15:00+02:00"),
+            end: new Date("2024-02-12T15:00:00+02:00"),
+            title: "Testingggg",
+            url: "https://www.bing.com",
+            description: "Test event description", // assuming each event has a description
+            },
+        ];
+    for (const e of events) {
+        const t = {
+        start: e.start.date || e.start.dateTime,
+        end: e.end.date || e.end.dateTime,
+        title: e.summary,
+        description: e.description || "ingen beskrivning tillgänglig",
+        };
+        console.log(t, "ishere");
+        newEvents.push(t);
+    }
     setEvents(newEvents);
-  }, []);
+    }, [events]);
 
   function renderEventContent(eventInfo) {
     return (
