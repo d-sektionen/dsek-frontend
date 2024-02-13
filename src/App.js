@@ -47,8 +47,10 @@ function App() {
                         <Route path="/" element={<><Header /><Home /><Footer /></>}></Route>
                         <Route path="/page/:slug" element={<><Header /><Page /><Footer /></>}></Route>
                         <Route path="/blogpost/:slug" element={<><Header /><BlogPage /><Footer /></>}></Route>
-                        <Route path="/utskott/:slug" element={<UtskottPage />}></Route>
+                        <Route path="/utskott/:slug" element={<><Header /><UtskottPage /><Footer /></>}></Route>
+                        <Route path="/utskott/eventu" element={<><Header /><EventU /><Footer /></>}></Route>
                         <Route path="/exjobb/:slug" element={<><Header /><ExjobbPage /><Footer /></>}></Route>
+                        {/* --------Remove? using strapi+slug instead --------- */}
                         <Route path="/deg" element={<DEG />}></Route>
                         <Route path="/valberedningen" element={<Valberedningen />}></Route>
                         <Route path="/alumni" element={<Alumni />}></Route>
@@ -57,12 +59,12 @@ function App() {
                         <Route path="/pubu" element={<PubU />}></Route>
                         <Route path="/naru" element={<NarU />}></Route>
                         <Route path="/mafu" element={<MafU />}></Route>
-                        <Route path="/utskott/eventu" element={<EventU />}></Route>
                         <Route path="/infu" element={<InfU />}></Route>
                         <Route path="/donna" element={<Donna />}></Route>
                         <Route path="/dgroup" element={<Dgroup />}></Route>
                         <Route path="/link" element={<Link />}></Route>
                         <Route path="/staben" element={<Staben />}></Route>
+                        {/* ---------------------------------------------------- */}
                         <Route path="/kalender" element={<><Header /><Calendar /><Footer /></>}></Route>
                         <Route path="/extra/socialamedier" element={<><Header /><SocialMedia /><Footer /></>}></Route>
                         <Route path="/extra/exjobb" element={<><Header /><Exjobb /><Footer /></>}></Route>

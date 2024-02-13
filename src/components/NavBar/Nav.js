@@ -21,6 +21,7 @@ import link from '../../images/linkdagarna.png'
 
 import placeholder from '../../images/placeholder.png'
 
+
 function Nav({ setState, tabIndex }) {
     // konstruerar och returnerar en NavBar som innehåller vanliga knappar och
     // dropdownknappar
@@ -71,11 +72,23 @@ function Nav({ setState, tabIndex }) {
       ["Fotoalbum", "https://d-sektionen.se/filarkiv/fotoalbum/"]
     ];
 
-    const [logoUrl, setLogoUrl] = useState("../logo_white.png");
 
-    function dark() {
-      let root = document.documentElement;
-      if (root.style.getPropertyValue('--text-color') === 'var(--text-color-light)') {
+    const [darkMode, setDarkMode] = useState(() => {
+      const storedDarkMode = localStorage.getItem('isDarkMode');
+      return storedDarkMode ? JSON.parse(storedDarkMode) : false;
+    });
+
+    useEffect(() => {
+      const isDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
+      setDarkMode(isDarkMode);
+      console.log('Retrieved from localStorage:', isDarkMode);
+    }, []);
+    
+    useEffect(() => {
+      console.log('Setting dark mode:', darkMode);
+      localStorage.setItem('isDarkMode', JSON.stringify(darkMode));
+      const root = document.documentElement;
+      if (darkMode) {
         root.style.setProperty('--text-color', 'var(--text-color-dark)');
         root.style.setProperty('--bg-color', 'var(--bg-color-dark)');
         root.style.setProperty('--header-bg-color', 'var(--header-bg-color-dark)');
@@ -85,7 +98,13 @@ function Nav({ setState, tabIndex }) {
         root.style.setProperty('--footer-bg-color', 'var(--footer-bg-color-dark)');
         root.style.setProperty('--widget-title-bg-color', 'var(--widget-title-bg-color-dark)');
         root.style.setProperty('--widget-title-border-color', 'var(--widget-title-border-color-dark)');
-        setLogoUrl("../../public/logo_dark.ai"); 
+        root.style.setProperty('--display-light-logo', 'none');
+        root.style.setProperty('--display-dark-logo', 'inline-block');
+        root.style.setProperty('--button-bg-color', 'var(--button-bg-color-dark)');
+        root.style.setProperty('--button-text-color', 'var(--button-text-color-dark)');
+        root.style.setProperty('--navbar-dropdown-bg-color', 'var(--navbar-dropdown-bg-color-dark)');
+        root.style.setProperty('--utskott-bg-color', 'var(--utskott-text-color-dark)');
+        root.style.setProperty('--utskott-text-color', 'var(--utskott-bg-color-dark)');
       } else {
         root.style.setProperty('--text-color', 'var(--text-color-light)');
         root.style.setProperty('--bg-color', 'var(--bg-color-light)');
@@ -96,8 +115,15 @@ function Nav({ setState, tabIndex }) {
         root.style.setProperty('--footer-bg-color', 'var(--footer-bg-color-light)');
         root.style.setProperty('--widget-title-bg-color', 'var(--widget-title-bg-color-light)');
         root.style.setProperty('--widget-title-border-color', 'var(--widget-title-border-color-light)');
-        setLogoUrl("../logo_white.png");
+        root.style.setProperty('--display-light-logo', 'inline-block');
+        root.style.setProperty('--display-dark-logo', 'none');
+        root.style.setProperty('--button-bg-color', 'var(--button-bg-color-light)');
+        root.style.setProperty('--button-text-color', 'var(--button-text-color-light)');
+        root.style.setProperty('--navbar-dropdown-bg-color', 'var(--navbar-dropdown-bg-color-light)');
+        root.style.setProperty('--utskott-bg-color', 'var(--utskott-text-color-light)');
+        root.style.setProperty('--utskott-text-color', 'var(--utskott-bg-color-light)');
       }
+<<<<<<< HEAD:src/components/NavBar/Nav.js
   }
     return (
     <>
@@ -115,9 +141,32 @@ function Nav({ setState, tabIndex }) {
           <button type="button" onClick={dark}>D-Mode</button>
         </nav>
     </>
+=======
+    }, [darkMode]);
+      
+    return (
+      <nav className="site-nav">
+        <Dropdown content="Sektionen">
+          <DropdownElements setState={setState} titles={dropdownItemsSektionen} />
+        </Dropdown>
+        <Dropdown content="Utskott">
+        <DropdownElements setState={setState} titles={dropdownItemsUtskott} />
+        </Dropdown>
+        <Dropdown content="Bli student">
+          <DropdownElements setState={setState} titles={dropdownItemsBliStudent} />
+        </Dropdown>
+        <NavButton title="Kalender" link="/kalender" />
+        <NavButton title="Medlemstjänster" link="https://medlem.d-sektionen.se" />
+        <NavButton title="Företag" link="/page/foretag" />
+        <Dropdown content="Extra">
+          <DropdownElements setState={setState} titles={dropdownItemsExtra} />
+        </Dropdown>
+        <button type="button" id="dmode" onClick={() => setDarkMode(!darkMode)}>
+        {darkMode ? '!(D-mode)' : 'D-mode'}
+      </button>
+      </nav>
+>>>>>>> dev:src/components/Nav.js
     );
 }
-
-
 
 export default Nav;

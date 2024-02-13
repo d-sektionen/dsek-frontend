@@ -27,7 +27,8 @@
 
 .CalendarWidget {
     margin: 0.7em auto auto auto;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     max-width: 100%;
 }
 
