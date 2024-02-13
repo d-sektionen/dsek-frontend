@@ -1,10 +1,18 @@
+/* NarrowNav */
 @media only screen and (max-width: 900px) {
     .site-nav {
-        display: grid;
+        display: none;
         grid-template-columns: 100%;
         justify-content: left;
         width: 100%;
-        height: 32px;
+        height: fit-content;
+        margin-right: 0;
+        background-color: #000;
+    }
+
+    .narrow-header {
+        overflow-x: hidden;
+        /* OBS! om content är för långt så kommer det inte gå att se hela */
     }
 
     .nav-button {
@@ -17,19 +25,64 @@
         text-align: left;
     }
 
-    .nav-button:hover,
-    .narrow-dropdown .dropdown-nav-button:hover {
+    a.dropdown-nav-button:hover, .nav-button:hover {
+        color: #F7E623;
+        cursor: pointer;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 0;
+        margin: -2em 1em auto auto; 
+        /* använd samma enhet som height i ".narrow-header .logo-container"
+        i Header.css */
+        /* varför syns den på vissa datorer men inte andra? */
+        color: #fff;
+        padding: 0;
+    }
+    
+    .hamburger:hover {
+        cursor: pointer;
         color: #F7E623;
     }
-
-    .wide-dropdown {
-        display: none;
+    
+    .dropdown .dropdown-nav-button {
+        display: block;
+        border-top: 0.5px solid #3b3b3b;
+        padding: 5px 5px 5px 35px;
+        width: 100%;
+        text-decoration: none;
+        background-color: #121212;
+        color: #fff;
+        text-align: left;
+        transition: 0.4s;
+        /* NOTE: longer than original site, why? */
     }
+
+    a.reg-nav-button {
+        border-top: 0.5px solid #3b3b3b;
+        display: block;
+    }
+    
+    .dropdown-items {
+        width: 100%;
+        z-index: 2;
+        overflow-wrap: break-word;
+        contain: content;
+    }
+
+    .button-layout > p {
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+    }
+
 }
 
+/* WideNav */
 @media only screen and (min-width: 900px) {
     .site-nav {
-        display: flex;
+        display: flex !important;
         justify-content: center;
         width: 100%;
         height: 48px;
@@ -40,31 +93,76 @@
         margin: 0 6px 0 6px;
         padding: 0 14px 0 14px;
         font-size: 24px;
-        width: fit-content;
         height: 32px;
         line-height: 32px;
         background-color: var(--navbar-bg-color);
-        color: var(--navbar-text-color);
+        /* color: var(--navbar-text-color); */
+        color: black;
         transition: 0.4s;
     }
 
-    .wide-dropdown:hover .nav-button,
-    .wide-dropdown .dropdown-nav-button:hover,
+    .dropdown:hover .nav-button,
+    a.dropdown-nav-button:hover,
     .nav-button:hover {
+        cursor: pointer;
         color: #F7E623;
     }
 
-    .narrow-dropdown {
+    .dropdown-items {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background-color: #fff;
+        width: fit-content;
+        min-width: 100%;
+        max-width: 20em;
+        box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    }
+
+    .yes-dropdown:hover .dropdown-items {
+        cursor: pointer;
+        display: block !important;
+    }
+
+    .no-dropdown:hover .dropdown-items {
+        cursor: pointer;
+        display: none !important;
+    }
+    
+    .dropdown .dropdown-nav-button {
+        display: block;
+        padding: 5px 5px 5px 5px;
+        text-align: left;
+        text-decoration: none;
+        transition: 0.4s;
+        /* NOTE: longer than original site, why? */
+    }
+    
+    .dropdown {
+        position: relative;
+    }
+
+    .button-layout > p, .button-layout > img {
+        margin: 0;
+    }
+
+    .hamburger {
         display: none;
     }
 }
 
-.reg-nav-button {
-    cursor: pointer;
+.button-layout {
+    /* För bild + namn i utskottsmenyn */
+    display: flex;
 }
 
-.wide-dropdown {
-    position: relative;
+.dropdown-nav-button a {
+    border: none;
+}
+
+.reg-nav-button {
+    cursor: pointer;
 }
 
 .dropdown-button {
@@ -139,20 +237,11 @@ button {
     border: 'none';
 }
 
-.narrow-dropdown .dropdown-items {
-    width: 100%;
-    z-index: 2;
-}
-
 .dropdown-nav-button .dropdown-icon {
+    /* För de små bilderna brevid utskottsnamnen */
     max-width: 24px; 
     max-height: 24px; 
     margin-right: 8px; 
-}
-
-.dropdown-elements li a {
-    display: flex;
-    align-items: center;
 }
 
 @font-face {

@@ -1,4 +1,4 @@
-import '../css/Nav.css';
+import '../css/SideNav.css';
 import CalendarWidget from './CalendarWidget.js';
 import SearchBar from './SearchBar';
 import SideNavButton from './SideNavButton.js';

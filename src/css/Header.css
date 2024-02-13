@@ -48,7 +48,8 @@
     display: var(--display-dark-logo);
 }
 .narrow-header .logo-container {
-    height: 45px;
+    height: 3em;
+    /* behöver använda samma enhet som margin i ".hamburger" i Nav.css */
 }
 
 .wide-header .logo-container {
@@ -63,4 +64,9 @@
     margin-top: 0px;
     margin-bottom: 32px;
     opacity: 0;
+}
+
+.logo {
+    height: 90%;
+    object-fit: contain;
 }

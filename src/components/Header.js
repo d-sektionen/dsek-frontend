@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 import "../css/Header.css";
 import Link from "./Link";
-import NarrowNav from './NarrowNav';
-import Nav from "./Nav";
+import NarrowNav from './NavBar/NarrowNav';
+import Nav from "./NavBar/Nav";
 
 import logoWhite from "../images/logo_white.png";
 import logoDark from "../images/logo_dark.png";
@@ -30,7 +30,8 @@ function Header() {
                         <img src={logoDark} alt="D-sektionens"className="logo" />
                     </Link>
                 </div>
-                <NarrowNav />
+                <Nav />
+                {/* <NarrowNav /> */}
             </header>
             <header className="wide-header">
                     <div className={"logo-container" + (hideLogo ? " hidden" : "")}>
