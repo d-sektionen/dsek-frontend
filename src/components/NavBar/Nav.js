@@ -1,7 +1,7 @@
 import '../../css/Nav.css';
 import Dropdown from './Dropdown';
 import NavButton from './NavButton.js';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi'
 
 //import logos
@@ -123,49 +123,26 @@ function Nav({ setState, tabIndex }) {
         root.style.setProperty('--utskott-bg-color', 'var(--utskott-text-color-light)');
         root.style.setProperty('--utskott-text-color', 'var(--utskott-bg-color-light)');
       }
-<<<<<<< HEAD:src/components/NavBar/Nav.js
-  }
-    return (
-    <>
-      <div className='hamburger narrow-nav' tabIndex="0" onClick={handleClick}>
-          <GiHamburgerMenu/>
-      </div>
-        <nav className="site-nav" setState={handleClick} style={{display:menuStyle}}>
-          <Dropdown title="Sektionen" items={dropdownItemsSektionen}></Dropdown>
-          <Dropdown title="Utskott" items={dropdownItemsUtskott}></Dropdown>
-          <Dropdown title="Bli student" items={dropdownItemsBliStudent}></Dropdown>
-          <NavButton title="Kalender" link="/kalender" />
-          <NavButton title="Medlemstjänster" link="https://medlem.d-sektionen.se" />
-          <NavButton title="Företag" link="/page/foretag" />
-          <Dropdown title="Extra" items={dropdownItemsExtra}></Dropdown>
-          <button type="button" onClick={dark}>D-Mode</button>
-        </nav>
-    </>
-=======
     }, [darkMode]);
-      
+
     return (
-      <nav className="site-nav">
-        <Dropdown content="Sektionen">
-          <DropdownElements setState={setState} titles={dropdownItemsSektionen} />
-        </Dropdown>
-        <Dropdown content="Utskott">
-        <DropdownElements setState={setState} titles={dropdownItemsUtskott} />
-        </Dropdown>
-        <Dropdown content="Bli student">
-          <DropdownElements setState={setState} titles={dropdownItemsBliStudent} />
-        </Dropdown>
-        <NavButton title="Kalender" link="/kalender" />
-        <NavButton title="Medlemstjänster" link="https://medlem.d-sektionen.se" />
-        <NavButton title="Företag" link="/page/foretag" />
-        <Dropdown content="Extra">
-          <DropdownElements setState={setState} titles={dropdownItemsExtra} />
-        </Dropdown>
-        <button type="button" id="dmode" onClick={() => setDarkMode(!darkMode)}>
-        {darkMode ? '!(D-mode)' : 'D-mode'}
-      </button>
-      </nav>
->>>>>>> dev:src/components/Nav.js
+      <>
+        <div className='hamburger narrow-nav' tabIndex="0" onClick={handleClick}>
+            <GiHamburgerMenu/>
+        </div>
+          <nav className="site-nav" setState={handleClick} style={{display:menuStyle}}>
+            <Dropdown title="Sektionen" items={dropdownItemsSektionen}></Dropdown>
+            <Dropdown title="Utskott" items={dropdownItemsUtskott}></Dropdown>
+            <Dropdown title="Bli student" items={dropdownItemsBliStudent}></Dropdown>
+            <NavButton title="Kalender" link="/kalender" />
+            <NavButton title="Medlemstjänster" link="https://medlem.d-sektionen.se" />
+            <NavButton title="Företag" link="/page/foretag" />
+            <Dropdown title="Extra" items={dropdownItemsExtra}></Dropdown>
+            <button type="button" id="dmode" onClick={() => setDarkMode(!darkMode)}>
+              {darkMode ? '!(D-mode)' : 'D-mode'}
+            </button>
+          </nav>
+      </>
     );
 }
 
