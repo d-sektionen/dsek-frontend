@@ -2,15 +2,20 @@
 
 ## Features:
 
+### Good links:
+
+For the calander, https://fullcalendar.io/docs
+
 ### TODO:
-- [X] Bygg ut sektionssidorna med information som rör sektionen. Detta ska göras med Page.js under Templates 
-( Bytte till strapi)
+
+- [x] Bygg ut sektionssidorna med information som rör sektionen. Detta ska göras med Page.js under Templates
+      ( Bytte till strapi)
 - [ ] Bygg ut "Sökande" sidorna med Page.js
 - [ ] Fixa sökrutan i Sidenav på huvudsidan (lägg till funktionalitet)
 - [ ] Kontakt (länk i sidenav)
 - [ ] Fotoalbum (länk i sidenav)
 - [x] staben font
-- [x] dsek-frontend/public/fake-cms/pages/*.md borde flyttas (ska de ligga i cms?)
+- [x] dsek-frontend/public/fake-cms/pages/\*.md borde flyttas (ska de ligga i cms?)
 - [ ] pagenav-knappar funkar inte riktigt...
 - [ ] Alumni-blogg (meny)
 - [x] Företag (meny)
@@ -22,6 +27,7 @@
 - [x] Utskottsloggor i dropdown menyn
 
 ### Bugs
+
 - [x] det går inte att klicka längst ut på högerkanten av dropdownmenyknapparna (menyn minimeras när musen fortfarande hovrar över menyn)
 - [x] PageNavs sifferknappar buggar lite...
 - [x] Länkarna i smala menyn (de som inte är dropdown) funkar bara om man klickar på texten, inte hela knappen

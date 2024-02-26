@@ -5,8 +5,12 @@
     "dependencies": {
         "@fullcalendar/core": "^6.1.5",
         "@fullcalendar/daygrid": "^6.1.5",
-        "@fullcalendar/list": "^6.1.5",
+        "@fullcalendar/interaction": "^6.1.11",
+        "@fullcalendar/list": "^6.1.11",
         "@fullcalendar/react": "^6.1.5",
+        "@fullcalendar/resource-timeline": "^6.1.11",
+        "@fullcalendar/timegrid": "^6.1.11",
+        "@fullcalendar/timeline": "^6.1.11",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
