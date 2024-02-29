@@ -1,4 +1,4 @@
-import '../css/Nav.css';
+import '../css/PageNav.css';
 
 function PageNavButton({ label, onClick, selected, disabled }) {
     return (

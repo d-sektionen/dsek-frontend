@@ -19,22 +19,34 @@ code {
     --uWidth: 66%;
 
     /* Light mode colors */
-    --text-color-light: #000;
+    --text-color-light: #111919;
     --bg-color-light: #fff;
     --header-bg-color-light: #fff;
     --footer-text-color-light: #555;
     --footer-bg-color-light: #f8f8f8;
     --widget-title-border-color-light: #ddd;
     --widget-title-bg-color-light: hsla(0, 0%, 82%, .3);
+    --button-bg-color-light: #fff; 
+    --button-text-color-light: #111919;
+    --navbar-dropdown-bg-color-light: #fff;
+    --utskott-bg-color-light: #fff;
+    --utskott-text-color-light: #111919;
 
     /* Dark mode colors */
     --text-color-dark: #fff;
-    --bg-color-dark: #000;
-    --header-bg-color-dark: #000;
+    --bg-color-dark: #111919;
+    --header-bg-color-dark: #111919;
     --footer-text-color-dark: #fff;
-    --footer-bg-color-dark: #000;
+    --footer-bg-color-dark: #111919;
     --widget-title-border-color-dark: #333; 
     --widget-title-bg-color-dark: hsla(0, 0%, 30%, .3); 
+    --display-dark-logo: none;
+    --button-bg-color-dark: #111919; 
+    --button-text-color-dark: #fff; 
+    --navbar-dropdown-bg-color-dark: #111919;
+    --utskott-bg-color-dark: #111919;
+    --utskott-text-color-dark: #fff;
+   
 
     /* Current colors, initially set to light mode */
     --text-color: var(--text-color-light);
@@ -44,5 +56,10 @@ code {
     --footer-bg-color: var(--footer-bg-color-light);
     --widget-title-border-color: var(--widget-title-border-color-light);
     --widget-title-bg-color: var(--widget-title-bg-color-light);
-    
+    --display-light-logo: inline-block;
+    --button-bg-color: var(--button-bg-color-light);
+    --button-text-color: var(--button-text-color-light);
+    --navbar-dropdown-bg-color: var(--navbar-dropdown-bg-color-light);
+    --utskott-bg-color: var(--utskott-bg-color-light);
+    --utskott-text-color: var(--utskott-text-color-light);
 }

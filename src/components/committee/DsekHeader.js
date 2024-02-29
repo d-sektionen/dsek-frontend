@@ -5,7 +5,7 @@ function DsekHeader() {
     return (
         <div className="D-Sek-Header">
             <Link to="/">
-                <img alt="D-sektionen" src={"logo.png"} className="D-Sek-Header-Logo-1" />
+                <img alt="Datateknologsektionen" src={"logo.png"} className="D-Sek-Header-Logo-1" />
             </Link>
             <p className="D-Sek-Header-Text-1">Denna sida är kopplad till d-sektionen.se</p>
             <Link to="https://www.webbu.se/">
