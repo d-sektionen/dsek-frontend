@@ -4,6 +4,7 @@ import { gapi } from "gapi-script";
 import React, { useEffect, useState } from "react";
 import '../css/Widget.css';
 
+
 // "Det finns inga kommande aktiviteter" om inga hittas
 function CalendarWidget(props) {
 
@@ -12,50 +13,46 @@ function CalendarWidget(props) {
     const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
     const calendarID = "c_jhjemj5afa0ubjucqad23cuuos@group.calendar.google.com";
 
-    // const getEvents = (calendarID, apiKey) => {
-    //     function initiate() {
-    //         gapi.client
-    //             .init({
-    //                 apiKey: apiKey,
-    //             })
-    //             .then(function () {
-    //                 return gapi.client.request({
-    //                     path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
-    //                 });
-    //             })
-    //             .then(
-    //                 (response) => {
-    //                     let events = response.result.items;
+    const date = new Date();
 
-    //                     const newEvents = [
-    //                         {
-    //                             start: new Date('2024-02-12T13:15:00+02:00'),
-    //                             end: new Date('2024-02-12T15:00:00+02:00'),
-    //                             title: 'Testingggg',
-    //                             url: 'https://www.bing.com'
-    //                         }
-    //                     ];
-    //                     for (const e of events) {
-    //                         const t = {
-    //                             start: e.start.date || e.start.dateTime,
-    //                             end: e.end.date || e.end.dateTime,
-    //                             title: e.summary,
-    //                         };
-    //                         newEvents.push(t);
-    //                     }
-    //                     setEvents(newEvents);
-    //                 },
-    //                 function (err) {
-    //                     return [false, err];
-    //                 }
-    //             );
-    //     }
-    //     gapi.load("client", initiate);
-    // };
+    // Reference: https://developers.google.com/calendar/api/v3/reference/events/list
+    const getEvents = (calendarID, apiKey) => {
+        function initiate() {
+            gapi.client
+                .init({
+                    apiKey: apiKey,
+                })
+                .then(function () {
+                    return gapi.client.request({
+                        path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events?timeMin=${date.toISOString()}`,
+                    });
+                })
+                .then(
+                    (response) => {
+                        let events = response.result.items;
+                        const newEvents = [];
+                        for (const e of events) {
+                            const t = {
+                                start: e.start.date || e.start.dateTime,
+                                end: e.end.date || e.end.dateTime,
+                                title: e.summary,
+                            };
+                            newEvents.push(t);
+                        }
+                        setEvents(newEvents);
+                    },
+                    function (err) {
+                        return [false, err];
+                    }
+                );
+        }
+        gapi.load("client", initiate);
+    };
 
-    // useEffect(() => {
-    //     const events = getEvents(calendarID, apiKey);
-    // }, []);
+    useEffect(() => {
+        // Load the Google Calendar API & set the events
+        getEvents(calendarID, apiKey);
+    }, []);
 
     return (
         <>
@@ -63,7 +60,13 @@ function CalendarWidget(props) {
                 <h1 className="Widget-Title">{props.title}</h1>
                 <FullCalendar
                     plugins={[listPlugin]}
-                    initialView="listMonth"
+                    views={{
+                        listWeek: {
+                            duration: { days: 21 },
+                            buttonText: 'Vecka'
+                        }
+                    }}
+                    initialView="listWeek"
                     events={events}
                     headerToolbar={
                         false
