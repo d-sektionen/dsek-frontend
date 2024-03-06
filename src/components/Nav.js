@@ -71,11 +71,11 @@ function Nav({ setState, tabIndex }) {
     useEffect(() => {
       const isDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
       setDarkMode(isDarkMode);
-      console.log('Retrieved from localStorage:', isDarkMode);
+      
     }, []);
     
     useEffect(() => {
-      console.log('Setting dark mode:', darkMode);
+      
       localStorage.setItem('isDarkMode', JSON.stringify(darkMode));
       const root = document.documentElement;
       if (darkMode) {

@@ -26,6 +26,8 @@ function subtractYears(date, years) {
 
 export default function Calendar() {
   const [events, setEvents] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
   const calendarID = "c_jhjemj5afa0ubjucqad23cuuos@group.calendar.google.com";
@@ -35,6 +37,7 @@ export default function Calendar() {
   // Reference: https://developers.google.com/calendar/api/v3/reference/events/list
   const getEvents = (calendarID, apiKey) => {
       function initiate() {
+        
           gapi.client
               .init({
                   apiKey: apiKey,
@@ -48,6 +51,7 @@ export default function Calendar() {
                   (response) => {
                       let events = response.result.items;
                       const newEvents = [];
+                      
                       for (const e of events) {
                         const t = {
                           start: e.start.date || e.start.dateTime,
@@ -57,6 +61,15 @@ export default function Calendar() {
                         };
                         newEvents.push(t);
                       }
+                      
+                    /*
+                      const tt = {
+                        start: new Date("2024-03-04T13:15:00+02:00"),
+                        end: new Date("2024-03-04T15:00:00+02:00"),
+                        title: "Testingggg",
+                        description: "Hej D-student! Här kommer information om sektionens vintermöte att samlas. Ett sektionsmöte är sektionens högst beslutande organ, och det är sektionsmöten som beslutar om till exempel sektionens budgetering, framtida arbetssätt, stadgar, reglemente, med mera. För mer information om hur ett sektionsmöte fungerar finns en beskrivning av relevanta termer och processer på d-sektionen.se/sektionsmote Observera att mycket information kommer läggas till under de kommande veckorna, så denna sida kommer att uppdateras kontinuerligt. Styrelsen kommer bjuda på pizza i samband med sektionsmötet, länk för anmälan: https://forms.gle/zhwdJDGGrRGXr5oo7. Deadline för anmälan är 24 januari 2024.",
+                      };
+                      newEvents.push(tt)*/
                       setEvents(newEvents);
                   },
                   function (err) {
@@ -78,11 +91,23 @@ export default function Calendar() {
         <div className="eventbox">
           <i className="title">{eventInfo.event.title}</i>
           <b className="info">{eventInfo.timeText}</b>
-          <p className="desc">{eventInfo.event.extendedProps.description}</p>
+          <p className="desc" onClick={e => e.target.classList.toggle('expanded')}>{eventInfo.event.extendedProps.description}</p>
         </div>
       </>
     );
   }
+
+  function EventModal({ event, onClose }) {
+    return (
+        <div className="modal">
+            <div className="modal-content">
+                <h2>{event.title}</h2>
+                <p>{event.extendedProps.description}</p>
+                <button onClick={onClose}>Close</button>
+            </div>
+        </div>
+    );
+}
 
   function showMoreInfo(event) {
     alert(`More info about ${event.title}: ${event.extendedProps.description}`);
@@ -110,10 +135,17 @@ export default function Calendar() {
           events={events}
           eventContent={renderEventContent} // custom event rendering
           locale={"sv"}
-          eventClick={info =>{
-            alert('Clicked on: ' + info.event.title);
+          eventClick={info => {
+            setSelectedEvent(info.event);
+            setIsModalOpen(true);
           }}
         />
+        {isModalOpen && (
+          <EventModal
+            event={selectedEvent}
+            onClose={() => setIsModalOpen(false)}
+          />
+        )}
       </div>
       <div className="wide">
         <Sponsors />
