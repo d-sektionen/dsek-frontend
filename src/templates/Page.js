@@ -67,9 +67,9 @@ export default function Page() {
             </div>
             <div className="wide">
                 < Sponsors />
-                < BackToTop />
+                {/* < BackToTop /> */}
             </div>
-            < BackToTop />
+            {/* < BackToTop /> */}
         </div>
     );
 }
