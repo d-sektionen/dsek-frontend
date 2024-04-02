@@ -63,3 +63,22 @@ code {
     --utskott-bg-color: var(--utskott-bg-color-light);
     --utskott-text-color: var(--utskott-text-color-light);
 }
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #fff4;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #fff8;
+}

@@ -66,9 +66,9 @@ export default function BlogPage() {
             </div>
             <div className="wide">
                 < Sponsors />
-                < BackToTop />
+                {/* < BackToTop /> */}
             </div>
-            < BackToTop />
+            {/* < BackToTop /> */}
         </div>
     );
 }

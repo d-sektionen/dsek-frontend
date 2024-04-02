@@ -60,7 +60,7 @@ export default function Document() {
             </div>
             <div className="wide">
                 < Sponsors />
-                < BackToTop />
+                {/* < BackToTop /> */}
             </div>
         </div>
     );

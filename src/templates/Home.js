@@ -67,7 +67,7 @@ function Home() {
             </div>
             <div className="wide">
                 < Sponsors />
-                < BackToTop />
+                {/* < BackToTop /> */}
             </div>
         </div>
     );
