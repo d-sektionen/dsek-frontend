@@ -80,7 +80,7 @@ export default function SocialMedia() {
             </div>
             <div className="wide">
                 < Sponsors />
-                < BackToTop />
+                {/* < BackToTop /> */}
             </div>
         </div>
     );

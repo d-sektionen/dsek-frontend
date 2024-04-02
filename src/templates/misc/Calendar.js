@@ -73,7 +73,7 @@ export default function Calendar() {
             </div >
             <div className="wide">
                 < Sponsors />
-                < BackToTop />
+                {/* < BackToTop /> */}
             </div>
         </div >
     );
