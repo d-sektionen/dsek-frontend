@@ -7,6 +7,7 @@
 For the calander, https://fullcalendar.io/docs
 
 ### TODO:
+test
 
 - [x] Gör om alla utskotts sidor via strappi
 - [x] Ta bort side nav
