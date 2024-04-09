@@ -1,4 +1,4 @@
-import '../css/Nav.css';
+import '../css/PageNav.css';
 import PageNavButton from './PageNavButton';
 
 function calculatePageInterval(currentPage, totalPages) {

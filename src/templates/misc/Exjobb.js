@@ -69,7 +69,7 @@ export function Exjobb() {
             </div>
             <div className="wide">
                 < Sponsors />
-                < BackToTop />
+                {/* < BackToTop /> */}
             </div>
         </div>
     );
@@ -134,9 +134,9 @@ export function ExjobbPage() {
             </div>
             <div className="wide">
                 < Sponsors />
-                < BackToTop />
+                {/* < BackToTop /> */}
             </div>
-            < BackToTop />
+            {/* < BackToTop /> */}
         </div>
     );
 }

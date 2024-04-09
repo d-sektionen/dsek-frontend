@@ -25,6 +25,11 @@
     margin: 0 10px 0 10px;
 }
 
+p > a {
+    text-decoration: underline;
+    color: blue;
+}
+
 @media only screen and (max-width: 900px) {
     .Middle {
         width: 100%;

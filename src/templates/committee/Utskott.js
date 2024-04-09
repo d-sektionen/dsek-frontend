@@ -61,7 +61,7 @@ function UtskottPage() {
                         </div>
                     }
                 </div>
-                < BackToTop />
+                {/* < BackToTop /> */}
             </div>
 
         </>

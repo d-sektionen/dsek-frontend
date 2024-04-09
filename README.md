@@ -8,23 +8,25 @@ For the calander, https://fullcalendar.io/docs
 
 ### TODO:
 
-- [x] Bygg ut sektionssidorna med information som rör sektionen. Detta ska göras med Page.js under Templates
-      ( Bytte till strapi)
-- [ ] Bygg ut "Sökande" sidorna med Page.js
-- [ ] Fixa sökrutan i Sidenav på huvudsidan (lägg till funktionalitet)
-- [ ] Kontakt (länk i sidenav)
-- [ ] Fotoalbum (länk i sidenav)
+- [x] Gör om alla utskotts sidor via strappi
+- [x] Ta bort side nav
 - [x] staben font
 - [x] dsek-frontend/public/fake-cms/pages/\*.md borde flyttas (ska de ligga i cms?)
-- [ ] pagenav-knappar funkar inte riktigt...
-- [ ] Alumni-blogg (meny)
+- [x] Alumni-blogg (meny)
 - [x] Företag (meny)
 - [x] Exjobb (meny)
 - [x] länkar på utskottssidor
 - [x] borde hoppa till konsekvent plats (t.ex. högst upp) på sidan när man byter sida med pagenav-knappar
 - [ ] API-nyckeln till kalendern behöver en annan lösning så att den inte syns i deployad build
-- [ ] tillgänglighet (skärmläsare etc)
+- [x] tillgänglighet (skärmläsare etc)
 - [x] Utskottsloggor i dropdown menyn
+- [x] Fixa search bar med strapi pluggin
+- [x] Darkmode
+- [x] Ta bort eller gör om knappen som skickar dig längst upp på sidan
+- [] (om tid finns) Lägg till kort för evenemang/nyheter typ som https://www.dsek.se/
+- [] Finns "ny student"? Om inte lägg till
+- [] Se över allt under Extra, t.ex. Alumniblogg ska det tas bort?
+- [] Implementera nya Figma designen
 
 ### Bugs
 

@@ -87,13 +87,25 @@ export default function Calendar() {
 
   function renderEventContent(eventInfo) {
     return (
-      <>
-        <div className="eventbox">
-          <i className="title">{eventInfo.event.title}</i>
-          <b className="info">{eventInfo.timeText}</b>
-          <p className="desc" onClick={e => e.target.classList.toggle('expanded')}>{eventInfo.event.extendedProps.description}</p>
-        </div>
-      </>
+        <div className="Home">
+            <div className="wide">
+                <SideNav />
+            </div>
+            <div className="Middle FullPageCalendar">
+                <p style={{ textAlign: 'right' }}><a href="https://calendar.google.com/calendar/embed?src=c_jhjemj5afa0ubjucqad23cuuos%40group.calendar.google.com&ctz=Europe%2FStockholm">Prenumerera genom Google Kalender</a></p>
+                <p style={{ textAlign: 'right' }}><a href="http://kalender.d-sektionen.se/">Prenumerera med denna ics-länk (kopiera)</a></p>
+                <FullCalendar
+                    plugins={[dayGridPlugin]}
+                    initialView="dayGridMonth"
+                    events={events}
+                    locale={'sv'}
+                />
+            </div >
+            <div className="wide">
+                < Sponsors />
+                {/* < BackToTop /> */}
+            </div>
+        </div >
     );
   }
 

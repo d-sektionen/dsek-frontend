@@ -22,6 +22,13 @@
         display: none;
     }
 
+    #dmode {
+        font-size: 1.1em;
+        right: 0;
+        left: auto;
+        text-align: right;
+    }
+
 }
 
 .logo {
@@ -40,6 +47,13 @@
         background-color: black;
         /* border-radius: 5vh; */
     }
+
+    #dmode {
+        font-size: 0.75em;
+        text-align: left;
+        right: auto;
+        left: 0;
+    }
 }
 #logoWhite {
     display: var(--display-light-logo);
@@ -48,7 +62,8 @@
     display: var(--display-dark-logo);
 }
 .narrow-header .logo-container {
-    height: 45px;
+    height: 3em;
+    /* behöver använda samma enhet som margin i ".hamburger" i Nav.css */
 }
 
 .wide-header .logo-container {
@@ -63,4 +78,22 @@
     margin-top: 0px;
     margin-bottom: 32px;
     opacity: 0;
+}
+
+.logo {
+    height: 90%;
+    object-fit: contain;
+}
+
+#dmode {
+    border: solid 1px;
+    border-radius: 2px;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    position: absolute;
 }
