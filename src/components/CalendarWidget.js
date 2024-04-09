@@ -4,6 +4,7 @@ import { gapi } from "gapi-script";
 import React, { useEffect, useState } from "react";
 import '../css/Widget.css';
 
+
 // "Det finns inga kommande aktiviteter" om inga hittas
 function CalendarWidget(props) {
 
@@ -12,6 +13,9 @@ function CalendarWidget(props) {
     const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
     const calendarID = "c_jhjemj5afa0ubjucqad23cuuos@group.calendar.google.com";
 
+    const date = new Date();
+
+    // Reference: https://developers.google.com/calendar/api/v3/reference/events/list
     const getEvents = (calendarID, apiKey) => {
         function initiate() {
             gapi.client
@@ -20,21 +24,13 @@ function CalendarWidget(props) {
                 })
                 .then(function () {
                     return gapi.client.request({
-                        path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
+                        path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events?timeMin=${date.toISOString()}`,
                     });
                 })
                 .then(
                     (response) => {
                         let events = response.result.items;
-
-                        const newEvents = [
-                            {
-                                start: new Date('2023-04-20T13:15:00+02:00'),
-                                end: new Date('2023-04-20T15:00:00+02:00'),
-                                title: 'Testingggg',
-                                url: 'https://www.bing.com'
-                            }
-                        ];
+                        const newEvents = [];
                         for (const e of events) {
                             const t = {
                                 start: e.start.date || e.start.dateTime,
@@ -54,7 +50,8 @@ function CalendarWidget(props) {
     };
 
     useEffect(() => {
-        const events = getEvents(calendarID, apiKey);
+        // Load the Google Calendar API & set the events
+        getEvents(calendarID, apiKey);
     }, []);
 
     return (
@@ -63,7 +60,13 @@ function CalendarWidget(props) {
                 <h1 className="Widget-Title">{props.title}</h1>
                 <FullCalendar
                     plugins={[listPlugin]}
-                    initialView="listMonth"
+                    views={{
+                        listWeek: {
+                            duration: { days: 21 },
+                            buttonText: 'Vecka'
+                        }
+                    }}
+                    initialView="listWeek"
                     events={events}
                     headerToolbar={
                         false
