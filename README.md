@@ -2,10 +2,6 @@
 
 ## Features:
 
-### Good links:
-
-For the calander, https://fullcalendar.io/docs
-
 ### TODO:
 
 - [x] Gör om alla utskotts sidor via strappi
