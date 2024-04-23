@@ -10,6 +10,15 @@
     align-items: center;
     border: 2px solid #FFF;
     background-color: #3af;
+    cursor: pointer;
+}
+
+.eventbox:hover {
+    background-color: #0888aa;
+}
+
+.eventbox:active {
+    background-color: #044477;
 }
 
 .info {
@@ -73,10 +82,24 @@
     color: var(--text-color);
 }
 
+.modal button{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
 @media (max-width: 600px) {
     .modal-content {
         width: 80%;
     }
 }
 
-/*.fc-h-event{}*/
+.fc-h-event {
+    background-color: none;
+    border: none;
+    display: block;
+}

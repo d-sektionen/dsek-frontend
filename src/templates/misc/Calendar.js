@@ -27,7 +27,8 @@ export default function Calendar() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState(null);
 
-    const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+    //const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+    const apiKey = "AIzaSyDge4FHFtWmv0HrVnJ-tI03QdWcWFXs1Bk";
     const calendarID = "c_jhjemj5afa0ubjucqad23cuuos@group.calendar.google.com";
 
     const timeMin = subtractYears(new Date(), 1).toISOString();
@@ -36,12 +37,13 @@ export default function Calendar() {
     const getEvents = (calendarID, apiKey) => {
         async function initiate() {
             await gapi.client.init({ apiKey: apiKey });
-            // const response = await gapi.client.request({
-            //     path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events?maxResults=500&orderBy=updated&timeMin=${timeMin}`,
-            // });
+            const response = await gapi.client.request({
+                 path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events?maxResults=500&orderBy=updated&timeMin=${timeMin}`,
+            });
 
-            // let events = response.result.items;
-            let events = [];
+            let events = response.result.items;
+            //let events = []
+
             const newEvents = [];
 
             for (const e of events) {
@@ -49,10 +51,11 @@ export default function Calendar() {
                     start: e.start.date || e.start.dateTime,
                     end: e.end.date || e.end.dateTime,
                     title: e.summary,
-                    description: e.description || "ingen beskrivning tillgänglig",
+                    description: e.description,
                 };
                 newEvents.push(t);
             }
+            /*
             const tt = {
                 start: new Date("2024-03-04T13:15:00+02:00"),
                 end: new Date("2024-03-04T15:00:00+02:00"),
@@ -60,6 +63,7 @@ export default function Calendar() {
                 description: "Hej D-student! Här kommer information om sektionens vintermöte att samlas. Ett sektionsmöte är sektionens högst beslutande organ, och det är sektionsmöten som beslutar om till exempel sektionens budgetering, framtida arbetssätt, stadgar, reglemente, med mera. För mer information om hur ett sektionsmöte fungerar finns en beskrivning av relevanta termer och processer på d-sektionen.se/sektionsmote Observera att mycket information kommer läggas till under de kommande veckorna, så denna sida kommer att uppdateras kontinuerligt. Styrelsen kommer bjuda på pizza i samband med sektionsmötet, länk för anmälan: https://forms.gle/zhwdJDGGrRGXr5oo7. Deadline för anmälan är 24 januari 2024.",
             };
             newEvents.push(tt)
+            */
             setEvents(newEvents);
         }
         gapi.load("client", initiate);
@@ -83,11 +87,15 @@ export default function Calendar() {
     }
 
     function EventModal({ event, onClose }) {
+        let text = event.extendedProps.description;
+        if(!text)
+            text = "Ingen beskrivning finns tillgänglig.";
+        
         return (
             <div className="modal">
                 <div className="modal-content">
                     <h2>{event.title}</h2>
-                    <p>{event.extendedProps.description}</p>
+                    <p dangerouslySetInnerHTML={{ __html: text }} />
                     <button onClick={onClose}>Close</button>
                 </div>
             </div>
