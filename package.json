@@ -11,6 +11,7 @@
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
         "date-fns": "^2.30.0",
+        "dayjs": "^1.11.13",
         "dotenv": "^16.0.3",
         "gapi-script": "^1.2.0",
         "marked": "^4.2.4",
