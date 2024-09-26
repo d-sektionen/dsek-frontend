@@ -1,0 +1,58 @@
+# THIS FILE IS FOR DEVELOPMENT PURPOSES ONLY
+# DO NOT USE IT IN PRODUCTION
+
+networks:
+  primary:
+    name: dsek-dev-network
+    driver: bridge
+
+services:
+  db:
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: $DB_USER
+      POSTGRES_DB: $DB_NAME
+      POSTGRES_PASSWORD: $DB_PASSWORD
+    env_file: .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+      - .dev/db/dumps:/dumps
+    networks:
+      - primary
+
+  strapi:
+    image: registry.d-sektionen.se/strapi-cms:development
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_NAME: $DB_NAME
+      DATABASE_USERNAME: $DB_NAME
+      DATABASE_PASSWORD: $DB_PASSWORD
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      APP_KEYS: secret
+      API_TOKEN_SALT: secret
+      ADMIN_JWT_SECRET: secret
+    ports:
+      - "1337:1337"
+    networks:
+      - primary
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      dockerfile: Dockerfile.dev
+    env_file: .env
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src
+    networks:
+      - primary
+
+volumes:
+  db:
+    name: dlan-dev-db
