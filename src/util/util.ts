@@ -2,5 +2,5 @@ import { remark } from "remark";
 import html from "remark-html";
 
 export function renderMarkdown(markdown: string) {
-  return remark().use(html).process(markdown);
+  return remark().use(html).processSync(markdown).toString();
 }

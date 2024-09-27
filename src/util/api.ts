@@ -32,3 +32,13 @@ export async function apiFetch<T>(
 
   return json.data as T;
 }
+
+export async function apiFetchOne<T>(
+  path: string,
+  query?: ApiFetchQuery,
+  options?: ApiFetchOptions,
+) {
+  const data = await apiFetch<T[]>(path);
+  if (data == null) return null;
+  return data[0] ?? null;
+}

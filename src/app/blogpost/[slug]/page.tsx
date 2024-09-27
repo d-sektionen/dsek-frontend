@@ -1,18 +1,27 @@
-import { apiFetch, apiUrl, Blogpost } from "@/util/api";
+import { apiFetchOne, apiUrl } from "@/util/api";
+import type { Blogpost } from "@/util/strapi";
+import { renderMarkdown } from "@/util/util";
 
-export default async function BlogpostPage() {
-  const posts = await apiFetch<Blogpost[]>("blogposts", { populate: "*" });
+export default async function BlogpostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const post = await apiFetchOne<Blogpost>("blogposts", {
+    filters: { slug: params.slug },
+  });
+
+  if (post == null) {
+    return "Loading...";
+  }
+
+  const { title, content, preview_content, thumbnail } = post.attributes;
 
   return (
     <>
-      <h1>Cool blogg</h1>
-      {posts?.map(({ attributes: { title, thumbnail, content } }) => (
-        <div>
-          <h2>{title}</h2>
-          <img src={apiUrl(thumbnail.data.attributes.url).href} />
-          <div>{content}</div>
-        </div>
-      ))}
+      <h1>{title}</h1>
+      {thumbnail && <img src={thumbnail.data.attributes.url} />}
+      <div dangerouslySetInnerHTML={{ __html: renderMarkdown(content) }} />
     </>
   );
 }
