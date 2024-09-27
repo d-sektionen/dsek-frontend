@@ -57,4 +57,4 @@ services:
 
 volumes:
   db:
-    name: dlan-dev-db
+    name: dsek-dev-db
