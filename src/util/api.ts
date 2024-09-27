@@ -32,17 +32,3 @@ export async function apiFetch<T>(
 
   return json.data as T;
 }
-
-export type Blogpost = StrapiEntry<{
-  title: string;
-  content: string;
-  preview_content: string;
-  slug: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  locale: string;
-  thumbnail: StrapiResponse<StrapiFile<StrapiImage>>;
-  extra_media: StrapiResponse<StrapiFile<StrapiImage>[]>;
-  extra_files: StrapiResponse<StrapiFile>;
-}>;
