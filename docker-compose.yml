@@ -46,6 +46,8 @@ services:
     build:
       dockerfile: Dockerfile.dev
     env_file: .env
+    environment:
+      STRAPI_BASE_URL: "http://strapi:1337"
     ports:
       - "3000:3000"
     volumes:
