@@ -53,12 +53,12 @@ a {
     --font-heading-sm: 1rem / 1.2 var(--ff-display);
     --font-heading-xs: uppercase 0.875rem / 1.2 var(--ff-display);
 
-    /* Spacing, WIP */
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 0.75rem;
-    --spacing-lg: 1rem;
-    --spacing-xl: 1.5rem;
+    /* Sizes, WIP */
+    --size-xs: 0.25rem;
+    --size-sm: 0.5rem;
+    --size-md: 0.75rem;
+    --size-lg: 1rem;
+    --size-xl: 1.5rem;
 
     /* Shadows, WIP */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 5%);
@@ -69,11 +69,6 @@ a {
     --rounded-sm: 0.25rem;
     --rounded: 0.5rem;
     --rounded-lg: 1rem;
-
-    /* Transition */
-    --ease-out: 0.125s ease-out;
-    --ease-in: 0.125s ease-in;
-    --ease-in-out: 0.125s ease-in-out;
 }
 
 /* Apply to all elements, so that individual components can override theming */
@@ -100,6 +95,12 @@ a {
     --color-pixels-green: rgb(var(--theme-pixels-green));
     --color-pixels-yellow: rgb(var(--theme-pixels-yellow));
     --color-pixels-brown: rgb(var(--theme-pixels-brown));
+
+    /* Transition */
+    --ease-speed: 0.125s;
+    --ease-out: var(--ease-speed) ease-out;
+    --ease-in: var(--ease-speed) ease-in;
+    --ease-in-out: var(--ease-speed) ease-in-out;
 }
 
 html {
