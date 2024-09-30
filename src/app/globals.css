@@ -96,6 +96,53 @@ a {
     --color-pixels-yellow: rgb(var(--theme-pixels-yellow));
     --color-pixels-brown: rgb(var(--theme-pixels-brown));
 
+    /* color-mix is baseline, sucks if you don't support it */
+    --color-base-1: color-mix(
+        in lch,
+        var(--color-background),
+        var(--color-on-background) 10%
+    );
+    --color-base-2: color-mix(
+        in lch,
+        var(--color-background),
+        var(--color-on-background) 20%
+    );
+    --color-base-3: color-mix(
+        in lch,
+        var(--color-background),
+        var(--color-on-background) 30%
+    );
+    --color-base-4: color-mix(
+        in lch,
+        var(--color-background),
+        var(--color-on-background) 40%
+    );
+    --color-base-5: color-mix(
+        in lch,
+        var(--color-background),
+        var(--color-on-background) 50%
+    );
+    --color-base-6: color-mix(
+        in lch,
+        var(--color-background),
+        var(--color-on-background) 60%
+    );
+    --color-base-7: color-mix(
+        in lch,
+        var(--color-background),
+        var(--color-on-background) 70%
+    );
+    --color-base-8: color-mix(
+        in lch,
+        var(--color-background),
+        var(--color-on-background) 80%
+    );
+    --color-base-9: color-mix(
+        in lch,
+        var(--color-background),
+        var(--color-on-background) 90%
+    );
+
     /* Transition */
     --ease-speed: 0.125s;
     --ease-out: var(--ease-speed) ease-out;
@@ -118,4 +165,12 @@ body {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
     border-radius: var(--rounded);
+}
+
+details summary {
+    list-style: none;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
 }

@@ -1,0 +1,14 @@
+.navbarLink {
+}
+
+.label {
+    padding-left: calc(var(--indent) * var(--size-md));
+    display: block;
+}
+
+.navbarLink[open] .iconClosed {
+    display: none;
+}
+.navbarLink:not([open]) .iconOpen {
+    display: none;
+}

@@ -1,0 +1,31 @@
+.navbar {
+    position: relative;
+}
+
+.navbar > header {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-base-1);
+    padding: var(--size-sm);
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    align-self: center;
+}
+
+.menuButton {
+    position: absolute;
+    display: flex;
+    top: 0;
+    right: 0;
+    margin: var(--size-lg);
+}
+
+.menu[open] .menuIcon {
+    display: none;
+}
+
+.menu:not([open]) .closeIcon {
+    display: none;
+}

@@ -1,18 +1,15 @@
-import clsx from "clsx";
+import { DesktopNavbar } from "../DesktopNavbar/DesktopNavbar";
+import { MobileNavbar } from "../MobileNavbar/MobileNavbar";
 import style from "./Navbar.module.css";
-import Image from "next/image";
-import { CgChevronDown, CgChevronRight } from "react-icons/cg";
-import { NavbarItem } from "../NavbarItem/NavbarItem";
-import Link from "next/link";
 
-type NavbarLink = {
+export type NavbarLink = {
   label: string;
   href?: string;
   children?: NavbarLink[];
 };
 
 /* TODO: this should be fetched from Strapi */
-const links: NavbarLink[] = [
+const items: NavbarLink[] = [
   {
     label: "Sektionen",
     children: [
@@ -85,33 +82,16 @@ const links: NavbarLink[] = [
   },
 ];
 
+/* Bad solution alert! Fix this eventually by unifying the navbars */
 export function Navbar() {
   return (
-    <div className={style.wrapper}>
-      <div className={style.navbar}>
-        <Link href="/" className={style.logo}>
-          <Image
-            src="/logo_dsektionen.svg"
-            alt="Logo illustration, 'Datateknologsektionen Linköpings Universitet', colored squares represent each program."
-            width={600}
-            height={100}
-          />
-        </Link>
-
-        <nav>
-          {links.map(({ label, href, children }, i) => (
-            <NavbarItem key={i} label={label} href={href}>
-              {children?.map(({ label, href, children }, j) => (
-                <NavbarItem key={j} isSubItem label={label} href={href}>
-                  {children?.map(({ label, href, children }, k) => (
-                    <NavbarItem key={k} isSubItem label={label} href={href} />
-                  ))}
-                </NavbarItem>
-              ))}
-            </NavbarItem>
-          ))}
-        </nav>
+    <>
+      <div className={style.desktopNavbar}>
+        <DesktopNavbar items={items} />
       </div>
-    </div>
+      <div className={style.mobileNavbar}>
+        <MobileNavbar items={items} />
+      </div>
+    </>
   );
 }
