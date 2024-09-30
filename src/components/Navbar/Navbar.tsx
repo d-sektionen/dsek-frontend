@@ -89,9 +89,8 @@ export function Navbar() {
   return (
     <div className={style.wrapper}>
       <div className={style.navbar}>
-        <Link href="/">
+        <Link href="/" className={style.logo}>
           <Image
-            className={style.logo}
             src="/logo_dsektionen.svg"
             alt="Logo illustration, 'Datateknologsektionen Linköpings Universitet', colored squares represent each program."
             width={600}
