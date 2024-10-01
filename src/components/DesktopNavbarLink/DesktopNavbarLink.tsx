@@ -44,7 +44,7 @@ export function DesktopNavbarLink({
         {isNested ? <CgChevronRight /> : <CgChevronDown />}
       </Label>
 
-      <nav style={{ "--depth": depth } as Record<string, unknown>}>
+      <nav>
         {children.map(({ label, href, children }) => (
           <DesktopNavbarLink depth={depth + 1} label={label} href={href}>
             {children}

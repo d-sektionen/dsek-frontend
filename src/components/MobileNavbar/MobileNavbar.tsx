@@ -14,13 +14,14 @@ export function MobileNavbar({ items }: MobileNavbarProps) {
   return (
     <article className={style.navbar}>
       <header>
-        <Image
-          className={style.logo}
-          src="/logo_dsektionen.svg"
-          alt="Logo illustration, 'Datateknologsektionen Linköpings Universitet', colored squares represent each program."
-          width={240}
-          height={40}
-        />
+        <Link className={style.logo} href="/">
+          <Image
+            src="/logo_dsektionen.svg"
+            alt="Logo illustration, 'Datateknologsektionen Linköpings Universitet', colored squares represent each program."
+            width={240}
+            height={40}
+          />
+        </Link>
       </header>
 
       <details className={style.menu}>

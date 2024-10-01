@@ -21,25 +21,30 @@ export function MobileNavbarLink({
   children,
 }: MobileNavbarLinkProps) {
   const Label = href != null ? Link : "li";
+  const depthVariable = { "--depth": depth } as Record<string, unknown>;
 
   if (children == null) {
     return (
-      <Label className={clsx(style.navbarLink, style.label)} href={href ?? ""}>
+      <Label
+        style={depthVariable}
+        className={clsx(style.navbarLink, style.label)}
+        href={href ?? ""}
+      >
         {label}
       </Label>
     );
   }
 
   return (
-    <details className={style.navbarLink}>
+    <details style={depthVariable} className={style.navbarLink}>
       <summary>
         <Label className={style.label} href={href ?? ""}>
           {label}
-          <CgChevronDown className={style.iconClosed} />
-          <CgChevronUp className={style.iconOpen} />
+          <CgChevronDown size={24} className={style.iconClosed} />
+          <CgChevronUp size={24} className={style.iconOpen} />
         </Label>
       </summary>
-      <nav style={{ "--depth": depth } as Record<string, unknown>}>
+      <nav>
         {children.map(({ label, href, children }) => (
           <MobileNavbarLink depth={depth + 1} label={label} href={href}>
             {children}

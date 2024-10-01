@@ -1,14 +1,19 @@
 .navbarLink {
+    background: var(--color-base-2);
 }
 
 .label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--size-sm) var(--size-md);
     padding-left: calc(var(--depth) * var(--size-md));
-    display: block;
 }
 
 .navbarLink[open] .iconClosed {
     display: none;
 }
+
 .navbarLink:not([open]) .iconOpen {
     display: none;
 }

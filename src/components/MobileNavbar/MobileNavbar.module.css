@@ -19,7 +19,7 @@
     display: flex;
     top: 0;
     right: 0;
-    margin: var(--size-lg);
+    margin: var(--size-lg) var(--size-md);
 }
 
 .menu[open] .menuIcon {
