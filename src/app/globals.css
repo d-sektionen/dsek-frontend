@@ -127,10 +127,12 @@ body {
     color: var(--color-on-background);
 }
 
-*:focus {
-    outline: 2px solid var(--color-primary);
-    outline-offset: -2px;
-    border-radius: var(--rounded);
+@media screen and (min-width: 640px) {
+    *:focus {
+        outline: 2px solid var(--color-primary);
+        outline-offset: -2px;
+        border-radius: var(--rounded);
+    }
 }
 
 details summary {
