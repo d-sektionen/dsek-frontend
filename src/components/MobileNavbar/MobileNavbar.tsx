@@ -27,8 +27,8 @@ export function MobileNavbar({ items }: MobileNavbarProps) {
 
       <details className={style.menu}>
         <summary className={style.menuButton}>
-          <CgMenu className={style.menuIcon} size={20} />
-          <CgClose className={style.closeIcon} size={20} />
+          <CgMenu className={style.menuIcon} size={24} />
+          <CgClose className={style.closeIcon} size={24} />
         </summary>
         <nav>
           {items.map(({ label, href, children }) => (

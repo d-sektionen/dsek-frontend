@@ -3,7 +3,7 @@
 }
 
 .label {
-    padding: var(--size-md) var(--size-sm);
+    padding: var(--size-lg) var(--size-sm);
     width: 100%;
     min-width: max-content;
     display: flex;
@@ -11,6 +11,7 @@
     justify-content: space-between;
     user-select: none;
     gap: var(--size-xs);
+    font: var(--font-button);
 }
 
 .navbarLink > nav {
@@ -49,7 +50,7 @@
 }
 
 .navbarLink > nav .label {
-    padding: var(--size-xs) var(--size-sm);
+    padding: var(--size-sm);
 }
 
 .navbarLink.nested > nav {

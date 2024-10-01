@@ -15,14 +15,15 @@
 
 .icon {
     display: flex;
-    padding: var(--size-sm) var(--size-md);
+    padding: 0 var(--size-md);
 }
 
 .label {
     display: block;
     flex: 1;
-    padding-top: var(--size-sm);
-    padding-bottom: var(--size-sm);
+    padding-top: var(--size-md);
+    padding-bottom: var(--size-md);
+    font: var(--font-button);
 }
 
 .navbarLink[open] > summary > .icon > .iconClosed {

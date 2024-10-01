@@ -46,8 +46,8 @@ export function MobileNavbarLink({
           {label}
         </Label>
         <div className={style.icon}>
-          <CgChevronDown size={24} className={style.iconClosed} />
-          <CgChevronUp size={24} className={style.iconOpen} />
+          <CgChevronDown size={20} className={style.iconClosed} />
+          <CgChevronUp size={20} className={style.iconOpen} />
         </div>
       </summary>
       <nav>

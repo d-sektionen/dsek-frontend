@@ -42,16 +42,8 @@ a {
     --theme-primary: var(--theme-pixels-pink);
     --theme-on-primary: var(--theme-pixels-yellow);
 
-    /* Fonts, 1rem = 16px */
-    --ff-display: "asap", "Arial", sans-serif;
     --ff-body: "Arial", sans-serif;
-
-    --font-base: 0.875rem / 1.6875 var(--ff-body);
-    --font-button: 0.875rem / 1 var(--ff-display);
-    --font-heading-lg: 1.75rem / 1.2 var(--ff-display);
-    --font-heading-md: 1.25rem / 1.2 var(--ff-display);
-    --font-heading-sm: 1rem / 1.2 var(--ff-display);
-    --font-heading-xs: uppercase 0.875rem / 1.2 var(--ff-display);
+    /* --ff-display is set in layout.tsx */
 
     /* Sizes, WIP */
     --size-xs: 0.25rem;
@@ -116,8 +108,16 @@ a {
     --ease-in-out: var(--ease-speed) ease-in-out;
 }
 
+/* Set font variables in html so nextjs has time to add its variable */
 html {
     font-size: 16px;
+
+    --font-base: 0.875rem / 1.6875 var(--ff-body);
+    --font-button: 0.875rem / 1 var(--ff-display);
+    --font-heading-lg: 1.75rem / 1.2 var(--ff-display);
+    --font-heading-md: 1.25rem / 1.2 var(--ff-display);
+    --font-heading-sm: 1rem / 1.2 var(--ff-display);
+    --font-heading-xs: uppercase 0.875rem / 1.2 var(--ff-display);
 }
 
 /* Globals */
