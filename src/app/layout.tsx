@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar/Navbar";
 import Script from "next/script";
+import { JumpToContentButton } from "@/components/JumpToContentButton/JumpToContentButton";
 
 export const metadata: Metadata = {
   title: "dsek-frontend",
@@ -17,8 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <JumpToContentButton />
         <Navbar />
-        {children}
+        <main id="content">{children}</main>
         <Script src="/scroll.js" />
       </body>
     </html>
