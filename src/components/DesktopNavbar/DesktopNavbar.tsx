@@ -2,9 +2,9 @@ import clsx from "clsx";
 import style from "./DesktopNavbar.module.css";
 import Image from "next/image";
 import { CgChevronDown, CgChevronRight } from "react-icons/cg";
-import { NavbarItem } from "../NavbarItem/NavbarItem";
 import Link from "next/link";
 import { NavbarLink } from "../Navbar/Navbar";
+import { DesktopNavbarLink } from "../DesktopNavbarLink/DesktopNavbarLink";
 
 type DesktopNavbarProps = {
   items: NavbarLink[];
@@ -25,15 +25,9 @@ export function DesktopNavbar({ items }: DesktopNavbarProps) {
 
         <nav>
           {items.map(({ label, href, children }, i) => (
-            <NavbarItem key={i} label={label} href={href}>
-              {children?.map(({ label, href, children }, j) => (
-                <NavbarItem key={j} isSubItem label={label} href={href}>
-                  {children?.map(({ label, href, children }, k) => (
-                    <NavbarItem key={k} isSubItem label={label} href={href} />
-                  ))}
-                </NavbarItem>
-              ))}
-            </NavbarItem>
+            <DesktopNavbarLink key={i} label={label} href={href}>
+              {children}
+            </DesktopNavbarLink>
           ))}
         </nav>
       </div>

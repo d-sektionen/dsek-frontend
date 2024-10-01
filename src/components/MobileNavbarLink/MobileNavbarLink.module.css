@@ -2,7 +2,7 @@
 }
 
 .label {
-    padding-left: calc(var(--indent) * var(--size-md));
+    padding-left: calc(var(--depth) * var(--size-md));
     display: block;
 }
 

@@ -1,22 +1,18 @@
-.navbarItem {
+.navbarLink {
     position: relative;
 }
 
-.subItem {
-    width: max-content;
-    min-width: 100%;
-    user-select: none;
-}
-
-.link {
+.label {
     padding: var(--size-md) var(--size-sm);
+    width: 100%;
+    min-width: max-content;
     display: flex;
     align-items: center;
     user-select: none;
     gap: var(--size-xs);
 }
 
-.subMenu {
+.navbarLink > nav {
     color: initial;
     visibility: hidden;
     background-color: var(--color-background);
@@ -34,29 +30,28 @@
         bottom var(--ease-out);
 }
 
-.navbarItem:hover > .link,
-.navbarItem:focus > .link,
-.navbarItem:focus-within > .link {
+.navbarLink:hover,
+.navbarLink:focus,
+.navbarLink:focus-within {
     background-color: var(--color-primary);
     color: var(--color-on-primary);
     transition:
         background-color var(--ease-out),
         color var(--ease-out);
 }
-
-.subItem .link {
-    padding: var(--size-xs) var(--size-sm);
-}
-
-.navbarItem:hover > .subMenu,
-.navbarItem:focus > .subMenu,
-.navbarItem:focus-within > .subMenu {
+.navbarLink:hover > nav,
+.navbarLink:focus > nav,
+.navbarLink:focus-within > nav {
     visibility: visible;
     bottom: 0;
     opacity: 1;
 }
 
-.subItem .subMenu {
+.navbarLink > nav .label {
+    padding: var(--size-xs) var(--size-sm);
+}
+
+.navbarLink.nested > nav {
     top: var(--size-xs);
     right: 0;
     transform: translateX(100%);
@@ -65,9 +60,13 @@
         top var(--ease-out);
 }
 
-.subItem:hover > .subMenu,
-.subItem:focus > .subMenu,
-.subItem:focus-within > .subMenu {
+.navbarLink.nested {
+    user-select: none;
+}
+
+.navbarLink.nested:hover > nav,
+.navbarLink.nested:focus > nav,
+.navbarLink.nested:focus-within > nav {
     bottom: 0;
     top: 0;
 }
