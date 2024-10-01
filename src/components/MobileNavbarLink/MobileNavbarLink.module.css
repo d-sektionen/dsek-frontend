@@ -1,19 +1,34 @@
 .navbarLink {
-    background: var(--color-base-2);
+    background: var(--color-base-3);
+    padding-left: var(--size-md);
 }
 
-.label {
+.navbarLink > nav {
+    border-left: 2px solid var(--color-base-4);
+}
+
+.navbarLink > summary {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--size-sm) var(--size-md);
-    padding-left: calc(var(--depth) * var(--size-md));
 }
 
-.navbarLink[open] .iconClosed {
+.icon {
+    display: flex;
+    padding: var(--size-sm) var(--size-md);
+}
+
+.label {
+    display: block;
+    flex: 1;
+    padding-top: var(--size-sm);
+    padding-bottom: var(--size-sm);
+}
+
+.navbarLink[open] > summary > .icon > .iconClosed {
     display: none;
 }
 
-.navbarLink:not([open]) .iconOpen {
+.navbarLink:not([open]) > summary > .icon > .iconOpen {
     display: none;
 }

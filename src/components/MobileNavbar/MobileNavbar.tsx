@@ -14,6 +14,7 @@ export function MobileNavbar({ items }: MobileNavbarProps) {
   return (
     <article className={style.navbar}>
       <header>
+        {/* TODO: Find a good solution for items that are both links and menus */}
         <Link className={style.logo} href="/">
           <Image
             src="/logo_dsektionen.svg"
@@ -26,8 +27,8 @@ export function MobileNavbar({ items }: MobileNavbarProps) {
 
       <details className={style.menu}>
         <summary className={style.menuButton}>
-          <CgMenu className={style.menuIcon} size={24} />
-          <CgClose className={style.closeIcon} size={24} />
+          <CgMenu className={style.menuIcon} size={20} />
+          <CgClose className={style.closeIcon} size={20} />
         </summary>
         <nav>
           {items.map(({ label, href, children }) => (

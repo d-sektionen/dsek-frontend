@@ -8,6 +8,7 @@
     min-width: max-content;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     user-select: none;
     gap: var(--size-xs);
 }

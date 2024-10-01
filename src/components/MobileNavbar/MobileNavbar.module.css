@@ -5,7 +5,7 @@
 .navbar > header {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-base-1);
+    background-color: var(--color-base-2);
     padding: var(--size-sm);
     box-shadow: var(--shadow);
 }
@@ -17,9 +17,9 @@
 .menuButton {
     position: absolute;
     display: flex;
-    top: 0;
     right: 0;
-    margin: var(--size-lg) var(--size-md);
+    top: var(--size-sm); /* slightly wacky way to put it in the right spot */
+    margin: var(--size-md);
 }
 
 .menu[open] .menuIcon {

@@ -36,13 +36,19 @@ export function MobileNavbarLink({
   }
 
   return (
-    <details style={depthVariable} className={style.navbarLink}>
+    <details
+      name={`navbar-${depth}`}
+      style={depthVariable}
+      className={style.navbarLink}
+    >
       <summary>
         <Label className={style.label} href={href ?? ""}>
           {label}
+        </Label>
+        <div className={style.icon}>
           <CgChevronDown size={24} className={style.iconClosed} />
           <CgChevronUp size={24} className={style.iconOpen} />
-        </Label>
+        </div>
       </summary>
       <nav>
         {children.map(({ label, href, children }) => (

@@ -41,7 +41,7 @@ export function DesktopNavbarLink({
         href={href ?? ""}
       >
         {label}
-        {isNested ? <CgChevronRight /> : <CgChevronDown />}
+        {isNested ? <CgChevronRight size={16} /> : <CgChevronDown size={16} />}
       </Label>
 
       <nav>
