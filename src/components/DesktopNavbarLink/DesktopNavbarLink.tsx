@@ -21,36 +21,34 @@ export function DesktopNavbarLink({
   depth = 1,
   children,
 }: DesktopNavbarLinkProps) {
-  const Label = href != null ? Link : "li";
+  const Label = href != null ? Link : "span";
   const isNested = depth > 1;
 
-  if (children == null) {
-    return (
-      <Label className={clsx(style.navbarLink, style.label)} href={href ?? ""}>
-        {label}
-      </Label>
-    );
-  }
-
   return (
-    <div className={clsx(style.navbarLink, isNested && style.nested)}>
-      <Label
-        tabIndex={0}
-        className={style.label}
-        role="listitem"
-        href={href ?? ""}
-      >
+    <li className={clsx(style.navbarLink, isNested && style.nested)}>
+      <Label tabIndex={0} className={style.label} href={href ?? ""}>
         {label}
-        {isNested ? <CgChevronRight size={16} /> : <CgChevronDown size={16} />}
+
+        {children &&
+          (isNested ? (
+            <CgChevronRight size={16} />
+          ) : (
+            <CgChevronDown size={16} />
+          ))}
       </Label>
 
-      <nav>
-        {children.map(({ label, href, children }) => (
-          <DesktopNavbarLink depth={depth + 1} label={label} href={href}>
+      <ol>
+        {children?.map(({ label, href, children }, i) => (
+          <DesktopNavbarLink
+            key={i}
+            depth={depth + 1}
+            label={label}
+            href={href}
+          >
             {children}
           </DesktopNavbarLink>
         ))}
-      </nav>
-    </div>
+      </ol>
+    </li>
   );
 }

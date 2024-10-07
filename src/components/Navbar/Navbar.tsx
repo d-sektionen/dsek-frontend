@@ -1,5 +1,7 @@
 import { DesktopNavbar } from "../DesktopNavbar/DesktopNavbar";
+import { JumpToContentButton } from "../JumpToContentButton/JumpToContentButton";
 import { MobileNavbar } from "../MobileNavbar/MobileNavbar";
+import { ScreenReaderText } from "../ScreenReaderText/ScreenReaderText";
 import style from "./Navbar.module.css";
 
 export type NavbarLink = {
@@ -87,9 +89,12 @@ export function Navbar() {
   return (
     <>
       <div className={style.desktopNavbar}>
+        <ScreenReaderText as="h3">Desktop navbar</ScreenReaderText>
         <DesktopNavbar items={items} />
       </div>
+      <JumpToContentButton />
       <div className={style.mobileNavbar}>
+        <ScreenReaderText as="h3">Mobile navbar</ScreenReaderText>
         <MobileNavbar items={items} />
       </div>
     </>

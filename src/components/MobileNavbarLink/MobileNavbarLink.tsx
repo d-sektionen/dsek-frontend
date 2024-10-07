@@ -20,43 +20,38 @@ export function MobileNavbarLink({
   depth = 1,
   children,
 }: MobileNavbarLinkProps) {
-  const Label = href != null ? Link : "li";
+  const Label = href != null ? Link : "span";
   const depthVariable = { "--depth": depth } as Record<string, unknown>;
 
-  if (children == null) {
-    return (
-      <Label
-        style={depthVariable}
-        className={clsx(style.navbarLink, style.label)}
-        href={href ?? ""}
-      >
-        {label}
-      </Label>
-    );
-  }
-
   return (
-    <details
-      name={`navbar-${depth}`}
-      style={depthVariable}
-      className={style.navbarLink}
-    >
-      <summary>
-        <Label className={style.label} href={href ?? ""}>
-          {label}
-        </Label>
-        <div className={style.icon}>
-          <CgChevronDown size={20} className={style.iconClosed} />
-          <CgChevronUp size={20} className={style.iconOpen} />
-        </div>
-      </summary>
-      <nav>
-        {children.map(({ label, href, children }) => (
-          <MobileNavbarLink depth={depth + 1} label={label} href={href}>
-            {children}
-          </MobileNavbarLink>
-        ))}
-      </nav>
-    </details>
+    <li>
+      <details
+        name={`navbar-${depth}`}
+        style={depthVariable}
+        className={style.navbarLink}
+      >
+        <summary>
+          <Label className={style.label} href={href ?? ""}>
+            {label}
+          </Label>
+          <div className={style.icon}>
+            <CgChevronDown size={20} className={style.iconClosed} />
+            <CgChevronUp size={20} className={style.iconOpen} />
+          </div>
+        </summary>
+        <ol>
+          {children?.map(({ label, href, children }, i) => (
+            <MobileNavbarLink
+              key={i}
+              depth={depth + 1}
+              label={label}
+              href={href}
+            >
+              {children}
+            </MobileNavbarLink>
+          ))}
+        </ol>
+      </details>
+    </li>
   );
 }
