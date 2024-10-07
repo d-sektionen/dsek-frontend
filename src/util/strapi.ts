@@ -43,6 +43,11 @@ export type StrapiImageFormat = {
   sizeInBytes: number;
 };
 
+export type StrapiComponent<T = unknown> = {
+  id: number;
+  __component: string;
+} & T;
+
 export type Blogpost = StrapiEntry<{
   title: string;
   content: string;
@@ -72,4 +77,19 @@ export type Utskott = StrapiEntry<{
   content: string;
   slug: string;
   preview_content: string;
+}>;
+
+export type Sidebar = StrapiEntry<{
+  sidebar_widgets: StrapiComponent[];
+}>;
+
+export type LogoWithLink = StrapiComponent<{
+  logo: StrapiResponse<StrapiImage>;
+  link: string;
+}>;
+
+export type SidebarSponsorWidget = StrapiComponent<{
+  __component: "sidebar-widgets.sponsor";
+  title: string;
+  logos: LogoWithLink[];
 }>;
