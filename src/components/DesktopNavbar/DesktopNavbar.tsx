@@ -3,8 +3,8 @@ import style from "./DesktopNavbar.module.css";
 import Image from "next/image";
 import { CgChevronDown, CgChevronRight } from "react-icons/cg";
 import Link from "next/link";
-import { NavbarLink } from "../Navbar/Navbar";
 import { DesktopNavbarLink } from "../DesktopNavbarLink/DesktopNavbarLink";
+import type { NavbarLink } from "@/util/strapi";
 
 type DesktopNavbarProps = {
   items: NavbarLink[];
@@ -24,10 +24,8 @@ export function DesktopNavbar({ items }: DesktopNavbarProps) {
         </Link>
 
         <nav>
-          {items.map(({ label, href, children }, i) => (
-            <DesktopNavbarLink key={i} label={label} href={href}>
-              {children}
-            </DesktopNavbarLink>
+          {items.map(({ id }, i) => (
+            <DesktopNavbarLink key={id} id={id} />
           ))}
         </nav>
       </div>

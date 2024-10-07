@@ -1,7 +1,7 @@
 import { types as mimeTypes } from "mime-types";
 
 export type StrapiResponse<T> = {
-  data: StrapiEntry<T>;
+  data: T;
 };
 
 export type StrapiEntry<T> = {
@@ -55,4 +55,21 @@ export type Blogpost = StrapiEntry<{
   thumbnail: StrapiResponse<StrapiFile<StrapiImage>>;
   extra_media: StrapiResponse<StrapiFile<StrapiImage>[]>;
   extra_files: StrapiResponse<StrapiFile>;
+}>;
+
+export type Navbar = StrapiEntry<{
+  navbar_links: StrapiResponse<NavbarLink[]>;
+}>;
+
+export type NavbarLink = StrapiEntry<{
+  label: string;
+  url: string;
+  navbar_links?: StrapiResponse<NavbarLink[]>;
+}>;
+
+export type Utskott = StrapiEntry<{
+  title: string;
+  content: string;
+  slug: string;
+  preview_content: string;
 }>;

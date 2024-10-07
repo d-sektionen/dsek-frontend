@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { NavbarLink } from "../Navbar/Navbar";
 import style from "./MobileNavbar.module.css";
 import Image from "next/image";
 import { CgClose, CgMenu } from "react-icons/cg";
 import Link from "next/link";
 import { MobileNavbarLink } from "../MobileNavbarLink/MobileNavbarLink";
+import type { NavbarLink } from "@/util/strapi";
 
 type MobileNavbarProps = {
   items: NavbarLink[];
@@ -24,10 +24,8 @@ export function MobileNavbar({ items }: MobileNavbarProps) {
           <CgClose className={style.closeIcon} size={24} />
         </summary>
         <nav>
-          {items.map(({ label, href, children }) => (
-            <MobileNavbarLink label={label} href={href}>
-              {children}
-            </MobileNavbarLink>
+          {items.map(({ id }) => (
+            <MobileNavbarLink key={id} id={id} />
           ))}
         </nav>
       </details>
