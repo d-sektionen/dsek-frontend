@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={asapFont.variable}>
-      <body>
+      <body style={{ height: 9999 }}>
         <JumpToContentButton />
         <Navbar />
         <main id="content">{children}</main>

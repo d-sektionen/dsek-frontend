@@ -13,17 +13,10 @@ type MobileNavbarProps = {
 export function MobileNavbar({ items }: MobileNavbarProps) {
   return (
     <article className={style.navbar}>
-      <header>
-        {/* TODO: Find a good solution for items that are both links and menus */}
-        <Link className={style.logo} href="/">
-          <Image
-            src="/logo_dsektionen.svg"
-            alt="Logo illustration, 'Datateknologsektionen Linköpings Universitet', colored squares represent each program."
-            width={240}
-            height={40}
-          />
-        </Link>
-      </header>
+      {/* It's a little unintuitive, but the mobile navbar is structured
+          in reverse and displayed with `flex-direction: column-reverse`. This
+          is so that we can use `.menu:not([open]) + header` to avoid the header
+          disappearing while we're scrolling the menu. */}
 
       <details className={style.menu}>
         <summary className={style.menuButton}>
@@ -38,6 +31,18 @@ export function MobileNavbar({ items }: MobileNavbarProps) {
           ))}
         </nav>
       </details>
+
+      <header>
+        {/* TODO: Find a good solution for items that are both links and menus */}
+        <Link className={style.logo} href="/">
+          <Image
+            src="/logo_dsektionen.svg"
+            alt="Logo illustration, 'Datateknologsektionen Linköpings Universitet', colored squares represent each program."
+            width={240}
+            height={40}
+          />
+        </Link>
+      </header>
     </article>
   );
 }

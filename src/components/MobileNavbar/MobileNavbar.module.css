@@ -1,31 +1,48 @@
 .navbar {
-    position: relative;
+  position: fixed;
+  width: 100%;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .navbar > header {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-base-2);
-    padding: var(--size-sm);
-    box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-base-2);
+  padding: var(--size-sm);
+  box-shadow: var(--shadow);
+  transition: opacity var(--ease-out), transform var(--ease-out);
 }
 
 .logo {
-    align-self: center;
+  align-self: center;
 }
 
 .menuButton {
-    position: absolute;
-    display: flex;
-    right: 0;
-    top: var(--size-sm); /* slightly wacky way to put it in the right spot */
-    margin: var(--size-md);
+  position: absolute;
+  display: flex;
+  right: 0;
+  top: var(--size-sm); /* slightly wacky way to put it in the right spot */
+  margin: var(--size-md);
+  z-index: 1;
+  transition: opacity var(--ease-out), transform var(--ease-out);
+}
+
+.menu {
+  overflow-y: scroll;
 }
 
 .menu[open] .menuIcon {
-    display: none;
+  display: none;
 }
 
 .menu:not([open]) .closeIcon {
-    display: none;
+  display: none;
+}
+
+:global(.scrolled-down) .menu:not([open]) + header,
+:global(.scrolled-down) .menu:not([open]) .menuButton {
+  opacity: 0%;
+  transform: translateY(calc(-1 * var(--size-md)));
 }
