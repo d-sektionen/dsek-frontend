@@ -1,53 +1,54 @@
-const BASE_URL = 'https://strapi.d-sektionen.se/api/';
+const BASE_URL = "https://strapi.d-sektionen.se/api/";
 
 async function fetchData(endpoint, slug) {
-    try {
-        let url = `${BASE_URL}${endpoint}`;
-        if (slug) {
-            url += `?filters[slug][$eq]=${slug}`;
-        }
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        return slug ? data.data[0] : data.data;
-    } catch (error) {
-        console.error(`Error fetching data from ${endpoint} with slug ${slug}:`, error);
-        throw error;
+  try {
+    let url = `${BASE_URL}${endpoint}`;
+    if (slug) {
+      url += `?filters[slug][$eq]=${slug}`;
     }
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return slug ? data.data[0] : data.data;
+  } catch (error) {
+    console.error(
+      `Error fetching data from ${endpoint} with slug ${slug}:`,
+      error,
+    );
+    throw error;
+  }
 }
 
 export function getBlogposts() {
-    //fetchs all blog posts and populate all relations
-    return fetchData('blogposts?populate=*');
+  //fetchs all blog posts and populate all relations
+  return fetchData("blogposts?populate=*");
 }
 
 export function getBlogpost(slug) {
-    return fetchData('blogposts', slug);
+  return fetchData("blogposts", slug);
 }
 
 export function getUtskott(slug) {
-    return fetchData('utskotts', slug);
+  return fetchData("utskotts", slug);
 }
 
 export function getPage(slug) {
-    return fetchData('pages', slug);
+  return fetchData("pages", slug);
 }
 
 export function getDocuments() {
-    return fetchData('upload/files');
+  return fetchData("upload/files");
 }
 
 export function getExjobbs() {
-    return fetchData('exjobbs?populate=*');
+  return fetchData("exjobbs?populate=*");
 }
 
 export function getExjobb(slug) {
-    return fetchData('exjobbs', slug);
+  return fetchData("exjobbs", slug);
 }
-
-
 
 /*
 const BASE_URL = 'https://strapi.d-sektionen.se/api/';
@@ -148,4 +149,4 @@ export async function getExjobb(slug) {
         console.error(`Error fetching post with slug ${slug}:`, error);
         throw error;
     }
-}*/ 
+}*/

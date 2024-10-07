@@ -1,15 +1,12 @@
-Skolan
-======
+# Skolan
 
-Linköpings universitet
-----------------------
+## Linköpings universitet
 
 Som student i datateknik, informationsteknologi, mjukvaruteknik eller innovativ programmering blir du en del av Linköpings universitet (LiU).
 
 Du kommer hålla till vid Campus Valla, det största av universitetets tre campus. Du läser på Tekniska högskolan (LiTH) som är en av de tre fakulteterna på Linköpings universitet. Tack vare universitetets bredd med flera fakulteter finns det kurser inom många olika ämnesområden tex medicin, filosofi, beteendevetenskap, ekonomi, affärsjuridik, pedagogik, slöjd, kultur, media mm. Över 26 000 studenter läser på någon av de många utbildningar och kurser som finns att välja bland vid Linköpings universitet.
 
-Campus tillhörande Linköpings universitet
------------------------------------------
+## Campus tillhörande Linköpings universitet
 
 Linköpings universitet är framförallt uppdelat på tre campus, samt en filial i Carl Malmsten som finns i Stockholm.
 
@@ -25,8 +22,7 @@ US står för Universitetssjukhuset och Campus US är således en naturlig del a
 
 Placerat centralt i Norrköping med Motala ström passerade utanför fönstren. I nyrenoverade lokaler i det gamla industrilandskapet finns både civil-, högskoleingenjörsutbildningar, lärarprogram och sjuksköterskeutbildning m.fl. Mer info på LiU:s hemsida: [Campus Norrköping](https://liu.se/artikel/campus-norrkoping).
 
-Linköpings tekniska högskola
-----------------------------
+## Linköpings tekniska högskola
 
 Linköpings tekniska högskola (LiTH) skapat sig en given plats som högre lärosäte i Sverige trots den ringa åldern.
 

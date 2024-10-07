@@ -1,78 +1,159 @@
-import './App.css';
-import BlogPage from './templates/Blogpost';
-import Page from './templates/Page';
-import Alumni from './templates/committee/Alumni';
-import DEG from './templates/committee/DEG';
-import EventU from './templates/committee/EventU';
-import MafU from './templates/committee/MafU';
-import NarU from './templates/committee/NarU';
-import PubU from './templates/committee/PubU';
-import UtbU from './templates/committee/UtbU';
-import InfU from './templates/committee/InfU';
-import Valberedningen from './templates/committee/Valberedningen';
-import Werk from './templates/committee/Werk';
-import Link from './templates/committee/Link';
-import Dgroup from './templates/committee/Dgroup';
-import Donna from './templates/committee/Donna';
-import Staben from './templates/committee/Staben';
-import UtskottPage from './templates/committee/Utskott';
+import "./App.css";
+import BlogPage from "./templates/Blogpost";
+import Page from "./templates/Page";
+import Alumni from "./templates/committee/Alumni";
+import DEG from "./templates/committee/DEG";
+import EventU from "./templates/committee/EventU";
+import MafU from "./templates/committee/MafU";
+import NarU from "./templates/committee/NarU";
+import PubU from "./templates/committee/PubU";
+import UtbU from "./templates/committee/UtbU";
+import InfU from "./templates/committee/InfU";
+import Valberedningen from "./templates/committee/Valberedningen";
+import Werk from "./templates/committee/Werk";
+import Link from "./templates/committee/Link";
+import Dgroup from "./templates/committee/Dgroup";
+import Donna from "./templates/committee/Donna";
+import Staben from "./templates/committee/Staben";
+import UtskottPage from "./templates/committee/Utskott";
 
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Home from './templates/Home';
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Home from "./templates/Home";
 
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
-import Calendar from './templates/misc/Calendar';
-import SocialMedia from './templates/misc/SocialMedia';
-import { ExjobbPage, Exjobb } from './templates/misc/Exjobb';
+import Calendar from "./templates/misc/Calendar";
+import SocialMedia from "./templates/misc/SocialMedia";
+import { ExjobbPage, Exjobb } from "./templates/misc/Exjobb";
 
 function ScrollToTop() {
-    const { pathname } = useLocation();
-  
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [pathname]);
-  
-    return null;
-  }
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
-    return (
-        <>
-            <div className="App">
-                <BrowserRouter>
-                    <ScrollToTop />
-                    <Routes>
-                        <Route path="/" element={<><Header /><Home /><Footer /></>}></Route>
-                        <Route path="/page/:slug" element={<><Header /><Page /><Footer /></>}></Route>
-                        <Route path="/blogpost/:slug" element={<><Header /><BlogPage /><Footer /></>}></Route>
-                        <Route path="/utskott/:slug" element={<><Header /><UtskottPage /><Footer /></>}></Route>
-                        <Route path="/utskott/eventu" element={<><Header /><EventU /><Footer /></>}></Route>
-                        <Route path="/exjobb/:slug" element={<><Header /><ExjobbPage /><Footer /></>}></Route>
-                        {/* --------Remove? using strapi+slug instead --------- */}
-                        <Route path="/deg" element={<DEG />}></Route>
-                        <Route path="/valberedningen" element={<Valberedningen />}></Route>
-                        <Route path="/alumni" element={<Alumni />}></Route>
-                        <Route path="/werk" element={<Werk />}></Route>
-                        <Route path="/utbu" element={<UtbU />}></Route>
-                        <Route path="/pubu" element={<PubU />}></Route>
-                        <Route path="/naru" element={<NarU />}></Route>
-                        <Route path="/mafu" element={<MafU />}></Route>
-                        <Route path="/infu" element={<InfU />}></Route>
-                        <Route path="/donna" element={<Donna />}></Route>
-                        <Route path="/dgroup" element={<Dgroup />}></Route>
-                        <Route path="/link" element={<Link />}></Route>
-                        <Route path="/staben" element={<Staben />}></Route>
-                        {/* ---------------------------------------------------- */}
-                        <Route path="/kalender" element={<><Header /><Calendar /><Footer /></>}></Route>
-                        <Route path="/extra/socialamedier" element={<><Header /><SocialMedia /><Footer /></>}></Route>
-                        <Route path="/extra/exjobb" element={<><Header /><Exjobb /><Footer /></>}></Route>
-                    </Routes>
-                </BrowserRouter>
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div className="App">
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Header />
+                  <Home />
+                  <Footer />
+                </>
+              }
+            ></Route>
+            <Route
+              path="/page/:slug"
+              element={
+                <>
+                  <Header />
+                  <Page />
+                  <Footer />
+                </>
+              }
+            ></Route>
+            <Route
+              path="/blogpost/:slug"
+              element={
+                <>
+                  <Header />
+                  <BlogPage />
+                  <Footer />
+                </>
+              }
+            ></Route>
+            <Route
+              path="/utskott/:slug"
+              element={
+                <>
+                  <Header />
+                  <UtskottPage />
+                  <Footer />
+                </>
+              }
+            ></Route>
+            <Route
+              path="/utskott/eventu"
+              element={
+                <>
+                  <Header />
+                  <EventU />
+                  <Footer />
+                </>
+              }
+            ></Route>
+            <Route
+              path="/exjobb/:slug"
+              element={
+                <>
+                  <Header />
+                  <ExjobbPage />
+                  <Footer />
+                </>
+              }
+            ></Route>
+            {/* --------Remove? using strapi+slug instead --------- */}
+            <Route path="/deg" element={<DEG />}></Route>
+            <Route path="/valberedningen" element={<Valberedningen />}></Route>
+            <Route path="/alumni" element={<Alumni />}></Route>
+            <Route path="/werk" element={<Werk />}></Route>
+            <Route path="/utbu" element={<UtbU />}></Route>
+            <Route path="/pubu" element={<PubU />}></Route>
+            <Route path="/naru" element={<NarU />}></Route>
+            <Route path="/mafu" element={<MafU />}></Route>
+            <Route path="/infu" element={<InfU />}></Route>
+            <Route path="/donna" element={<Donna />}></Route>
+            <Route path="/dgroup" element={<Dgroup />}></Route>
+            <Route path="/link" element={<Link />}></Route>
+            <Route path="/staben" element={<Staben />}></Route>
+            {/* ---------------------------------------------------- */}
+            <Route
+              path="/kalender"
+              element={
+                <>
+                  <Header />
+                  <Calendar />
+                  <Footer />
+                </>
+              }
+            ></Route>
+            <Route
+              path="/extra/socialamedier"
+              element={
+                <>
+                  <Header />
+                  <SocialMedia />
+                  <Footer />
+                </>
+              }
+            ></Route>
+            <Route
+              path="/extra/exjobb"
+              element={
+                <>
+                  <Header />
+                  <Exjobb />
+                  <Footer />
+                </>
+              }
+            ></Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </>
+  );
 }
 
 export default App;

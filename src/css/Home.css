@@ -1,65 +1,65 @@
 .Home {
-    position: relative;
-    flex-grow: 1;
-    display: flex;
-    padding-top: 16px;
-    width: 100%;
-    padding-bottom: 16px;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  padding-top: 16px;
+  width: 100%;
+  padding-bottom: 16px;
 }
 
 .Left {
-    width: 100%;
+  width: 100%;
 }
 
 .Middle {
-    width: 50%;
+  width: 50%;
 }
 
 .Right {
-    width: 100%;
-    float: right;
+  width: 100%;
+  float: right;
 }
 
 .wide {
-    width: 25%;
-    margin: 0 10px 0 10px;
+  width: 25%;
+  margin: 0 10px 0 10px;
 }
 
 p > a {
-    text-decoration: underline;
-    color: blue;
+  text-decoration: underline;
+  color: blue;
 }
 
 @media only screen and (max-width: 900px) {
-    .Middle {
-        width: 100%;
-        margin: 0 auto 0 auto;
-        padding: 0 10px 16px 10px;
-    }
+  .Middle {
+    width: 100%;
+    margin: 0 auto 0 auto;
+    padding: 0 10px 16px 10px;
+  }
 
-    .wide {
-        display: none;
-    }
+  .wide {
+    display: none;
+  }
 
-    .wide-header {
-        display: none;
-    }
+  .wide-header {
+    display: none;
+  }
 
-    .Home {
-        margin-top: 40px;
-    }
+  .Home {
+    margin-top: 40px;
+  }
 
-    .FullPageCalendar {
-        margin-top: 1em;
-    }
+  .FullPageCalendar {
+    margin-top: 1em;
+  }
 }
 
 @media only screen and (min-width: 900px) {
-    .Left {
-        max-width: 256px;
-    }
+  .Left {
+    max-width: 256px;
+  }
 
-    .Right {
-        max-width: 256px;
-    }
+  .Right {
+    max-width: 256px;
+  }
 }

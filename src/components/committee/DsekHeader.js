@@ -1,19 +1,29 @@
-import '../../css/committee/DsekHeader.css';
-import Link from '../Link';
+import "../../css/committee/DsekHeader.css";
+import Link from "../Link";
 
 function DsekHeader() {
-    return (
-        <div className="D-Sek-Header">
-            <Link to="/">
-                <img alt="Datateknologsektionen" src={"logo.png"} className="D-Sek-Header-Logo-1" />
-            </Link>
-            <p className="D-Sek-Header-Text-1">Denna sida är kopplad till d-sektionen.se</p>
-            <Link to="https://www.webbu.se/">
-                <img alt="Webbutskottet" src={"webbu-logo.png"} className="D-Sek-Header-Logo-2" />
-            </Link>
-            <p className="D-Sek-Header-Text-2">Utvecklad av</p>
-        </div>
-    );
+  return (
+    <div className="D-Sek-Header">
+      <Link to="/">
+        <img
+          alt="Datateknologsektionen"
+          src={"logo.png"}
+          className="D-Sek-Header-Logo-1"
+        />
+      </Link>
+      <p className="D-Sek-Header-Text-1">
+        Denna sida är kopplad till d-sektionen.se
+      </p>
+      <Link to="https://www.webbu.se/">
+        <img
+          alt="Webbutskottet"
+          src={"webbu-logo.png"}
+          className="D-Sek-Header-Logo-2"
+        />
+      </Link>
+      <p className="D-Sek-Header-Text-2">Utvecklad av</p>
+    </div>
+  );
 }
 
 export default DsekHeader;

@@ -1,50 +1,49 @@
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-    height: 2000px;
+body {
+  height: 2000px;
 }
 
-.headerclass{  
-
+.headerclass {
 }
 
-.student{
-    text-align: center;   
-    margin-top: 50px;
-    font-size: 40px; 
+.student {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 40px;
 }
 
-.student a{
-    margin-left: 20px;
-    margin-right: 20px;
-    border-right: 1px solid #000000;
-    text-decoration: none;
-    color: #000000;
-    border-left: 1px solid #000000;
+.student a {
+  margin-left: 20px;
+  margin-right: 20px;
+  border-right: 1px solid #000000;
+  text-decoration: none;
+  color: #000000;
+  border-left: 1px solid #000000;
 }
 
-.student a:hover{
-    color:brown
+.student a:hover {
+  color: brown;
 }
 
-.spons{
-    width: 100%;
-    margin-top: 100px;
+.spons {
+  width: 100%;
+  margin-top: 100px;
 }
 
-.s{
-    float: right;
-    width: 200px;
-    margin-left: 40px;
+.s {
+  float: right;
+  width: 200px;
+  margin-left: 40px;
 }
 
-.sponsclass{
-    width: 1000px
+.sponsclass {
+  width: 1000px;
 }
 
-.header{
-    margin-top: 10%;
-    top: 0;
+.header {
+  margin-top: 10%;
+  top: 0;
 }

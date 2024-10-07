@@ -1,13 +1,13 @@
 .PubU {
-    width: min(var(--uWidth), 960px);
-    margin: auto;
+  width: min(var(--uWidth), 960px);
+  margin: auto;
 }
 
 .PubU p {
-    text-align: center;
+  text-align: center;
 }
 
 .PubU-Img {
-    width: 100%;
-    filter: invert();
+  width: 100%;
+  filter: invert();
 }

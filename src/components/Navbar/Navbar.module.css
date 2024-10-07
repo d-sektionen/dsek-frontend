@@ -1,15 +1,15 @@
 .desktopNavbar {
-    display: block;
+  display: block;
 }
 .mobileNavbar {
-    display: none;
+  display: none;
 }
 
 @media screen and (max-width: 640px) {
-    .desktopNavbar {
-        display: none;
-    }
-    .mobileNavbar {
-        display: block;
-    }
+  .desktopNavbar {
+    display: none;
+  }
+  .mobileNavbar {
+    display: block;
+  }
 }

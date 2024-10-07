@@ -1,12 +1,12 @@
-FAQ
-===
+# FAQ
 
 Nedan presenteras D-sektionens FAQ. Frågorna delas in i 4 kategorier, [Boende](#boende), [Skolan](#skolan), [Aktiviteter](#aktiviteter) och [Övrigt](#övrigt).
 
 Hittar du inte svar på din fråga nedan så kan du kontakta [info@d-sektionen.se](mailto:info@d-sektionen.se).
 
 # Boende
-------
+
+---
 
 **Fråga:** Hur nära skolan brukar man bo och hur tar man sig dit?
 
@@ -23,7 +23,8 @@ En utmärkt sida att leta reda på en lägenhet att slå sig ner i är [studentb
 **Svar:** Beror lite på vad man själv är för typ av person. Det kan vara bra att tänka på att i korridor delar man kök med de personer som bor i samma korridor. I övriga bostäder har man ett eget kök. Det kan även vara bra att tänka på var man ska bo, så att man har nära till campus och till mataffären.
 
 # Skolan
-------
+
+---
 
 **Fråga:** Hur vet jag vilka böcker/kursmaterial jag behöver?
 
@@ -56,7 +57,8 @@ Där finns en mängd information om kursen där kursmaterial, förkunskaper, må
 **Svar:** På högskolan läser man mer specifikt de kurser som kommer vara till nytta för ett framtida jobb. Därför tycker nog nästan alla som valt rätt utbildning att det (nästan!) bara är roliga kurser!
 
 # Aktiviteter
------------
+
+---
 
 **Fråga:** Vad finns för aktiviteter utanför skolan?
 
@@ -73,7 +75,8 @@ Att engagera sig i studentlivet rekommenderas också starkt. Festerist, fadderis
 Till de mest studentvänliga hör nog [Flamman](http://www.flamman.org/) i studentområdet med samma namn och [\[hg\]](http://hg.se/) i Ryd. Här kostar de billigaste dryckerna av valfri alkoholhalt runt 30 kr, och dansgolven är fyllda av svettiga studenter som svingar sina lurviga! Vill man avnjuta en god öl till ett rimligt pris finns alltid studentpuben [VilleValla](https://www.villevallapub.se/) i Irrblosset som kan stoltsera med ett brett (läs: väldigt brett) sortiment av öl och cider från världens alla hörn. Allt detta ackompanjeras av trevlig och kunnig personal och en gemytlig miljö.
 
 # Övrigt
-------
+
+---
 
 **Fråga:** Hur långt räcker studiebidraget/studielånet?
 

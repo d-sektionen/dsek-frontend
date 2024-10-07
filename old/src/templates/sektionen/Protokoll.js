@@ -3,7 +3,7 @@ import Page from "../Page";
 function Protokoll() {
   return (
     <div>
-        <Page></Page>
+      <Page></Page>
     </div>
   );
 }

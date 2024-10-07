@@ -1,99 +1,100 @@
 .narrow-header,
 .wide-header {
-    top: 0;
-    width: 100%;
-    z-index: 500;
-    /* background-image: url("../../public/bg.jpg"); */
-    background-size: cover;
+  top: 0;
+  width: 100%;
+  z-index: 500;
+  /* background-image: url("../../public/bg.jpg"); */
+  background-size: cover;
 }
 
 .wide-header {
-    background-color: var(--header-bg-color);
-    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+  background-color: var(--header-bg-color);
+  box-shadow:
+    0 1px 3px rgb(0 0 0 / 12%),
+    0 1px 2px rgb(0 0 0 / 24%);
 }
 
 .narrow-header {
-    background-color: #000;
-    box-shadow: none;
+  background-color: #000;
+  box-shadow: none;
 }
 
 @media only screen and (min-width: 900px) {
-    .narrow-header {
-        display: none;
-    }
+  .narrow-header {
+    display: none;
+  }
 
-    #dmode {
-        font-size: 1.1em;
-        right: 0;
-        left: auto;
-        text-align: right;
-    }
-
+  #dmode {
+    font-size: 1.1em;
+    right: 0;
+    left: auto;
+    text-align: right;
+  }
 }
 
 .logo {
-    height: 100%;
-    object-fit: contain;
+  height: 100%;
+  object-fit: contain;
 }
 
 @media only screen and (max-width: 900px) {
-    .wide-header {
-        display: none;
-    }
+  .wide-header {
+    display: none;
+  }
 
-    .logo {
-        border-left: 40px solid black;
-        border-right: 40px solid black;
-        background-color: black;
-        /* border-radius: 5vh; */
-    }
+  .logo {
+    border-left: 40px solid black;
+    border-right: 40px solid black;
+    background-color: black;
+    /* border-radius: 5vh; */
+  }
 
-    #dmode {
-        font-size: 0.75em;
-        text-align: left;
-        right: auto;
-        left: 0;
-    }
+  #dmode {
+    font-size: 0.75em;
+    text-align: left;
+    right: auto;
+    left: 0;
+  }
 }
 #logoWhite {
-    display: var(--display-light-logo);
+  display: var(--display-light-logo);
 }
 #logoDark {
-    display: var(--display-dark-logo);
+  display: var(--display-dark-logo);
 }
 .narrow-header .logo-container {
-    height: 3em;
-    /* behöver använda samma enhet som margin i ".hamburger" i Nav.css */
+  height: 3em;
+  /* behöver använda samma enhet som margin i ".hamburger" i Nav.css */
 }
 
 .wide-header .logo-container {
-    height: 150px;
-    transition: 0.3s;
-    font-size: 0;
-    /* Needed to keep <a> confined to the bounds of .logo-container */
+  height: 150px;
+  transition: 0.3s;
+  font-size: 0;
+  /* Needed to keep <a> confined to the bounds of .logo-container */
 }
 
 .wide-header .logo-container.hidden {
-    height: 0;
-    margin-top: 0px;
-    margin-bottom: 32px;
-    opacity: 0;
+  height: 0;
+  margin-top: 0px;
+  margin-bottom: 32px;
+  opacity: 0;
 }
 
 .logo {
-    height: 90%;
-    object-fit: contain;
+  height: 90%;
+  object-fit: contain;
 }
 
 #dmode {
-    border: solid 1px;
-    border-radius: 2px;
-    padding: 10px 20px;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer;
-    background-color: var(--button-bg-color);
-    color: var(--button-text-color);
-    position: absolute;
+  border: solid 1px;
+  border-radius: 2px;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  position: absolute;
 }

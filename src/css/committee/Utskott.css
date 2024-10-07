@@ -1,77 +1,77 @@
 /* only need if we don't use navbar, remove?*/
 body > .utskott {
-    background-color: var(--utskott-bg-color);
-    color: var(--utskott-text-color);
-}   
+  background-color: var(--utskott-bg-color);
+  color: var(--utskott-text-color);
+}
 
-.utskott img{
-    margin-top: 8px;
-    height: 256px;
+.utskott img {
+  margin-top: 8px;
+  height: 256px;
 }
 
 .utskott {
-    width: 80%; 
-    margin: auto;
-    font-family: Gill Sans Nova Condensed UltraBold;
+  width: 80%;
+  margin: auto;
+  font-family: Gill Sans Nova Condensed UltraBold;
 }
 
 .utskott_header_title,
 .utskott_header_description {
-    margin: 64px;
-    text-align: left;
+  margin: 64px;
+  text-align: left;
 }
 
-.utskott_content_text{
-    text-align: left;
-    margin: 64px;
+.utskott_content_text {
+  text-align: left;
+  margin: 64px;
 }
 
 .utskott_content_text a {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .utskott p + h2 {
-    margin-top: 64px; /* Top margin of 64px for p elements following h2 elements */
+  margin-top: 64px; /* Top margin of 64px for p elements following h2 elements */
 }
 
 /* makes a <hr> (a line after each title) */
 .utskott h2::after {
-    content: "";
-    display: block;
-    border-bottom: 1px solid black;
-    width: 100%;
-    margin: 10px 0;
+  content: "";
+  display: block;
+  border-bottom: 1px solid black;
+  width: 100%;
+  margin: 10px 0;
 }
 
 /* ---- Extra css for valberedningen ----*/
 
 .utskott > .valberedningen > .utskott_content_text h3 {
-    width: 75%;
-    margin: auto;
-    border: 1px solid black;
-    border-bottom: none !important;
-    text-align: left;
-    padding: 16px;
-    padding-bottom: 0; 
-    padding-top: 30px; 
-    margin-bottom: 0; 
+  width: 75%;
+  margin: auto;
+  border: 1px solid black;
+  border-bottom: none !important;
+  text-align: left;
+  padding: 16px;
+  padding-bottom: 0;
+  padding-top: 30px;
+  margin-bottom: 0;
 }
 
 .utskott > .valberedningen > .utskott_content_text h3 + p {
-    width: 75%;
-    margin: auto;
-    border: 1px solid black;
-    border-top: none;
-    text-align: left;
-    padding: 16px;
-    padding-bottom: 40px; 
-    margin-bottom: 0; 
+  width: 75%;
+  margin: auto;
+  border: 1px solid black;
+  border-top: none;
+  text-align: left;
+  padding: 16px;
+  padding-bottom: 40px;
+  margin-bottom: 0;
 }
 
 .utskott > .valberedningen > .utskott_content_text p + h3 {
-    margin-top: 32px; /* Top margin of 64px for p elements following h2 elements */
+  margin-top: 32px; /* Top margin of 64px for p elements following h2 elements */
 }
 
 .utskott > .eventu > .utskott_content_text h1 {
-    margin-top: 100px;
+  margin-top: 100px;
 }

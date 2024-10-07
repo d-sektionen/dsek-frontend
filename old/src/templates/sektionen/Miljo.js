@@ -3,7 +3,7 @@ import Page from "../Page";
 function Miljo() {
   return (
     <div>
-        <Page></Page>
+      <Page></Page>
     </div>
   );
 }

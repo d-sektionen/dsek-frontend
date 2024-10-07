@@ -1,31 +1,31 @@
 .EventU hr {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .EventU-Content {
-    width: 90%;
-    margin: auto;
-    padding-bottom: 24px;
+  width: 90%;
+  margin: auto;
+  padding-bottom: 24px;
 }
 
 .EventU-Title,
 .EventU-Sub-Title {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 90%;
-    margin: 1em auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 90%;
+  margin: 1em auto;
 }
 
 .EventU-Desc,
 .EventU-Sub-Desc {
-    width: 90%;
-    text-align: left;
-    margin: auto;
-    overflow-wrap: break-word;
+  width: 90%;
+  text-align: left;
+  margin: auto;
+  overflow-wrap: break-word;
 }
 
 .EventU-Contact {
-    margin-top: 16px;
-    font-size: 12px;
-    font-style: italic;
+  margin-top: 16px;
+  font-size: 12px;
+  font-style: italic;
 }

@@ -1,39 +1,39 @@
 .wrapper {
-    height: 200px;
+  height: 200px;
 }
 
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: var(--color-background);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: var(--shadow);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow);
 }
 
 .navbar > nav {
-    list-style: none;
-    display: flex;
-    gap: var(--size-sm);
+  list-style: none;
+  display: flex;
+  gap: var(--size-sm);
 }
 
 .logo {
-    margin-top: var(--size-xl);
-    opacity: 100%;
-    height: 100px;
-    transform: translateY(0);
-    transition:
-        margin-top var(--ease-out),
-        height var(--ease-out),
-        opacity var(--ease-out),
-        transform var(--ease-out);
+  margin-top: var(--size-xl);
+  opacity: 100%;
+  height: 100px;
+  transform: translateY(0);
+  transition:
+    margin-top var(--ease-out),
+    height var(--ease-out),
+    opacity var(--ease-out),
+    transform var(--ease-out);
 }
 
 :global(.scrolled) .logo {
-    margin-top: 0;
-    opacity: 0%;
-    height: 0;
-    transform: translateY(calc(-1 * var(--size-xl))) scale(0.8);
+  margin-top: 0;
+  opacity: 0%;
+  height: 0;
+  transform: translateY(calc(-1 * var(--size-xl))) scale(0.8);
 }

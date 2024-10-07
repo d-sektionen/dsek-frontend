@@ -1,14 +1,13 @@
-import '../css/SideNav.css';
-import CalendarWidget from './CalendarWidget.js';
-import SearchBar from './SearchBar';
-import SideNavButton from './SideNavButton.js';
-
+import "../css/SideNav.css";
+import CalendarWidget from "./CalendarWidget.js";
+import SearchBar from "./SearchBar";
+import SideNavButton from "./SideNavButton.js";
 
 function SideNav() {
-    return (
-        <div className="Left">
-            <SearchBar className={'SideNavSearch'} />
-            {/* 
+  return (
+    <div className="Left">
+      <SearchBar className={"SideNavSearch"} />
+      {/* 
             <nav className="SideNav">
                 <SideNavButton title="Sociala medier" link="/socialamedier" />
                 <SideNavButton title="Kalender" link="/kalender" />
@@ -16,9 +15,9 @@ function SideNav() {
                 <SideNavButton title="Fotoalbum" link="#" />
             </nav>
             */}
-            <CalendarWidget title="Månadens aktiviteter" />
-        </div>
-    );
+      <CalendarWidget title="Månadens aktiviteter" />
+    </div>
+  );
 }
 
 export default SideNav;

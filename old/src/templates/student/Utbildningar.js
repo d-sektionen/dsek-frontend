@@ -5,8 +5,7 @@ import Page from "../Page";
 function Utbildningar() {
   return (
     <div>
-        <Page>
-        </Page>
+      <Page></Page>
     </div>
   );
 }

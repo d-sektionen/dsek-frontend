@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -24,6 +25,9 @@
     "@types/qs": "^6.9.16",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
     "typescript": "^5"
   }
 }

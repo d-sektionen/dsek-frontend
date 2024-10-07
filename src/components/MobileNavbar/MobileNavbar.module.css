@@ -12,7 +12,9 @@
   background-color: var(--color-base-2);
   padding: var(--size-sm);
   box-shadow: var(--shadow);
-  transition: opacity var(--ease-out), transform var(--ease-out);
+  transition:
+    opacity var(--ease-out),
+    transform var(--ease-out);
 }
 
 .logo {
@@ -26,7 +28,9 @@
   top: var(--size-sm); /* slightly wacky way to put it in the right spot */
   margin: var(--size-md);
   z-index: 1;
-  transition: opacity var(--ease-out), transform var(--ease-out);
+  transition:
+    opacity var(--ease-out),
+    transform var(--ease-out);
 }
 
 .menu {

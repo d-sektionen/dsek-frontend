@@ -1,37 +1,38 @@
-
 .page-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 3px;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3px;
+  width: 100%;
 }
 
 .page-nav-button {
-    width: 32px;
-    height: 32px;
+  width: 32px;
+  height: 32px;
 
-    background: #f8f8f8;
-    color: #000;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
-    transition: box-shadow 0.3s ease;
+  background: #f8f8f8;
+  color: #000;
+  box-shadow:
+    0 1px 3px rgb(0 0 0 / 12%),
+    0 1px 2px rgb(0 0 0 / 24%);
+  transition: box-shadow 0.3s ease;
 
-    font-family: "Asap", Arial, sans-serif;
+  font-family: "Asap", Arial, sans-serif;
 }
 
 .page-nav-button:hover {
-    border-bottom: #E5398D 6px solid;
-    cursor: pointer;
+  border-bottom: #e5398d 6px solid;
+  cursor: pointer;
 }
 
 .page-nav-button.selected {
-    border-bottom: #305fb9 6px solid;
-    cursor: default;
+  border-bottom: #305fb9 6px solid;
+  cursor: default;
 }
 
 .page-nav-button:disabled {
-    border: 0;
-    background: #e7e7e7;
-    box-shadow: none;
-    cursor: default;
+  border: 0;
+  background: #e7e7e7;
+  box-shadow: none;
+  cursor: default;
 }

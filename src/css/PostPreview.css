@@ -1,53 +1,52 @@
 .PostPreview {
-    margin-bottom: 12px;
-    margin-top: 12px;
-    width: 100%;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  width: 100%;
 }
 
 .PostPreview-Title {
-    font-family: "Asap", Arial, sans-serif;
-    margin: 0;
-    line-height: 1.2;
-    font-weight: 400;;
-    border-bottom: 2px solid #333;
-    padding-bottom: 6px;
-    text-align: left;
+  font-family: "Asap", Arial, sans-serif;
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 400;
+  border-bottom: 2px solid #333;
+  padding-bottom: 6px;
+  text-align: left;
 }
 
 .PostPreview-Title a {
-    text-decoration: none;
-    /* color: #333; */
+  text-decoration: none;
+  /* color: #333; */
 }
 
 .PostPreview-Date {
-    font-size: 90%;
-    line-height: 1.3;
-    margin-top: 2px;
-    text-align: left;
-    /* color: #333; */
-    font-family: "Asap", Arial, sans-serif;
-    font-weight: 300;
-    padding-top: 6px;
-    font-size: 12px;
+  font-size: 90%;
+  line-height: 1.3;
+  margin-top: 2px;
+  text-align: left;
+  /* color: #333; */
+  font-family: "Asap", Arial, sans-serif;
+  font-weight: 300;
+  padding-top: 6px;
+  font-size: 12px;
 }
 
 .PostPreview-Content {
-    width: 100%;
-    padding-bottom: 36px;
-    overflow: hidden;
-    /* color: #555; */
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    text-align: left;
+  width: 100%;
+  padding-bottom: 36px;
+  overflow: hidden;
+  /* color: #555; */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: left;
 }
 
 .PostPreview-Content p {
-    /*color: #555;*/
-    word-wrap: break-word;
-    line-height: 1.6875;
+  /*color: #555;*/
+  word-wrap: break-word;
+  line-height: 1.6875;
 }
 
 .PostPreview-Content p {
-    text-decoration: none;
+  text-decoration: none;
 }
-

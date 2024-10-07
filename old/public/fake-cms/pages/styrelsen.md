@@ -1,5 +1,4 @@
-Styrelsen, kansliet & SnOrdfar
-==============================
+# Styrelsen, kansliet & SnOrdfar
 
 Styrelsen och kansliet för D-sektionen är förtroendevalda under ett år och har till uppgift att verka för att beslutad verksamhet följs, samt att verka för sammanhållning och utveckling för sektionen och dess medlemmar. I styrelsen sitter ordförande, vice ordförande, sekreterare, kassör, utbildningsutskottets ordförande, arbetsmiljöombud, eventutskottets ordförande samt en till två ledamöter.
 
@@ -9,14 +8,8 @@ Studienämndsordförande, även kallade SnOrdf kan man kontakta om man har funde
 
 ### Styrelsen
 
-  
-
 ### Kansliet
 
-  
-
 ### SnOrdfar
-
-  
 
 Om du har tips, åsikter eller idéer på hur vi kan förbättra sektionens arbete är du varmt välkommen att kontakta någon av oss!

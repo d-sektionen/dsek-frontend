@@ -1,13 +1,13 @@
 .ImgObj {
-    margin-top: 32px;
-    margin-bottom: 32px;
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 .ImgObj-Title {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .ImgObj-Desc {
-    font-style: italic;
-    font-size: 14px;
+  font-style: italic;
+  font-size: 14px;
 }
