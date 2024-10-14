@@ -4,6 +4,8 @@ import { Navbar } from "@/components/Navbar/Navbar";
 import Script from "next/script";
 import localFont from "next/font/local";
 import { JumpToContentButton } from "@/components/JumpToContentButton/JumpToContentButton";
+import { Sidebar } from "@/components/Sidebar/Sidebar";
+import style from "./layout.module.css";
 
 export const metadata: Metadata = {
   title: "dsek-frontend",
@@ -26,7 +28,11 @@ export default function RootLayout({
       <body>
         <JumpToContentButton />
         <Navbar />
-        <main id="content">{children}</main>
+        <div className={style.container}>
+          <Sidebar endpoint="left-sidebar" />
+          <main id="content">{children}</main>
+          <Sidebar endpoint="right-sidebar" />
+        </div>
         <Script src="/scroll.js" />
       </body>
     </html>

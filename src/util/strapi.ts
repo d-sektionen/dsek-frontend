@@ -9,21 +9,23 @@ export type StrapiEntry<T> = {
   attributes: T;
 };
 
-export type StrapiFile<T = {}> = {
-  name: string;
-  alternativeText: string | null;
-  caption: string | null;
-  hash: string;
-  ext: string;
-  mime: keyof typeof mimeTypes;
-  size: number;
-  url: string;
-  previewUrl: string | null;
-  provider: "local" | string;
-  provider_metadata: unknown | null; // TODO: what is this?
-  createdAt: string;
-  updatedAt: string;
-} & T;
+export type StrapiFile<T = {}> = StrapiEntry<
+  {
+    name: string;
+    alternativeText: string | null;
+    caption: string | null;
+    hash: string;
+    ext: string;
+    mime: keyof typeof mimeTypes;
+    size: number;
+    url: string;
+    previewUrl: string | null;
+    provider: "local" | string;
+    provider_metadata: unknown | null; // TODO: what is this?
+    createdAt: string;
+    updatedAt: string;
+  } & T
+>;
 
 export type StrapiImage = {
   width: number;
@@ -80,16 +82,16 @@ export type Utskott = StrapiEntry<{
 }>;
 
 export type Sidebar = StrapiEntry<{
-  sidebar_widgets: StrapiComponent[];
+  widgets: StrapiComponent[];
 }>;
 
 export type LogoWithLink = StrapiComponent<{
-  logo: StrapiResponse<StrapiImage>;
+  logo: StrapiResponse<StrapiFile<StrapiImage>>;
   link: string;
 }>;
 
 export type SidebarSponsorWidget = StrapiComponent<{
-  __component: "sidebar-widgets.sponsor";
+  __component: "sidebar.sponsor";
   title: string;
   logos: LogoWithLink[];
 }>;

@@ -8,7 +8,7 @@ import type { Navbar } from "@/util/strapi";
 
 /* Bad solution alert! Fix this eventually by unifying the navbars */
 export async function Navbar() {
-  const navbar = await apiFetch<Navbar>("navbar", { populate: "*" });
+  const navbar = await apiFetch<Navbar>("/navbar", { populate: "*" });
 
   if (navbar == null) {
     return null;

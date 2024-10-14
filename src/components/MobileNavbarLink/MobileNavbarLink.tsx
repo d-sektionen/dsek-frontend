@@ -19,7 +19,7 @@ export async function MobileNavbarLink({
 }: MobileNavbarLinkProps) {
   const depthVariable = { "--depth": depth } as Record<string, unknown>;
 
-  const link = await apiFetch<NavbarLink>(`navbar-links/${id}`, {
+  const link = await apiFetch<NavbarLink>(`/navbar-links/${id}`, {
     populate: "*",
   });
   if (link == null) {

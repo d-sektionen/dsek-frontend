@@ -20,7 +20,7 @@ export async function DesktopNavbarLink({
 }: DesktopNavbarLinkProps) {
   const isNested = depth > 1;
 
-  const link = await apiFetch<NavbarLink>(`navbar-links/${id}`, {
+  const link = await apiFetch<NavbarLink>(`/navbar-links/${id}`, {
     populate: "*",
   });
   if (link == null) {

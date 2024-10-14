@@ -1,0 +1,5 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-sm);
+}

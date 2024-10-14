@@ -7,7 +7,7 @@ export default async function BlogpostPage({
 }: {
   params: { slug: string };
 }) {
-  const post = await apiFetchOne<Blogpost>("blogposts", {
+  const post = await apiFetchOne<Blogpost>("/blogposts", {
     filters: { slug: params.slug },
   });
 
