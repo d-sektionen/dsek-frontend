@@ -1,0 +1,39 @@
+.inputField {
+    margin-bottom: var(--size-md);
+}
+
+.inputField label {
+    display: block;
+    margin-bottom: var(--size-xs);
+    font: var(--font-heading-xs);
+}
+
+.inputWrapper {
+    display: flex;
+    border: solid 1px var(--color-base-3);
+    border-radius: var(--rounded-sm);
+    overflow: hidden;
+}
+
+.leadingIconWrapper,
+.trailingIconWrapper {
+    display: flex;
+    color: var(--color-base-6);
+    padding: var(--size-sm);
+    padding-right: var(--size-xs);
+}
+
+.trailingIconWrapper {
+    color: var(--color-base-8);
+    background-color: var(--color-base-2);
+    padding: var(--size-sm);
+}
+
+.inputField input {
+    appearance: none;
+    background: none;
+    border: none;
+    flex: 1;
+    padding: var(--size-sm);
+    padding-left: var(--size-xs);
+}

@@ -3,6 +3,7 @@ import type { Sidebar, StrapiComponent } from "@/util/strapi";
 import { SidebarSponsorWidget } from "../SidebarSponsorWidget/SidebarSponsorWidget";
 import { ElementType } from "react";
 import style from "./Sidebar.module.css";
+import { SidebarNavigationWidget } from "../SidebarNavigationWidget/SidebarNavigationWidget";
 
 export type SidebarProps = {
   endpoint: "right-sidebar" | "left-sidebar";
@@ -13,12 +14,15 @@ const widgetMap: Record<
   ElementType<{ widget: StrapiComponent<any> }>
 > = {
   "sidebar.sponsor": SidebarSponsorWidget,
+  "sidebar.navigation": SidebarNavigationWidget,
 };
 
 export async function Sidebar({ endpoint }: SidebarProps) {
   const sidebar = await apiFetch<Sidebar>(endpoint, {
-    populate: "widgets.logos.logo.*",
+    populate: ["widgets.logos.logo.*", "widgets.navbar_links"],
   });
+
+  console.log({ sidebar });
 
   if (sidebar == null) {
     return <div />;

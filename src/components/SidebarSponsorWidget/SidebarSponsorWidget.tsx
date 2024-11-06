@@ -11,9 +11,8 @@ export type SidebarSponsorWidgetProps = {
 export async function SidebarSponsorWidget({
   widget: { title, logos },
 }: SidebarSponsorWidgetProps) {
-  console.log(logos[0].logo);
   return (
-    <article className={style.sponsor}>
+    <article className={style.sponsorWidget}>
       <header>
         <h3>{title}</h3>
       </header>

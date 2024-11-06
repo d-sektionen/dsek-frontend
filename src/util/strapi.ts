@@ -95,3 +95,8 @@ export type SidebarSponsorWidget = StrapiComponent<{
   title: string;
   logos: LogoWithLink[];
 }>;
+
+export type SidebarNavigationWidget = StrapiComponent<{
+  __component: "sidebar.navigation";
+  navbar_links?: StrapiResponse<NavbarLink[]>;
+}>;

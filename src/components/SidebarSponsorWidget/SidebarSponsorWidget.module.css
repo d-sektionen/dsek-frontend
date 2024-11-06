@@ -1,21 +1,21 @@
-.sponsor {
+.sponsorWidget {
     background-color: var(--color-base-1);
     border: solid 1px var(--color-base-3);
-    border-radius: var(--rounded);
+    border-radius: var(--rounded-sm);
 }
 
-.sponsor > header {
+.sponsorWidget > header {
     padding: var(--size-sm);
     text-align: center;
     border-bottom: solid 1px var(--color-base-3);
 }
 
-.sponsor > header > h3 {
+.sponsorWidget > header > h3 {
     font: var(--font-heading-xs);
     text-transform: uppercase;
 }
 
-.sponsor > main {
+.sponsorWidget > main {
     display: flex;
     position: relative;
     flex-direction: column;
@@ -24,6 +24,6 @@
     padding: var(--size-lg);
 }
 
-.sponsor > main img {
+.sponsorWidget > main img {
     object-fit: contain;
 }
