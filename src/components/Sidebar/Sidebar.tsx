@@ -4,6 +4,7 @@ import { SidebarSponsorWidget } from "../SidebarSponsorWidget/SidebarSponsorWidg
 import { ElementType } from "react";
 import style from "./Sidebar.module.css";
 import { SidebarNavigationWidget } from "../SidebarNavigationWidget/SidebarNavigationWidget";
+import { SidebarCalendarWidget } from "../SidebarCalendarWidget/SidebarCalendarWidget";
 
 export type SidebarProps = {
   endpoint: "right-sidebar" | "left-sidebar";
@@ -15,14 +16,13 @@ const widgetMap: Record<
 > = {
   "sidebar.sponsor": SidebarSponsorWidget,
   "sidebar.navigation": SidebarNavigationWidget,
+  "sidebar.calendar": SidebarCalendarWidget,
 };
 
 export async function Sidebar({ endpoint }: SidebarProps) {
   const sidebar = await apiFetch<Sidebar>(endpoint, {
     populate: ["widgets.logos.logo.*", "widgets.navbar_links"],
   });
-
-  console.log({ sidebar });
 
   if (sidebar == null) {
     return <div />;
@@ -36,7 +36,7 @@ export async function Sidebar({ endpoint }: SidebarProps) {
     <aside className={style.sidebar}>
       {widgets.map((widget) => {
         const Widget = widgetMap[widget.__component];
-        return <Widget key={widget.id} widget={widget} />;
+        return Widget && <Widget key={widget.id} widget={widget} />;
       })}
     </aside>
   );

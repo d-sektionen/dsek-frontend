@@ -100,3 +100,9 @@ export type SidebarNavigationWidget = StrapiComponent<{
   __component: "sidebar.navigation";
   navbar_links?: StrapiResponse<NavbarLink[]>;
 }>;
+
+export type SidebarCalendarWidget = StrapiComponent<{
+  __component: "sidebar.calendar";
+  calendar_id: string;
+  title: string;
+}>;

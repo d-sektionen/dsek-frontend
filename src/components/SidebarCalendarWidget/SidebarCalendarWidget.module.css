@@ -1,0 +1,25 @@
+.calendarWidget {
+  background-color: var(--color-base-1);
+  border: solid 1px var(--color-base-3);
+  border-radius: var(--rounded-sm);
+}
+
+.calendarWidget > header {
+  padding: var(--size-sm);
+  text-align: center;
+  border-bottom: solid 1px var(--color-base-3);
+}
+
+.calendarWidget > header > h3 {
+  font: var(--font-heading-xs);
+  text-transform: uppercase;
+}
+
+.calendarWidget > main {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--size-sm);
+  padding: var(--size-lg);
+}
