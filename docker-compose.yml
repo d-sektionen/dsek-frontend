@@ -35,6 +35,8 @@ services:
       APP_KEYS: secret
       API_TOKEN_SALT: secret
       ADMIN_JWT_SECRET: secret
+    volumes:
+      - strapi:/opt/app
     ports:
       - "1337:1337"
     networks:
@@ -59,3 +61,5 @@ services:
 volumes:
   db:
     name: dsek-dev-db
+  strapi:
+    name: dsek-dev-strapi
