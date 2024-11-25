@@ -32,7 +32,6 @@ export async function apiFetch<T>(
 ) {
   let url = apiUrl(path, query);
   const res = await fetch(url, options);
-  console.log(url);
   if (!res.ok) return null;
 
   const json = await res.json();

@@ -19,7 +19,49 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  align-items: center;
   gap: var(--size-sm);
   padding: var(--size-lg);
+}
+
+.calendarWidget ol {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  gap: var(--size-md);
+  align-items: center;
+}
+
+.item:not(:last-child) {
+  padding-bottom: var(--size-md);
+  margin-bottom: var(--size-md);
+  border-bottom: solid 1px var(--color-base-3);
+}
+
+.item .symbol {
+  text-align: center;
+  background: var(--color-background);
+  border-radius: var(--rounded-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.item .symbol .month {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: 0.675em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.item .symbol .monthDay {
+  font-size: 2em;
+  line-height: 1.25;
+}
+
+.item .symbol .weekDay {
+  font-size: 0.675em;
 }

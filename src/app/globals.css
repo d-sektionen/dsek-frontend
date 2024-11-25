@@ -39,8 +39,8 @@ a {
     --theme-pixels-brown: /* #764122 */ 118 65 34;
 
     /* This is a terrible color combination */
-    --theme-primary: var(--theme-pixels-pink);
-    --theme-on-primary: var(--theme-pixels-yellow);
+    --theme-primary: var(--theme-pixels-blue);
+    --theme-on-primary: var(--theme-background);
 
     --ff-body: "Arial", sans-serif;
     /* --ff-display is set in layout.tsx */
@@ -112,7 +112,8 @@ a {
 html {
     font-size: 16px;
 
-    --font-base: 0.875rem / 1.6875 var(--ff-body);
+    --font-body: 0.875rem / 1.6875 var(--ff-body);
+    --font-body-sm: 0.75rem / 1.6875 var(--ff-body);
     --font-button: 0.875rem / 1 var(--ff-display);
     --font-heading-lg: 1.75rem / 1.2 var(--ff-display);
     --font-heading-md: 1.25rem / 1.2 var(--ff-display);
@@ -122,7 +123,7 @@ html {
 
 /* Globals */
 body {
-    font: var(--font-base);
+    font: var(--font-body);
     background-color: var(--color-background);
     color: var(--color-on-background);
 }
