@@ -6,10 +6,10 @@ const calendar = google.calendar({
   auth: process.env.GOOGLE_API_KEY!,
 });
 
-export async function calendarGetFutureEvents(calendarId: string) {
+export async function calendarGetFutureEvents() {
   const resp = await calendar.events.list(
     {
-      calendarId,
+      calendarId: process.env.GOOGLE_CALENDAR_ID!,
       singleEvents: true,
       orderBy: "startTime",
       timeMin: dayjs("2011").toISOString(),
@@ -18,4 +18,13 @@ export async function calendarGetFutureEvents(calendarId: string) {
   );
 
   return resp?.data?.items ?? [];
+}
+
+export async function calendarGetEvent(eventId: string) {
+  const resp = await calendar.events.get({
+    calendarId: process.env.GOOGLE_CALENDAR_ID!,
+    eventId,
+  });
+
+  return resp?.data;
 }

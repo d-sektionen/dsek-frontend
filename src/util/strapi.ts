@@ -103,6 +103,5 @@ export type SidebarNavigationWidget = StrapiComponent<{
 
 export type SidebarCalendarWidget = StrapiComponent<{
   __component: "sidebar.calendar";
-  calendar_id: string;
   title: string;
 }>;

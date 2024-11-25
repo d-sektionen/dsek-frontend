@@ -25,7 +25,14 @@
 
 .calendarWidget ol {
   display: flex;
+  list-style: none;
   flex-direction: column;
+}
+
+.calendarWidget ol > *:not(:last-child) {
+  padding-bottom: var(--size-md);
+  margin-bottom: var(--size-md);
+  border-bottom: solid 1px var(--color-base-3);
 }
 
 .item {
@@ -33,12 +40,6 @@
   grid-template-columns: 55px 1fr;
   gap: var(--size-md);
   align-items: center;
-}
-
-.item:not(:last-child) {
-  padding-bottom: var(--size-md);
-  margin-bottom: var(--size-md);
-  border-bottom: solid 1px var(--color-base-3);
 }
 
 .item .symbol {
