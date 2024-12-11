@@ -1,4 +1,4 @@
-import { google } from "googleapis";
+import { calendar_v3, google } from "googleapis";
 import dayjs, { Dayjs } from "dayjs";
 
 const calendar = google.calendar({
@@ -6,17 +6,22 @@ const calendar = google.calendar({
   auth: process.env.GOOGLE_API_KEY!,
 });
 
-export async function calendarGetFutureEvents() {
-  const resp = await calendar.events.list(
-    {
-      calendarId: process.env.GOOGLE_CALENDAR_ID!,
-      singleEvents: true,
-      orderBy: "startTime",
-      timeMin: dayjs("2011").toISOString(),
-    },
-    {},
-  );
+export async function calendarGetEventsBetween(from?: Dayjs, to?: Dayjs) {
+  const options: calendar_v3.Params$Resource$Events$List = {
+    calendarId: process.env.GOOGLE_CALENDAR_ID!,
+    singleEvents: true,
+    orderBy: "startTime",
+  };
 
+  if (from != null) {
+    options.timeMin = from.toISOString();
+  }
+
+  if (to != null) {
+    options.timeMax = to.toISOString();
+  }
+
+  const resp = await calendar.events.list(options, {});
   return resp?.data?.items ?? [];
 }
 

@@ -1,4 +1,4 @@
-import { calendarGetFutureEvents } from "@/util/google";
+import { calendarGetEventsBetween } from "@/util/google";
 import type { SidebarCalendarWidget } from "@/util/strapi";
 import style from "./SidebarCalendarWidget.module.css";
 import Link from "next/link";
@@ -11,7 +11,7 @@ type SidebarCalendarWidgetProps = {
 export async function SidebarCalendarWidget({
   widget: { title },
 }: SidebarCalendarWidgetProps) {
-  const events = await calendarGetFutureEvents();
+  const events = await calendarGetEventsBetween(dayjs(), undefined);
 
   return (
     <article className={style.calendarWidget}>
