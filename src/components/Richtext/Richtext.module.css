@@ -1,0 +1,8 @@
+.richtext {
+  white-space: pre-line;
+}
+
+.richtext a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}

@@ -6,6 +6,7 @@ import localFont from "next/font/local";
 import { JumpToContentButton } from "@/components/JumpToContentButton/JumpToContentButton";
 import { Sidebar } from "@/components/Sidebar/Sidebar";
 import style from "./layout.module.css";
+import { Footer } from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "dsek-frontend",
@@ -33,6 +34,7 @@ export default function RootLayout({
           <main id="content">{children}</main>
           <Sidebar endpoint="right-sidebar" />
         </div>
+        <Footer />
         <Script src="/scroll.js" />
       </body>
     </html>

@@ -21,7 +21,7 @@ const widgetMap: Record<
 
 export async function Sidebar({ endpoint }: SidebarProps) {
   const sidebar = await apiFetch<Sidebar>(endpoint, {
-    populate: ["widgets.logos.logo.*", "widgets.navbar_links"],
+    populate: ["widgets.logos.image.*", "widgets.navbar_links"],
   });
 
   if (sidebar == null) {

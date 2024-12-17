@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--size-xl);
+  padding-bottom: var(--size-xl);
+  margin-top: var(--size-xl);
+}
+
+.overline {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.overline > * {
+  height: var(--size-sm);
+}
+
+.text {
+  text-align: center;
+}
+
+.socials > ul {
+  display: flex;
+  list-style: none;
+  gap: var(--size-md);
+}
+
+.socials > a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}

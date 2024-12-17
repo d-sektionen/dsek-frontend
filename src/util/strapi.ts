@@ -1,3 +1,4 @@
+import { BlocksContent } from "@strapi/blocks-react-renderer";
 import { types as mimeTypes } from "mime-types";
 
 export type StrapiResponse<T> = {
@@ -85,15 +86,20 @@ export type Sidebar = StrapiEntry<{
   widgets: StrapiComponent[];
 }>;
 
-export type LogoWithLink = StrapiComponent<{
-  logo: StrapiResponse<StrapiFile<StrapiImage>>;
+export type ImageWithLink = StrapiComponent<{
+  image: StrapiResponse<StrapiFile<StrapiImage>>;
+  link: string;
+}>;
+
+export type TextWithLink = StrapiComponent<{
+  text: string;
   link: string;
 }>;
 
 export type SidebarSponsorWidget = StrapiComponent<{
   __component: "sidebar.sponsor";
   title: string;
-  logos: LogoWithLink[];
+  logos: ImageWithLink[];
 }>;
 
 export type SidebarNavigationWidget = StrapiComponent<{
@@ -104,4 +110,10 @@ export type SidebarNavigationWidget = StrapiComponent<{
 export type SidebarCalendarWidget = StrapiComponent<{
   __component: "sidebar.calendar";
   title: string;
+}>;
+
+export type Footer = StrapiEntry<{
+  text: BlocksContent;
+  socials: ImageWithLink[];
+  readmore: TextWithLink;
 }>;

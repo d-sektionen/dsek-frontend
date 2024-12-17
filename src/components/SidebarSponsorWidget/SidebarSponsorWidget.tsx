@@ -17,11 +17,11 @@ export async function SidebarSponsorWidget({
         <h3>{title}</h3>
       </header>
       <main>
-        {logos?.map(({ id, logo, link }) => (
+        {logos?.map(({ id, image, link }) => (
           <Link className={style.logo} key={id} href={link}>
             <Image
               alt={`Logotype of ${title}`}
-              src={uploadUrl(logo.data.attributes.url)}
+              src={uploadUrl(image.data.attributes.url)}
               width={200}
               height={130}
             />
