@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--size-xl);
-  padding-bottom: var(--size-xl);
-  margin-top: var(--size-xl);
+  gap: var(--size-6);
+  padding-bottom: var(--size-6);
+  margin-top: var(--size-6);
 }
 
 .overline {
@@ -14,7 +14,7 @@
 }
 
 .overline > * {
-  height: var(--size-sm);
+  height: var(--size-3);
 }
 
 .text {
@@ -24,7 +24,7 @@
 .socials > ul {
   display: flex;
   list-style: none;
-  gap: var(--size-md);
+  gap: var(--size-4);
 }
 
 .socials > a {

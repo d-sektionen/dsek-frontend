@@ -45,14 +45,18 @@ a {
   --ff-body: "Arial", sans-serif;
   /* --ff-display is set in layout.tsx */
 
-  /* Sizes, WIP */
-  --size-xs: 0.25rem;
-  --size-sm: 0.5rem;
-  --size-md: 0.75rem;
-  --size-lg: 1rem;
-  --size-xl: 1.5rem;
+  /* Sizes */
+  --size-1: 0.125rem;
+  --size-2: 0.25rem;
+  --size-3: 0.5rem;
+  --size-4: 0.75rem;
+  --size-5: 1rem;
+  --size-6: 1.5rem;
+  --size-7: 2rem;
+  --size-8: 2.5rem;
+  --size-9: 3rem;
 
-  /* Shadows, WIP */
+  /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 5%);
   --shadow: 0 1px 3px 0 rgb(0 0 0 / 10%);
   --shadow-lg: 0 4px 5px 0 rgb(0 0 0 / 10%);

@@ -1,6 +1,6 @@
 .navbarLink {
   background: var(--color-base-3);
-  padding-left: var(--size-md);
+  padding-left: var(--size-4);
 }
 
 .navbarLink > ol {
@@ -16,14 +16,14 @@
 
 .icon {
   display: flex;
-  padding: 0 var(--size-md);
+  padding: 0 var(--size-4);
 }
 
 .label {
   display: block;
   flex: 1;
-  padding-top: var(--size-md);
-  padding-bottom: var(--size-md);
+  padding-top: var(--size-4);
+  padding-bottom: var(--size-4);
   font: var(--font-button);
 }
 

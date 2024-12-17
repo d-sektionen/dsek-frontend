@@ -5,7 +5,7 @@
 }
 
 .calendarWidget > header {
-  padding: var(--size-sm);
+  padding: var(--size-3);
   text-align: center;
   border-bottom: solid 1px var(--color-base-3);
 }
@@ -19,8 +19,8 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  gap: var(--size-sm);
-  padding: var(--size-lg);
+  gap: var(--size-3);
+  padding: var(--size-5);
 }
 
 .calendarWidget ol {
@@ -30,15 +30,15 @@
 }
 
 .calendarWidget ol > *:not(:last-child) {
-  padding-bottom: var(--size-md);
-  margin-bottom: var(--size-md);
+  padding-bottom: var(--size-4);
+  margin-bottom: var(--size-4);
   border-bottom: solid 1px var(--color-base-3);
 }
 
 .item {
   display: grid;
   grid-template-columns: 55px 1fr;
-  gap: var(--size-md);
+  gap: var(--size-4);
   align-items: center;
 }
 

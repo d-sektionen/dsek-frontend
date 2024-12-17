@@ -14,7 +14,7 @@
   font: var(--font-heading-md);
   display: flex;
   align-items: center;
-  gap: var(--size-md);
+  gap: var(--size-4);
 }
 
 .navigationWidget li::before {

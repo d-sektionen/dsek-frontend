@@ -3,7 +3,7 @@
 }
 
 .label {
-  padding: var(--size-lg) var(--size-sm);
+  padding: var(--size-5) var(--size-3);
   width: 100%;
   min-width: max-content;
   display: flex;
@@ -21,7 +21,7 @@
   background-color: var(--color-background);
   box-shadow: var(--shadow);
   position: absolute;
-  bottom: calc(-1 * var(--size-sm));
+  bottom: calc(-1 * var(--size-3));
   height: max-content;
   left: 0;
   opacity: 0;
@@ -51,7 +51,7 @@
 }
 
 .navbarLink > ol .label {
-  padding: var(--size-sm);
+  padding: var(--size-3);
 }
 
 .navbarLink.nested > ol {

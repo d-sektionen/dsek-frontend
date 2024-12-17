@@ -1,10 +1,10 @@
 .inputField {
-  margin-bottom: var(--size-md);
+  margin-bottom: var(--size-4);
 }
 
 .inputField label {
   display: block;
-  margin-bottom: var(--size-xs);
+  margin-bottom: var(--size-2);
   font: var(--font-heading-xs);
 }
 
@@ -19,14 +19,14 @@
 .trailingIconWrapper {
   display: flex;
   color: var(--color-base-6);
-  padding: var(--size-sm);
-  padding-right: var(--size-xs);
+  padding: var(--size-3);
+  padding-right: var(--size-2);
 }
 
 .trailingIconWrapper {
   color: var(--color-base-8);
   background-color: var(--color-base-2);
-  padding: var(--size-sm);
+  padding: var(--size-3);
 }
 
 .inputField input {
@@ -34,6 +34,6 @@
   background: none;
   border: none;
   flex: 1;
-  padding: var(--size-sm);
-  padding-left: var(--size-xs);
+  padding: var(--size-3);
+  padding-left: var(--size-2);
 }

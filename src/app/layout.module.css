@@ -2,12 +2,12 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  gap: var(--size-sm);
-  padding: 0 var(--size-lg);
+  gap: var(--size-3);
+  padding: 0 var(--size-5);
 }
 
 .container > main {
-  padding: 0 var(--size-lg);
+  padding: 0 var(--size-5);
 }
 
 @media screen and (min-width: 1200px) {
