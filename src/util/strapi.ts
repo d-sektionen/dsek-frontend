@@ -77,9 +77,10 @@ export type NavbarLink = StrapiEntry<{
 
 export type Utskott = StrapiEntry<{
   title: string;
-  content: string;
   slug: string;
-  preview_content: string;
+  content: BlocksContent;
+  summary: string;
+  logo: StrapiResponse<StrapiFile<StrapiImage>>;
 }>;
 
 export type Sidebar = StrapiEntry<{
