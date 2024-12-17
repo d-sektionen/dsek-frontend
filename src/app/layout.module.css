@@ -4,6 +4,7 @@
   display: grid;
   gap: var(--size-3);
   padding: 0 var(--size-5);
+  margin-bottom: 64px;
 }
 
 .container > main {
