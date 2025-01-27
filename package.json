@@ -31,8 +31,10 @@
     "@types/qs": "^6.9.16",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "dotenv": "^16.4.7",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
+    "pg": "^8.13.1",
     "prettier": "^3.3.3",
     "typescript": "^5"
   }
