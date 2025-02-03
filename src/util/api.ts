@@ -7,6 +7,10 @@ type ApiFetchQuery = {
   filters?: {
     slug?: string;
   };
+  pagination?: {
+    start?: number;
+    limit?: number;
+  };
   populate?: any;
 };
 
@@ -16,6 +20,7 @@ export function apiUrl(path: string, query?: object) {
   let url = new URL(BASE_URL);
   url.pathname = `/api/${trimLeft(path, "/")}`;
   url.search = qs.stringify(query);
+  console.log({ query, search: url.search });
   return url.href;
 }
 
@@ -45,7 +50,7 @@ export async function apiFetchOne<T>(
   query?: ApiFetchQuery,
   options?: ApiFetchOptions,
 ) {
-  const data = await apiFetch<T[]>(path);
+  const data = await apiFetch<T[]>(path, query, options);
   if (data == null) return null;
   return data[0] ?? null;
 }

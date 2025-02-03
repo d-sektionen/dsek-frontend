@@ -4,6 +4,8 @@
 
 .label {
   padding: var(--size-5) var(--size-3);
+  text-decoration: none;
+  color: inherit;
   width: 100%;
   min-width: max-content;
   display: flex;

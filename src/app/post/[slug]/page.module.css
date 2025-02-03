@@ -1,0 +1,14 @@
+.header {
+  margin-bottom: var(--size-7);
+}
+
+.header h1 {
+  padding-bottom: var(--size-5);
+  border-bottom: solid 1px var(--color-base-8);
+  margin-bottom: var(--size-5);
+}
+
+.header date {
+  font: var(--font-body-xs);
+  color: var(--color-base-6);
+}

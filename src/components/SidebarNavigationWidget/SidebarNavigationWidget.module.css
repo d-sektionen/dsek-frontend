@@ -31,6 +31,11 @@
   opacity: 100%;
 }
 
+.navigationWidget a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .navigationWidget nav > a:nth-of-type(4n + 1) li::before {
   background-color: var(--color-pixels-brown);
 }

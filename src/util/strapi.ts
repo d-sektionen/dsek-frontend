@@ -51,18 +51,27 @@ export type StrapiComponent<T = unknown> = {
   __component: string;
 } & T;
 
-export type Blogpost = StrapiEntry<{
+export type Post = StrapiEntry<{
   title: string;
-  content: string;
-  preview_content: string;
+  excerpt: string;
+  content: BlocksContent;
   slug: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  locale: string;
+  authors: StrapiResponse<Author[]>;
   thumbnail: StrapiResponse<StrapiFile<StrapiImage>>;
-  extra_media: StrapiResponse<StrapiFile<StrapiImage>[]>;
-  extra_files: StrapiResponse<StrapiFile>;
+  attachments: StrapiResponse<StrapiFile[]>;
+  publishedAt: string;
+}>;
+
+export type Author = StrapiEntry<{
+  name: string;
+}>;
+
+export type LegacyPost = StrapiEntry<{
+  title: string;
+  excerpt: string;
+  html: string;
+  slug: string;
+  publishedAt: string;
 }>;
 
 export type Navbar = StrapiEntry<{
