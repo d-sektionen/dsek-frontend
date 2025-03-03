@@ -9,7 +9,7 @@ import { Richtext } from "../Richtext/Richtext";
 type FooterProps = {};
 
 export async function Footer({}: FooterProps) {
-  const footer = await apiFetch<Footer>("/footer", {
+  const { data: footer } = await apiFetch<Footer>("/footer", {
     populate: ["socials.image.*", "readmore"],
   });
   if (!footer) return null;

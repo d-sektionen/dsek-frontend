@@ -55,6 +55,7 @@ export type Post = StrapiEntry<{
   title: string;
   excerpt: string;
   content: BlocksContent;
+  custom_html: string;
   slug: string;
   authors: StrapiResponse<Author[]>;
   thumbnail: StrapiResponse<StrapiFile<StrapiImage>>;
@@ -64,14 +65,6 @@ export type Post = StrapiEntry<{
 
 export type Author = StrapiEntry<{
   name: string;
-}>;
-
-export type LegacyPost = StrapiEntry<{
-  title: string;
-  excerpt: string;
-  html: string;
-  slug: string;
-  publishedAt: string;
 }>;
 
 export type Navbar = StrapiEntry<{

@@ -2,7 +2,7 @@ import { apiFetch } from "@/util/api";
 import { Utskott } from "@/util/strapi";
 
 export default async function UtskottPage() {
-  const utskott = await apiFetch<Utskott[]>("/utskotts");
+  const { data: utskott } = await apiFetch<Utskott[]>("/utskotts");
 
   return (
     <div>

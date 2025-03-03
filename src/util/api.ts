@@ -1,5 +1,4 @@
 import qs from "qs";
-import { StrapiEntry, StrapiFile, StrapiImage, StrapiResponse } from "./strapi";
 import { trimLeft } from "./util";
 
 const BASE_URL = process.env.STRAPI_BASE_URL as string;
@@ -8,13 +7,22 @@ type ApiFetchQuery = {
     slug?: string;
   };
   pagination?: {
+    page?: number;
+    pageSize?: number;
     start?: number;
     limit?: number;
   };
   populate?: any;
 };
 
-type ApiFetchOptions = RequestInit & {};
+type ApiFetchOptions<T> = RequestInit & {
+  default?: T;
+};
+
+type ApiFetchResponse<T> = {
+  data?: T;
+  total?: number;
+};
 
 export function apiUrl(path: string, query?: object) {
   let url = new URL(BASE_URL);
@@ -33,24 +41,34 @@ export function uploadUrl(path: string) {
 export async function apiFetch<T>(
   path: string,
   query?: ApiFetchQuery,
-  options?: ApiFetchOptions,
-) {
+  options?: ApiFetchOptions<T>,
+): Promise<ApiFetchResponse<T>> {
   let url = apiUrl(path, query);
   const res = await fetch(url, options);
-  if (!res.ok) return null;
+  let data = options?.default;
+  let total;
 
-  const json = await res.json();
-  if (!json.hasOwnProperty("data")) return null;
+  if (res.ok) {
+    const json = await res.json();
+    if (json.hasOwnProperty("data")) data = json.data as T;
+    if (json.hasOwnProperty("pagination"))
+      total = json.pagination.total as number;
+  }
 
-  return json.data as T;
+  return { data, total };
 }
 
 export async function apiFetchOne<T>(
   path: string,
   query?: ApiFetchQuery,
-  options?: ApiFetchOptions,
+  options?: ApiFetchOptions<T>,
 ) {
-  const data = await apiFetch<T[]>(path, query, options);
-  if (data == null) return null;
-  return data[0] ?? null;
+  const { data, total } = await apiFetch<T[]>(
+    path,
+    query,
+    options as ApiFetchOptions<T[]>,
+  );
+
+  if (data == null) return { data: options?.default, total };
+  else return { data: data[0] ?? options?.default, total };
 }

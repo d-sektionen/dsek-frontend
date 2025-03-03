@@ -1,6 +1,7 @@
 import pg from "pg";
 import dotenv from "dotenv";
 import dayjs from "dayjs";
+import { stripHtml } from "string-strip-html";
 
 const testData = [
   {
@@ -122,12 +123,11 @@ async function createPost(item) {
   const date = dayjs(item.date).toISOString();
   const slug = item.slug;
   const isPublished = item.status === "publish";
-  const excerpt = item.excerpt.rendered;
+  const excerpt = stripHtml(item.excerpt.rendered).result;
   const content = item.content.rendered;
 
   await client.query(
-    `INSERT INTO legacy_posts (title, slug, excerpt, html, created_at, updated_at, published_at) VALUES ($1, $2, $3, $4, $5, $6, $7);`,
+    `INSERT INTO posts (title, slug, excerpt, custom_html, created_at, updated_at, published_at) VALUES ($1, $2, $3, $4, $5, $6, $7);`,
     [title, slug, excerpt, content, date, date, isPublished ? date : null],
   );
-  console.log(`(${title}, ${slug})`);
 }
