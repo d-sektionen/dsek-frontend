@@ -110,9 +110,14 @@ for (let i = 1; i <= 7; i++) {
 }
 
 try {
+  console.log("Creating wordpress admin user...");
+  const author = await getOrCreateAuthor("WordPress Admin");
+
+  console.log("Creating posts...");
   for (const item of items) {
-    console.log(item.title.rendered + "...");
-    await createPost(item);
+    console.log("..." + item.title.rendered);
+    const post = await createPost(item);
+    if (post?.id) await associateAuthor(post.id, author.id);
   }
 } catch (error) {
   console.error(error);
@@ -126,8 +131,35 @@ async function createPost(item) {
   const excerpt = stripHtml(item.excerpt.rendered).result;
   const content = item.content.rendered;
 
-  await client.query(
-    `INSERT INTO posts (title, slug, excerpt, custom_html, created_at, updated_at, published_at) VALUES ($1, $2, $3, $4, $5, $6, $7);`,
+  const res = await client.query(
+    `INSERT INTO posts (title, slug, excerpt, custom_html, created_at, updated_at, published_at) VALUES ($1, $2, $3, $4, $5, $6, $7) ON CONFLICT (slug) DO NOTHING RETURNING id;`,
     [title, slug, excerpt, content, date, date, isPublished ? date : null],
+  );
+
+  return res.rows[0];
+}
+
+async function getOrCreateAuthor(name) {
+  let res = await client.query(`SELECT id FROM authors WHERE name = $1;`, [
+    name,
+  ]);
+
+  if (res.rows.length === 0) {
+    const date = dayjs(item.date).toISOString();
+    res = await client.query(
+      `INSERT INTO authors (name, created_at, updated_at, published_at) VALUES ($1, $2, $3, $4) ON CONFLICT (name) DO NOTHING RETURNING id;`,
+      [name, date, date, date],
+    );
+  }
+
+  return res.rows[0];
+}
+
+async function associateAuthor(postId, authorId) {
+  console.log("......associating author");
+  const date = dayjs().toISOString();
+  const res = await client.query(
+    `INSERT INTO posts_authors_links (post_id, author_id) VALUES ($1, $2);`,
+    [postId, authorId],
   );
 }
