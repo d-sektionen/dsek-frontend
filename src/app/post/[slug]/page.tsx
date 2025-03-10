@@ -43,6 +43,7 @@ export default async function PostPage({
       {thumbnail.data && (
         <Image
           src={apiUrl(thumbnail.data.attributes.url)}
+          className={style.thumbnail}
           alt={title}
           width={800}
           height={400}

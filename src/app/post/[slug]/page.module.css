@@ -13,6 +13,10 @@
   color: var(--color-base-6);
 }
 
+.thumbnail {
+  margin-bottom: var(--size-4);
+}
+
 .content h1,
 .content h2,
 .content h3,
