@@ -1,5 +1,5 @@
 .header {
-  margin-bottom: var(--size-7);
+  margin-bottom: var(--size-4);
 }
 
 .header h1 {
@@ -11,4 +11,25 @@
 .header date {
   font: var(--font-body-xs);
   color: var(--color-base-6);
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content p {
+  margin-bottom: var(--size-3);
+}
+
+.content h1 {
+  font: var(--font-heading-lg);
+}
+
+.content h2 {
+  font: var(--font-heading-md);
+}
+
+.content ol,
+.content ul {
+  list-style-position: inside;
+  margin: var(--size-3) 0;
 }

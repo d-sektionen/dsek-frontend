@@ -36,11 +36,11 @@ export default async function PostPage({
           <time dateTime={publishDate.format()}>
             {publishDate.format("ddd ll [kl.]LT")}
           </time>{" "}
-          av {authors.data.join()}
+          av {authors.data.map((a) => a.attributes.name).join()}
         </p>
       </div>
 
-      {thumbnail && (
+      {thumbnail.data && (
         <Image
           src={apiUrl(thumbnail.data.attributes.url)}
           alt={title}
@@ -49,8 +49,10 @@ export default async function PostPage({
         />
       )}
       <div className={style.content}>
-        <BlocksRenderer content={content} />
-        <div dangerouslySetInnerHTML={{ __html: custom_html }} />
+        {content && <BlocksRenderer content={content} />}
+        {custom_html && (
+          <div dangerouslySetInnerHTML={{ __html: custom_html }} />
+        )}
       </div>
       <div className={style.footer}></div>
     </div>
