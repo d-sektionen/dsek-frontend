@@ -10,6 +10,13 @@ export type StrapiEntry<T> = {
   attributes: T;
 };
 
+export type Pagination = {
+  page?: number;
+  pageSize?: number;
+  start?: number;
+  limit?: number;
+};
+
 export type StrapiFile<T = {}> = StrapiEntry<
   {
     name: string;

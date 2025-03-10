@@ -1,17 +1,13 @@
 import qs from "qs";
 import { trimLeft } from "./util";
+import { Pagination } from "./strapi";
 
 const BASE_URL = process.env.STRAPI_BASE_URL as string;
 type ApiFetchQuery = {
   filters?: {
     slug?: string;
   };
-  pagination?: {
-    page?: number;
-    pageSize?: number;
-    start?: number;
-    limit?: number;
-  };
+  pagination?: Pagination;
   populate?: any;
 };
 
@@ -51,8 +47,8 @@ export async function apiFetch<T>(
   if (res.ok) {
     const json = await res.json();
     if (json.hasOwnProperty("data")) data = json.data as T;
-    if (json.hasOwnProperty("pagination"))
-      total = json.pagination.total as number;
+    if (json.hasOwnProperty("meta") && json.meta.hasOwnProperty("pagination"))
+      total = json.meta.pagination.total;
   }
 
   return { data, total };

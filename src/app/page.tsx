@@ -5,6 +5,7 @@ import { Post } from "@/util/strapi";
 import { useSearchParams } from "next/navigation";
 import dayjs from "dayjs";
 import Link from "next/link";
+import { Pagination } from "@/components/Pagination/Pagination";
 
 const PAGE_SIZE = 10;
 export default async function HomePage({
@@ -12,9 +13,9 @@ export default async function HomePage({
 }: {
   searchParams: Promise<{ page: number }>;
 }) {
-  const { page: pageNumber } = await searchParams;
+  const { page: pageNumber = 1 } = await searchParams;
 
-  const { data: posts } = await apiFetch<Post[]>("posts", {
+  const { data: posts, total } = await apiFetch<Post[]>("posts", {
     pagination: {
       page: pageNumber,
       pageSize: PAGE_SIZE,
@@ -39,6 +40,10 @@ export default async function HomePage({
           </li>
         ))}
       </ul>
+
+      {total != null && total > PAGE_SIZE ? (
+        <Pagination page={pageNumber} pageSize={PAGE_SIZE} totalPosts={total} />
+      ) : null}
     </div>
   );
 }
