@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import style from "./page.module.css";
 import { apiFetch } from "@/util/api";
 import { Post } from "@/util/strapi";
 import { useSearchParams } from "next/navigation";
@@ -25,8 +25,8 @@ export default async function HomePage({
     <div>
       <ul>
         {posts?.map(({ attributes: { title, slug, publishedAt, excerpt } }) => (
-          <li className={styles.post}>
-            <Link className={styles.postTitle} href={`/post/${slug}`}>
+          <li className={style.post}>
+            <Link className={style.postTitle} href={`/post/${slug}`}>
               <h2>{title}</h2>
             </Link>
             <hr />
