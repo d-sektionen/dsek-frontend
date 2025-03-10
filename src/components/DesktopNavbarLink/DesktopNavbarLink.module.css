@@ -16,6 +16,10 @@
   font: var(--font-button);
 }
 
+.navbarLink a {
+  text-decoration: none !important;
+}
+
 .navbarLink > ol {
   list-style: none;
   color: initial;

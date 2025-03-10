@@ -119,8 +119,9 @@ html {
   --font-body: 0.875rem / 1.6875 var(--ff-body);
   --font-body-sm: 0.75rem / 1.6875 var(--ff-body);
   --font-button: 0.875rem / 1 var(--ff-display);
-  --font-heading-lg: 1.75rem / 1.2 var(--ff-display);
-  --font-heading-md: 1.25rem / 1.2 var(--ff-display);
+  --font-heading-xl: 2.5rem / 1.1 var(--ff-display);
+  --font-heading-lg: 1.75rem / 1.1 var(--ff-display);
+  --font-heading-md: 1.25rem / 1.1 var(--ff-display);
   --font-heading-sm: 1rem / 1.2 var(--ff-display);
   --font-heading-xs: 0.875rem / 1.2 var(--ff-display);
 }
@@ -145,4 +146,25 @@ details summary {
 
 details summary::-webkit-details-marker {
   display: none;
+}
+
+h1 {
+  font: var(--font-heading-xl);
+}
+
+h2 {
+  font: var(--font-heading-lg);
+}
+
+h3 {
+  font: var(--font-heading-md);
+}
+
+h4 {
+  font: var(--font-heading-sm);
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: clamp(1px, 0.075em, 2px);
 }
