@@ -13,7 +13,8 @@ export default async function HomePage({
 }: {
   searchParams: Promise<{ page: number }>;
 }) {
-  const { page: pageNumber = 1 } = await searchParams;
+  const params = await searchParams;
+  const pageNumber = Number(params.page || 1);
 
   const { data: posts, total } = await apiFetch<Post[]>("posts", {
     pagination: {
@@ -41,7 +42,7 @@ export default async function HomePage({
         ))}
       </ul>
 
-      {total != null && total > PAGE_SIZE ? (
+      {total && total > PAGE_SIZE ? (
         <Pagination page={pageNumber} pageSize={PAGE_SIZE} totalPosts={total} />
       ) : null}
     </div>

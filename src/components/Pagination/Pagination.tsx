@@ -41,7 +41,10 @@ export function Pagination({ page, pageSize, totalPosts }: PaginationProps) {
         ))}
       </div>
 
-      <PaginationButton href={`?page=${1}`} disabled={page >= totalPages - 1}>
+      <PaginationButton
+        href={`?page=${page + 1}`}
+        disabled={page >= totalPages - 1}
+      >
         <CgChevronRight />
       </PaginationButton>
       <PaginationButton
