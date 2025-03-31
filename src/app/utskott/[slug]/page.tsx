@@ -1,6 +1,10 @@
-import { apiFetch, apiFetchOne } from "@/util/api";
+import { apiFetch, apiFetchOne, apiUrl, uploadUrl } from "@/util/api";
 import { Utskott } from "@/util/strapi";
 import { notFound } from "next/navigation";
+import style from "./page.module.css";
+import Image from "next/image";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { Richtext } from "@/components/Richtext/Richtext";
 
 export async function getStaticPaths() {
   const { data: utskotts = [] } = await apiFetch<Utskott[]>("/utskotts");
@@ -21,18 +25,33 @@ export default async function UtskottPage({
   const { slug } = await params;
   const { data: utskott } = await apiFetchOne<Utskott>(`/utskotts`, {
     filters: { slug },
+    populate: ["content", "logo"],
   });
 
   if (utskott == null) {
     return notFound();
   }
 
-  const { title, summary } = utskott.attributes;
+  const { title, summary, content, logo } = utskott.attributes;
 
   return (
     <div>
-      <h1>{title}</h1>
+      <div className={style.header}>
+        <h1>
+          {logo.data && (
+            <Image
+              width={64}
+              height={64}
+              alt={`${title} logotyp`}
+              src={uploadUrl(logo.data.attributes.url)}
+            />
+          )}
+          {title}
+        </h1>
+        <hr />
+      </div>
       <p>{summary}</p>
+      <Richtext content={content} />
     </div>
   );
 }
