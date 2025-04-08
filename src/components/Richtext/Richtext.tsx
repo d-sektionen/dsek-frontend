@@ -8,6 +8,7 @@ type RichtextProps = {
 };
 
 export function Richtext({ content, className }: RichtextProps) {
+  if (!content) return null;
   return (
     <div className={clsx(style.richtext, className)}>
       <BlocksRenderer content={content} />

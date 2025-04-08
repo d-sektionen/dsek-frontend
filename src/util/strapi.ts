@@ -70,6 +70,15 @@ export type Post = StrapiEntry<{
   publishedAt: string;
 }>;
 
+export type Page = StrapiEntry<{
+  title: string;
+  content: BlocksContent;
+  slug: string;
+  authors: StrapiResponse<Author[]>;
+  thumbnail: StrapiResponse<StrapiFile<StrapiImage>>;
+  publishedAt: string;
+}>;
+
 export type Author = StrapiEntry<{
   name: string;
 }>;
