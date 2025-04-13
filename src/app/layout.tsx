@@ -27,7 +27,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={asapFont.variable}>
       <body>
-        <JumpToContentButton />
         <Navbar />
         <div className={style.container}>
           <Sidebar endpoint="left-sidebar" />

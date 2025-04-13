@@ -22,7 +22,6 @@ export async function Navbar() {
         <ScreenReaderText as="h3">Desktop navbar</ScreenReaderText>
         <DesktopNavbar items={links.data} />
       </div>
-      <JumpToContentButton />
       <div className={style.mobileNavbar}>
         <ScreenReaderText as="h3">Mobile navbar</ScreenReaderText>
         <MobileNavbar items={links.data} />

@@ -5,6 +5,7 @@ import { CgChevronDown, CgChevronRight } from "react-icons/cg";
 import Link from "next/link";
 import { DesktopNavbarLink } from "../DesktopNavbarLink/DesktopNavbarLink";
 import type { NavbarLink } from "@/util/strapi";
+import { JumpToContentButton } from "../JumpToContentButton/JumpToContentButton";
 
 type DesktopNavbarProps = {
   items: NavbarLink[];
@@ -14,6 +15,7 @@ export function DesktopNavbar({ items }: DesktopNavbarProps) {
   return (
     <div className={style.wrapper}>
       <div className={style.navbar}>
+        <JumpToContentButton />
         <Link href="/" className={style.logo}>
           <Image
             src="/logo_dsektionen.svg"
