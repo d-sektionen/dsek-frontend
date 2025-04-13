@@ -1,0 +1,5 @@
+.eventDateRange {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 0 var(--size-2);
+}
