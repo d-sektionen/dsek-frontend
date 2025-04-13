@@ -42,6 +42,14 @@
   align-items: center;
 }
 
+.item:hover {
+  text-decoration: none;
+}
+
+.item:hover h4 {
+  text-decoration: underline;
+}
+
 .item .symbol {
   text-align: center;
   background: var(--color-background);

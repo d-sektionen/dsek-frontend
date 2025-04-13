@@ -24,25 +24,23 @@ export async function SidebarCalendarWidget({
             const startDate = dayjs(event.start?.dateTime);
             const endDate = dayjs(event.end?.dateTime);
             return (
-              <Link href={`/kalender/${event.id}`}>
-                <li className={style.item}>
-                  <div className={style.symbol}>
-                    <div className={style.month}>{startDate.format("MMM")}</div>
-                    <div className={style.monthDay}>
-                      {startDate.format("DD")}
-                    </div>
-                    <div className={style.weekDay}>
-                      {startDate.format("ddd")}
-                    </div>
-                  </div>
-                  <div>
-                    <h4>{event.summary}</h4>
-                    <p>
-                      {startDate.format("HH:mm")} &ndash;{" "}
-                      {endDate.format("HH:mm")}
-                    </p>
-                  </div>
-                </li>
+              <Link
+                role="listitem"
+                className={style.item}
+                href={`/kalender/${event.id}`}
+              >
+                <div className={style.symbol}>
+                  <div className={style.month}>{startDate.format("MMM")}</div>
+                  <div className={style.monthDay}>{startDate.format("DD")}</div>
+                  <div className={style.weekDay}>{startDate.format("ddd")}</div>
+                </div>
+                <div>
+                  <h4>{event.summary}</h4>
+                  <p>
+                    {startDate.format("HH:mm")} &ndash;{" "}
+                    {endDate.format("HH:mm")}
+                  </p>
+                </div>
               </Link>
             );
           })}
