@@ -24,13 +24,12 @@ services:
 
   strapi:
     build:
-      context: strapi
+      context: ./strapi
       dockerfile: Dockerfile.development
-    env_file: .env
     environment:
       DATABASE_CLIENT: postgres
       DATABASE_NAME: $DB_NAME
-      DATABASE_USERNAME: $DB_NAME
+      DATABASE_USERNAME: $DB_USER
       DATABASE_PASSWORD: $DB_PASSWORD
       DATABASE_HOST: db
       DATABASE_PORT: 5432
@@ -38,12 +37,11 @@ services:
       API_TOKEN_SALT: secret
       ADMIN_JWT_SECRET: secret
     volumes:
-      - ./config:/opt/app/config
-      - ./src:/opt/app/src
-      - ./package.json:/opt/package.json
-      - ./yarn.lock:/opt/yarn.lock
-      - ./.env:/opt/app/.env
-      - ./public/uploads:/opt/app/public/uploads
+      - ./strapi/config:/opt/app/config
+      - ./strapi/src:/opt/app/src
+      - ./strapi/package.json:/opt/package.json
+      - ./strapi/package-lock.json:/opt/package-lock.json
+      - ./strapi/public/uploads:/opt/app/public/uploads
     ports:
       - "1337:1337"
     networks:
@@ -53,7 +51,7 @@ services:
 
   frontend:
     build:
-      context: frontend
+      context: ./frontend
       dockerfile: Dockerfile.development
     env_file: .env
     environment:
@@ -61,10 +59,12 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./src:/app/src
-      - ./public:/app/public
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
     networks:
       - primary
+    depends_on:
+      - strapi
 
 volumes:
   db:
