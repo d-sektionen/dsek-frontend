@@ -23,7 +23,9 @@ services:
       - primary
 
   strapi:
-    image: registry.d-sektionen.se/strapi-cms:development
+    build:
+      context: strapi
+      dockerfile: Dockerfile.development
     env_file: .env
     environment:
       DATABASE_CLIENT: postgres
@@ -36,7 +38,12 @@ services:
       API_TOKEN_SALT: secret
       ADMIN_JWT_SECRET: secret
     volumes:
-      - strapi:/opt/app
+      - ./config:/opt/app/config
+      - ./src:/opt/app/src
+      - ./package.json:/opt/package.json
+      - ./yarn.lock:/opt/yarn.lock
+      - ./.env:/opt/app/.env
+      - ./public/uploads:/opt/app/public/uploads
     ports:
       - "1337:1337"
     networks:
@@ -46,7 +53,8 @@ services:
 
   frontend:
     build:
-      dockerfile: Dockerfile.dev
+      context: frontend
+      dockerfile: Dockerfile.development
     env_file: .env
     environment:
       STRAPI_BASE_URL: "http://strapi:1337"
@@ -61,5 +69,3 @@ services:
 volumes:
   db:
     name: dsek-dev-db
-  strapi:
-    name: dsek-dev-strapi
