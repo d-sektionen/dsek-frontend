@@ -10,8 +10,8 @@ export async function getStaticPaths() {
   const { data: utskotts = [] } = await apiFetch<Utskott[]>("/utskotts");
 
   return {
-    paths: utskotts.map(({ attributes }) => ({
-      params: { slug: attributes.slug },
+    paths: utskotts.map(({ slug }) => ({
+      params: { slug },
     })),
     fallback: false,
   };
@@ -32,18 +32,18 @@ export default async function UtskottPage({
     return notFound();
   }
 
-  const { title, summary, content, logo } = utskott.attributes;
+  const { title, summary, content, logo } = utskott;
 
   return (
     <div>
       <div className={style.header}>
         <h1>
-          {logo.data && (
+          {logo && (
             <Image
               width={64}
               height={64}
               alt={`${title} logotyp`}
-              src={uploadUrl(logo.data.attributes.url)}
+              src={uploadUrl(logo.url)}
             />
           )}
           {title}

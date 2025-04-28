@@ -24,8 +24,8 @@ export function MobileNavbar({ items }: MobileNavbarProps) {
           <CgClose className={style.closeIcon} size={24} />
         </summary>
         <nav>
-          {items.map(({ id }) => (
-            <MobileNavbarLink key={id} id={id} />
+          {items.map(({ documentId }) => (
+            <MobileNavbarLink key={documentId} documentId={documentId} />
           ))}
         </nav>
       </details>

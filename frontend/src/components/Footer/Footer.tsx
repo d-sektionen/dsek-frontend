@@ -10,13 +10,12 @@ type FooterProps = {};
 
 export async function Footer({}: FooterProps) {
   const { data: footer } = await apiFetch<Footer>("/footer", {
-    populate: ["socials.image.*", "readmore"],
+    populate: ["socials.image", "read_more"],
   });
+  console.log({ footer });
   if (!footer) return null;
 
-  const { text, socials, readmore } = footer.attributes;
-
-  console.log(readmore);
+  const { text, socials, read_more } = footer;
 
   return (
     <footer className={style.footer}>
@@ -36,10 +35,10 @@ export async function Footer({}: FooterProps) {
         <ul>
           {socials.map(({ id, image, link }) => (
             <li key={id}>
-              <Link href={link}>
+              <Link href={link ?? ""}>
                 <Image
                   alt=""
-                  src={uploadUrl(image.data.attributes.url)}
+                  src={uploadUrl(image.url)}
                   width={48}
                   height={48}
                 />
@@ -48,7 +47,7 @@ export async function Footer({}: FooterProps) {
           ))}
         </ul>
 
-        {readmore && <Link href={readmore.link}>{readmore.text}</Link>}
+        {read_more && <Link href={read_more.link ?? ""}>{read_more.text}</Link>}
       </div>
     </footer>
   );

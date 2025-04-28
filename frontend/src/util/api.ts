@@ -51,6 +51,7 @@ export async function apiFetch<T>(
       total = json.meta.pagination.total;
   }
 
+  console.log({ url, data });
   return { data, total };
 }
 

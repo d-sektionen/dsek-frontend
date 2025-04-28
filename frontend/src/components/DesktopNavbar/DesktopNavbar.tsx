@@ -26,8 +26,8 @@ export function DesktopNavbar({ items }: DesktopNavbarProps) {
         </Link>
 
         <nav>
-          {items.map(({ id }, i) => (
-            <DesktopNavbarLink key={id} id={id} />
+          {items.map(({ documentId }) => (
+            <DesktopNavbarLink key={documentId} documentId={documentId} />
           ))}
         </nav>
       </div>

@@ -8,23 +8,25 @@ import type { Navbar } from "../../util/strapi";
 
 /* Bad solution alert! Fix this eventually by unifying the navbars */
 export async function Navbar() {
-  const { data: navbar } = await apiFetch<Navbar>("/navbar", { populate: "*" });
+  const { data: navbar } = await apiFetch<Navbar>("/navbar", {
+    populate: "*",
+  });
 
   if (navbar == null) {
     return null;
   }
 
-  const links = navbar.attributes.navbar_links;
+  const links = navbar.navbar_links;
 
   return (
     <>
       <div className={style.desktopNavbar}>
         <ScreenReaderText as="h3">Desktop navbar</ScreenReaderText>
-        <DesktopNavbar items={links.data} />
+        <DesktopNavbar items={links} />
       </div>
       <div className={style.mobileNavbar}>
         <ScreenReaderText as="h3">Mobile navbar</ScreenReaderText>
-        <MobileNavbar items={links.data} />
+        <MobileNavbar items={links} />
       </div>
     </>
   );

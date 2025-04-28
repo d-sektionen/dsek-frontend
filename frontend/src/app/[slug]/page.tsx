@@ -20,12 +20,12 @@ export default async function PagePage({
 
   if (post == null) return notFound();
 
-  const { title, authors, thumbnail, publishedAt, content } = post.attributes;
+  const { title, authors, thumbnail, publishedAt, content } = post;
 
   return (
     <div>
       <PageHeader title={title} />
-      <PageThumbnail thumbnail={thumbnail?.data} />
+      <PageThumbnail thumbnail={thumbnail} />
       <div className={style.content}>
         <Richtext content={content} />
       </div>

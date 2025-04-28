@@ -13,11 +13,11 @@ export default async function UtskottPage() {
         <hr />
       </div>
       <ul>
-        {utskott?.map(({ id, attributes }) => (
+        {utskott?.map(({ id, title, summary, slug }) => (
           <li className={style.utskott} key={id}>
-            <h2>{attributes.title}</h2>
-            <p>{attributes.summary}</p>
-            <Link href={`/utskott/${attributes.slug}`}>Läs mer</Link>
+            <h2>{title}</h2>
+            <p>{summary}</p>
+            <Link href={`/utskott/${slug}`}>Läs mer</Link>
           </li>
         ))}
       </ul>

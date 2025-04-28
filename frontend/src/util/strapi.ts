@@ -7,8 +7,11 @@ export type StrapiResponse<T> = {
 
 export type StrapiEntry<T> = {
   id: number;
-  attributes: T;
-};
+  documentId: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+} & T;
 
 export type Pagination = {
   page?: number;
@@ -64,9 +67,9 @@ export type Post = StrapiEntry<{
   content: BlocksContent;
   custom_html: string;
   slug: string;
-  authors: StrapiResponse<Author[]>;
-  thumbnail: StrapiResponse<StrapiFile<StrapiImage>>;
-  attachments: StrapiResponse<StrapiFile[]>;
+  authors: Author[];
+  thumbnail: StrapiFile<StrapiImage>;
+  attachments: StrapiFile[];
   publishedAt: string;
 }>;
 
@@ -74,8 +77,8 @@ export type Page = StrapiEntry<{
   title: string;
   content: BlocksContent;
   slug: string;
-  authors: StrapiResponse<Author[]>;
-  thumbnail: StrapiResponse<StrapiFile<StrapiImage>>;
+  authors: Author[];
+  thumbnail: StrapiFile<StrapiImage>;
   publishedAt: string;
 }>;
 
@@ -84,13 +87,13 @@ export type Author = StrapiEntry<{
 }>;
 
 export type Navbar = StrapiEntry<{
-  navbar_links: StrapiResponse<NavbarLink[]>;
+  navbar_links: NavbarLink[];
 }>;
 
 export type NavbarLink = StrapiEntry<{
   label: string;
   url: string;
-  navbar_links?: StrapiResponse<NavbarLink[]>;
+  navbar_links?: NavbarLink[];
 }>;
 
 export type Utskott = StrapiEntry<{
@@ -98,7 +101,7 @@ export type Utskott = StrapiEntry<{
   slug: string;
   content: BlocksContent;
   summary: string;
-  logo: StrapiResponse<StrapiFile<StrapiImage>>;
+  logo: StrapiFile<StrapiImage>;
 }>;
 
 export type Sidebar = StrapiEntry<{
@@ -106,7 +109,7 @@ export type Sidebar = StrapiEntry<{
 }>;
 
 export type ImageWithLink = StrapiComponent<{
-  image: StrapiResponse<StrapiFile<StrapiImage>>;
+  image: StrapiFile<StrapiImage>;
   link: string;
 }>;
 
@@ -134,5 +137,5 @@ export type SidebarCalendarWidget = StrapiComponent<{
 export type Footer = StrapiEntry<{
   text: BlocksContent;
   socials: ImageWithLink[];
-  readmore: TextWithLink;
+  read_more: TextWithLink;
 }>;

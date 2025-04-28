@@ -8,6 +8,7 @@ type PageHeaderProps = {
   event?: {
     start: Dayjs;
     end?: Dayjs;
+    hasTime?: boolean;
   };
   endDate?: Dayjs;
   authors?: Author[];
@@ -19,6 +20,8 @@ export function PageHeader({
   event,
   authors,
 }: PageHeaderProps) {
+  const eventTimeFormat = event?.hasTime ? "dddd ll [kl.]LT" : "dddd ll";
+
   return (
     <div className={style.header}>
       <h1>{title}</h1>
@@ -28,23 +31,21 @@ export function PageHeader({
           Publicerad{" "}
           {publishDate && (
             <time dateTime={publishDate.format()}>
-              {publishDate.format("ddd ll [kl.]LT")}{" "}
+              {publishDate.format("dddd ll [kl.]LT")}{" "}
             </time>
           )}{" "}
-          {authors && (
-            <span>av {authors.map((a) => a.attributes.name).join()}</span>
-          )}
+          {authors && <span>av {authors.map((a) => a.name).join()}</span>}
         </p>
       )}
 
       {event && (
         <p className={style.eventDateRange}>
           <span>Start:</span>
-          <span>{event.start.format("ddd ll [kl.]LT")}</span>
+          <span>{event.start.format(eventTimeFormat)}</span>
           {event.end && (
             <>
               <span>Slut:</span>
-              <span>{event.end.format("ddd ll [kl.]LT")}</span>
+              <span>{event.end.format(eventTimeFormat)}</span>
             </>
           )}
         </p>

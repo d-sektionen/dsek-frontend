@@ -14,9 +14,9 @@ const widgetMap: Record<
   string,
   ElementType<{ widget: StrapiComponent<any> }>
 > = {
-  "sidebar.sponsor": SidebarSponsorWidget,
-  "sidebar.navigation": SidebarNavigationWidget,
-  "sidebar.calendar": SidebarCalendarWidget,
+  "sidebar.sponsor-widget": SidebarSponsorWidget,
+  "sidebar.navigation-widget": SidebarNavigationWidget,
+  "sidebar.calendar-widget": SidebarCalendarWidget,
 };
 
 export async function Sidebar({ endpoint }: SidebarProps) {
@@ -28,9 +28,7 @@ export async function Sidebar({ endpoint }: SidebarProps) {
     return <div />;
   }
 
-  const {
-    attributes: { widgets },
-  } = sidebar;
+  const { widgets } = sidebar;
 
   return (
     <aside className={style.sidebar}>

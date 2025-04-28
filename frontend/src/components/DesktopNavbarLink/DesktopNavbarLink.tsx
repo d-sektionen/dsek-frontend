@@ -7,7 +7,7 @@ import type { NavbarLink } from "../../util/strapi";
 import { apiFetch } from "../../util/api";
 
 type DesktopNavbarLinkProps = {
-  id: number;
+  documentId: string;
   depth?: number;
 };
 
@@ -15,20 +15,22 @@ type DesktopNavbarLinkProps = {
 //       but this site will (should) be redesigned at some point so having them separate
 //       right now makes much more sense.
 export async function DesktopNavbarLink({
-  id,
+  documentId,
   depth = 1,
 }: DesktopNavbarLinkProps) {
   const isNested = depth > 1;
 
-  const { data: link } = await apiFetch<NavbarLink>(`/navbar-links/${id}`, {
-    populate: "*",
-  });
+  const { data: link } = await apiFetch<NavbarLink>(
+    `/navbar-links/${documentId}`,
+    { populate: "*" },
+  );
+
   if (link == null) {
     return null;
   }
 
-  const { label, url, navbar_links } = link.attributes;
-  const hasChildren = navbar_links?.data.length ?? 0 > 0;
+  const { label, url, navbar_links } = link;
+  const hasChildren = navbar_links?.length ?? 0 > 0;
   const Label = url != null ? Link : "span";
 
   return (
@@ -46,8 +48,12 @@ export async function DesktopNavbarLink({
       </Label>
 
       <ol>
-        {navbar_links?.data.map(({ id }) => (
-          <DesktopNavbarLink key={id} id={id} depth={depth + 1} />
+        {navbar_links?.map(({ documentId }) => (
+          <DesktopNavbarLink
+            key={documentId}
+            documentId={documentId}
+            depth={depth + 1}
+          />
         ))}
       </ol>
     </li>

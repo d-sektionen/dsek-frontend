@@ -6,7 +6,7 @@ import { apiFetch } from "../../util/api";
 import { NavbarLink } from "../../util/strapi";
 
 type MobileNavbarLinkProps = {
-  id: number;
+  documentId: string;
   depth?: number;
 };
 
@@ -14,20 +14,21 @@ type MobileNavbarLinkProps = {
 //       but this site will (should) be redesigned at some point so having them separate
 //       right now makes much more sense.
 export async function MobileNavbarLink({
-  id,
+  documentId,
   depth = 1,
 }: MobileNavbarLinkProps) {
   const depthVariable = { "--depth": depth } as Record<string, unknown>;
 
-  const { data: link } = await apiFetch<NavbarLink>(`/navbar-links/${id}`, {
-    populate: "*",
-  });
+  const { data: link } = await apiFetch<NavbarLink>(
+    `/navbar-links/${documentId}`,
+    { populate: "*" },
+  );
   if (link == null) {
     return null;
   }
 
-  const { label, url, navbar_links } = link.attributes;
-  const hasChildren = navbar_links?.data.length ?? 0 > 0;
+  const { label, url, navbar_links } = link;
+  const hasChildren = navbar_links?.length ?? 0 > 0;
   const Label = url != null ? Link : "span";
 
   return (
@@ -50,8 +51,12 @@ export async function MobileNavbarLink({
           ) : null}
         </summary>
         <ol>
-          {navbar_links?.data.map(({ id }) => (
-            <MobileNavbarLink key={id} id={id} depth={depth + 1} />
+          {navbar_links?.map(({ documentId }) => (
+            <MobileNavbarLink
+              key={documentId}
+              documentId={documentId}
+              depth={depth + 1}
+            />
           ))}
         </ol>
       </details>

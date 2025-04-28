@@ -21,8 +21,10 @@ export async function SidebarCalendarWidget({
       <main>
         <ol>
           {events.slice(0, 8).map((event) => {
-            const startDate = dayjs(event.start?.dateTime);
-            const endDate = dayjs(event.end?.dateTime);
+            const startDate = dayjs(event.start?.dateTime || event.start?.date);
+            const endDate = dayjs(event.end?.dateTime || event.end?.date);
+            const hasTime = event.start?.dateTime && event.end?.dateTime;
+
             return (
               <Link
                 role="listitem"
@@ -36,10 +38,12 @@ export async function SidebarCalendarWidget({
                 </div>
                 <div>
                   <h4>{event.summary}</h4>
-                  <p>
-                    {startDate.format("HH:mm")} &ndash;{" "}
-                    {endDate.format("HH:mm")}
-                  </p>
+                  {hasTime ? (
+                    <p>
+                      {startDate.format("HH:mm")} &ndash;{" "}
+                      {endDate.format("HH:mm")}
+                    </p>
+                  ) : null}
                 </div>
               </Link>
             );

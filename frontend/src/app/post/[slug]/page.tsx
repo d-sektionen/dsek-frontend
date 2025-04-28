@@ -21,17 +21,16 @@ export default async function PostPage({
 
   if (post == null) return notFound();
 
-  const { title, authors, thumbnail, publishedAt, content, custom_html } =
-    post.attributes;
+  const { title, authors, thumbnail, publishedAt, content, custom_html } = post;
 
   return (
     <div>
       <PageHeader
         title={title}
-        authors={authors?.data}
+        authors={authors}
         publishDate={dayjs(publishedAt)}
       />
-      <PageThumbnail thumbnail={thumbnail?.data} />
+      <PageThumbnail thumbnail={thumbnail} />
       <Richtext content={content} />
       <div className={style.content}>
         <Richtext content={content} />

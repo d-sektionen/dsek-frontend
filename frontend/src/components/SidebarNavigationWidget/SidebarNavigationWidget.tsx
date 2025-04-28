@@ -21,10 +21,10 @@ export function SidebarNavigationWidget({
       />
       <nav>
         {navbar_links?.data
-          .filter((link) => link.attributes.url != null)
-          .map((link) => (
-            <Link href={link.attributes.url}>
-              <li>{link.attributes.label}</li>
+          .filter((l) => l.url != null)
+          .map(({ url, label }) => (
+            <Link href={url}>
+              <li>{label}</li>
             </Link>
           ))}
       </nav>

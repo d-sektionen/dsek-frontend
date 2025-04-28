@@ -13,7 +13,7 @@ export function PageThumbnail({ thumbnail, alt = "" }: PageThumbnailProps) {
 
   return (
     <Image
-      src={uploadUrl(thumbnail.attributes.url)}
+      src={uploadUrl(thumbnail.url)}
       className={style.thumbnail}
       alt={alt}
       width={800}

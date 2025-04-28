@@ -9,8 +9,9 @@ export default async function CalendarEventPage({
 }) {
   const { eventId } = await params;
   const event = await calendarGetEvent(eventId);
-  const startDate = dayjs(event.start?.dateTime);
-  const endDate = dayjs(event.end?.dateTime);
+  const startDate = dayjs(event.start?.dateTime || event.start?.date);
+  const endDate = dayjs(event.end?.dateTime || event.end?.date);
+  const hasTime = event.start?.dateTime && event.end?.dateTime;
   const publishDate = dayjs(event.created);
   const isMultiday = endDate.day() !== startDate.day();
 

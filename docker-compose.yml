@@ -1,11 +1,6 @@
 # THIS FILE IS FOR DEVELOPMENT PURPOSES ONLY
 # DO NOT USE IT IN PRODUCTION
 
-networks:
-  primary:
-    name: dsek-dev-network
-    driver: bridge
-
 services:
   db:
     image: postgres:16-alpine
@@ -69,3 +64,6 @@ services:
 volumes:
   db:
     name: dsek-dev-db
+
+networks:
+  primary:

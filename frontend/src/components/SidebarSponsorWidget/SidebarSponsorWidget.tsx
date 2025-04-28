@@ -18,10 +18,10 @@ export async function SidebarSponsorWidget({
       </header>
       <main>
         {logos?.map(({ id, image, link }) => (
-          <Link className={style.logo} key={id} href={link}>
+          <Link className={style.logo} key={id} href={link ?? ""}>
             <Image
               alt={`Logotype of ${title}`}
-              src={uploadUrl(image.data.attributes.url)}
+              src={uploadUrl(image.url)}
               width={200}
               height={130}
             />
