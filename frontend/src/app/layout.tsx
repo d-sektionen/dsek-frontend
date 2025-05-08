@@ -15,13 +15,13 @@ export const metadata: Metadata = {
 };
 
 const asapFont = localFont({
-  src: "/public/fonts/asap-regular.ttf",
+  src: "../assets/fonts/asap-regular.ttf",
   display: "swap",
   variable: "--ff-display",
 });
 
 const stabenFont = localFont({
-  src: "/public/fonts/rocky-aoe.ttf",
+  src: "../assets/fonts/rocky-aoe.ttf",
   display: "swap",
   variable: "--ff-staben",
 });
