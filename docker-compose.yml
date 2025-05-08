@@ -5,10 +5,9 @@ services:
   db:
     image: postgres:16-alpine
     environment:
-      POSTGRES_USER: $DB_USER
-      POSTGRES_DB: $DB_NAME
-      POSTGRES_PASSWORD: $DB_PASSWORD
-    env_file: .env
+      POSTGRES_USER: dsek
+      POSTGRES_DB: dsek
+      POSTGRES_PASSWORD: dsek
     ports:
       - "5432:5432"
     volumes:
@@ -23,9 +22,9 @@ services:
       dockerfile: Dockerfile.development
     environment:
       DATABASE_CLIENT: postgres
-      DATABASE_NAME: $DB_NAME
-      DATABASE_USERNAME: $DB_USER
-      DATABASE_PASSWORD: $DB_PASSWORD
+      DATABASE_NAME: dsek
+      DATABASE_USERNAME: dsek
+      DATABASE_PASSWORD: dsek
       DATABASE_HOST: db
       DATABASE_PORT: 5432
       APP_KEYS: secret
@@ -48,7 +47,6 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile.development
-    env_file: .env
     environment:
       STRAPI_BASE_URL: "http://strapi:1337"
     ports:
