@@ -7,6 +7,7 @@ import { JumpToContentButton } from "../components/JumpToContentButton/JumpToCon
 import { Sidebar } from "../components/Sidebar/Sidebar";
 import style from "./layout.module.css";
 import { Footer } from "../components/Footer/Footer";
+import clsx from "clsx";
 
 export const metadata: Metadata = {
   title: "dsek-frontend",
@@ -14,9 +15,15 @@ export const metadata: Metadata = {
 };
 
 const asapFont = localFont({
-  src: "./asap-regular.ttf",
+  src: "/public/fonts/asap-regular.ttf",
   display: "swap",
   variable: "--ff-display",
+});
+
+const stabenFont = localFont({
+  src: "/public/fonts/rocky-aoe.ttf",
+  display: "swap",
+  variable: "--ff-staben",
 });
 
 export default function RootLayout({
@@ -25,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={asapFont.variable}>
+    <html lang="en" className={clsx(asapFont.variable, stabenFont.variable)}>
       <body>
         <Navbar />
         <div className={style.container}>
