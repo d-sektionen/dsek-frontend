@@ -2,7 +2,8 @@ import qs from "qs";
 import { trimLeft } from "./util";
 import { Pagination } from "./strapi";
 
-const BASE_URL = process.env.STRAPI_BASE_URL as string;
+const BASE_URL =
+  (process.env.STRAPI_BASE_URL as string) || "http://localhost:1337";
 type ApiFetchQuery = {
   filters?: {
     slug?: string;

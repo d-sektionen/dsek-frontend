@@ -1,4 +1,4 @@
-import { apiFetchOne } from "../../../util/api";
+import { apiFetch, apiFetchOne } from "../../../util/api";
 import type { Post } from "../../../util/strapi";
 import { notFound } from "next/navigation";
 import style from "./page.module.css";
@@ -6,6 +6,14 @@ import { Richtext } from "../../../components/Richtext/Richtext";
 import { PageHeader } from "../../../components/PageHeader/PageHeader";
 import { PageThumbnail } from "../../../components/PageThumbnail/PageThumbnail";
 import dayjs from "dayjs";
+
+export const revalidate = 60;
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const { data: posts = [] } = await apiFetch<Post[]>("/posts");
+  return posts.map((u) => u.slug);
+}
 
 export default async function PostPage({
   params,

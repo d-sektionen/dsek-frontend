@@ -1,10 +1,18 @@
-import { apiFetchOne } from "../../util/api";
+import { apiFetch, apiFetchOne } from "../../util/api";
 import { notFound } from "next/navigation";
 import style from "./page.module.css";
 import { Richtext } from "../../components/Richtext/Richtext";
 import { Page } from "../../util/strapi";
 import { PageHeader } from "../../components/PageHeader/PageHeader";
 import { PageThumbnail } from "../../components/PageThumbnail/PageThumbnail";
+
+export const revalidate = 60;
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const { data: pages = [] } = await apiFetch<Page[]>("/pages");
+  return pages.map((u) => u.slug);
+}
 
 export default async function PagePage({
   params,

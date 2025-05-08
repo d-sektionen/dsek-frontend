@@ -6,15 +6,12 @@ import Image from "next/image";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import { Richtext } from "../../../components/Richtext/Richtext";
 
-export async function getStaticPaths() {
-  const { data: utskotts = [] } = await apiFetch<Utskott[]>("/utskotts");
+export const revalidate = 60;
+export const dynamicParams = true;
 
-  return {
-    paths: utskotts.map(({ slug }) => ({
-      params: { slug },
-    })),
-    fallback: false,
-  };
+export async function generateStaticParams() {
+  const { data: utskotts = [] } = await apiFetch<Utskott[]>("/utskotts");
+  return utskotts.map((u) => u.slug);
 }
 
 export default async function UtskottPage({
