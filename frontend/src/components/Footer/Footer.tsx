@@ -12,7 +12,6 @@ export async function Footer({}: FooterProps) {
   const { data: footer } = await apiFetch<Footer>("/footer", {
     populate: ["socials.image", "read_more"],
   });
-  console.log({ footer });
   if (!footer) return null;
 
   const { text, socials, read_more } = footer;

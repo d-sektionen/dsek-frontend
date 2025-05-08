@@ -25,7 +25,6 @@ export function apiUrl(path: string, query?: object) {
   let url = new URL(BASE_URL);
   url.pathname = `/api/${trimLeft(path, "/")}`;
   url.search = qs.stringify(query);
-  console.log({ query, search: url.search });
   return url.href;
 }
 
@@ -52,7 +51,6 @@ export async function apiFetch<T>(
       total = json.meta.pagination.total;
   }
 
-  console.log({ url, data });
   return { data, total };
 }
 

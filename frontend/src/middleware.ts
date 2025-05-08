@@ -6,7 +6,6 @@ const REDIRECTS: Record<string, string> = {
 };
 
 export function middleware(request: NextRequest) {
-  console.log(request.nextUrl.pathname);
   let redirect = REDIRECTS[request.nextUrl.pathname];
   if (redirect != null) {
     if (redirect[0] == "/") {

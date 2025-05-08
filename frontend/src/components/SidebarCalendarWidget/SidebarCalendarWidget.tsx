@@ -28,6 +28,7 @@ export async function SidebarCalendarWidget({
             return (
               <Link
                 role="listitem"
+                key={event.id}
                 className={style.item}
                 href={`/kalender/${event.id}`}
               >

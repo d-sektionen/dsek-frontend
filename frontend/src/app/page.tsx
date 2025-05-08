@@ -26,8 +26,8 @@ export default async function HomePage({
   return (
     <div>
       <ul>
-        {posts?.map(({ title, slug, publishedAt, excerpt }) => (
-          <li className={style.post}>
+        {posts?.map(({ documentId, title, slug, publishedAt, excerpt }) => (
+          <li key={documentId} className={style.post}>
             <Link className={style.postTitle} href={`/post/${slug}`}>
               <h2>{title}</h2>
             </Link>

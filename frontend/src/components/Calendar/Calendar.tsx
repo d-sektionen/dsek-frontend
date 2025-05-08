@@ -27,7 +27,6 @@ export function Calendar() {
   }
 
   function handleClick({ event }: EventClickArg) {
-    console.log(event);
     router.push(`/kalender/${event._def.publicId}`);
   }
 

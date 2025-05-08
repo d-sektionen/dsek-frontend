@@ -32,7 +32,7 @@ export async function MobileNavbarLink({
   const Label = url != null ? Link : "span";
 
   return (
-    <li>
+    <li key={documentId}>
       <details
         name={`navbar-${depth}`}
         style={depthVariable}

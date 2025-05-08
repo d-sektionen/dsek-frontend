@@ -34,7 +34,10 @@ export async function DesktopNavbarLink({
   const Label = url != null ? Link : "span";
 
   return (
-    <li className={clsx(style.navbarLink, isNested && style.nested)}>
+    <li
+      key={documentId}
+      className={clsx(style.navbarLink, isNested && style.nested)}
+    >
       <Label tabIndex={0} className={style.label} href={url ?? ""}>
         {label}
 
