@@ -38,6 +38,6 @@
     "pg": "^8.13.1",
     "prettier": "^3.3.3",
     "string-strip-html": "^13.4.12",
-    "typescript": "^5"
+    "typescript": "^5.9.2"
   }
 }

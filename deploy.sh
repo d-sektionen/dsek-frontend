@@ -10,3 +10,5 @@ docker push registry.d-sektionen.se/d-sektionen.se:production
 docker push registry.d-sektionen.se/d-sektionen.se:staging
 docker push registry.d-sektionen.se/strapi:production
 docker push registry.d-sektionen.se/strapi:staging
+echo == RELOADING ==
+curl -d "" http://localhost:9000/api/stacks/webhooks/bb4d851a-4e14-474d-a075-654b179acea3
