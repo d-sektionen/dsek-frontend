@@ -41,7 +41,10 @@ export async function apiFetch<T>(
   options?: ApiFetchOptions<T>,
 ): Promise<ApiFetchResponse<T>> {
   let url = apiUrl(path, query);
-  const res = await fetch(url, { ...options, next: { tags: options?.tags } });
+  const res = await fetch(url, {
+    ...options,
+    next: { tags: ["content", ...(options?.tags ?? [])] },
+  });
   let data = options?.default;
   let total;
 

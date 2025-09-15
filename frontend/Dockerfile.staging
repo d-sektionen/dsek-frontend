@@ -21,7 +21,7 @@ COPY --from=compile /app/public /app/public
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser  --system --uid 1001 nextjs
 
-RUN mkdir .nextjs
+RUN mkdir .next
 RUN chown nextjs:nodejs .next
 
 # Automatically leverage output traces to reduce image size
