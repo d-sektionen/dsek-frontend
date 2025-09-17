@@ -22,9 +22,9 @@ export function SidebarNavigationWidget({
         placeholder="Sök"
       /> */}
       <nav>
-        {navbar_links?.data
-          .filter((l) => l.url != null)
-          .map(({ url, label }) => (
+        {navbar_links
+          ?.filter((l) => l.url != null)
+          ?.map(({ url, label }) => (
             <Link href={url}>
               <li>{label}</li>
             </Link>

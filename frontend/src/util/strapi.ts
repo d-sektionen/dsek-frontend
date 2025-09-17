@@ -126,7 +126,7 @@ export type SidebarSponsorWidget = StrapiComponent<{
 
 export type SidebarNavigationWidget = StrapiComponent<{
   __component: "sidebar.navigation";
-  navbar_links?: StrapiResponse<NavbarLink[]>;
+  navbar_links?: NavbarLink[];
 }>;
 
 export type SidebarCalendarWidget = StrapiComponent<{
