@@ -33,6 +33,7 @@ export function Pagination({ page, pageSize, totalPosts }: PaginationProps) {
       <div className={style.pages}>
         {Array.from({ length: end - start + 1 }, (_, i) => (
           <PaginationButton
+            key={i}
             active={start + i === page}
             href={`?page=${start + i}`}
           >
