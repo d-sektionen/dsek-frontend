@@ -10,8 +10,9 @@ import { Footer } from "../components/Footer/Footer";
 import clsx from "clsx";
 
 export const metadata: Metadata = {
-  title: "dsek-frontend",
-  description: "",
+  title: "D-sektionen på LiU",
+  description:
+    "D-sektionen vid LiU bildades 1976 i Linköping och har Sveriges äldsta och mest moderna datateknologiska utbildningar.",
 };
 
 const asapFont = localFont({
