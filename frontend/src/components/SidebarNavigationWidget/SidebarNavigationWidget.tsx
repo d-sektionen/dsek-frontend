@@ -24,8 +24,8 @@ export function SidebarNavigationWidget({
       <nav>
         {navbar_links
           ?.filter((l) => l.url != null)
-          ?.map(({ url, label }) => (
-            <Link href={url}>
+          ?.map(({ url, label }, i) => (
+            <Link key={i} href={url}>
               <li>{label}</li>
             </Link>
           ))}
