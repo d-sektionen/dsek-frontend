@@ -7,9 +7,13 @@
   text-decoration: underline;
 }
 
-.richtext :global(p),
 .richtext :global(ul),
-.richtext :global(ol), {
+.richtext :global(ol) {
+  margin-bottom: var(--size-6);
+  list-style-position: inside;
+}
+
+.richtext :global(p) {
   margin-bottom: var(--size-6);
 }
 
