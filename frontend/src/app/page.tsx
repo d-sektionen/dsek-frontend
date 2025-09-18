@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { Pagination } from "../components/Pagination/Pagination";
+import { PostList } from "@/components/PostList/PostList";
 
 const PAGE_SIZE = 10;
 export default async function HomePage({
@@ -25,22 +26,7 @@ export default async function HomePage({
 
   return (
     <div>
-      <ul>
-        {posts?.map(({ documentId, title, slug, publishedAt, excerpt }) => (
-          <li key={documentId} className={style.post}>
-            <Link className={style.postTitle} href={`/post/${slug}`}>
-              <h2>{title}</h2>
-            </Link>
-            <hr />
-            <p>
-              <time dateTime={dayjs(publishedAt).format("YYYY-MM-DD")}>
-                {dayjs(publishedAt).format("YYYY-MM-DD")}
-              </time>
-            </p>
-            <p>{excerpt}</p>
-          </li>
-        ))}
-      </ul>
+      <PostList posts={posts ?? []} />
 
       {total && total > PAGE_SIZE ? (
         <Pagination page={pageNumber} pageSize={PAGE_SIZE} totalPosts={total} />

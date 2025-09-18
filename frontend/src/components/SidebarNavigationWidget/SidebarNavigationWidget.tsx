@@ -13,14 +13,14 @@ export function SidebarNavigationWidget({
 }: SidebarSponsorWidgetProps) {
   return (
     <article className={style.navigationWidget}>
-      {/* This search bar does not do anything, add it after proper search
-       functionality is implemented */}
-      {/* <Input
-        name="search"
-        type="search"
-        leadingIcon={CgSearch}
-        placeholder="Sök"
-      /> */}
+      <form method="get" action="/search">
+        <Input
+          name="q"
+          type="search"
+          leadingIcon={CgSearch}
+          placeholder="Sök"
+        />
+      </form>
       <nav>
         {navbar_links
           ?.filter((l) => l.url != null)

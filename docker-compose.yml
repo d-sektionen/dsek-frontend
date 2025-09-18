@@ -14,7 +14,7 @@ services:
       - db:/var/lib/postgresql/data
       - .dev/db/dumps:/dumps
     networks:
-      - primary
+      - internal
 
   strapi:
     build:
@@ -30,6 +30,8 @@ services:
       APP_KEYS: secret
       API_TOKEN_SALT: secret
       ADMIN_JWT_SECRET: secret
+      MEILI_HOST: meilisearch:7700
+      MEILI_API_KEY: development
     volumes:
       - ./strapi/config:/opt/app/config
       - ./strapi/src:/opt/app/src
@@ -39,7 +41,7 @@ services:
     ports:
       - "1337:1337"
     networks:
-      - primary
+      - internal
     depends_on:
       - db
 
@@ -55,13 +57,21 @@ services:
       - ./frontend/src:/app/src
       - ./frontend/public:/app/public
     networks:
-      - primary
+      - internal
     depends_on:
       - strapi
+
+  meilisearch:
+    image: getmeili/meilisearch:latest
+    restart: unless-stopped
+    ports:
+      - "7700:7700"
+    networks:
+      - internal
 
 volumes:
   db:
     name: dsek-dev-db
 
 networks:
-  primary:
+  internal:
