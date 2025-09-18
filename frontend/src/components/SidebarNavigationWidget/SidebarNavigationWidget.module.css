@@ -1,6 +1,3 @@
-.navigationWidget {
-}
-
 .navigationWidget nav {
   display: flex;
   background-color: var(--color-base-1);
