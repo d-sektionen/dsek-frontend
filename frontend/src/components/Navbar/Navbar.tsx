@@ -1,14 +1,13 @@
-import { apiFetch } from "../../util/api";
 import { DesktopNavbar } from "../DesktopNavbar/DesktopNavbar";
 import { JumpToContentButton } from "../JumpToContentButton/JumpToContentButton";
 import { MobileNavbar } from "../MobileNavbar/MobileNavbar";
 import { ScreenReaderText } from "../ScreenReaderText/ScreenReaderText";
 import style from "./Navbar.module.css";
-import type { Navbar } from "../../util/strapi";
+import { strapiFetch, type Navbar } from "../../util/strapi";
 
 /* Bad solution alert! Fix this eventually by unifying the navbars */
 export async function Navbar() {
-  const { data: navbar } = await apiFetch<Navbar>("/navbar", {
+  const { data: navbar } = await strapiFetch<Navbar>("/navbar", {
     populate: "*",
   });
 

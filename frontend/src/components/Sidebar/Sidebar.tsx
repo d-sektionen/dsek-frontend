@@ -1,4 +1,4 @@
-import { apiFetch } from "../../util/api";
+import { strapiFetch } from "../../util/strapi";
 import type { Sidebar, StrapiComponent } from "../../util/strapi";
 import { SidebarSponsorWidget } from "../SidebarSponsorWidget/SidebarSponsorWidget";
 import { ElementType } from "react";
@@ -20,7 +20,7 @@ const widgetMap: Record<
 };
 
 export async function Sidebar({ endpoint }: SidebarProps) {
-  const { data: sidebar } = await apiFetch<Sidebar>(endpoint, {
+  const { data: sidebar } = await strapiFetch<Sidebar>(endpoint, {
     populate: ["widgets.logos.image.*", "widgets.navbar_links"],
   });
 

@@ -1,4 +1,4 @@
-import { uploadUrl } from "../../util/api";
+import { strapiUploadUrl } from "../../util/strapi";
 import { StrapiFile, StrapiImage } from "../../util/strapi";
 import Image from "next/image";
 import style from "./PageThumbnail.module.css";
@@ -13,7 +13,7 @@ export function PageThumbnail({ thumbnail, alt = "" }: PageThumbnailProps) {
 
   return (
     <Image
-      src={uploadUrl(thumbnail.url)}
+      src={strapiUploadUrl(thumbnail.url)}
       className={style.thumbnail}
       alt={alt}
       width={800}

@@ -2,7 +2,7 @@ import Link from "next/link";
 import style from "./MobileNavbarLink.module.css";
 import { CgChevronDown, CgChevronUp } from "react-icons/cg";
 import clsx from "clsx";
-import { apiFetch } from "../../util/api";
+import { strapiFetch } from "../../util/strapi";
 import { NavbarLink } from "../../util/strapi";
 
 type MobileNavbarLinkProps = {
@@ -19,7 +19,7 @@ export async function MobileNavbarLink({
 }: MobileNavbarLinkProps) {
   const depthVariable = { "--depth": depth } as Record<string, unknown>;
 
-  const { data: link } = await apiFetch<NavbarLink>(
+  const { data: link } = await strapiFetch<NavbarLink>(
     `/navbar-links/${documentId}`,
     { populate: "*" },
   );

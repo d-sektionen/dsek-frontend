@@ -1,10 +1,10 @@
-import { apiFetch } from "../../util/api";
+import { strapiFetch } from "../../util/strapi";
 import { Utskott } from "../../util/strapi";
 import style from "./page.module.css";
 import Link from "next/link";
 
 export default async function UtskottPage() {
-  const { data: utskott } = await apiFetch<Utskott[]>("/utskotts");
+  const { data: utskott } = await strapiFetch<Utskott[]>("/utskotts");
 
   return (
     <div>

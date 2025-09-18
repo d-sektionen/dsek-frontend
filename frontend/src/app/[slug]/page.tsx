@@ -1,4 +1,4 @@
-import { apiFetch, apiFetchOne } from "../../util/api";
+import { strapiFetch, strapiFetchOne } from "@/util/strapi";
 import { notFound } from "next/navigation";
 import style from "./page.module.css";
 import { Richtext } from "../../components/Richtext/Richtext";
@@ -10,7 +10,7 @@ export const revalidate = 60;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const { data: pages = [] } = await apiFetch<Page[]>("/pages");
+  const { data: pages = [] } = await strapiFetch<Page[]>("/pages");
   return pages.map((u) => u.slug);
 }
 
@@ -21,7 +21,7 @@ export default async function PagePage({
 }) {
   const { slug } = await params;
 
-  const { data: post } = await apiFetchOne<Page>("pages", {
+  const { data: post } = await strapiFetchOne<Page>("pages", {
     filters: { slug },
     populate: ["authors", "thumbnail", "attachments"],
   });

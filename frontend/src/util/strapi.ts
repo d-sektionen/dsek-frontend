@@ -1,5 +1,79 @@
 import { BlocksContent } from "@strapi/blocks-react-renderer";
 import { types as mimeTypes } from "mime-types";
+import qs from "qs";
+import { trimLeft } from "./util";
+
+const STRAPI_BASE_URL =
+  (process.env.STRAPI_BASE_URL as string) || "http://localhost:1337";
+
+type StrapiFetchQuery = {
+  filters?: {
+    slug?: string;
+  };
+  pagination?: Pagination;
+  populate?: any;
+};
+
+type StrapiFetchOptions<T> = RequestInit & {
+  default?: T;
+  tags?: string[];
+};
+
+type StrapiFetchResponse<T> = {
+  data?: T;
+  total?: number;
+};
+
+export function strapiUrl(path: string, query?: object) {
+  let url = new URL(STRAPI_BASE_URL);
+  url.pathname = `/api/${trimLeft(path, "/")}`;
+  url.search = qs.stringify(query);
+  return url.href;
+}
+
+export function strapiUploadUrl(path: string) {
+  let url = new URL(STRAPI_BASE_URL);
+  url.pathname = trimLeft(path, "/");
+  return url.href;
+}
+
+export async function strapiFetch<T>(
+  path: string,
+  query?: StrapiFetchQuery,
+  options?: StrapiFetchOptions<T>,
+): Promise<StrapiFetchResponse<T>> {
+  let url = strapiUrl(path, query);
+  const res = await fetch(url, {
+    ...options,
+    next: { tags: ["content", ...(options?.tags ?? [])] },
+  });
+  let data = options?.default;
+  let total;
+
+  if (res.ok) {
+    const json = await res.json();
+    if (json.hasOwnProperty("data")) data = json.data as T;
+    if (json.hasOwnProperty("meta") && json.meta.hasOwnProperty("pagination"))
+      total = json.meta.pagination.total;
+  }
+
+  return { data, total };
+}
+
+export async function strapiFetchOne<T>(
+  path: string,
+  query?: StrapiFetchQuery,
+  options?: StrapiFetchOptions<T>,
+) {
+  const { data, total } = await strapiFetch<T[]>(
+    path,
+    query,
+    options as StrapiFetchOptions<T[]>,
+  );
+
+  if (data == null) return { data: options?.default, total };
+  else return { data: data[0] ?? options?.default, total };
+}
 
 export type StrapiResponse<T> = {
   data: T;

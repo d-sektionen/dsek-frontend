@@ -1,4 +1,4 @@
-import { apiFetch, uploadUrl } from "@/util/api";
+import { strapiFetch, strapiUploadUrl } from "@/util/strapi";
 import type { Footer } from "@/util/strapi";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +9,7 @@ import { Richtext } from "../Richtext/Richtext";
 type FooterProps = {};
 
 export async function Footer({}: FooterProps) {
-  const { data: footer } = await apiFetch<Footer>("/footer", {
+  const { data: footer } = await strapiFetch<Footer>("/footer", {
     populate: ["socials.image", "read_more"],
   });
   if (!footer) return null;
@@ -37,7 +37,7 @@ export async function Footer({}: FooterProps) {
               <Link href={link ?? ""}>
                 <Image
                   alt=""
-                  src={uploadUrl(image.url)}
+                  src={strapiUploadUrl(image.url)}
                   width={48}
                   height={48}
                 />

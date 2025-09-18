@@ -4,7 +4,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import { CgChevronDown, CgChevronRight } from "react-icons/cg";
 import type { NavbarLink } from "../../util/strapi";
-import { apiFetch } from "../../util/api";
+import { strapiFetch } from "../../util/strapi";
 
 type DesktopNavbarLinkProps = {
   documentId: string;
@@ -20,7 +20,7 @@ export async function DesktopNavbarLink({
 }: DesktopNavbarLinkProps) {
   const isNested = depth > 1;
 
-  const { data: link } = await apiFetch<NavbarLink>(
+  const { data: link } = await strapiFetch<NavbarLink>(
     `/navbar-links/${documentId}`,
     { populate: "*" },
   );

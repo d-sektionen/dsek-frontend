@@ -1,4 +1,9 @@
-import { apiFetch, apiFetchOne, apiUrl, uploadUrl } from "../../../util/api";
+import {
+  strapiFetch,
+  strapiFetchOne,
+  strapiUrl,
+  strapiUploadUrl,
+} from "../../../util/strapi";
 import { Utskott } from "../../../util/strapi";
 import { notFound } from "next/navigation";
 import style from "./page.module.css";
@@ -10,7 +15,7 @@ export const revalidate = 60;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const { data: utskotts = [] } = await apiFetch<Utskott[]>("/utskotts");
+  const { data: utskotts = [] } = await strapiFetch<Utskott[]>("/utskotts");
   return utskotts.map((u) => u.slug);
 }
 
@@ -20,7 +25,7 @@ export default async function UtskottPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const { data: utskott } = await apiFetchOne<Utskott>(`/utskotts`, {
+  const { data: utskott } = await strapiFetchOne<Utskott>(`/utskotts`, {
     filters: { slug },
     populate: ["content", "logo"],
   });
@@ -40,7 +45,7 @@ export default async function UtskottPage({
               width={64}
               height={64}
               alt={`${title} logotyp`}
-              src={uploadUrl(logo.url)}
+              src={strapiUploadUrl(logo.url)}
             />
           )}
           {title}

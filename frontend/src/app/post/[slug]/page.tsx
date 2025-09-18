@@ -1,4 +1,4 @@
-import { apiFetch, apiFetchOne } from "../../../util/api";
+import { strapiFetch, strapiFetchOne } from "../../../util/strapi";
 import type { Post } from "../../../util/strapi";
 import { notFound } from "next/navigation";
 import style from "./page.module.css";
@@ -11,7 +11,7 @@ export const revalidate = 60;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const { data: posts = [] } = await apiFetch<Post[]>("/posts");
+  const { data: posts = [] } = await strapiFetch<Post[]>("/posts");
   return posts.map((u) => u.slug);
 }
 
@@ -22,7 +22,7 @@ export default async function PostPage({
 }) {
   const { slug } = await params;
 
-  const { data: post } = await apiFetchOne<Post>("posts", {
+  const { data: post } = await strapiFetchOne<Post>("posts", {
     filters: { slug },
     populate: ["authors", "thumbnail", "attachments"],
   });

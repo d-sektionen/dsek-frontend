@@ -1,4 +1,4 @@
-import { apiFetch, apiUrl, uploadUrl } from "../../util/api";
+import { strapiFetch, strapiUrl, strapiUploadUrl } from "../../util/strapi";
 import type { SidebarSponsorWidget } from "../../util/strapi";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,7 +21,7 @@ export async function SidebarSponsorWidget({
           <Link className={style.logo} key={id} href={link ?? ""}>
             <Image
               alt={`Logotype of ${title}`}
-              src={uploadUrl(image.url)}
+              src={strapiUploadUrl(image.url)}
               width={200}
               height={130}
             />

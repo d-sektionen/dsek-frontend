@@ -1,6 +1,6 @@
 import Image from "next/image";
 import style from "./page.module.css";
-import { apiFetch } from "../util/api";
+import { strapiFetch } from "../util/strapi";
 import { Post } from "../util/strapi";
 import { useSearchParams } from "next/navigation";
 import dayjs from "dayjs";
@@ -16,7 +16,7 @@ export default async function HomePage({
   const params = await searchParams;
   const pageNumber = Number(params.page || 1);
 
-  const { data: posts, total } = await apiFetch<Post[]>("posts", {
+  const { data: posts, total } = await strapiFetch<Post[]>("posts", {
     pagination: {
       page: pageNumber,
       pageSize: PAGE_SIZE,
