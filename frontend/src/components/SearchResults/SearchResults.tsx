@@ -1,6 +1,6 @@
 "use client";
 
-import { meiliSearchMultiple, MeiliSearchResults } from "@/util/meilisearch";
+import { MeiliSearchResults } from "@/util/meilisearch";
 import { Page, Post } from "@/util/strapi";
 import { useEffect, useState } from "react";
 import style from "./SearchResults.module.css";
@@ -15,7 +15,13 @@ export function SearchResults({ query }: SearchResultsProps) {
   const [results, setResults] = useState<MeiliSearchResults<Post | Page>>();
 
   useEffect(() => {
-    meiliSearchMultiple<Post | Page>(["post", "page"], query).then(setResults);
+    fetch("/api/search", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query }),
+    })
+      .then((it) => it.json())
+      .then(setResults);
   }, [query]);
 
   return (

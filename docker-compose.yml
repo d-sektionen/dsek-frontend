@@ -51,6 +51,7 @@ services:
       dockerfile: Dockerfile.development
     environment:
       STRAPI_BASE_URL: "http://strapi:1337"
+      MEILI_BASE_URL: "http://meilisearch:7700"
     ports:
       - "3000:3000"
     volumes:

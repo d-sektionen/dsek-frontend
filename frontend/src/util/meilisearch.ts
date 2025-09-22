@@ -35,10 +35,16 @@ export async function meiliSearchMultiple<T>(
   query: string,
   options: MeiliSearchOptions = {},
 ): Promise<MeiliSearchResults<T>> {
+  const key = process.env.MEILI_PUBLIC_KEY;
+  if (!key && process.env.NODE_ENV !== "development") {
+    throw new Error("Cannot use meilisearch without a public key.");
+  }
+
   const res = await fetch(meiliUrl("/multi-search"), {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${key}`,
     },
     body: JSON.stringify({
       federation: {},
