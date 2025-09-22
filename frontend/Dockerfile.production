@@ -29,6 +29,8 @@ RUN chown nextjs:nodejs .next
 COPY --from=compile --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=compile --chown=nextjs:nodejs /app/.next/static ./.next/static
 
+RUN cd /app/.next && npm install sharp
+
 USER nextjs
 
 ENV NODE_ENV=production
