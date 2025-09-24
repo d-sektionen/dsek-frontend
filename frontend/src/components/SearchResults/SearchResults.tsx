@@ -23,6 +23,7 @@ export function SearchResults({ query, page = 1 }: SearchResultsProps) {
   const [results, setResults] = useState<MeiliSearchResults<Post | Page>>();
 
   useEffect(() => {
+    setResults(undefined);
     fetch("/api/search", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -32,7 +33,15 @@ export function SearchResults({ query, page = 1 }: SearchResultsProps) {
       .then(setResults);
   }, [query, page]);
 
-  if (!results) return <Spinner />;
+  if (results == null) return <Spinner label="Söker efter innehåll..." />;
+  if (results?.hits?.length === 0) {
+    return (
+      <>
+        <h3>Inga sökresultat</h3>
+        <p>Det du sökte på gav inga resultat, försök med en annan sökterm.</p>
+      </>
+    );
+  }
 
   return (
     <>
