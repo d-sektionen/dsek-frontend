@@ -10,6 +10,7 @@ import style from "./SearchResults.module.css";
 import Link from "next/link";
 import dayjs from "@/util/dayjs";
 import { Pagination } from "../Pagination/Pagination";
+import { Spinner } from "../Spinner/Spinner";
 
 type SearchResultsProps = {
   query: string;
@@ -30,6 +31,8 @@ export function SearchResults({ query, page = 1 }: SearchResultsProps) {
       .then((it) => it.json())
       .then(setResults);
   }, [query, page]);
+
+  if (!results) return <Spinner />;
 
   return (
     <>
