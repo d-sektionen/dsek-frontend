@@ -1,33 +1,40 @@
 "use client";
 
-import { MeiliSearchResults } from "@/util/meilisearch";
+import {
+  MEILI_DEFAULT_PAGE_SIZE,
+  MeiliSearchResults,
+} from "@/util/meilisearch";
 import { Page, Post } from "@/util/strapi";
 import { useEffect, useState } from "react";
 import style from "./SearchResults.module.css";
 import Link from "next/link";
 import dayjs from "@/util/dayjs";
+import { Pagination } from "../Pagination/Pagination";
 
 type SearchResultsProps = {
   query: string;
+  page?: number;
 };
 
-export function SearchResults({ query }: SearchResultsProps) {
+const PAGE_SIZE = 20;
+
+export function SearchResults({ query, page = 1 }: SearchResultsProps) {
   const [results, setResults] = useState<MeiliSearchResults<Post | Page>>();
 
   useEffect(() => {
     fetch("/api/search", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query }),
+      body: JSON.stringify({ query, page }),
     })
       .then((it) => it.json())
       .then(setResults);
-  }, [query]);
+  }, [query, page]);
 
   return (
     <>
       <ul>
-        {results?.hits.map((it) => (
+        {results?.hits?.map((it) => (
           <li key={it.documentId} className={style.post}>
             <Link href={`/post/${it.slug}`}>
               <h2>{it.title}</h2>
@@ -45,6 +52,13 @@ export function SearchResults({ query }: SearchResultsProps) {
           </li>
         ))}
       </ul>
+
+      <Pagination
+        searchParams={{ q: query }}
+        page={page}
+        pageSize={MEILI_DEFAULT_PAGE_SIZE}
+        totalPosts={results?.estimatedTotalHits ?? 1}
+      />
     </>
   );
 }

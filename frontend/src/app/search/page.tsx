@@ -5,9 +5,9 @@ import { SearchResults } from "@/components/SearchResults/SearchResults";
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string }>;
+  searchParams: Promise<{ q?: string; page?: string }>;
 }) {
-  const { q } = await searchParams;
+  const { q, page = 1 } = await searchParams;
 
   if (!q) return null;
 
@@ -16,7 +16,7 @@ export default async function SearchPage({
       <PageHeader title={`Sökresultat för ${q}`} />
 
       <Suspense>
-        <SearchResults query={q} />
+        <SearchResults query={q} page={Number(page)} />
       </Suspense>
     </div>
   );

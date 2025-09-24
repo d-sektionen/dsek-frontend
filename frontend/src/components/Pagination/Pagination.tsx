@@ -8,25 +8,36 @@ import {
   CgChevronLeft,
   CgChevronRight,
 } from "react-icons/cg";
+import qs from "qs";
 
 type PaginationProps = {
   page: number;
   pageSize: number;
   totalPosts: number;
+  searchParams?: Record<string, string>;
 };
 
-export function Pagination({ page, pageSize, totalPosts }: PaginationProps) {
+export function Pagination({
+  searchParams,
+  page,
+  pageSize,
+  totalPosts,
+}: PaginationProps) {
   if (!page || !pageSize) return null;
   const totalPages = Math.ceil(totalPosts / pageSize);
   let start = Math.max(1, page - 2);
   let end = Math.min(totalPages, start + 4);
 
+  function hrefToPage(page: number) {
+    return "?" + qs.stringify({ ...searchParams, page });
+  }
+
   return (
     <div className={style.pagination}>
-      <PaginationButton href={`?page=${1}`} disabled={page <= 2}>
+      <PaginationButton href={hrefToPage(1)} disabled={page <= 2}>
         <CgChevronDoubleLeft />
       </PaginationButton>
-      <PaginationButton href={`?page=${page - 1}`} disabled={page === 1}>
+      <PaginationButton href={hrefToPage(page - 1)} disabled={page === 1}>
         <CgChevronLeft />
       </PaginationButton>
 
@@ -35,7 +46,7 @@ export function Pagination({ page, pageSize, totalPosts }: PaginationProps) {
           <PaginationButton
             key={i}
             active={start + i === page}
-            href={`?page=${start + i}`}
+            href={hrefToPage(start + i)}
           >
             {start + i}
           </PaginationButton>
@@ -43,13 +54,13 @@ export function Pagination({ page, pageSize, totalPosts }: PaginationProps) {
       </div>
 
       <PaginationButton
-        href={`?page=${page + 1}`}
+        href={hrefToPage(page + 1)}
         disabled={page >= totalPages - 1}
       >
         <CgChevronRight />
       </PaginationButton>
       <PaginationButton
-        href={`?page=${totalPages}`}
+        href={hrefToPage(totalPages)}
         disabled={page === totalPages}
       >
         <CgChevronDoubleRight />

@@ -1,10 +1,16 @@
 import qs from "qs";
 import { trimLeft } from "./util";
 
+export const MEILI_DEFAULT_PAGE_SIZE = 20;
 const MEILI_BASE_URL =
   (process.env.MEILI_BASE_URL as string) || "http://localhost:7700";
 
-type MeiliSearchOptions = {};
+type MeiliSearchOptions = {
+  pagination?: {
+    page?: number;
+    pageSize?: number;
+  };
+};
 
 export type MeiliSearchHit<T> = T & {
   _meilisearch_id: string;
@@ -33,7 +39,7 @@ export function meiliUrl(path: string, query?: object) {
 export async function meiliSearchMultiple<T>(
   indexes: string[],
   query: string,
-  options: MeiliSearchOptions = {},
+  { pagination }: MeiliSearchOptions,
 ): Promise<MeiliSearchResults<T>> {
   const key = process.env.MEILI_PUBLIC_KEY;
   if (!key && process.env.NODE_ENV !== "development") {
@@ -47,8 +53,16 @@ export async function meiliSearchMultiple<T>(
       Authorization: `Bearer ${key}`,
     },
     body: JSON.stringify({
-      federation: {},
-      queries: indexes.map((id) => ({ indexUid: id, q: query })),
+      federation: {
+        offset:
+          ((pagination?.page ?? 1) - 1) *
+          (pagination?.pageSize ?? MEILI_DEFAULT_PAGE_SIZE),
+        limit: pagination?.pageSize ?? MEILI_DEFAULT_PAGE_SIZE,
+      },
+      queries: indexes.map((id) => ({
+        indexUid: id,
+        q: query,
+      })),
     }),
   });
 
