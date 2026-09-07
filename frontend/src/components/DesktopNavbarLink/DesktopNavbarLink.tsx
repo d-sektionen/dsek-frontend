@@ -30,7 +30,7 @@ export async function DesktopNavbarLink({
   }
 
   const { label, url, navbar_links } = link;
-  const hasChildren = navbar_links?.length ?? 0 > 0;
+  const hasChildren = (navbar_links?.length ?? 0) > 0;
   const Label = url != null ? Link : "span";
 
   return (
