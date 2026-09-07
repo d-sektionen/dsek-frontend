@@ -17,16 +17,26 @@ export async function SidebarSponsorWidget({
         <h3>{title}</h3>
       </header>
       <main>
-        {logos?.map(({ id, image, link }) => (
-          <Link className={style.logo} key={id} href={link ?? ""}>
+        {logos?.map(({ id, image, link }) => {
+          const img = (
             <Image
               alt={`Logotype of ${title}`}
               src={strapiUploadUrl(image.url)}
               width={200}
               height={130}
             />
-          </Link>
-        ))}
+          );
+
+          return link ? (
+            <Link className={style.logo} key={id} href={link}>
+              {img}
+            </Link>
+          ) : (
+            <div className={style.logo} key={id}>
+              {img}
+            </div>
+          );
+        })}
       </main>
     </article>
   );
