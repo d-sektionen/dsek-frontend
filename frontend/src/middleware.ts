@@ -6,12 +6,9 @@ const REDIRECTS: Record<string, string> = {
 };
 
 export function middleware(request: NextRequest) {
-  let redirect = REDIRECTS[request.nextUrl.pathname];
+  const redirect = REDIRECTS[request.nextUrl.pathname];
   if (redirect != null) {
-    if (redirect[0] == "/") {
-      redirect = process.env.BASE_URL + redirect;
-    }
-    return NextResponse.redirect(redirect);
+    return NextResponse.redirect(new URL(redirect, request.nextUrl));
   }
 }
 
