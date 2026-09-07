@@ -1,0 +1,10 @@
+.screenReaderText {
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+}

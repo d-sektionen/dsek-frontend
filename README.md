@@ -1,38 +1,61 @@
-# Dsek-frontend
+# Webbsidan D-Sektionen.se
 
-## Features:
+Denna version av D-Sektionen.se togs fram verksamhetsår 23/24 som en single-page React-webbapp. Webbappen skrevs 24/25 till största del om som ett full-stack NextJS-projekt, framför allt för att förbättra first-paint prestanda och för att flytta huvudsaklig funktionalitet till TypeScript.
 
-### TODO:
+## Status
+*Senast uppdaterad: 5 Maj 2025*
 
-- [x] Gör om alla utskotts sidor via strappi
-- [x] Ta bort side nav
-- [x] staben font
-- [x] dsek-frontend/public/fake-cms/pages/\*.md borde flyttas (ska de ligga i cms?)
-- [x] Alumni-blogg (meny)
-- [x] Företag (meny)
-- [x] Exjobb (meny)
-- [x] länkar på utskottssidor
-- [x] borde hoppa till konsekvent plats (t.ex. högst upp) på sidan när man byter sida med pagenav-knappar
-- [ ] API-nyckeln till kalendern behöver en annan lösning så att den inte syns i deployad build
-- [x] tillgänglighet (skärmläsare etc)
-- [x] Utskottsloggor i dropdown menyn
-- [x] Fixa search bar med strapi pluggin
-- [x] Darkmode
-- [x] Ta bort eller gör om knappen som skickar dig längst upp på sidan
-- [] (om tid finns) Lägg till kort för evenemang/nyheter typ som https://www.dsek.se/
-- [] Finns "ny student"? Om inte lägg till
-- [] Se över allt under Extra, t.ex. Alumniblogg ska det tas bort?
-- [] Implementera nya Figma designen
+Webbsidan är en MVP och redo för testning.
 
-### Bugs
+### Funktionalitet
+- [x] Skapa länkar i navbar
+  - [x] Skapa underlänkar till länkar i navbar
+- [x] Skapa sidor
+  - [ ] Skapa undersidor (behövs detta?)
+- [x] Skapa inlägg
+  - [x] Importera inlägg från den tidigare Wordpress-webben
+  - [ ] Skapa attachments till ett inlägg
+  - [ ] Visa attachments till ett inlägg
+- [x] Visa inlägg
+- [x] Visa en lista med inlägg
+  - [x] Paginering
+- [x] Skapa widgetar i höger/vänster sidebar
+  - [ ] Söka i sidebar
+- [x] Skapa utskott
+- [x] Visa utskott
+- [ ] Åsiktslådan
+- [ ] Sektionsfotograferingssidan
 
-- [x] det går inte att klicka längst ut på högerkanten av dropdownmenyknapparna (menyn minimeras när musen fortfarande hovrar över menyn)
-- [x] PageNavs sifferknappar buggar lite...
-- [x] Länkarna i smala menyn (de som inte är dropdown) funkar bara om man klickar på texten, inte hela knappen
-- [x] bilder i md pages - Det mesta visas i markdown genom Strapi
-- [ ] hemsidan går typ sönder om den är lite för inzoomad
-- [x] menyn i smalt läge bör menyn stängas när man klickar på en av länkarna (vilket inte händer när man redirectar inom sidan)
-- [x] namn på utskottssidor
-- [x] PubU:s sida är lite wonky
-- [x] EventU:s sida: borde vara mailto-länk i "grupperna" (e-post-knapp)
-- [x] Kanske problem med PageNav button, scroll to top, firefox (knapp 2?)
+## Kom igång
+### Installera dependencies
+#### Docker
+
+För att kunna köra eller bygga projektet behöver du Docker och Docker Compose installerade. Docker finns på alla x86 baserade operativsystem, men fungerar bäst på Linux.
+
+- [Installera Docker](https://www.docker.com/)
+- [Installera Docker Compose](https://docs.docker.com/compose/install/)
+
+Både utvecklingsmiljön och produktionsbilderna utnyttjar docker för att se till så att miljön ser likadan ut och alla versioner är korrekta.
+
+#### Node
+
+Docker hanterar själv den Node-version som används för att köra webbsidan, men om du vill slippa errors i koden bör du själv installera Node. Alla versioner nyare än Node 20 bör fungera.
+
+- [Installera Node](https://nodejs.org/en/download)
+
+#### NPM paket för frontenden
+
+För att undvika felmeddelanden i koden behöver du också installera de NPM-paket som behövs för frontenden.
+
+```
+cd frontend
+npm install
+```
+
+### Starta utvecklingsmiljön
+
+Använd Docker Compose för att starta utvecklingsmiljön.
+
+```
+docker compose up
+```
