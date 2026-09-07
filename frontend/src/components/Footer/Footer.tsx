@@ -34,14 +34,23 @@ export async function Footer({}: FooterProps) {
         <ul>
           {socials.map(({ id, image, link }) => (
             <li key={id}>
-              <Link href={link ?? ""}>
+              {link ? (
+                <Link href={link}>
+                  <Image
+                    alt=""
+                    src={strapiUploadUrl(image.url)}
+                    width={48}
+                    height={48}
+                  />
+                </Link>
+              ) : (
                 <Image
                   alt=""
                   src={strapiUploadUrl(image.url)}
                   width={48}
                   height={48}
                 />
-              </Link>
+              )}
             </li>
           ))}
         </ul>
