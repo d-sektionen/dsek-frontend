@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={clsx(asapFont.variable, stabenFont.variable)}>
+    <html lang="sv" className={clsx(asapFont.variable, stabenFont.variable)}>
       <body>
         <Navbar />
         <div className={style.container}>
