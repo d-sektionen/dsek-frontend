@@ -1,6 +1,6 @@
 const isDev = process.env.NODE_ENV === "development";
 
-/** @type {import('next').NextConfig} */
+/** @type {import("next").NextConfig} */
 const nextConfig = {
   output: "standalone",
   images: isDev

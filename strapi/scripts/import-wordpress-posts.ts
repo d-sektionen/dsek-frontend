@@ -1,14 +1,17 @@
-"use strict";
-
 import pg from "pg";
 import dotenv from "dotenv";
 import dayjs from "dayjs";
 import { stripHtml } from "string-strip-html";
 
-/**
- * @typedef {{ id: number, publishedId?: number }} PublishedItem
- * @typedef {{title: {rendered: string}, date: string, slug: string, status: "draft" | "publish", excerpt: {rendered: string}, content: {rendered: string}}} WPPost
- */
+type PublishedItem = { id: number; publishedId?: number };
+type WPPost = {
+  title: { rendered: string };
+  date: string;
+  slug: string;
+  status: "draft" | "publish";
+  excerpt: { rendered: string };
+  content: { rendered: string };
+};
 
 dotenv.configDotenv();
 const client = new pg.Client({
@@ -18,44 +21,42 @@ const client = new pg.Client({
   database: process.env.DATABASE_NAME,
 });
 
-await client.connect();
+async function main() {
+  await client.connect();
+  const items: WPPost[] = [];
 
-/** @type {WPPost[]} */
-const items = [];
-
-console.log("🔎 Searching d-sektionen.se for wordpress posts");
-for (let i = 1; i <= 7; i++) {
-  const res = await fetch(
-    `https://d-sektionen.se/wp-json/wp/v2/posts?per_page=100&page=${i}`,
-  );
-  if (!res.ok) {
-    console.error(`Failed to fetch page ${i}`);
-    continue;
+  console.log("🔎 Searching d-sektionen.se for wordpress posts");
+  for (let i = 1; i <= 7; i++) {
+    const res = await fetch(
+      `https://d-sektionen.se/wp-json/wp/v2/posts?per_page=100&page=${i}`,
+    );
+    if (!res.ok) {
+      console.error(`Failed to fetch page ${i}`);
+      continue;
+    }
+    const data = (await res.json()) as WPPost[];
+    items.push(...data);
   }
-  const data = await res.json();
-  items.push(...data);
+
+  try {
+    console.log("👤 Creating 'WordPress Admin' user");
+    const author = await getOrCreateAuthor("WordPress Admin");
+
+    console.log("Creating posts...");
+    for (const item of items) {
+      console.log("\t📄 " + item.title.rendered);
+      const post = await createPost(item);
+      if (post) await associateAuthor(post, author);
+    }
+    console.log("✅ Finished!");
+  } catch (error) {
+    console.error(error);
+  } finally {
+    await client.end();
+  }
 }
 
-try {
-  console.log("👤 Creating 'WordPress Admin' user");
-  const author = await getOrCreateAuthor("WordPress Admin");
-
-  console.log("Creating posts...");
-  for (const item of items) {
-    console.log("\t📄 " + item.title.rendered);
-    const post = await createPost(item);
-    if (post) await associateAuthor(post, author);
-  }
-  console.log("✅ Finished!");
-} catch (error) {
-  console.error(error);
-}
-
-/**
- * @param {WPPost} item
- * @returns {Promise<PublishedItem | undefined>}
- */
-async function createPost(item) {
+async function createPost(item: WPPost): Promise<PublishedItem | undefined> {
   const documentId = randomId();
   const title = item.title.rendered.slice(0, 255);
   const date = dayjs(item.date).toISOString();
@@ -91,11 +92,7 @@ async function createPost(item) {
   };
 }
 
-/**
- * @param {string} name
- * @returns {Promise<PublishedItem>}
- */
-async function getOrCreateAuthor(name) {
+async function getOrCreateAuthor(name: string): Promise<PublishedItem> {
   const res = await client.query(`SELECT id FROM authors WHERE name = $1;`, [
     name,
   ]);
@@ -121,11 +118,7 @@ async function getOrCreateAuthor(name) {
   return getOrCreateAuthor(name);
 }
 
-/**
- * @param {PublishedItem} post
- * @param {PublishedItem} author
- */
-async function associateAuthor(post, author) {
+async function associateAuthor(post: PublishedItem, author: PublishedItem) {
   console.log("\t\t 🔗 Linking author");
   await client.query(
     `INSERT INTO posts_authors_lnk (post_id, author_id, author_ord) VALUES ($1, $2, 1)`,
@@ -137,9 +130,6 @@ async function associateAuthor(post, author) {
   );
 }
 
-/**
- * @returns {string}
- */
 function randomId() {
   const alphabet = "abcdefghijklmnopqrstuvwxyz1234567890";
   return Array.from(
@@ -147,3 +137,8 @@ function randomId() {
     () => alphabet[Math.floor(Math.random() * alphabet.length)],
   );
 }
+
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

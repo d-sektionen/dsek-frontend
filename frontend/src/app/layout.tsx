@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "../components/Navbar/Navbar";
-import Script from "next/script";
 import localFont from "next/font/local";
 import { JumpToContentButton } from "../components/JumpToContentButton/JumpToContentButton";
 import { Sidebar } from "../components/Sidebar/Sidebar";
 import style from "./layout.module.css";
 import { Footer } from "../components/Footer/Footer";
 import clsx from "clsx";
+import { ScrollClasses } from "./ScrollClasses";
 
 export const metadata: Metadata = {
   title: "D-sektionen på LiU",
@@ -42,7 +42,7 @@ export default function RootLayout({
           <Sidebar endpoint="right-sidebar" />
         </div>
         <Footer />
-        <Script src="/scroll.js" />
+        <ScrollClasses />
       </body>
     </html>
   );
